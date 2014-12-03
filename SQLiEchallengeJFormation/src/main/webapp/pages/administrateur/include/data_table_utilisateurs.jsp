@@ -48,7 +48,7 @@
 										<td class="hidden-phone "><s:property
 												value="telephoneUtilisateur" /></td>
 										<td class="center hidden-phone "><s:property
-												value="sexe" /></td>
+												value="sexeUtilisateur" /></td>
 										<td>
 											<s:property
 												value="profil.getNomProfil()" />
