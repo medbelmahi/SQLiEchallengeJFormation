@@ -28,7 +28,7 @@
 							id="hidden-table-info">
 							<thead>
 								<tr role="row">
-									<th>Nom &amp; Prénom</th>
+									<th>Prénom &amp; Nom</th>
 									<th>Email</th>
 									<th>Telephone</th>
 									<th>Sexe</th>
@@ -48,7 +48,7 @@
 										<td class="hidden-phone "><s:property
 												value="telephoneUtilisateur" /></td>
 										<td class="center hidden-phone "><s:property
-												value="sexeString" /></td>
+												value="sexe" /></td>
 										<td>
 											<s:property
 												value="profil.getNomProfil()" />

@@ -248,5 +248,6 @@
 	<!-- javascript of utilisateur_list page Begin -->
 		<s:include value="include/javascript_utilisateur_list.jsp"></s:include>
 	<!-- javascript of utilisateur_list page End -->
+	
 </body>
 </html>
