@@ -14,7 +14,7 @@
 					<div class="row">
 						<h5 class="text-danger" >(*) champs obligatoire</h5>
 					</div>
-					<form data-toggle="validator" id="add_collaborateur" action="utilisateurs/add" method="post" role="form" class="form-horizontal adminex-form">
+					<form data-toggle="validator" id="add_collaborateur" action="add" method="post" role="form" class="form-horizontal adminex-form">
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">
@@ -24,7 +24,7 @@
 									</div>
 									<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 									<div>
-										<span class="btn btn-default btn-file"> <span class="fileupload-new"><i class="fa fa-paper-clip"></i>Choisir une image</span> <span class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span> <input class="default" type="file">
+										<span class="btn btn-default btn-file"> <span class="fileupload-new col-sm-12"><i class="fa fa-paper-clip"></i>Choisir une image</span> <span class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span> <input class="default" type="file">
 										</span> <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
 									</div>
 								</div>
@@ -33,8 +33,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="inputLastName_2" class="col-sm-2 control-label">Nom<span class="text-danger" > *</span></label>
-							<div class="col-sm-10">
+							<label for="inputLastName_2" class="col-sm-3 control-label">Nom<span class="text-danger" > *</span></label>
+							<div class="col-sm-9">
 								<input autocomplete="off" name="nom" class="form-control" id="inputLastName_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
@@ -47,14 +47,14 @@
 						</div>
 
 						<div class="form-group">
-							<label for="inputEmail_2" class="col-sm-2 control-label">Email</label> 
-							<div class="col-sm-10">
+							<label for="inputEmail_2" class="col-sm-3 control-label">Email<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<input autocomplete="off" name="email" class="form-control" id="inputEmail_2" placeholder="Email" type="email" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="thedateDiv_2" class="col-sm-3 control-label">Date de naissance</label>
+							<label for="thedateDiv_2" class="col-sm-3 control-label">Date de naissance<span class="text-danger" > *</span></label>
 							<div id="thedateDiv_2" class="">
 
 								<div data-date-viewmode="years" data-date-format="dd/mm/yyyy" data-date="12/02/1990" class="col-sm-9 input-append date dpYears">
@@ -69,23 +69,23 @@
 						</div>
 
 						<div class="form-group">
-							<label for="inputTelephone_2" class="col-sm-2 control-label">Telephone</label> 
-							<div class="col-sm-10">
+							<label for="inputTelephone_2" class="col-sm-3 control-label">Telephone<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone_2" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required="required">
 							</div>
 						</div>
 
 
 						<div class="form-group">
-							<label for="inputAdress_2" class="col-sm-2 control-label">Adresse</label> 
-							<div class="col-sm-10">
+							<label for="inputAdress_2" class="col-sm-3 control-label">Adresse<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress_2" placeholder="Ex : Casablanca Rue 10 N80" type="text" required="required">
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="inputAdress_2" class="col-sm-2 control-label">Profil</label> 
-							<div class="col-sm-10">
+							<label for="inputAdress_2" class="col-sm-3 control-label">Profil<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<select name="profil" class="form-control input-sm m-bot15">
 	                                <s:iterator value="profils">
 										<option value='<s:property value="idProfil" />'><s:property value="nomProfil" /></option>
@@ -95,12 +95,11 @@
 						</div>
 
 						<div class="form-group">
-							<div style="display: flex; align-items: center;" class="col-sm-2 col-sm-2">
-								<label class="col-sm-2 control-label">Sexe</label>
-							</div>
-							<div class="col-lg-8 vcenter">
+								<label for="sexeElement" class="col-sm-3 control-label vcenter">Sexe<span class="text-danger" > *</span></label>
+							
+							<div  id="sexeElement" class="col-sm-9 vcenter">
 
-								<div class="col-sm-9 icheck ">
+								<div class="icheck ">
 									<div class="square-green single-row col-sm-6">
 										<div class="radio ">
 											<input tabindex="3" type="radio" name="sexe" id="optionHomme_2" value="Homme" checked="checked"> <label>	Male </label>
