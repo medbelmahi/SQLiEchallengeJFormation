@@ -27,7 +27,7 @@ public class LoginAction extends SqliActionSupport {
 	private String password;
 	
 	@Override
-	public String execute() throws Exception {
+	public String execute() {
 		try {
 			//Get user from DB
 			Utilisateur u = utilisateurMetier.getUtilisateur(email, password);

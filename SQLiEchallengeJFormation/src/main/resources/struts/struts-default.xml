@@ -9,6 +9,18 @@
 
 	<!-- default package -->
     <package name="default" namespace="/" extends="sqli_basic_package">
+    	
+    
+    	<action name="login" class="com.sqli.echallenge.jformation.web.LoginAction">
+    		<result name="success" type="redirectAction">index</result>
+    		<result name="error">/pages/login.jsp</result>
+    		<result name="input">/pages/login.jsp</result>
+    	</action>
+    	
+    	<action name="logout" class="com.sqli.echallenge.jformation.web.LogoutAction">
+    		<result type="redirectAction">login</result>
+    	</action>
+    
     	<action name="test" class="com.sqli.echallenge.jformation.web.TestAction">
     		<result>/pages/test.jsp</result>
     	</action>
