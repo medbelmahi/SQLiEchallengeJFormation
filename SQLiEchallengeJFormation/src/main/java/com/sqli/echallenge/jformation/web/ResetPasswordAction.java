@@ -25,7 +25,6 @@ public class ResetPasswordAction extends SqliActionSupport {
 	
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
-	
 	@Autowired
 	public SqliMailSender mailSender;
 	
@@ -41,10 +40,9 @@ public class ResetPasswordAction extends SqliActionSupport {
 			SqliEmailModel model = new SqliEmailModel();
 			
 			//Inflate Model
-			model.addModel(u.getNomUtilsateur());
+			model.addModel(u.getFullname());
 			model.addModel(u.getPasswordUtilisateur());
-			//Send Email
-			mailSender.sendMail(u.getEmailUtilisateur(), TEMPLATE_MAIL, model);
+			mailSender.sendMail(u.getEmailUtilisateur(), TEMPLATE_MAIL, model);//Send Email
 			
 			//show success message
 			setSessionActionMessageText(getText("utilisateur.resetPasswordMail.sent.success"));

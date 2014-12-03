@@ -18,6 +18,10 @@
     	</action>
     	
     	<action name="utilisateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurAddAction">
+	    	<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg, image/png</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>

@@ -3,6 +3,14 @@
  */
 package com.sqli.echallenge.jformation.web.administrateur;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +23,9 @@ import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 import com.sqli.echallenge.jformation.metier.ProfilMetier;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
+import com.sqli.echallenge.jformation.util.FileHelper;
+import com.sqli.echallenge.jformation.util.SqliEmailModel;
+import com.sqli.echallenge.jformation.util.SqliMailSender;
 import com.sqli.echallenge.jformation.util.SqliRandomGenerator;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
@@ -23,8 +34,10 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Controller
-public class UtilisateurAddAction extends SqliActionSupport {
+public class UtilisateurAddAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = -7968028204363016406L;
+	private static final String SAVE_DIR = "src/main/resources/avatars";
+	private static final String TEMPLATE_MAIL = "template/utilisateur-new-created-template.vm";
 	
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
@@ -32,11 +45,20 @@ public class UtilisateurAddAction extends SqliActionSupport {
 	public SqliRandomGenerator sqliRandomGenerator;
 	@Autowired
 	public ProfilMetier profilMetier;
+	@Autowired
+	public SqliMailSender mailSender;
+	
+	private HttpServletRequest servletRequest;
+	
+	//Image (avatar) file
+	private File fileImage;
+	private String fileImageContentType;
+	private String fileImageFileName;
 	
 	private String nom;
 	private String prenom;
 	private String email;
-	private String dateNaissance;
+	private Date dateNaissance;
 	private String telephone;
 	private String adresse;
 	private Long profil;//idProfil
@@ -44,12 +66,14 @@ public class UtilisateurAddAction extends SqliActionSupport {
 
 	@Override
 	public String execute() throws Exception {
+		
 		try{
 			//Create new Utilisateur
 			Utilisateur utilisateur = new Utilisateur();
 			utilisateur.setNomUtilsateur(nom);
 			utilisateur.setPrenomUtilisateur(prenom);
 			utilisateur.setEmailUtilisateur(email);
+			utilisateur.setDateNaissanceUtilisateur(dateNaissance);
 			utilisateur.setTelephoneUtilisateur(telephone);
 			utilisateur.setAdresseUtilisateur(adresse);
 			utilisateur.setSexeUtilisateur(sexe);
@@ -60,15 +84,24 @@ public class UtilisateurAddAction extends SqliActionSupport {
 			//get profil from db and set it
 			utilisateur.setProfil(profilMetier.getProfil(profil));
 			
+			//set Image Avatar
+			utilisateur.setUrlPhotoUtilisateur(saveImage());
+			
 			//add Utilisateur
 			utilisateurMetier.add(utilisateur);
+			
+			//Send Mail to New utilisateur
+			SqliEmailModel model = new SqliEmailModel();
+			//Inflate Model
+			model.addModel(utilisateur.getNomUtilsateur());
+			model.addModel(utilisateur.getPasswordUtilisateur());
+			mailSender.sendMail(utilisateur.getEmailUtilisateur(), TEMPLATE_MAIL, model);
 			
 			setSessionActionMessageText(getText("utilisateur.new.add.success"));
 			return SqliActionSupport.SUCCESS;
 		}catch(Exception e){
-			
 			//show error message
-			setSessionActionMessageText(e.getMessage());
+			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;
 		}
 	}
@@ -106,11 +139,11 @@ public class UtilisateurAddAction extends SqliActionSupport {
 
 	@RequiredFieldValidator(shortCircuit=true)
 	@DateRangeFieldValidator(dateFormat = "dd/MM/yyyy", shortCircuit=true)
-	public String getDateNaissance() {
+	public Date getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(String dateNaissance) {
+	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
@@ -152,5 +185,61 @@ public class UtilisateurAddAction extends SqliActionSupport {
 
 	public void setSexe(String sexe) {
 		this.sexe = sexe;
+	}
+
+	public File getFileImage() {
+		return fileImage;
+	}
+
+	public void setFileImage(File fileImage) {
+		this.fileImage = fileImage;
+	}
+
+	public String getFileImageContentType() {
+		return fileImageContentType;
+	}
+
+	public void setFileImageContentType(String fileImageContentType) {
+		this.fileImageContentType = fileImageContentType;
+	}
+
+	public String getFileImageFileName() {
+		return fileImageFileName;
+	}
+
+	public void setFileImageFileName(String fileImageFileName) {
+		this.fileImageFileName = fileImageFileName;
+	}
+	
+	public void setServletRequest(HttpServletRequest servletRequest) {
+		this.servletRequest = servletRequest;
+	}
+	
+	@SuppressWarnings("deprecation")
+	private String saveImage() throws IOException{
+		if(fileImage == null){
+			return "null";
+		}
+		
+		//Get paths reat + context
+		String serverRealPath = servletRequest.getRealPath("/");
+		String contextPath = servletRequest.getContextPath();
+
+		//create Files
+		File saveDirContext = new File(contextPath, SAVE_DIR);
+		File saveDirReal = new File(serverRealPath, SAVE_DIR);
+		
+		//generate names and prepare URI
+		String generatedName = new FileHelper().setRandomName(fileImageFileName);
+		File fileToSaveReal = new File(saveDirReal, generatedName);
+		File fileToSaveContext = new File(saveDirContext, generatedName);
+
+		System.out.println(">URIreal: " + fileToSaveReal);
+		System.out.println(">URIcontext: " + fileToSaveContext);
+		
+		//save image
+		FileUtils.copyFile(fileImage, fileToSaveReal);
+		
+		return fileToSaveContext.toString();
 	}
 }
