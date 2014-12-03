@@ -71,7 +71,7 @@
 												</li>
 												
 												<li style="padding-left: 15px;">
-													<a data-href=<s:url action="delete" ><s:param name="id"><s:property value="idUtilisateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
+													<a data-href=<s:url action="utilisateurs/delete" ><s:param name="idUtilisateur"><s:property value="idUtilisateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 														<i class="fa fa-times"></i>
 													</a>
 												</li>
