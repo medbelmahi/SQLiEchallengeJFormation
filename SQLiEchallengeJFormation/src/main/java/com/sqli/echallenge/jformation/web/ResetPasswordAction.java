@@ -21,6 +21,7 @@ import com.sqli.echallenge.jformation.util.SqliMailSender;
 @Controller
 public class ResetPasswordAction extends SqliActionSupport {
 	private static final long serialVersionUID = -6188248136122214630L;
+	private static final String TEMPLATE_MAIL = "template/utilisateur-reset-password-email-template.vm";
 	
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
@@ -37,13 +38,13 @@ public class ResetPasswordAction extends SqliActionSupport {
 			Utilisateur u = utilisateurMetier.getUtilisateur(email);
 			
 			//Send reset password mail to User
-			String template = "template/utilisateur-reset-password-email-template.vm";
 			SqliEmailModel model = new SqliEmailModel();
+			
 			//Inflate Model
 			model.addModel(u.getNomUtilsateur());
 			model.addModel(u.getPasswordUtilisateur());
 			//Send Email
-			mailSender.sendMail(u.getEmailUtilisateur(), template, model);
+			mailSender.sendMail(u.getEmailUtilisateur(), TEMPLATE_MAIL, model);
 			
 			//show success message
 			setSessionActionMessageText(getText("utilisateur.resetPasswordMail.sent.success"));
