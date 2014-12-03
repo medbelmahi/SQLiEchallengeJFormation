@@ -71,7 +71,7 @@ public class SqliActionSupport extends ActionSupport implements SessionAware {
 		return (session.get(SESSION_ACTION_ERROR_FIELD) != null) ? true : false;
 	}
 	
-	public boolean isSessionMessageError(){
+	public boolean isSessionActionMessage(){
 		return (session.get(SESSION_ACTION_MESSAGE_FIELD) != null) ? true : false;
 	}
 	

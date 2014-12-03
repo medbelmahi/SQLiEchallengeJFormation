@@ -33,6 +33,14 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 			throw new SqliException(propretiesHelper.getText("utilisateur.email.password.notfound"));
 		}
 	}
+	
+	public Utilisateur getUtilisateur(String email) throws Exception {
+		try {
+			return dao.getUtilisateur(email);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("utilisateur.email.notfound"));
+		}
+	}
 
 	public UtilisateurDao getDao() {
 		return dao;
@@ -41,5 +49,4 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 	public void setDao(UtilisateurDao dao) {
 		this.dao = dao;
 	}
-
 }

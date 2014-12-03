@@ -9,10 +9,23 @@
 
 	<!-- default package -->
     <package name="default" namespace="/" extends="sqli_basic_package">
-    	
+    	<default-action-ref name="index" />
+    
+    	<action name="index" class="com.sqli.echallenge.jformation.web.IndexAction">
+    		<result name="index_administrateur">/pages/administrateur/index.jsp</result>
+    		<result name="index_respo_formation">/pages/responsable_formation/index.jsp</result>
+    		<result name="index_formateur">/pages/formateur/index.jsp</result>
+    		<result name="login" type="redirectAction">login</result>
+    	</action>
     
     	<action name="login" class="com.sqli.echallenge.jformation.web.LoginAction">
     		<result name="success" type="redirectAction">index</result>
+    		<result name="error">/pages/login.jsp</result>
+    		<result name="input">/pages/login.jsp</result>
+    	</action>
+    	
+    	<action name="resetpassword" class="com.sqli.echallenge.jformation.web.ResetPasswordAction">
+    		<result name="success">/pages/login.jsp</result>
     		<result name="error">/pages/login.jsp</result>
     		<result name="input">/pages/login.jsp</result>
     	</action>

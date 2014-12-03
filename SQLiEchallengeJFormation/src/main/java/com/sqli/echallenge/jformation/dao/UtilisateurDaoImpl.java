@@ -32,6 +32,13 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 		return (Utilisateur) query.getSingleResult();
 	}
 	
+	public Utilisateur getUtilisateur(String email) throws Exception {
+		Query query = entityManager.createQuery("from Utilisateur where emailUtilisateur=:email");
+		query.setParameter("email", email);
+		
+		return (Utilisateur) query.getSingleResult();
+	}
+	
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
@@ -39,5 +46,4 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }
