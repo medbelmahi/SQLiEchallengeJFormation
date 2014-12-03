@@ -11,7 +11,10 @@
 
 			<div class="modal-body">
 				<div class="panel-body">
-					<form data-toggle="validator" id="add_collaborateur" action="addUtilisateur" method="post" role="form" class="form-horizontal adminex-form">
+					<div class="row">
+						<h5 class="text-danger" >(*) champs obligatoire</h5>
+					</div>
+					<form data-toggle="validator" id="add_collaborateur" action="utilisateurs/add" method="post" role="form" class="form-horizontal adminex-form">
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">
@@ -30,28 +33,28 @@
 						</div>
 
 						<div class="form-group">
-							<label for="inputLastName_2" class="col-sm-2 col-sm-2 control-label">Nom</label> 
+							<label for="inputLastName_2" class="col-sm-2 control-label">Nom<span class="text-danger" > *</span></label>
 							<div class="col-sm-10">
 								<input autocomplete="off" name="nom" class="form-control" id="inputLastName_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputFirstName_2" class="col-sm-2 col-sm-2 control-label">Prenom</label> 
-							<div class="col-sm-10">
+							<label for="inputFirstName_2" class="col-sm-3 control-label">Prenom<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<input autocomplete="off" name="prenom" class="form-control"id="inputFirstName_2" placeholder="Prenom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputEmail_2" class="col-sm-2 col-sm-2 control-label">Email</label> 
+							<label for="inputEmail_2" class="col-sm-2 control-label">Email</label> 
 							<div class="col-sm-10">
 								<input autocomplete="off" name="email" class="form-control" id="inputEmail_2" placeholder="Email" type="email" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="thedateDiv_2" class="col-sm-2 col-sm-2 control-label">Date de naissance</label>
+							<label for="thedateDiv_2" class="col-sm-3 control-label">Date de naissance</label>
 							<div id="thedateDiv_2" class="">
 
 								<div data-date-viewmode="years" data-date-format="dd/mm/yyyy" data-date="12/02/1990" class="col-sm-9 input-append date dpYears">
@@ -66,7 +69,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="inputTelephone_2" class="col-sm-2 col-sm-2 control-label">Telephone</label> 
+							<label for="inputTelephone_2" class="col-sm-2 control-label">Telephone</label> 
 							<div class="col-sm-10">
 								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone_2" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required="required">
 							</div>
@@ -74,14 +77,14 @@
 
 
 						<div class="form-group">
-							<label for="inputAdress_2" class="col-sm-2 col-sm-2 control-label">Adresse</label> 
+							<label for="inputAdress_2" class="col-sm-2 control-label">Adresse</label> 
 							<div class="col-sm-10">
 								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress_2" placeholder="Ex : Casablanca Rue 10 N80" type="text" required="required">
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="inputAdress_2" class="col-sm-2 col-sm-2 control-label">Profil</label> 
+							<label for="inputAdress_2" class="col-sm-2 control-label">Profil</label> 
 							<div class="col-sm-10">
 								<select name="profil" class="form-control input-sm m-bot15">
 	                                <s:iterator value="profils">
@@ -93,27 +96,27 @@
 
 						<div class="form-group">
 							<div style="display: flex; align-items: center;" class="col-sm-2 col-sm-2">
-								<label class="col-sm-2 col-sm-2 control-label">Sexe</label>
+								<label class="col-sm-2 control-label">Sexe</label>
 							</div>
 							<div class="col-lg-8 vcenter">
 
 								<div class="col-sm-9 icheck ">
 									<div class="square-green single-row col-sm-6">
 										<div class="radio ">
-											<input tabindex="3" type="radio" name="sexe" id="optionHomme_2" value="true" checked="checked"> <label>	Male </label>
+											<input tabindex="3" type="radio" name="sexe" id="optionHomme_2" value="Homme" checked="checked"> <label>	Male </label>
 										</div>
 
 									</div>
 									<div class="square-red single-row col-sm-6">
 										<div class="radio ">
-											<input tabindex="3" type="radio" name="sexe" id="optionFemme_2" value="false"> <label> Female </label>
+											<input tabindex="3" type="radio" name="sexe" id="optionFemme_2" value="Femme"> <label> Female </label>
 										</div>
 									</div>
 								</div>
 
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary">Ajouter utilisateur</button>
 					</form>
 				</div>
 			</div>
