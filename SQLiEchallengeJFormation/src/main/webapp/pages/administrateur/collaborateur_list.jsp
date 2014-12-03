@@ -275,7 +275,9 @@
 	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
 	
 	
-
+	<!-- javascript of collaborateur_list page Begin -->
+		<s:include value="include/javascript_collaborateur_list.jsp"></s:include>
+	<!-- javascript of collaborateur_list page End -->
 	
 	
 	

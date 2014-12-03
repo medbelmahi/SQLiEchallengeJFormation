@@ -23,7 +23,7 @@
 				<img alt="" src='<s:url value="/images/photos/user-avatar.png"/>' class="media-object">
 				<div class="media-body">
 					<h4>
-						<a href="#">John Doe</a>
+						<a href="#"><s:property value="%{#session.utilisateur.fullname}" /></a>
 					</h4>
 					<span>"Hello There..."</span>
 				</div>
@@ -33,17 +33,16 @@
 			<ul class="nav nav-pills nav-stacked custom-nav">
 				<li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
 				<li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
-				<li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign
-							Out</span></a></li>
+				<li><a href="<s:url value="/logout"/>"><i class="fa fa-sign-out"></i>Se deconnecter</a></li>
 			</ul>
 		</div>
 
 		<!--sidebar nav start-->
 		<ul class="nav nav-pills nav-stacked custom-nav">
 		
-			<li><a href="index.html"><i class="fa fa-home"></i> <span>Gestion des collaborateurs</span></a></li>
+			<li><a href="index.html"><i class="fa fa-home"></i> <span>Profil</span></a></li>
 			<li class="menu-list nav-active"><a href=""><i
-					class="fa fa-laptop"></i> <span>Layouts</span></a>
+					class="fa fa-laptop"></i> <span>Gestion collaborateur</span></a>
 				<ul class="sub-menu-list">
 					<li class="active"><a href="blank_page.html"> Blank Page</a></li>
 					<li><a href="boxed_view.html"> Boxed Page</a></li>
@@ -53,7 +52,7 @@
 
 				</ul></li>
 			<li class="menu-list"><a href=""><i class="fa fa-book"></i>
-					<span>Gestion des profils</span></a>
+					<span>Gestion profil</span></a>
 				<ul class="sub-menu-list">
 					<li><a href="general.html"> General</a></li>
 					<li><a href="buttons.html"> Buttons</a></li>
@@ -77,7 +76,7 @@
 
 
 			<li class="menu-list"><a href=""><i class="fa fa-envelope"></i>
-					<span>Gestion des utilisateurs</span></a>
+					<span>Gestion utilisateur</span></a>
 				<ul class="sub-menu-list">
 					<li><a href="mail.html"> Inbox</a></li>
 					<li><a href="mail_compose.html"> Compose Mail</a></li>
