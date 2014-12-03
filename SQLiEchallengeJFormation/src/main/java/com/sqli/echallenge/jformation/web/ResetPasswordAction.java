@@ -37,7 +37,7 @@ public class ResetPasswordAction extends SqliActionSupport {
 			Utilisateur u = utilisateurMetier.getUtilisateur(email);
 			
 			//Send reset password mail to User
-			String template = "com/sqli/echallenge/jformation/web/templatemail/utilisateur-reset-password-email-template.vm";
+			String template = "template/utilisateur-reset-password-email-template.vm";
 			SqliEmailModel model = new SqliEmailModel();
 			//Inflate Model
 			model.addModel(u.getNomUtilsateur());
