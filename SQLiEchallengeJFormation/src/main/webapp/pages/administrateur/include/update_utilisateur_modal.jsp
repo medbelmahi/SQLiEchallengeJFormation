@@ -1,21 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<!-- Update collaborateur modale Start -->
-<div style="display: none;" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="updateCollaborateurModal" class="modal fade">
+<div style="display: none;" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="updateUtilisateurModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Mise à jour du Collaborateur</h4>
+				<h4 class="modal-title">Mise à jour d'utilisateur</h4>
 			</div>
-			
+
 			<div class="modal-body">
-				<div class="row">
-					<h5 class="text-danger" >(*) champs obligatoire</h5>
-				</div>
 				<div class="panel-body">
-					<form data-toggle="validator" id="update_collaborateur" action="updateCollaborateur" method="post" role="form" class="form-horizontal adminex-form">
+					<form data-toggle="validator" id="update_utilisateur" action="updateUtilisateur" method="post" role="form" class="form-horizontal adminex-form">
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">
@@ -37,10 +33,10 @@
 							</div>
 						</div>
 						
-						<input type="hidden" id="idCollaborateur" name="idCollaborateur">
+						<input type="hidden" id="idUtilisateur" name="idUtilisateur">
 						
 						<div class="form-group">
-							<label for="inputLastName" class="col-sm-2 col-sm-2 control-label">Nom</label> <h5 class="text-danger" > *</h5>
+							<label for="inputLastName" class="col-sm-2 col-sm-2 control-label">Nom</label> 
 							<div class="col-sm-10">
 								<input autocomplete="off" name="nom" class="form-control" id="inputLastName" placeholder="Nom" type="text" required>
 							</div>
@@ -89,7 +85,18 @@
 								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress" placeholder="Ex : Casablanca Rue 10 N80" type="text">
 							</div>
 						</div>
-
+						
+						
+						<div class="form-group">
+							<label for="inputAdress_2" class="col-sm-2 col-sm-2 control-label">Profil</label> 
+							<div class="col-sm-10">
+								<select id="profilSelected" name="profil" class="form-control input-sm m-bot15">
+	                                <s:iterator value="profils">
+										<option value='<s:property value="idProfil" />'><s:property value="nomProfil" /></option>
+									</s:iterator>
+                            	</select>
+							</div>
+						</div>
 
 						<div class="form-group">
 							<div style="display: flex; align-items: center;" class="col-sm-2 col-sm-2 control-label"> 
@@ -119,9 +126,7 @@
 					</form>
 				</div>
 			</div>
-			<!--  -->
-
 		</div>
 	</div>
 </div>
-<!-- Update collaborateur modale End -->
+

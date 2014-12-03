@@ -127,7 +127,7 @@
 	        	</div><!-- present working link End-->
 	        	
 	        	<!-- success message Start -->
-	        	<s:if test="isSessionMessageError()">
+	        	<s:if test="isSessionActionMessage()">
 		        	<div class="row">
 		        		<div class="col-md-12">
 		        			<div class="alert alert-info fade in">
@@ -273,5 +273,9 @@
 	<!--gritter script-->
 	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
 	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
+	
+	
+
+	
 	
 	
