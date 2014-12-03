@@ -11,7 +11,7 @@
 
 			<div class="modal-body">
 				<div class="panel-body">
-					<form data-toggle="validator" id="update_utilisateur" action="updateUtilisateur" method="post" role="form" class="form-horizontal adminex-form">
+					<form data-toggle="validator" id="update_utilisateur" action="update" method="post" role="form" class="form-horizontal adminex-form">
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">

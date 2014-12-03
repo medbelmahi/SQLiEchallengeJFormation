@@ -7,7 +7,7 @@
 	
 	function jsonGetUtilisateur(idUtilisateur){
 		//make ajax request to /ajax/getCollaborateur?idCollaborateur=x
-		$.getJSON('<s:url action="getUtilisateur" namespace="/ajax" />', {idUtilisateur : idUtilisateur}, function(jsonResponse) {
+		$.getJSON('<s:url action="get/utilisateur" namespace="/ajax" />', {idUtilisateur : idUtilisateur}, function(jsonResponse) {
 			//if satuts == "success" , do
 			if(jsonResponse.status === "success"){
 				
@@ -61,7 +61,7 @@
 	<script type="text/javascript">
 		function jsonGetUtilisateur_forSendEmail(idUtilisateur){
 			//make ajax request to /ajax/getCollaborateur?idCollaborateur=x
-			$.getJSON('<s:url action="getUtilisateur" namespace="/ajax" />', {idUtilisateur : idUtilisateur}, function(jsonResponse) {
+			$.getJSON('<s:url action="get/utilisateur" namespace="/ajax" />', {idUtilisateur : idUtilisateur}, function(jsonResponse) {
 				//if satuts == "success" , do
 				if(jsonResponse.status === "success"){
 					

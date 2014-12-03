@@ -8,7 +8,12 @@
     <include file="struts/struts-global.xml"></include>
 
 	<!-- default package -->
-    <package name="ajax" namespace="/ajax" extends="sqli_basic_package">
+    <package name="ajax" namespace="/ajax" extends="sqli_basic_package, json-default">
+    
+    <action name="get/utilisateur" class="com.sqli.echallenge.jformation.web.ajax.administrateur.UtilisateurGetAjaxAction">
+     	 	<result name="none" type="json" />
+    </action>
+     	 
     </package>
     
 </struts>
