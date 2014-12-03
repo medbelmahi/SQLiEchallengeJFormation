@@ -7,5 +7,12 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 		
-	
+	<!-- Util.PropretiesHelper -->
+	<bean id="proprties_helper_util" class="com.sqli.echallenge.jformation.util.PropretiesHelper"></bean>
+		
+	<!-- Utilisateur -->	
+	<bean id="utilisateur_dao" class="com.sqli.echallenge.jformation.dao.UtilisateurDaoImpl"></bean>	
+	<bean id="utilisateur_metier" class="com.sqli.echallenge.jformation.metier.UtilisateurMetierImpl">
+		<property name="dao" ref="utilisateur_dao"></property>
+	</bean>
 </beans>
