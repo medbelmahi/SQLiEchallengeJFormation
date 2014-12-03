@@ -11,10 +11,7 @@
 
 			<div class="modal-body">
 				<div class="panel-body">
-					<div class="row">
-						<h5 class="text-danger" >(*) champs obligatoire</h5>
-					</div>
-					<form data-toggle="validator" id="add_collaborateur" action="add" method="post" role="form" class="form-horizontal adminex-form">
+					<form data-toggle="validator" id="add_collaborateur" action="add" method="post" role="form" class="form-horizontal adminex-form" enctype="multipart/form-data" >
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">
@@ -24,7 +21,7 @@
 									</div>
 									<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 									<div>
-										<span class="btn btn-default btn-file"> <span class="fileupload-new col-sm-12"><i class="fa fa-paper-clip"></i>Choisir une image</span> <span class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span> <input class="default" type="file">
+										<span class="btn btn-default btn-file"> <span class="fileupload-new col-sm-12"><i class="fa fa-paper-clip"></i>Choisir une image</span> <span class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span> <input name="fileImage" class="default" type="file">
 										</span> <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
 									</div>
 								</div>
@@ -115,7 +112,14 @@
 
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Ajouter utilisateur</button>
+						<div class="form-group">
+							<div class="col-sm-5">
+								<button type="submit" class="btn btn-primary">Ajouter utilisateur</button>
+							</div>
+							<div class="col-sm-7">
+								<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>
