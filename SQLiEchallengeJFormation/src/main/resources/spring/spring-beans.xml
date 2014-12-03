@@ -9,10 +9,18 @@
 		
 	<!-- Util.PropretiesHelper -->
 	<bean id="proprties_helper_util" class="com.sqli.echallenge.jformation.util.PropretiesHelper"></bean>
+	<!-- Util.SqliRandomGenerator -->
+	<bean id="sqlirandomgenrator_util" class="com.sqli.echallenge.jformation.util.SqliRandomGenerator"></bean>
 		
 	<!-- Utilisateur -->	
 	<bean id="utilisateur_dao" class="com.sqli.echallenge.jformation.dao.UtilisateurDaoImpl"></bean>	
 	<bean id="utilisateur_metier" class="com.sqli.echallenge.jformation.metier.UtilisateurMetierImpl">
 		<property name="dao" ref="utilisateur_dao"></property>
+	</bean>
+		
+	<!-- Profil -->	
+	<bean id="profil_dao" class="com.sqli.echallenge.jformation.dao.ProfilDaoImpl"></bean>	
+	<bean id="profil_metier" class="com.sqli.echallenge.jformation.metier.ProfilMetierImpl">
+		<property name="dao" ref="profil_dao"></property>
 	</bean>
 </beans>

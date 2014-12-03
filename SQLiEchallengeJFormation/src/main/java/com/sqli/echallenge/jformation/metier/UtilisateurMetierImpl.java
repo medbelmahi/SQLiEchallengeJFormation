@@ -52,6 +52,14 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 		}
 	}
 
+	public void add(Utilisateur utilisateur) throws Exception {
+		try {
+			dao.add(utilisateur);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("utilisateur.add.email.deplicated"));
+		}
+	}
+
 	public UtilisateurDao getDao() {
 		return dao;
 	}

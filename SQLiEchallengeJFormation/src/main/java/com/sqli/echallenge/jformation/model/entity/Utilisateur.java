@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import com.sqli.echallenge.jformation.util.UserHelper;
 
 @Entity
 @Table(name="SQLI_UTILISATEURS")
@@ -142,6 +145,11 @@ public class Utilisateur {
 
 	public void setProfil(Profil profil) {
 		this.profil = profil;
+	}
+	
+	@Transient
+	public String getFullname(){
+		return UserHelper.getFullname(nomUtilsateur, prenomUtilisateur);
 	}
 	
 }

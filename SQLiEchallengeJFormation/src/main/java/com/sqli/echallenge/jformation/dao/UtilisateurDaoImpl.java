@@ -50,6 +50,10 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 		return query.getResultList();
 	}
 	
+	public void add(Utilisateur utilisateur) throws Exception {
+		entityManager.persist(utilisateur);
+	}
+	
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}

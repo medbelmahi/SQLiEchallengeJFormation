@@ -16,6 +16,12 @@
     		<result name="error">/pages/administrateur/utilisateur_list.jsp</result>
     		<result name="input">/pages/administrateur/utilisateur_list.jsp</result>
     	</action>
+    	
+    	<action name="utilisateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurAddAction">
+    		<result name="success" type="redirectAction">utilisateurs/list</result>
+    		<result name="error" type="redirectAction">utilisateurs/list</result>
+    		<result name="input" type="redirectAction">utilisateurs/list</result>
+    	</action>
     
     </package>
     
