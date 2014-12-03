@@ -1,5 +1,7 @@
 package com.sqli.echallenge.jformation.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -37,6 +39,15 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 		query.setParameter("email", email);
 		
 		return (Utilisateur) query.getSingleResult();
+	}
+	
+	//get all users except Admin
+	@SuppressWarnings("unchecked")
+	public List<Utilisateur> getAll(Utilisateur utilisateur) throws Exception {
+		Query query = entityManager.createQuery("from Utilisateur where idUtilisateur!=:idUtilisateur order by prenomUtilisateur");
+		query.setParameter("idUtilisateur", utilisateur.getIdUtilisateur());
+		
+		return query.getResultList();
 	}
 	
 	public EntityManager getEntityManager() {

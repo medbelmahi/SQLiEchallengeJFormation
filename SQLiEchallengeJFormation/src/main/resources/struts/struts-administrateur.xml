@@ -9,6 +9,14 @@
 
 	<!-- default package -->
     <package name="administrateur" namespace="/administrateur" extends="sqli_basic_package">
+    	<default-action-ref name="utilisateurs/list" />
+    
+    	<action name="utilisateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurListAction">
+    		<result name="success">/pages/administrateur/utilisateur_list.jsp</result>
+    		<result name="error">/pages/administrateur/utilisateur_list.jsp</result>
+    		<result name="input">/pages/administrateur/utilisateur_list.jsp</result>
+    	</action>
+    
     </package>
     
 </struts>

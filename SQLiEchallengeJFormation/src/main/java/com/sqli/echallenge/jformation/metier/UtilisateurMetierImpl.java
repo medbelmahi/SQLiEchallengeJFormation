@@ -1,5 +1,7 @@
 package com.sqli.echallenge.jformation.metier;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,14 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 			return dao.getUtilisateur(email);
 		} catch (Exception e) {
 			throw new SqliException(propretiesHelper.getText("utilisateur.email.notfound"));
+		}
+	}
+	
+	public List<Utilisateur> getAll(Utilisateur utilisateur) throws Exception {
+		try {
+			return dao.getAll(utilisateur);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("utilisateur.list.empty"));
 		}
 	}
 
