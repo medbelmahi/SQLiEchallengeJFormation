@@ -57,7 +57,7 @@
 				<ul class="sub-menu-list">
 					<li><a href="general.html"> General</a></li>
 					<li><a href="buttons.html"> Buttons</a></li>
-					<li><a href="tabs-accordions.html"> Tabs & Accordions</a></li>
+					<li><a href="tabs-accordions.html"> Tabs &amp; Accordions</a></li>
 					<li><a href="typography.html"> Typography</a></li>
 					<li><a href="slider.html"> Slider</a></li>
 					<li><a href="panels.html"> Panels</a></li>

@@ -15,9 +15,11 @@
 				<div class="adv-table">
 					<div class="clearfix">
 						<div class="btn-group">
-							<button href="#addCollaborateurModal" data-toggle="modal" class="btn btn-primary">
-								Ajouter Collaborateur <i class="fa fa-plus"></i>
-							</button>
+							<a href="#addCollaborateurModal" data-toggle="modal" class="btn btn-primary">
+								<button>
+									Ajouter Collaborateur <i class="fa fa-plus"></i>
+								</button>
+							</a>
 						</div>
 					</div>
 					<div id="hidden-table-info_wrapper"
@@ -28,7 +30,7 @@
 							id="hidden-table-info">
 							<thead>
 								<tr role="row">
-									<th>Prénom & Nom</th>
+									<th>Prénom &amp; Nom</th>
 									<th>Email</th>
 									<th>Telephone</th>
 									<th>Sexe</th>

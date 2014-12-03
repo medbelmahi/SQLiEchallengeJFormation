@@ -184,7 +184,7 @@
 	
 	        <!--footer section start-->
 	        <footer class="sticky-footer">
-	            2014 &copy; Mouad & Mohamed
+	            2014 &copy; Mouad &amp; Mohamed
 	        </footer>
 	        <!--footer section end-->
 	
