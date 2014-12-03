@@ -38,7 +38,7 @@
 					</h5>
 				</s:if>
 				<s:if test="isSessionActionMessage()">
-					<h5 class="text-danger">
+					<h5 class="text-success">
 						<s:property value="sessionActionMessageText" />
 					</h5>
 				</s:if>
@@ -80,7 +80,7 @@
 	                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	                        <h4 class="modal-title">Mot de passe oublié ?</h4>
 	                    </div>
-	                    <form action="resetpassword" id="reset_password">
+	                    <form action="resetpassword" id="reset_password" method="post">
 		                    <div class="modal-body">
 		                        <p>Entrez votre adresse e-mail ci-dessous pour réinitialiser votre mot de passe.</p>
 		                        <input type="email" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
