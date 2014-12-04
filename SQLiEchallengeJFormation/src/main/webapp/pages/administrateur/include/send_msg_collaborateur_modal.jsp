@@ -19,9 +19,11 @@
                  
                  
                   <section class="mail-box-info">
+                  	<form role="form-horizontal" method="post" action="email">
                     <header class="header">
                         <div class="compose-btn pull-right">
-                            <button onclick="sendMessageToCollaboroateur_ajax();" class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Send</button>
+                        	<!-- onclick="sendMessageToCollaboroateur_ajax();" -->
+                            <button class="btn btn-primary btn-sm" type="submit" ><i class="fa fa-check"></i> Send</button>
                             <!-- <button class="btn btn-sm btn-default"><i class="fa fa-times"></i> Discard</button>
                             <button class="btn btn-sm btn-default">Draft</button> -->
                         </div>
@@ -33,8 +35,8 @@
 
                     <section class="mail-list">
                         <div class="compose-mail">
-                            <form role="form-horizontal" method="post" action="sendEmailToCollaborateur">
-                            	<input type="hidden" id="idCollaborateur_sendMessage" name="id">
+                            
+                            	<input type="hidden" id="idCollaborateur_sendMessage" name="idUtilisateur">
                                 <div class="form-group">
                                     <label for="to" class="col-md-3">A:</label>
                                     <input type="text" tabindex="1" id="to" class="form-control" readonly="readonly">
@@ -48,9 +50,10 @@
                                 <div class="compose-editor">
                                     <textarea class="wysihtml5 form-control" rows="9" name="msg" id="msg_"></textarea>
                                 </div>
-                            </form>
+                            
                         </div>
                     </section>
+                    </form>
                 </section>
             </div>
         </div>
