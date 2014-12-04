@@ -40,7 +40,7 @@ public class HabilitationDaoImpl implements HabilitationDao {
 	}
 
 	public Habilitation get(Long idHabilitation) throws Exception {
-		Query query = entityManager.createQuery("from Habilitation where idHabilitation:=idHabilitation");
+		Query query = entityManager.createQuery("from Habilitation where idHabilitation=:idHabilitation");
 		query.setParameter("idHabilitation", idHabilitation);
 		return (Habilitation) query.getSingleResult();
 	}
