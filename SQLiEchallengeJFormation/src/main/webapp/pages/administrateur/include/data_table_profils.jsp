@@ -15,9 +15,9 @@
 				<div class="adv-table">
 					<div class="clearfix">
 						<div class="btn-group">
-							<button href="#addProfilModal" data-toggle="modal" class="btn btn-primary">
+							<a href="#addProfilModal" data-toggle="modal" ><button class="btn btn-primary">
 								Ajouter Profil <i class="fa fa-plus"></i>
-							</button>
+							</button></a>
 						</div>
 					</div>
 					<div id="hidden-table-info_wrapper"

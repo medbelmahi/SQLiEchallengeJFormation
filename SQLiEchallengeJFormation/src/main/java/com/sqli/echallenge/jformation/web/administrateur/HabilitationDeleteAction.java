@@ -43,7 +43,7 @@ public class HabilitationDeleteAction extends SqliActionSupport {
 		return idHabilitation;
 	}
 
-	public void setIdHabilitaion(Long idHabilitation) {
+	public void setIdHabilitation(Long idHabilitation) {
 		this.idHabilitation = idHabilitation;
 	}
 
