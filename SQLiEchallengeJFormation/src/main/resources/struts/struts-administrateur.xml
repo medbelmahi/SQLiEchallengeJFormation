@@ -95,6 +95,19 @@
     		<result name="input">/pages/administrateur/collaborateur_list.jsp</result>
     	</action>
     	<action name="collaborateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurAddAction">
+    		<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg, image/png</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		<result name="success" type="redirectAction">collaborateurs/list</result>
+    		<result name="error" type="redirectAction">collaborateurs/list</result>
+    		<result name="input" type="redirectAction">collaborateurs/list</result>
+    	</action>
+    	<action name="collaborateurs/update" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurUpdateAction">
+    		<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg, image/png</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
     		<result name="success" type="redirectAction">collaborateurs/list</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>

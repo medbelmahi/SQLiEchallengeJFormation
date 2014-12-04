@@ -31,12 +31,12 @@ public class ProfilUpdateActionsAction extends SqliActionSupport {
 			profilMetier.deleteActions(idProfil);
 			
 			//update new actions
-			profilMetier.updateActions(idProfil, actions);
+			if(actions!=null) profilMetier.updateActions(idProfil, actions);
 			
 			setSessionActionMessageText(getText("profil.actions.update.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
-
+			e.printStackTrace();
 			//show error message
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;
