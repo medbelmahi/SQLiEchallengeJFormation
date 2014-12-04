@@ -70,6 +70,42 @@
     	</action>
     	<!-- End profil actions -->
     
+    	<!-- Habilitations actions -->
+    	<action name="habilitations/list" class="com.sqli.echallenge.jformation.web.administrateur.HabilitationListAction">
+    		<result name="success">/pages/administrateur/habilitation_list.jsp</result>
+    		<result name="error">/pages/administrateur/habilitation_list.jsp</result>
+    		<result name="input">/pages/administrateur/habilitation_list.jsp</result>
+    	</action>
+    	<action name="habilitations/add" class="com.sqli.echallenge.jformation.web.administrateur.HabilitationAddAction">
+    		<result name="success" type="redirectAction">habilitations/list</result>
+    		<result name="error" type="redirectAction">habilitations/list</result>
+    		<result name="input" type="redirectAction">habilitations/list</result>
+    	</action>
+    	<action name="habilitations/delete" class="com.sqli.echallenge.jformation.web.administrateur.HabilitationDeleteAction">
+			<result name="success" type="redirectAction">habilitations/list</result>
+    		<result name="error" type="redirectAction">habilitations/list</result>
+    		<result name="input" type="redirectAction">habilitations/list</result>
+    	</action>
+    	<!-- End habilitations actions -->
+    	
+    	<!-- Habilitations actions -->
+    	<action name="collaborateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurListAction">
+    		<result name="success">/pages/administrateur/collaborateur_list.jsp</result>
+    		<result name="error">/pages/administrateur/collaborateur_list.jsp</result>
+    		<result name="input">/pages/administrateur/collaborateur_list.jsp</result>
+    	</action>
+    	<action name="collaborateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurAddAction">
+    		<result name="success" type="redirectAction">collaborateurs/list</result>
+    		<result name="error" type="redirectAction">collaborateurs/list</result>
+    		<result name="input" type="redirectAction">collaborateurs/list</result>
+    	</action>
+    	<action name="collaborateurs/delete" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurDeleteAction">
+    		<result name="success" type="redirectAction">collaborateurs/list</result>
+    		<result name="error" type="redirectAction">collaborateurs/list</result>
+    		<result name="input" type="redirectAction">collaborateurs/list</result>
+    	</action>
+    	<!-- End habilitations actions -->
+    	
     </package>
     
 </struts>

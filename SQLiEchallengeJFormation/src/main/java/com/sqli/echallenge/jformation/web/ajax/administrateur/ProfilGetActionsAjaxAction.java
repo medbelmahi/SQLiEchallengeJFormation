@@ -30,6 +30,7 @@ public class ProfilGetActionsAjaxAction extends SqliActionSupport {
 	public ActionHelper actionHelper;
 	
 	private Long idProfil;
+	private String nomProfil;
 	private Map<String, String> allActionsMap = new HashMap<String, String>();
 	private Map<String, String> profilActionsMap = new HashMap<String, String>();
 	private String status;
@@ -40,6 +41,9 @@ public class ProfilGetActionsAjaxAction extends SqliActionSupport {
 			//get profil from db
 			Profil profil = profilMetier.get(idProfil);
 			List<String> actions = profil.getActions();
+			
+			//Model title
+			nomProfil = profil.getNomProfil();
 			
 			//inflate profilActionsMap
 			for(String action : actions){
@@ -94,6 +98,14 @@ public class ProfilGetActionsAjaxAction extends SqliActionSupport {
 
 	public void setProfilActionsMap(Map<String, String> profilActionsMap) {
 		this.profilActionsMap = profilActionsMap;
+	}
+
+	public String getNomProfil() {
+		return nomProfil;
+	}
+
+	public void setNomProfil(String nomProfil) {
+		this.nomProfil = nomProfil;
 	}
 
 }
