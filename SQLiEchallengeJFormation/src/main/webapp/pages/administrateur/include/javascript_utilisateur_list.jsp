@@ -23,7 +23,7 @@
 				//set image profil
 				
 				var imageProfil = document.getElementById("utilisateurImageProfil");
-				image.setAttribute("src",jsonResponse.imageProfil);
+				imageProfil.setAttribute("src",jsonResponse.imageProfil);
 				
 				//check sexe option
 				if(jsonResponse.sexe == "Homme"){
