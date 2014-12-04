@@ -8,7 +8,7 @@
             <div class="modal-body">
 				
                   <section class="mail-box-info">
-                  <form role="form-horizontal" method="post" action="sendEmailToCollaborateur">
+                  <form role="form-horizontal" method="post" action="email">
                     <header class="header">
                         <div class="compose-btn pull-right">
                         <!-- sendMessageToCollaboroateur_ajax(); -->
