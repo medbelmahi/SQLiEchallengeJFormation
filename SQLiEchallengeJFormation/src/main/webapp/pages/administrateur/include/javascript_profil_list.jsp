@@ -48,7 +48,32 @@
 				var checkboxElement = document.getElementById("checkboxElement");
 				checkboxElement.innerHTML = checkboxElementInnerHtml;
 				
-				document.getElementById("profilTitle").innerHTML = "Affectation des action au profil ( "+jsonResponse.nomProfil+" )";
+				//desactiver button Affecter et les checkbox
+				var affectationButton = document.getElementById("affectationButton");
+				var actionCheckBoxList = document.getElementsByName("actions");
+				if(jsonResponse.elementaireProfil){
+					document.getElementById("profilTitle").innerHTML = "Profil de base ( "+jsonResponse.nomProfil+" )";
+					
+					var att = document.createAttribute("disabled"); 
+					att.value = "disabled"; 
+					affectationButton.setAttributeNode(att);
+					
+					for(i=0; i < actionCheckBoxList.length; i++){
+						var att_ = document.createAttribute("disabled"); 
+						att_.value = "disabled"; 
+						actionCheckBoxList[i].setAttributeNode(att_);
+					}
+					
+				}else{
+					document.getElementById("profilTitle").innerHTML = "Affectation des action au profil ( "+jsonResponse.nomProfil+" )";
+					
+					affectationButton.removeAttribute("disabled");
+					
+					for(i=0; i < actionCheckBoxList.length; i++){
+						actionCheckBoxList[i].removeAttribute("disabled");
+					}
+				}
+				
 				 
 				//initialiser icheck
 				 $.getScript('<s:url value="/js/icheck-init.js"/>', function(){
