@@ -31,10 +31,34 @@ public class ProfilDaoImpl implements ProfilDao {
 		return query.getResultList();
 	}
 	
-	public Profil getProfil(Long idProfil) throws Exception {
+	public Profil get(Long idProfil) throws Exception {
 		Query query = entityManager.createQuery("from Profil where idProfil=:idProfil");
 		query.setParameter("idProfil", idProfil);
 		return (Profil) query.getSingleResult();
+	}
+	
+	public Profil get(String nomProfil) throws Exception {
+		Query query = entityManager.createQuery("from Profil where nomProfil=:nomProfil");
+		query.setParameter("nomProfil", nomProfil);
+		return (Profil) query.getSingleResult();
+	}
+	
+	public void delete(Long idProfil) throws Exception {
+		entityManager.remove(get(idProfil));
+	}
+	
+	//Native Query!
+	public void deleteActions(Long idProfil) throws Exception {
+		Query query = entityManager.createNativeQuery("DELETE FROM SQLI_ACTIONS WHERE ID_PROFIL=:idProfil");
+		query.setParameter("idProfil", idProfil);
+		query.executeUpdate();
+	}
+	//Native Query
+	public void addAction(Long idProfil, String action) throws Exception {
+		Query query = entityManager.createNativeQuery("INSERT INTO SQLI_ACTIONS(ID_PROFIL, ACTION_KEY) VALUES(:idProfil, :action)");
+		query.setParameter("idProfil", idProfil);
+		query.setParameter("action", action);
+		query.executeUpdate();
 	}
 
 	public EntityManager getEntityManager() {
@@ -44,5 +68,4 @@ public class ProfilDaoImpl implements ProfilDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }

@@ -11,24 +11,22 @@
     <package name="administrateur" namespace="/administrateur" extends="sqli_basic_package">
     	<default-action-ref name="utilisateurs/list" />
     
+    	<!-- Utilisateur actions -->
     	<action name="utilisateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurListAction">
     		<result name="success">/pages/administrateur/utilisateur_list.jsp</result>
     		<result name="error">/pages/administrateur/utilisateur_list.jsp</result>
     		<result name="input">/pages/administrateur/utilisateur_list.jsp</result>
     	</action>
-    	
     	<action name="utilisateurs/delete" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurDeleteAction">
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
     	</action>
-    	
     	<action name="utilisateurs/email" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurSendEmailAction">
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
     	</action>
-    	
     	<action name="utilisateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurAddAction">
 	    	<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
@@ -38,7 +36,6 @@
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
     	</action>
-    	
     	<action name="utilisateurs/update" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurUpdateAction">
 	    	<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
@@ -48,6 +45,25 @@
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
     	</action>
+    	<!-- End utilisateur actions -->
+    	
+    	<!-- Profil actions -->
+    	<action name="profils/list" class="com.sqli.echallenge.jformation.web.administrateur.ProfilListAction">
+    		<result name="success">/pages/administrateur/profil_list.jsp</result>
+    		<result name="error">/pages/administrateur/profil_list.jsp</result>
+    		<result name="input">/pages/administrateur/profil_list.jsp</result>
+    	</action>
+    	<action name="profils/delete" class="com.sqli.echallenge.jformation.web.administrateur.ProfilDeleteAction">
+    		<result name="success" type="redirectAction">profils/list</result>
+    		<result name="error" type="redirectAction">profils/list</result>
+    		<result name="input" type="redirectAction">profils/list</result>
+    	</action>
+    	<action name="profils/actions/update" class="com.sqli.echallenge.jformation.web.administrateur.ProfilUpdateActionsActions">
+    		<result name="success" type="redirectAction">profils/list</result>
+    		<result name="error" type="redirectAction">profils/list</result>
+    		<result name="input" type="redirectAction">profils/list</result>
+    	</action>
+    	<!-- End profil actions -->
     
     </package>
     

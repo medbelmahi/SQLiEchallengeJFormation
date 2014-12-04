@@ -83,7 +83,7 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 			utilisateur.setPasswordUtilisateur(sqliRandomGenerator.generateRandomString());
 			
 			//get profil from db and set it
-			utilisateur.setProfil(profilMetier.getProfil(profil));
+			utilisateur.setProfil(profilMetier.get(profil));
 			
 			//set Image Avatar
 			utilisateur.setUrlPhotoUtilisateur(saveImage());

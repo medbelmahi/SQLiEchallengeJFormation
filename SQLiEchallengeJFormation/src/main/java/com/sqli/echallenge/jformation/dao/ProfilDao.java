@@ -13,5 +13,9 @@ import com.sqli.echallenge.jformation.model.entity.Profil;
  */
 public interface ProfilDao {
 	public List<Profil> getAll() throws Exception;
-	public Profil getProfil(Long idProfil) throws Exception;
+	public Profil get(Long idProfil) throws Exception;
+	public Profil get(String nomProfil) throws Exception;
+	public void delete(Long idProfil) throws Exception;
+	public void deleteActions(Long idProfil) throws Exception;
+	public void addAction(Long idProfil, String action) throws Exception;
 }

@@ -75,7 +75,7 @@ public class UtilisateurUpdateAction extends SqliActionSupport implements Servle
 			utilisateur.setSexeUtilisateur(sexe);
 			
 			//get profil from db and set it
-			utilisateur.setProfil(profilMetier.getProfil(profil));
+			utilisateur.setProfil(profilMetier.get(profil));
 			
 			//set Image Avatar
 			if(fileImage != null) utilisateur.setUrlPhotoUtilisateur(saveImage());

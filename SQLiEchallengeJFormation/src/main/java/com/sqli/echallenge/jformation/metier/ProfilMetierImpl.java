@@ -30,15 +30,52 @@ public class ProfilMetierImpl implements ProfilMetier {
 		return dao.getAll();
 	}
 	
-	public Profil getProfil(Long idProfil) throws Exception {
+	public Profil get(Long idProfil) throws Exception {
 		try{
-			return dao.getProfil(idProfil);
+			return dao.get(idProfil);
 		}catch(Exception e){
 			throw new SqliException(propretiesHelper.getText("profil.id.notfound"));
 		}
 		
 	}
+	
+	public Profil get(String nomProfil) throws Exception {
+		try{
+			return dao.get(nomProfil);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("profil.nom.notfound"));
+		}
+		
+	}
+	
+	public void delete(Long idProfil) throws Exception {
+		try{
+			//check if profil elementaire
+			dao.delete(idProfil);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("profil.delete.fail"));
+		}
+	}
+	
+	public void deleteActions(Long idProfil) throws Exception {
+		try{
+			//check if profil elementaire
+			dao.deleteActions(idProfil);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("profil.actions.delete.fail"));
+		}
+	}
 
+	public void updateActions(Long idProfil, String[] actions) throws Exception {
+		try{
+			for(String action : actions){
+				dao.addAction(idProfil, action);
+			}
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("profil.action.add.fail"));
+		}
+	}
+	
 	public ProfilDao getDao() {
 		return dao;
 	}
@@ -54,4 +91,5 @@ public class ProfilMetierImpl implements ProfilMetier {
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
 	}
+	
 }

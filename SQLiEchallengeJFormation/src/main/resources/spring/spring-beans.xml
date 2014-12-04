@@ -11,7 +11,9 @@
 	<bean id="proprties_helper_util" class="com.sqli.echallenge.jformation.util.PropretiesHelper"></bean>
 	<!-- Util.SqliRandomGenerator -->
 	<bean id="sqlirandomgenrator_util" class="com.sqli.echallenge.jformation.util.SqliRandomGenerator"></bean>
-	
+	<!-- Util.ActionHelper -->
+	<bean id="action_helper_util" class="com.sqli.echallenge.jformation.util.ActionHelper"></bean>
+	<!-- Util.SqliMailThread -->
 	<bean id="mail_thread" class="com.sqli.echallenge.jformation.util.SqliMailThread" scope="prototype"></bean>
 		
 	<!-- Utilisateur -->	

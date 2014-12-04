@@ -7,6 +7,7 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ public class Profil {
 	@Column(name="DESCRIPTION")
 	private String description;
 	
-	@ElementCollection
+	@ElementCollection(fetch=FetchType.EAGER)
 	@CollectionTable(name="SQLI_ACTIONS", joinColumns=@JoinColumn(name="ID_PROFIL"))
 	@Column(name="ACTION_KEY")
 	private List<String> actions = new ArrayList<String>();
