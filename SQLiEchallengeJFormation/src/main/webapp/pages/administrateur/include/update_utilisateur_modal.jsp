@@ -106,12 +106,12 @@
 								<div class="col-sm-9 icheck ">
 									<div class="square-green single-row col-sm-6">
 										<div class="radio ">
-											<input tabindex="3" type="radio" name="sexe" id="optionHomme" value="true"> <label> Male </label>
+											<input tabindex="3" type="radio" name="sexe" id="optionHomme" value="Homme"> <label> Male </label>
 										</div>
 									</div>
 									<div class="square-red single-row col-sm-6">
 										<div class="radio ">
-											<input tabindex="3" type="radio" name="sexe" id="optionFemme" value="false"> <label> Female </label>
+											<input tabindex="3" type="radio" name="sexe" id="optionFemme" value="Femme"> <label> Female </label>
 										</div>
 									</div>
 								</div>
