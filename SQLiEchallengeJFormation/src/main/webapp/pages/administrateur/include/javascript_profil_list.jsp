@@ -16,11 +16,7 @@
 				var stringTemp = "";
 				
 				for(key in jsonResponse.allActionsMap){
-	// 			for(i = 0; i < jsonResponse.actionBeans.length; i++){
-					
-					console.log(key);
 					if(existeAction(jsonResponse.allActionsMap[key] , jsonResponse.profilActionsMap)){
-						console.log('la valeur est true : ' + jsonResponse.allActionsMap[key]);
 						stringTemp = '<div class="col-lg-12 vcenter">'
 									+'<div class="col-sm-12 icheck ">'
 									+'<div class="square-green single-row col-sm-12">'
@@ -33,7 +29,6 @@
 									+'</div>'
 									+'</div>';
 					}else{
-						console.log('la valeur est false : ' + jsonResponse.allActionsMap[key]);
 						stringTemp = '<div class="col-lg-12 vcenter">'
 							+'<div class="col-sm-12 icheck ">'
 							+'<div class="square-green single-row col-sm-12">'
@@ -69,8 +64,8 @@
 	};
 	
 	function existeAction(action , listAction){
-			for(key in listAction){
-				if(listAction[key] == action )return true;
+			for(key_ in listAction){
+				if(listAction[key_] == action )return true;
 			}
 			
 			return false;
