@@ -35,7 +35,7 @@
     	</action>
     
     	<action name="test" class="com.sqli.echallenge.jformation.web.TestAction">
-    		<result>/pages/test.jsp</result>
+    		<result>/pages/login.jsp</result>
     	</action>
     </package>
     

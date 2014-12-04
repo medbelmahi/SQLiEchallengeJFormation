@@ -16,11 +16,12 @@ public class TestAction extends ActionSupport {
 	
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
-
+	
 	@Override
-	public String execute() throws Exception {
+	public synchronized String execute() throws Exception {
 
-		System.out.println(utilisateurMetier.getUtilisateur(2L));
+		//myThread.setName("thread1");
+		//myThread.start();
 		
 		return SUCCESS;
 	}

@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.SqliEmailModel;
-import com.sqli.echallenge.jformation.util.SqliMailSender;
+import com.sqli.echallenge.jformation.util.SqliMailThread;
 
 /**
  * @author Mouad
@@ -26,23 +26,25 @@ public class ResetPasswordAction extends SqliActionSupport {
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
 	@Autowired
-	public SqliMailSender mailSender;
+	public SqliMailThread sqliMailThread;
 	
 	private String email;
 
 	@Override
-	public String execute() throws Exception {
+	public synchronized String execute() throws Exception {
 		try {
 			//Get Utilisateur
 			Utilisateur u = utilisateurMetier.getUtilisateur(email);
 			
-			//Send reset password mail to User
+			//Prepare Mail Model
 			SqliEmailModel model = new SqliEmailModel();
-			
-			//Inflate Model
 			model.addModel(u.getFullname());
 			model.addModel(u.getPasswordUtilisateur());
-			mailSender.sendMail(u.getEmailUtilisateur(), TEMPLATE_MAIL, model);//Send Email
+			//Prepare Mail Thread
+			sqliMailThread.setEmail(email);
+			sqliMailThread.setModel(model);
+			sqliMailThread.setTemplate(TEMPLATE_MAIL);
+			sqliMailThread.start();
 			
 			//show success message
 			setSessionActionMessageText(getText("utilisateur.resetPasswordMail.sent.success"));
@@ -50,7 +52,7 @@ public class ResetPasswordAction extends SqliActionSupport {
 
 		} catch (Exception e) {
 
-			//show erroer message
+			//show error message
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;
 		}
