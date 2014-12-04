@@ -6,7 +6,7 @@
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
-				Les utilisateurs <span class="tools pull-right">
+				liste des utilisateurs <span class="tools pull-right">
 					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
 <!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>

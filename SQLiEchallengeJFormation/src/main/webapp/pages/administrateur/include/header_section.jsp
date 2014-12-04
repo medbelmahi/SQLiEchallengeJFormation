@@ -157,8 +157,8 @@
 					</ul>
 				</div></li>
 			<li><a href="#" class="btn btn-default dropdown-toggle"
-				data-toggle="dropdown"> <img
-					src='<s:url value="/images/photos/user-avatar.png"/>' alt="" /><s:property value="%{#session.utilisateur.fullname}" /> <span class="caret"></span>
+				data-toggle="dropdown"> 
+				<img src='<s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />' alt="" /><s:property value="%{#session.utilisateur.fullname}" /> <span class="caret"></span>
 			</a>
 				<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
 					<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>

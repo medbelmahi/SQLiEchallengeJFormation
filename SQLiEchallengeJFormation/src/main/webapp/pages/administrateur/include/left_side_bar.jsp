@@ -20,7 +20,7 @@
 		<!-- visible to small devices only -->
 		<div class="visible-xs hidden-sm hidden-md hidden-lg">
 			<div class="media logged-user">
-				<img alt="" src='<s:url value="/images/photos/user-avatar.png"/>' class="media-object">
+				<img alt="" src='<s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />' class="media-object">
 				<div class="media-body">
 					<h4>
 						<a href="#"><s:property value="%{#session.utilisateur.fullname}" /></a>
