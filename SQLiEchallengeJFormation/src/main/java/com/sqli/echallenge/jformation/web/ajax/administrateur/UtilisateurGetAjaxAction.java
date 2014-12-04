@@ -34,6 +34,7 @@ public class UtilisateurGetAjaxAction extends SqliActionSupport {
 	private String adresse;
 	private String sexe;
 	private Long profil;//idProfil
+	private String imageProfil;
 	
 	@Override
 	public String execute() throws Exception {
@@ -46,6 +47,7 @@ public class UtilisateurGetAjaxAction extends SqliActionSupport {
 			telephone = utilisateur.getTelephoneUtilisateur();
 			adresse = utilisateur.getAdresseUtilisateur();
 			sexe = utilisateur.isSexeUtilisateur();
+			imageProfil = utilisateur.getUrlPhotoUtilisateur();
 			
 			profil = utilisateur.getProfil().getIdProfil();
 			
@@ -114,7 +116,15 @@ public class UtilisateurGetAjaxAction extends SqliActionSupport {
 		this.adresse = adresse;
 	}
 
+	
 
+	public String getImageProfil() {
+		return imageProfil;
+	}
+
+	public void setImageProfil(String imageProfil) {
+		this.imageProfil = imageProfil;
+	}
 
 	public String getSexe() {
 		return sexe;

@@ -17,14 +17,14 @@
 							<div class="col-sm-8">
 								<div class="fileupload fileupload-new" data-provides="fileupload">
 									<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-										<img src='<s:url value="/images/select_image.gif"/>' alt="">
+										<img id="utilisateurImageProfil" src='<s:url value="/images/select_image.gif"/>' alt="">
 									</div>
 									<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 									<div>
 										<span class="btn btn-default btn-file"> 
 											<span class="fileupload-new"><i class="fa fa-paper-clip"></i>Choisir une image</span> 
 											<span class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span> 
-											<input class="default" type="file">
+											<input class="default" type="file" name="fileImage">
 										</span> 
 										<a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
 									</div>

@@ -20,8 +20,13 @@
 				document.getElementById("inputDateNaissance").value = jsonResponse.dateNaissance;
 				document.getElementById("inputAdress").value = jsonResponse.adresse; 
 				
+				//set image profil
+				
+				var imageProfil = document.getElementById("utilisateurImageProfil");
+				image.setAttribute("src",jsonResponse.imageProfil);
+				
 				//check sexe option
-				if(jsonResponse.sexe == "true"){
+				if(jsonResponse.sexe == "Homme"){
 					document.getElementById("optionHomme").checked = true;
 					document.getElementById("optionFemme").checked = false;
 					var elementGreen = $(".iradio_square-green");
