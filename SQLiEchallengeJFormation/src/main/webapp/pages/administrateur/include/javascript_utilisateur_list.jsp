@@ -71,7 +71,7 @@
 				if(jsonResponse.status === "success"){
 					
 					//set inputs value from jsonResponse
-					document.getElementById("idCollaborateur_sendMessage").value = jsonResponse.idCollaborateur;
+					document.getElementById("idUtilisateur_sendMessage").value = jsonResponse.idUtilisateur;
 					var fullName = jsonResponse.nom + " " + jsonResponse.prenom;
 					document.getElementById("fullnameTo").innerHTML = fullName;
 					document.getElementById("to").value = jsonResponse.email;

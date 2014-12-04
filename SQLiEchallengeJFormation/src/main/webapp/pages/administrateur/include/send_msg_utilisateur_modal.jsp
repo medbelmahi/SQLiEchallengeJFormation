@@ -25,7 +25,7 @@
                     <section class="mail-list">
                         <div class="compose-mail">
                             
-                            	<input type="hidden" id="idCollaborateur_sendMessage" name="idUtilisateur">
+                            	<input type="hidden" id="idUtilisateur_sendMessage" name="idUtilisateur">
                                 <div class="form-group">
                                     <label for="to" class="col-md-3">A:</label>
                                     <input type="text" tabindex="1" id="to" class="form-control" readonly="readonly">
