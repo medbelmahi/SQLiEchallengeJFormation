@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<title>Example</title>
+	</head>
+
+	<body >
+		<h1>Bonjour ${model.models.get(0)}</h1>
+		<p>${model.models.get(1)}</p>
+		<p>JFormation | SQLi | Echallenge</p>
+	</body>
+</html>

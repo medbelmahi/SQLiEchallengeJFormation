@@ -27,7 +27,7 @@ public class ProfilDaoImpl implements ProfilDao {
 	
 	@SuppressWarnings("unchecked")
 	public List<Profil> getAll() throws Exception {
-		Query query = entityManager.createQuery("from Profil");
+		Query query = entityManager.createQuery("from Profil order by roleBase");
 		return query.getResultList();
 	}
 	

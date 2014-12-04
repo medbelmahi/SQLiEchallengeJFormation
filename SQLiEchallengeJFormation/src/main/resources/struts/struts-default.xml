@@ -12,7 +12,7 @@
     	<default-action-ref name="index" />
     
     	<action name="index" class="com.sqli.echallenge.jformation.web.IndexAction">
-    		<result name="index_administrateur" type="redirectAction">administrateur/</result>
+    		<result name="index_administrateur" type="redirectAction">administrateur/utilisateurs/list</result>
     		<result name="index_respo_formation" type="redirectAction">responsableFormation/</result>
     		<result name="index_formateur" type="redirectAction">formateur/</result>
     		<result name="login" type="redirectAction">login</result>
