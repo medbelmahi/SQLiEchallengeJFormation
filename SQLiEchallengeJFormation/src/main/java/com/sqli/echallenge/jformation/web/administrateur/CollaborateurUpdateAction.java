@@ -20,11 +20,9 @@ import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
-import com.sqli.echallenge.jformation.metier.ProfilMetier;
-import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
-import com.sqli.echallenge.jformation.model.entity.Utilisateur;
+import com.sqli.echallenge.jformation.metier.CollaborateurMetier;
+import com.sqli.echallenge.jformation.model.entity.Collaborateur;
 import com.sqli.echallenge.jformation.util.FileHelper;
-import com.sqli.echallenge.jformation.util.SqliRandomGenerator;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -37,11 +35,7 @@ public class CollaborateurUpdateAction extends SqliActionSupport implements Serv
 	private static final String SAVE_DIR = "src/main/resources/avatars";
 	
 	@Autowired
-	public UtilisateurMetier utilisateurMetier;
-	@Autowired
-	public SqliRandomGenerator sqliRandomGenerator;
-	@Autowired
-	public ProfilMetier profilMetier;
+	public CollaborateurMetier collaborateurMetier;
 	
 	private HttpServletRequest servletRequest;
 	
@@ -50,14 +44,13 @@ public class CollaborateurUpdateAction extends SqliActionSupport implements Serv
 	private String fileImageContentType;
 	private String fileImageFileName;
 	
-	private Long idUtilisateur;
+	private Long idCollaborateur;
 	private String nom;
 	private String prenom;
 	private String email;
 	private Date dateNaissance;
 	private String telephone;
 	private String adresse;
-	private Long profil;//idProfil
 	private String sexe;//Homme or Femme
 
 	@Override
@@ -65,25 +58,22 @@ public class CollaborateurUpdateAction extends SqliActionSupport implements Serv
 		
 		try{
 			//Create new Utilisateur
-			Utilisateur utilisateur = utilisateurMetier.getUtilisateur(idUtilisateur);
-			utilisateur.setNomUtilsateur(nom);
-			utilisateur.setPrenomUtilisateur(prenom);
-			utilisateur.setEmailUtilisateur(email);
-			utilisateur.setDateNaissanceUtilisateur(dateNaissance);
-			utilisateur.setTelephoneUtilisateur(telephone);
-			utilisateur.setAdresseUtilisateur(adresse);
-			utilisateur.setSexeUtilisateur(sexe);
-			
-			//get profil from db and set it
-			utilisateur.setProfil(profilMetier.get(profil));
+			Collaborateur collaborateur = collaborateurMetier.get(idCollaborateur);
+			collaborateur.setNomCollaborateur(nom);
+			collaborateur.setPrenomCollaborateur(prenom);
+			collaborateur.setEmailCollaborateur(email);
+			collaborateur.setDateNaissanceCollaborateur(dateNaissance);
+			collaborateur.setTelephoneCollaborateur(telephone);
+			collaborateur.setAdresseCollaborateur(adresse);
+			collaborateur.setSexeCollaborateur(sexe);
 			
 			//set Image Avatar
-			if(fileImage != null) utilisateur.setUrlPhotoUtilisateur(saveImage());
+			if(fileImage != null) collaborateur.setUrlPhotoCollaborateur(saveImage());
 			
 			//add Utilisateur
-			utilisateurMetier.update(utilisateur);
+			collaborateurMetier.update(collaborateur);
 			
-			setSessionActionMessageText(getText("utilisateur.update.success"));
+			setSessionActionMessageText(getText("collaborateur.update.success"));
 			return SqliActionSupport.SUCCESS;
 		}catch(Exception e){
 			//show error message
@@ -155,15 +145,6 @@ public class CollaborateurUpdateAction extends SqliActionSupport implements Serv
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)
-	public Long getProfil() {
-		return profil;
-	}
-
-	public void setProfil(Long profil) {
-		this.profil = profil;
-	}
-
-	@RequiredFieldValidator(shortCircuit=true)
 	@RequiredStringValidator(shortCircuit=true)
 	public String getSexe() {
 		return sexe;
@@ -225,13 +206,13 @@ public class CollaborateurUpdateAction extends SqliActionSupport implements Serv
 		
 		return fileToSaveContext.toString();
 	}
-
+	
 	@RequiredFieldValidator(shortCircuit=true)
-	public Long getIdUtilisateur() {
-		return idUtilisateur;
+	public Long getIdCollaborateur() {
+		return idCollaborateur;
 	}
 
-	public void setIdUtilisateur(Long idUtilisateur) {
-		this.idUtilisateur = idUtilisateur;
+	public void setIdCollaborateur(Long idCollaborateur) {
+		this.idCollaborateur = idCollaborateur;
 	}
 }

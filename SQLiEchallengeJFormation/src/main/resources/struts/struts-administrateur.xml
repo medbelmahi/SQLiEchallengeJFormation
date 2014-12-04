@@ -88,7 +88,7 @@
     	</action>
     	<!-- End habilitations actions -->
     	
-    	<!-- Habilitations actions -->
+    	<!-- Collaborateur actions -->
     	<action name="collaborateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurListAction">
     		<result name="success">/pages/administrateur/collaborateur_list.jsp</result>
     		<result name="error">/pages/administrateur/collaborateur_list.jsp</result>
@@ -117,7 +117,12 @@
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
     	</action>
-    	<!-- End habilitations actions -->
+    	<action name="collaborateurs/email" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurSendEmailAction">
+    		<result name="success" type="redirectAction">collaborateurs/list</result>
+    		<result name="error" type="redirectAction">collaborateurs/list</result>
+    		<result name="input" type="redirectAction">collaborateurs/list</result>
+    	</action>
+    	<!-- End Collaborateurs actions -->
     	
     </package>
     

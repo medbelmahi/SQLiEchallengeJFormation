@@ -21,12 +21,12 @@ public class HabilitationDeleteAction extends SqliActionSupport {
 	@Autowired
 	public HabilitationMetier habilitationMetier;
 	
-	private Long idHabilitaion;
+	private Long idHabilitation;
 	
 	@Override
 	public String execute() throws Exception {
 		try {
-			habilitationMetier.delete(idHabilitaion);
+			habilitationMetier.delete(idHabilitation);
 			
 			setSessionActionMessageText(getText("habilitation.delete.success"));
 			return SqliActionSupport.SUCCESS;
@@ -39,12 +39,12 @@ public class HabilitationDeleteAction extends SqliActionSupport {
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)
-	public Long getIdHabilitaion() {
-		return idHabilitaion;
+	public Long getIdHabilitation() {
+		return idHabilitation;
 	}
 
-	public void setIdHabilitaion(Long idHabilitaion) {
-		this.idHabilitaion = idHabilitaion;
+	public void setIdHabilitaion(Long idHabilitation) {
+		this.idHabilitation = idHabilitation;
 	}
 
 }
