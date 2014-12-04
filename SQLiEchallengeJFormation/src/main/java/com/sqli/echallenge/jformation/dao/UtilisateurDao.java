@@ -11,4 +11,6 @@ public interface UtilisateurDao {
 	public Utilisateur getUtilisateur(String email) throws Exception;
 	public List<Utilisateur> getAll(Utilisateur utilisateur) throws Exception;
 	public void add(Utilisateur utilisateur) throws Exception;
+	public void delete(Long idUtilisateur) throws Exception;
+	public void update(Utilisateur utilisateur) throws Exception;
 }

@@ -17,7 +17,23 @@
     		<result name="input">/pages/administrateur/utilisateur_list.jsp</result>
     	</action>
     	
+    	<action name="utilisateurs/delete" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurDeleteAction">
+    		<result name="success" type="redirectAction">utilisateurs/list</result>
+    		<result name="error" type="redirectAction">utilisateurs/list</result>
+    		<result name="input" type="redirectAction">utilisateurs/list</result>
+    	</action>
+    	
     	<action name="utilisateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurAddAction">
+	    	<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg, image/png</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		<result name="success" type="redirectAction">utilisateurs/list</result>
+    		<result name="error" type="redirectAction">utilisateurs/list</result>
+    		<result name="input" type="redirectAction">utilisateurs/list</result>
+    	</action>
+    	
+    	<action name="utilisateurs/update" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurUpdateAction">
 	    	<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
 			</interceptor-ref>

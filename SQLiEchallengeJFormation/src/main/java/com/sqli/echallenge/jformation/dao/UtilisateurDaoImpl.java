@@ -50,8 +50,16 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 		return query.getResultList();
 	}
 	
+	public void delete(Long idUtilisateur) throws Exception {
+		entityManager.remove(getUtilisateur(idUtilisateur));
+	}
+	
 	public void add(Utilisateur utilisateur) throws Exception {
 		entityManager.persist(utilisateur);
+	}
+	
+	public void update(Utilisateur utilisateur) throws Exception {
+		entityManager.merge(utilisateur);
 	}
 	
 	public EntityManager getEntityManager() {
@@ -61,4 +69,5 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
+
 }

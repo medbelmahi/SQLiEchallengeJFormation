@@ -24,8 +24,6 @@ import com.sqli.echallenge.jformation.metier.ProfilMetier;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.FileHelper;
-import com.sqli.echallenge.jformation.util.SqliEmailModel;
-import com.sqli.echallenge.jformation.util.SqliMailSender;
 import com.sqli.echallenge.jformation.util.SqliRandomGenerator;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
@@ -34,10 +32,9 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Controller
-public class UtilisateurAddAction extends SqliActionSupport implements ServletRequestAware {
+public class UtilisateurUpdateAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = -7968028204363016406L;
 	private static final String SAVE_DIR = "src/main/resources/avatars";
-	private static final String TEMPLATE_MAIL = "template/utilisateur-new-created-template.vm";
 	
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
@@ -45,8 +42,6 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 	public SqliRandomGenerator sqliRandomGenerator;
 	@Autowired
 	public ProfilMetier profilMetier;
-	@Autowired
-	public SqliMailSender mailSender;
 	
 	private HttpServletRequest servletRequest;
 	
@@ -55,6 +50,7 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 	private String fileImageContentType;
 	private String fileImageFileName;
 	
+	private Long idUtilisateur;
 	private String nom;
 	private String prenom;
 	private String email;
@@ -69,7 +65,7 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 		
 		try{
 			//Create new Utilisateur
-			Utilisateur utilisateur = new Utilisateur();
+			Utilisateur utilisateur = utilisateurMetier.getUtilisateur(idUtilisateur);
 			utilisateur.setNomUtilsateur(nom);
 			utilisateur.setPrenomUtilisateur(prenom);
 			utilisateur.setEmailUtilisateur(email);
@@ -78,26 +74,16 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 			utilisateur.setAdresseUtilisateur(adresse);
 			utilisateur.setSexeUtilisateur(sexe);
 			
-			//generate password
-			utilisateur.setPasswordUtilisateur(sqliRandomGenerator.generateRandomString());
-			
 			//get profil from db and set it
 			utilisateur.setProfil(profilMetier.getProfil(profil));
 			
 			//set Image Avatar
-			utilisateur.setUrlPhotoUtilisateur(saveImage());
+			if(fileImage != null) utilisateur.setUrlPhotoUtilisateur(saveImage());
 			
 			//add Utilisateur
-			utilisateurMetier.add(utilisateur);
+			utilisateurMetier.update(utilisateur);
 			
-			//Send Mail to New utilisateur (Thread)!!!!!
-			SqliEmailModel model = new SqliEmailModel();
-			//Inflate Model
-			model.addModel(utilisateur.getNomUtilsateur());
-			model.addModel(utilisateur.getPasswordUtilisateur());
-			mailSender.sendMail(utilisateur.getEmailUtilisateur(), TEMPLATE_MAIL, model);
-			
-			setSessionActionMessageText(getText("utilisateur.new.add.success"));
+			setSessionActionMessageText(getText("utilisateur.update.success"));
 			return SqliActionSupport.SUCCESS;
 		}catch(Exception e){
 			//show error message
@@ -217,9 +203,6 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 	
 	@SuppressWarnings("deprecation")
 	private String saveImage() throws IOException{
-		if(fileImage == null){
-			return "null";
-		}
 		
 		//Get paths reat + context
 		String serverRealPath = servletRequest.getRealPath("/");
@@ -241,5 +224,14 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 		FileUtils.copyFile(fileImage, fileToSaveReal);
 		
 		return fileToSaveContext.toString();
+	}
+
+	@RequiredFieldValidator(shortCircuit=true)
+	public Long getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+	public void setIdUtilisateur(Long idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 }

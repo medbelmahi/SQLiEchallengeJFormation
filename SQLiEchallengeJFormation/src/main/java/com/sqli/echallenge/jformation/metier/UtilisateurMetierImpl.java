@@ -59,7 +59,23 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 			throw new SqliException(propretiesHelper.getText("utilisateur.add.email.deplicated"));
 		}
 	}
-
+	
+	public void delete(Long idUtilisateur) throws Exception {
+		try {
+			dao.delete(idUtilisateur);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("utilisateur.delete.fail"));
+		}
+	}
+	
+	public void update(Utilisateur utilisateur) throws Exception {
+		try {
+			dao.update(utilisateur);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("utilisateur.update.email.deplicated"));
+		}
+	}
+	
 	public UtilisateurDao getDao() {
 		return dao;
 	}
@@ -67,4 +83,13 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 	public void setDao(UtilisateurDao dao) {
 		this.dao = dao;
 	}
+
+	public PropretiesHelper getPropretiesHelper() {
+		return propretiesHelper;
+	}
+
+	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
+		this.propretiesHelper = propretiesHelper;
+	}
+	
 }
