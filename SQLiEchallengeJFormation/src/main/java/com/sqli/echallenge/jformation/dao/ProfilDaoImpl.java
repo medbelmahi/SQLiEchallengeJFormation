@@ -53,12 +53,16 @@ public class ProfilDaoImpl implements ProfilDao {
 		query.setParameter("idProfil", idProfil);
 		query.executeUpdate();
 	}
-	//Native Query
+	//Native Query!!!
 	public void addAction(Long idProfil, String action) throws Exception {
 		Query query = entityManager.createNativeQuery("INSERT INTO SQLI_ACTIONS(ID_PROFIL, ACTION_KEY) VALUES(:idProfil, :action)");
 		query.setParameter("idProfil", idProfil);
 		query.setParameter("action", action);
 		query.executeUpdate();
+	}
+	
+	public void add(Profil profil) throws Exception {
+		entityManager.persist(profil);
 	}
 
 	public EntityManager getEntityManager() {
@@ -68,4 +72,5 @@ public class ProfilDaoImpl implements ProfilDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
+	
 }

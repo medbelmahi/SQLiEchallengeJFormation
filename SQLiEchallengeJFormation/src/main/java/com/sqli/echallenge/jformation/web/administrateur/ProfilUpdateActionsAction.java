@@ -15,7 +15,7 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Component
-public class ProfilUpdateActionsActions extends SqliActionSupport {
+public class ProfilUpdateActionsAction extends SqliActionSupport {
 	private static final long serialVersionUID = 6757084943679281696L;
 
 	@Autowired

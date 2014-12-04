@@ -58,7 +58,12 @@
     		<result name="error" type="redirectAction">profils/list</result>
     		<result name="input" type="redirectAction">profils/list</result>
     	</action>
-    	<action name="profils/actions/update" class="com.sqli.echallenge.jformation.web.administrateur.ProfilUpdateActionsActions">
+    	<action name="profils/actions/update" class="com.sqli.echallenge.jformation.web.administrateur.ProfilUpdateActionsAction">
+    		<result name="success" type="redirectAction">profils/list</result>
+    		<result name="error" type="redirectAction">profils/list</result>
+    		<result name="input" type="redirectAction">profils/list</result>
+    	</action>
+    	<action name="profils/add" class="com.sqli.echallenge.jformation.web.administrateur.ProfilAddAction">
     		<result name="success" type="redirectAction">profils/list</result>
     		<result name="error" type="redirectAction">profils/list</result>
     		<result name="input" type="redirectAction">profils/list</result>

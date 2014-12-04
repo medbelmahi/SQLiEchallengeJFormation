@@ -18,4 +18,5 @@ public interface ProfilDao {
 	public void delete(Long idProfil) throws Exception;
 	public void deleteActions(Long idProfil) throws Exception;
 	public void addAction(Long idProfil, String action) throws Exception;
+	public void add(Profil profil) throws Exception;
 }

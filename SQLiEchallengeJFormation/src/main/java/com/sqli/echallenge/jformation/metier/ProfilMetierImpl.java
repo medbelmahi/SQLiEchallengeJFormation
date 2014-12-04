@@ -76,6 +76,14 @@ public class ProfilMetierImpl implements ProfilMetier {
 		}
 	}
 	
+	public void add(Profil profil) throws Exception {
+		try{
+			dao.add(profil);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("profil.add.deplicated.name.fail"));
+		}
+	}
+	
 	public ProfilDao getDao() {
 		return dao;
 	}
@@ -91,5 +99,4 @@ public class ProfilMetierImpl implements ProfilMetier {
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
 	}
-	
 }

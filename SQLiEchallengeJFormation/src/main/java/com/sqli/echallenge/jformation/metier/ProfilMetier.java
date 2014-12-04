@@ -18,4 +18,5 @@ public interface ProfilMetier {
 	public void delete(Long idProfil) throws Exception;
 	public void deleteActions(Long idProfil) throws Exception;
 	public void updateActions(Long idProfil, String[] actions) throws Exception;
+	public void add(Profil profil) throws Exception;
 }
