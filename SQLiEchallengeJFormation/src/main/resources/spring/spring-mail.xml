@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 		
 		<!-- MailSender -->
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl" scope="prototype">
       <property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
 		<property name="username" value="formation.sqli.echallenge@gmail.com" />
@@ -22,7 +22,7 @@
 		</property>
    </bean>
    
-   <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+   <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean" scope="prototype">
       <property name="velocityProperties">
          <value>
             resource.loader=class
@@ -31,7 +31,7 @@
       </property>
    </bean>
    
-   <bean id="sqlimail" class="com.sqli.echallenge.jformation.util.SqliMailSender">
+   <bean id="sqlimail" class="com.sqli.echallenge.jformation.util.SqliMailSender" scope="prototype">
 		<property name="mailSender" ref="mailSender" />
 		<property name="velocityEngine" ref="velocityEngine" />
 	</bean>

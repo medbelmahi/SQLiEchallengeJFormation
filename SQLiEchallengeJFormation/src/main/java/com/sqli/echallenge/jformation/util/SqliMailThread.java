@@ -27,6 +27,9 @@ public class SqliMailThread extends Thread {
 		try {
 			mailSender.sendMail(email, template, model);
 		} catch (Exception e) {
+			
+		}finally{
+			//this.destroy();
 		}
 	}
 

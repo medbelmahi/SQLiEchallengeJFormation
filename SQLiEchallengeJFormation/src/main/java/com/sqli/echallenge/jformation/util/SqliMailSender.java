@@ -9,15 +9,19 @@ import java.util.Map;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.velocity.app.VelocityEngine;
+import org.springframework.context.annotation.Scope;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
+import org.springframework.stereotype.Component;
 import org.springframework.ui.velocity.VelocityEngineUtils;
 
 /**
  * @author Mouad
  *
  */
+@Component
+@Scope("prototype")
 public class SqliMailSender {
 
 	private JavaMailSender mailSender;

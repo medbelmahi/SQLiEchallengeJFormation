@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.SqliEmailModel;
-import com.sqli.echallenge.jformation.util.SqliMailSender;
+import com.sqli.echallenge.jformation.util.SqliMailThread;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -26,7 +26,7 @@ public class UtilisateurSendEmailAction extends SqliActionSupport {
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
 	@Autowired
-	public SqliMailSender mailSender;
+	public SqliMailThread sqliMailThread;
 	
 	private Long idUtilisateur;
 	private String object;
@@ -44,12 +44,16 @@ public class UtilisateurSendEmailAction extends SqliActionSupport {
 			//Inflate Model
 			model.addModel(u.getFullname());
 			model.addModel(msg);
-			mailSender.sendMail(u.getEmailUtilisateur(), TEMPLATE_MAIL, model);//Send Email
+			//Prepare Mail Thread
+			sqliMailThread.setEmail(u.getEmailUtilisateur());
+			sqliMailThread.setModel(model);
+			sqliMailThread.setTemplate(TEMPLATE_MAIL);
+			sqliMailThread.start();
 			
 			setSessionActionMessageText(getText("utilisateur.email.success"));
 			return SqliActionSupport.SUCCESS;
 		}catch(Exception e){
-			
+			e.printStackTrace();
 			setSessionActionErrorText(getText("utilisateur.email.fail"));
 			return SqliActionSupport.ERROR;
 		}

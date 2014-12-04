@@ -25,7 +25,7 @@ import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.FileHelper;
 import com.sqli.echallenge.jformation.util.SqliEmailModel;
-import com.sqli.echallenge.jformation.util.SqliMailSender;
+import com.sqli.echallenge.jformation.util.SqliMailThread;
 import com.sqli.echallenge.jformation.util.SqliRandomGenerator;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
@@ -47,7 +47,7 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 	@Autowired
 	public ProfilMetier profilMetier;
 	@Autowired
-	public SqliMailSender mailSender;
+	public SqliMailThread sqliMailThread;
 	
 	private HttpServletRequest servletRequest;
 	
@@ -93,10 +93,13 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 			
 			//Send Mail to New utilisateur (Thread)!!!!!
 			SqliEmailModel model = new SqliEmailModel();
-			//Inflate Model
 			model.addModel(utilisateur.getNomUtilsateur());
 			model.addModel(utilisateur.getPasswordUtilisateur());
-			mailSender.sendMail(utilisateur.getEmailUtilisateur(), TEMPLATE_MAIL, model);
+			//Prepare Mail Thread
+			sqliMailThread.setEmail(utilisateur.getEmailUtilisateur());
+			sqliMailThread.setModel(model);
+			sqliMailThread.setTemplate(TEMPLATE_MAIL);
+			sqliMailThread.start();
 			
 			setSessionActionMessageText(getText("utilisateur.new.add.success"));
 			return SqliActionSupport.SUCCESS;

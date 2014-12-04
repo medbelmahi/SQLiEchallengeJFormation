@@ -12,7 +12,7 @@
 	<!-- Util.SqliRandomGenerator -->
 	<bean id="sqlirandomgenrator_util" class="com.sqli.echallenge.jformation.util.SqliRandomGenerator"></bean>
 	
-	<bean id="mail_thread" class="com.sqli.echallenge.jformation.util.SqliMailThread"></bean>
+	<bean id="mail_thread" class="com.sqli.echallenge.jformation.util.SqliMailThread" scope="prototype"></bean>
 		
 	<!-- Utilisateur -->	
 	<bean id="utilisateur_dao" class="com.sqli.echallenge.jformation.dao.UtilisateurDaoImpl"></bean>	
