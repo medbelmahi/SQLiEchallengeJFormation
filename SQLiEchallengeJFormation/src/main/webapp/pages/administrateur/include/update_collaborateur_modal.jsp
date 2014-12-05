@@ -25,7 +25,7 @@
 										<span class="btn btn-default btn-file"> 
 											<span class="fileupload-new"><i class="fa fa-paper-clip"></i>Choisir une image</span> 
 											<span class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span> 
-											<input class="default" type="file">
+											<input class="default" type="file" name="fileImage" >
 										</span> 
 										<a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
 									</div>
@@ -95,12 +95,12 @@
 								<div class="icheck ">
 									<div class="square-green single-row col-sm-6">
 										<div class="radio ">
-											<input tabindex="3" type="radio" name="sexe" id="optionHomme" value="true"> <label> Male </label>
+											<input tabindex="3" type="radio" name="sexe" id="optionHomme" value="Homme"> <label> Male </label>
 										</div>
 									</div>
 									<div class="square-red single-row col-sm-6">
 										<div class="radio ">
-											<input tabindex="3" type="radio" name="sexe" id="optionFemme" value="false"> <label> Female </label>
+											<input tabindex="3" type="radio" name="sexe" id="optionFemme" value="Femme"> <label> Female </label>
 										</div>
 									</div>
 								</div>
