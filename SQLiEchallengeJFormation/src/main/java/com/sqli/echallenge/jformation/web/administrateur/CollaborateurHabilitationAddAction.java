@@ -32,8 +32,8 @@ public class CollaborateurHabilitationAddAction extends SqliActionSupport {
 			
 			setSessionActionMessageText(getText("collaborateur.habilitation.add.success"));
 			return SqliActionSupport.SUCCESS;
-		} catch (Exception e) {
 			
+		} catch (Exception e) {
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;
 		}

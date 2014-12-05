@@ -28,8 +28,9 @@ public class SqliMailThread extends Thread {
 			System.out.println(">> send Email to: " + email);
 			mailSender.sendMail(email, template, model);
 			System.out.println(">> send Email to: " + email + " OK");
-		} catch (Exception e) {
 			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}finally{
 			//this.destroy();
 		}

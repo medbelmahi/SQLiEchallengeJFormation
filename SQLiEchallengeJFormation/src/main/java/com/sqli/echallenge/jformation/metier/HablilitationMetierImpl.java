@@ -73,6 +73,22 @@ public class HablilitationMetierImpl implements HabilitationMetier {
 			throw new SqliException(propretiesHelper.getText("habilitation.list.load.fail"));
 		}
 	}
+	
+	public void addHabilitationToCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception {
+		try{
+			dao.addHabilitationToCollaborateur(idCollaborateur, idHabilitation);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("collaborateur.habilitation.add.fail"));
+		}
+	}
+
+	public void deleteHabilitationFromCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception {
+		try{
+			dao.deleteHabilitationFromCollaborateur(idCollaborateur, idHabilitation);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("collaborateur.habilitation.delete.fail"));
+		}
+	}
 
 	public HabilitationDao getDao() {
 		return dao;

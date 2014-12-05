@@ -62,7 +62,22 @@ public class HabilitationDaoImpl implements HabilitationDao {
 		
 		return query.getResultList();
 	}
-
+	//native Query!!!!
+	public void addHabilitationToCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception {
+		Query query = entityManager.createNativeQuery("INSERT INTO SQLI_COLLABORATEURS_HABILITATIONS (ID_HABILITATION, ID_COLLABORATEUR) VALUES(:idHabilitation, :idCollaborateur)");
+		query.setParameter("idHabilitation", idHabilitation);
+		query.setParameter("idCollaborateur", idCollaborateur);
+		
+		query.executeUpdate();
+	}
+	//native query:!!!
+	public void deleteHabilitationFromCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception {
+		Query query = entityManager.createNativeQuery("DELETE FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_HABILITATION=:idHabilitation AND ID_COLLABORATEUR=:idCollaborateur");
+		query.setParameter("idHabilitation", idHabilitation);
+		query.setParameter("idCollaborateur", idCollaborateur);
+		
+		query.executeUpdate();
+	}
 
 	public EntityManager getEntityManager() {
 		return entityManager;
