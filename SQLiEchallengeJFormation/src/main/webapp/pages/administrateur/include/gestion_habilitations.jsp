@@ -11,7 +11,6 @@
 			</header>
 			<div class="panel-body">
 
-
 				<div class="row">
 					<div class="col-md-5">
 						<!-- info collaborateur div Begin -->
@@ -65,75 +64,6 @@
 					<div class="col-md-7">
 
 						<div class="panel-group " id="accordion">
-							<%-- <div class="panel">
-								<div class="panel-heading dark">
-									<h4 class="panel-title">
-										<a class="accordion-toggle" data-toggle="collapse"
-											data-parent="#accordion" href="#collapseOne"> Supprimer
-											des habilitations </a>
-									</h4>
-								</div>
-								<div style="height: auto;" id="collapseOne"
-									class="panel-collapse collapse in">
-									<div class="panel-body">
-										<!-- le contenu -->
-										<div class="row">
-											<div class="col-md-12">
-												<div class="panel">
-													<div class="panel-body">
-														<h4>Supprimer des habilitations</h4>
-														<div class="row">
-															<div class="col-md-6">
-																<div class="form-group last">
-																	<label class="control-label col-md-3">Chercher</label>
-
-																	<div class="col-md-9">
-																		<select name="country" class="multi-select"
-																			 id="my_multi_select3_costum_2">
-
-																			<s:iterator value="collaborateurHabilitations">
-																				<option
-																					value='<s:property value="idHabilitation" />'
-																					data-description='<s:property value="descriptionHabilitation" />'
-																				data-score='<s:property value="scoreHabilitation" />'
-																					><s:property value="nomHabilitation" /></option>
-																			</s:iterator>
-																		</select>
-																	</div>
-
-																</div>
-															</div>
-
-															<div class="col-md-6">
-																<div class="row">
-																	<div class="col-md-12">
-																		<h3 id="theHabilitationName_2">habilatation name</h3>
-																		<p id="theHabilitationDescription_2">Description.</p>
-																	</div>
-																</div>
-																<hr>
-																<hr>
-																<div class="row">
-																	<div class="col-md-12">
-																		
-																		<form id="Spprimer_habilitation" action="habilitations/delete" method="post">
-																			<input id="theHabilitation_delete" type="hidden" name="idHabilitation" value="" required="required">
-																			<input id="idCollaborateurHabilitation_delete" type="hidden" name="idCollaborateur" value='<s:property value="collaborateur.idCollaborateur" />' required="required">
-																			
-																			<button type="submit" name="actionButton" value="delete" class="btn btn-danger btn-lg btn-block">Supprimer cette habilitation</button>
-																		</form>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- end mise a jour content -->
-									</div>
-								</div>
-							</div> --%>
 							
 										<!-- le contenu -->
 										<div class="row">
@@ -148,9 +78,9 @@
 																	<label class="control-label col-md-3">Chercher</label>
 																	<input type="hidden" name="idCollaborateur" value="<s:property value="idCollaborateur" />" required="required">
 																	<div class="col-md-9">
-																		<select name="idHabilitations" class="multi-select" id="my_multi_select3_costum" multiple="">
+																		<select name="idHabilitations" class="multi-select" id="my_multi_select3_costum" multiple="multiple" >
 																			<s:iterator value="collaborateurHabilitations">
-																				<option selected="true" id='habilitationOptionId_<s:property value="idHabilitation" />' data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
+																				<option selected="selected" id='habilitationOptionId_<s:property value="idHabilitation" />' data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
 																			</s:iterator>
 																			<s:iterator value="nonCollaborateurHabilitations">
 																				<option id='habilitationOptionId_<s:property value="idHabilitation" />' data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
@@ -161,43 +91,18 @@
 																</div>
 															</div>
 														
-															<%-- <div class="col-md-6">
-																<div class="row">
-																	<div class="col-md-12">
-																		<h3 id="theHabilitationName">habilatation name</h3>
-																		<p id="theHabilitationDescription">Description.</p>
-																	</div>
-																</div>
-																<hr>
-																
-																<hr>
-																<div class="row">
-																	<div class="col-md-12">
-																		<form id="add_habilitation_score" action="habilitations/add" method="post" >
-																			<s:hidden id="theIdCollaborateur" name="idCollaborateur" value='<s:property value="collaborateur.idCollaborateur" />' />
-																			<input id="theHabilitation_add" type="hidden" name="idHabilitation" value="" required="required">
-																			
-																			<button type="submit" class="btn btn-success btn-lg btn-block">Ajouter cette habilitation</button>
-																		</form>
-																	</div>
-																</div>
-															</div> --%>
-														</div>
-														
-														<div class="row" style="width: 20px;"></div>
-														
 														<div class="row" style="margin-top: 20px;">
 															<button type="submit" class="btn btn-success btn-lg btn-block">Mise à jour habilitation</button>
 														</div>
-														
+														</div>
 														</form>
+														
 													</div>
 												</div>
 											</div>
 										</div>
 										<!-- End ajout content -->
 									
-
 						</div>
 
 					</div>
@@ -205,7 +110,6 @@
 					<!-- End gestion des habilitation d'un collaborateur -->
 
 				</div>
-
 			</div>
 		</section>
 	</div>
