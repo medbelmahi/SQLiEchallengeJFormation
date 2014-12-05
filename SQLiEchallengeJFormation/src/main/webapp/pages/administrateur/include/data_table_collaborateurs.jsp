@@ -67,7 +67,7 @@
 												</li>
 												
 												<li style="padding-left: 15px;">
-													<a data-href=<s:url action="collaborateurs/delete" ><s:param name="id"><s:property value="idCollaborateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
+													<a data-href=<s:url action="collaborateurs/delete" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 														<i class="fa fa-times"></i>
 													</a>
 												</li>
