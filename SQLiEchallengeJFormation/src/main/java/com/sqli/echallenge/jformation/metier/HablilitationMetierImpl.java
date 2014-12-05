@@ -3,6 +3,8 @@
  */
 package com.sqli.echallenge.jformation.metier;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,15 +62,48 @@ public class HablilitationMetierImpl implements HabilitationMetier {
 	
 	public List<Habilitation> getHabilitationCollaborateurs(Long idCollaborateur) throws Exception {
 		try{
-			return dao.getHabilitationCollaborateurs(idCollaborateur);
+			List<Habilitation> habilitations = new ArrayList<Habilitation>();
+			
+			Iterator<Object[]> it = dao.getHabilitationCollaborateurs(idCollaborateur).iterator();
+			
+			while(it.hasNext()){
+				Object[] row = (Object[])it.next();
+				
+				Habilitation habilitation = new Habilitation();
+				habilitation.setIdHabilitation(Long.valueOf(row[0].toString()));
+				habilitation.setNomHabilitation(row[1].toString());
+				habilitation.setDescriptionHabilitation(row[2].toString());
+				
+				habilitations.add(habilitation);
+			}
+			
+			return habilitations;
+			
 		}catch(Exception e){
+
 			throw new SqliException(propretiesHelper.getText("habilitation.list.load.fail"));
 		}
 	}
 
 	public List<Habilitation> getHabilitationNonCollaborateurs(Long idCollaborateur) throws Exception {
 		try{
-			return dao.getHabilitationNonCollaborateurs(idCollaborateur);
+			List<Habilitation> habilitations = new ArrayList<Habilitation>();
+
+			Iterator<Object[]> it = dao.getHabilitationNonCollaborateurs(idCollaborateur).iterator();
+			
+			while(it.hasNext()){
+				Object[] row = (Object[])it.next();
+				
+				Habilitation habilitation = new Habilitation();
+				habilitation.setIdHabilitation(Long.valueOf(row[0].toString()));
+				habilitation.setNomHabilitation(row[1].toString());
+				habilitation.setDescriptionHabilitation(row[2].toString());
+				
+				habilitations.add(habilitation);
+			}
+			
+			return habilitations;
+			
 		}catch(Exception e){
 			throw new SqliException(propretiesHelper.getText("habilitation.list.load.fail"));
 		}

@@ -43,9 +43,11 @@ public class CollaborateurHabilitationListAction extends SqliActionSupport {
 			
 			//get List collaborateurHabilitations
 			collaborateurHabilitations = habilitationMetier.getHabilitationCollaborateurs(idCollaborateur);
+			System.out.println("habi: "  + collaborateurHabilitations); 
 			
 			//get List nonCollaborateurHabilitations
 			nonCollaborateurHabilitations = habilitationMetier.getHabilitationNonCollaborateurs(idCollaborateur);
+			System.out.println("non habi: "  + nonCollaborateurHabilitations); 
 			
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
