@@ -11,17 +11,14 @@
 			</div>
 			
 			<div class="modal-body">
-				<div class="row">
-					<h5 class="text-danger" >(*) champs obligatoire</h5>
-				</div>
 				<div class="panel-body">
-					<form data-toggle="validator" id="update_collaborateur" action="updateCollaborateur" method="post" role="form" class="form-horizontal adminex-form">
+					<form data-toggle="validator" id="update_collaborateur" action="update" method="post" role="form" class="form-horizontal adminex-form" enctype="multipart/form-data" >
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">
 								<div class="fileupload fileupload-new" data-provides="fileupload">
 									<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-										<img src='<s:url value="/images/select_image.gif"/>' alt="">
+										<img id="imageCollaborateur" src='<s:url value="/images/select_image.gif"/>' alt="">
 									</div>
 									<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 									<div>
@@ -119,10 +116,6 @@
 								<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
 							</div>
 						</div>
-						<!-- <div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-							<button type="submit" class="btn btn-success">Mise à jour</button>
-						</div> -->
 					</form>
 				</div>
 			</div>

@@ -126,44 +126,19 @@
 		            </div>
 	        	</div><!-- present working link End-->
 	        	
-	        	<!-- success message Start -->
-	        	<s:if test="isSessionActionMessage()">
-		        	<div class="row">
-		        		<div class="col-md-12">
-		        			<div class="alert alert-info fade in">
-		                         <button type="button" class="close close-sm" data-dismiss="alert">
-		                             <i class="fa fa-times"></i>
-		                         </button>
-		                         <strong>Message : </strong>  <s:property value="sessionActionMessageText" />
-		                     </div>
-		        		</div>
-		        	</div>
-		        </s:if>
-				<!-- success message End -->
+	        	
+				<!-- Message action start-->
+		        	<s:include value="include/message_action.jsp"></s:include>
+		        <!-- Message action end-->
 				
-				
-				<!-- Error message Start -->
-				<s:if test="isSessionActionError()">
-					<div class="row">
-			        		<div class="col-md-12">
-			        			<div class="alert alert-block alert-danger fade in">
-		                            <button type="button" class="close close-sm" data-dismiss="alert">
-		                                <i class="fa fa-times"></i>
-		                            </button>
-		                            <strong>Erreur ! </strong> <s:property value="sessionActionErrorText" />
-		                        </div>
-			        		</div>
-			        </div>
-			    </s:if>
-				<!-- Error message End -->
 				
 				<!-- Data table des collaborateurs Start -->
 					<s:include value="include/data_table_collaborateurs.jsp"></s:include>
 				<!-- Data table des collaborateurs End -->
 				
-				<!-- Begin Gestion des habilitations -->
+				<%-- <!-- Begin Gestion des habilitations -->
 					<s:include value="include/gestion_habilitations.jsp"></s:include>	
-				<!-- End Gestion des habilisation -->
+				<!-- End Gestion des habilisation --> --%>
 				
 				<!-- Ajout Collaborateur Modal Form -->
 					<s:include value="include/ajout_collaborateur_modal.jsp"></s:include>

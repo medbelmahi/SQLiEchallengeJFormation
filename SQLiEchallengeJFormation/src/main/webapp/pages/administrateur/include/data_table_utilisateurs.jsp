@@ -15,7 +15,7 @@
 				<div class="adv-table">
 					<div class="clearfix">
 						<div class="btn-group">
-							<a href="#addCollaborateurModal" data-toggle="modal"><button class="btn btn-primary">
+							<a href="#addUtilisateurModal" data-toggle="modal"><button class="btn btn-primary">
 								Ajouter utilisateur <i class="fa fa-plus"></i>
 							</button></a>
 						</div>

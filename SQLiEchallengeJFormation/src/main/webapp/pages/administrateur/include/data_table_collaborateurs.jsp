@@ -7,7 +7,7 @@
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
-				Les collaborateurs <span class="tools pull-right">
+				Liste des collaborateurs <span class="tools pull-right">
 					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
 				</span>
 			</header>
@@ -88,8 +88,7 @@
 										<td style="display: none;">
 											<ul>
 												<s:iterator value="habilitations">
-													<li><s:property value="habilitation.nomHabilitation" />
-														( <s:property value="scoreHabilitation" /> )</li>
+													<li><s:property value="habilitation.nomHabilitation" /></li>
 												</s:iterator>
 											</ul>
 										</td>

@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<div style="display: none;" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addUtilisateurModal" class="modal fade">
+<div style="display: none;" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="addCollaborateurModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Ajouter Nouveau Utilisateur</h4>
+				<h4 class="modal-title">Ajouter Nouveau Collaborateur</h4>
 			</div>
 
 			<div class="modal-body">
 				<div class="panel-body">
-					<form data-toggle="validator" id="add_utilisateur" action="add" method="post" role="form" class="form-horizontal adminex-form" enctype="multipart/form-data" >
+					<form data-toggle="validator" id="add_collaborateur" action="add" method="post" role="form" class="form-horizontal adminex-form" enctype="multipart/form-data" >
 						<div class="form-group">
 							<label class="control-label col-sm-4">Image de profil</label>
 							<div class="col-sm-8">
@@ -80,7 +80,7 @@
 							</div>
 						</div>
 						
-						<div class="form-group">
+						<%-- <div class="form-group">
 							<label for="inputAdress_2" class="col-sm-3 control-label">Profil<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
 								<select name="profil" class="form-control input-sm m-bot15">
@@ -89,7 +89,7 @@
 									</s:iterator>
                             	</select>
 							</div>
-						</div>
+						</div> --%>
 
 						<div class="form-group">
 								<label for="sexeElement" class="col-sm-3 control-label vcenter">Sexe<span class="text-danger" > *</span></label>

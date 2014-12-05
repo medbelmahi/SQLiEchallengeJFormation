@@ -25,7 +25,8 @@
 
 						<table aria-describedby="hidden-table-info_info"
 							class="display table table-bordered dataTable"
-							id="hidden-table-info">
+							id="dynamic-table">
+<!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
 									<th>Nom</th>
