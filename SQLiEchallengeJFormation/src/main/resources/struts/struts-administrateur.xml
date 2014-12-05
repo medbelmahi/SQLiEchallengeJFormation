@@ -127,20 +127,10 @@
     		<result name="error">/pages/administrateur/collaborateur_habilitation_list.jsp</result>
     		<result name="input">/pages/administrateur/collaborateur_habilitation_list.jsp</result>
     	</action>
-    	<action name="collaborateurs/habilitations/add" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurHabilitationAddAction">
-    		<result name="success" type="redirectAction">collaborateurs/habilitations</result>
-    		<result name="error" type="redirectAction">collaborateurs/habilitations</result>
-    		<result name="input" type="redirectAction">collaborateurs/habilitations</result>
-    	</action>
-    	<action name="collaborateurs/habilitations/delete" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurHabilitationDeleteAction">
-    		<result name="success"  type="redirectAction">collaborateurs/habilitations</result>
-    		<result name="error" type="redirectAction">collaborateurs/habilitations</result>
-    		<result name="input" type="redirectAction">collaborateurs/habilitations</result>
-    	</action>
     	<action name="collaborateurs/habilitations/update" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurHabilitationUpdateAction">
-    		<result name="success"  type="redirectAction">collaborateurs/habilitations</result>
-    		<result name="error" type="redirectAction">collaborateurs/habilitations</result>
-    		<result name="input" type="redirectAction">collaborateurs/habilitations</result>
+    		<result name="success"  type="redirectAction">collaborateurs/habilitations?idCollaborateur=${idCollaborateur}</result>
+    		<result name="error" type="redirectAction">collaborateurs/list</result>
+    		<result name="input" type="redirectAction">collaborateurs/list</result>
     	</action>
     	<!-- End Collaborateurs actions -->
     	

@@ -31,7 +31,7 @@ public class CollaborateurHabilitationUpdateAction extends SqliActionSupport {
 			habilitationMetier.deleteHabilitationsFromCollaborateur(idCollaborateur);
 			
 			//add new habilitations to collaborateur
-			habilitationMetier.addHabilitationsToCollaborateur(idCollaborateur, idHabilitations);
+			if(idHabilitations != null) habilitationMetier.addHabilitationsToCollaborateur(idCollaborateur, idHabilitations);
 			
 			//show success message
 			setSessionActionMessageText(getText("collaborateur.habilitation.add.success"));
