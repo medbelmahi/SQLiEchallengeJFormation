@@ -65,7 +65,7 @@
 					<div class="col-md-8">
 
 						<div class="panel-group " id="accordion">
-							<%-- <div class="panel">
+							<div class="panel">
 								<div class="panel-heading dark">
 									<h4 class="panel-title">
 										<a class="accordion-toggle" data-toggle="collapse"
@@ -95,7 +95,7 @@
 																				<option
 																					value='<s:property value="idHabilitation" />'
 																					data-description='<s:property value="descriptionHabilitation" />'
-																				data-score='<s:property value="scoreHabilitation" />'
+<%-- 																				data-score='<s:property value="scoreHabilitation" />' --%>
 																					><s:property value="nomHabilitation" /></option>
 																			</s:iterator>
 																		</select>
@@ -133,27 +133,33 @@
 										<!-- end mise a jour content -->
 									</div>
 								</div>
-							</div> --%>
-							
+							</div>
+							<div class="panel">
+								<div class="panel-heading dark">
+									<h4 class="panel-title">
+										<a class="accordion-toggle collapsed" data-toggle="collapse"
+											data-parent="#accordion" href="#collapseTwo"> Ajouter des habilitations </a>
+									</h4>
+								</div>
+								<div style="height: 0px;" id="collapseTwo"
+									class="panel-collapse collapse">
+									<div class="panel-body">
 										<!-- le contenu -->
 										<div class="row">
 											<div class="col-md-12">
 												<div class="panel">
 													<div class="panel-body">
-														<h4>Mise à jour des habilitations</h4>
-														<form action="habilitations/update" method="post">
+														<h4>Ajouter des habilitations</h4>
+														<form action="">
 														<div class="row">
 															<div class="col-md-12">
 																<div class="form-group last">
 																	<label class="control-label col-md-3">Chercher</label>
-																	<input type="hidden" name="idCollaborateur" value="<s:property value="idCollaborateur" />" required="required">
+
 																	<div class="col-md-9">
-																		<select name="idHabilitations" class="multi-select" id="my_multi_select3_costum" multiple="">
-																			<s:iterator value="collaborateurHabilitations">
-																				<option selected="true" id='habilitationOptionId_<s:property value="idHabilitation" />' data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
-																			</s:iterator>
+																		<select name="country" class="multi-select" id="my_multi_select3_costum">
 																			<s:iterator value="nonCollaborateurHabilitations">
-																				<option id='habilitationOptionId_<s:property value="idHabilitation" />' data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
+																				<option data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
 																			</s:iterator>
 																		</select>
 																	</div>
@@ -184,10 +190,8 @@
 															</div> --%>
 														</div>
 														
-														<div class="row" style="width: 50px;"></div>
-														
-														<div class="row" style="margin-top: 50px;">
-															<button type="submit" class="btn btn-success btn-lg btn-block">Mese à jour habilitation</button>
+														<div class="row">
+															<button type="submit" class="btn btn-success btn-lg btn-block">Ajouter cette habilitation</button>
 														</div>
 														
 														</form>
@@ -196,7 +200,9 @@
 											</div>
 										</div>
 										<!-- End ajout content -->
-									
+									</div>
+								</div>
+							</div>
 
 						</div>
 

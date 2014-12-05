@@ -71,9 +71,9 @@
 	<link href='<s:url value="/css/jquery.rating.css"/>' rel="stylesheet">
 	
 	<style type="text/css">
-		.ms-selection{
-			display: none;
-		}
+/* 		.ms-selection{ */
+/* 			display: none; */
+/* 		} */
 		
 		.selectedItem{
 			background-color: #65CEA7;
