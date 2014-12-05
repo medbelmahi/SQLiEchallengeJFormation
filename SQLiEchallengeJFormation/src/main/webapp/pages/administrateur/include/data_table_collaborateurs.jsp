@@ -48,7 +48,7 @@
 										<td class="  sorting_1"><s:property value="fullname" /></td>
 										<td class=" "><s:property value="emailCollaborateur" /></td>
 										<td class="hidden-phone "><s:property value="telephoneCollaborateur" /></td>
-										<td class="center hidden-phone "><s:property value="sexeString" /></td>
+										<td class="center hidden-phone "><s:property value="sexeCollaborateur" /></td>
 										
 										<td class="center hidden-phone ">
 											<ul style="list-style: none;" class="navbar-nav nav-options">
