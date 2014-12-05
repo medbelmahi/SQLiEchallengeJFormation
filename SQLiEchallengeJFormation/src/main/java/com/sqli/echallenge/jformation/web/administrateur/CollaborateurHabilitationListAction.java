@@ -43,10 +43,9 @@ public class CollaborateurHabilitationListAction extends SqliActionSupport {
 			
 			//get List collaborateurHabilitations
 			collaborateurHabilitations = habilitationMetier.getHabilitationCollaborateurs(idCollaborateur);
-			
 			//get List nonCollaborateurHabilitations
 			nonCollaborateurHabilitations = habilitationMetier.getHabilitationNonCollaborateurs(idCollaborateur);
-			
+
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 			

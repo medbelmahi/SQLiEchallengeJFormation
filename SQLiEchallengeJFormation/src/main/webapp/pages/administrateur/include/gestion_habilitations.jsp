@@ -184,10 +184,10 @@
 															</div> --%>
 														</div>
 														
-														<div class="row" style="width: 50px;"></div>
+														<div class="row" style="width: 20px;"></div>
 														
 														<div class="row" style="margin-top: 50px;">
-															<button type="submit" class="btn btn-success btn-lg btn-block">Mese à jour habilitation</button>
+															<button type="submit" class="btn btn-success btn-lg btn-block">Mise à jour habilitation</button>
 														</div>
 														
 														</form>
