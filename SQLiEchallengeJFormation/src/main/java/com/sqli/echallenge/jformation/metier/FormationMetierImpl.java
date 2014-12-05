@@ -58,6 +58,14 @@ public class FormationMetierImpl implements FormationMetier {
 		}
 	}
 	
+	public void delete(Long idFormation) throws Exception {
+		try{
+			dao.delete(idFormation);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("formation.delete.fail"));
+		}
+	}
+	
 	public FormationDao getDao() {
 		return dao;
 	}

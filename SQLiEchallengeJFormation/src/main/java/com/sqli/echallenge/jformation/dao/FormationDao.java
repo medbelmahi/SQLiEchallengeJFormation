@@ -16,5 +16,6 @@ public interface FormationDao {
 	public void add(Formation formation) throws Exception;
 	public Formation get(Long idFormation) throws Exception;
 	public void update(Formation formation) throws Exception;
+	public void delete(Long idFormation) throws Exception;
 
 }

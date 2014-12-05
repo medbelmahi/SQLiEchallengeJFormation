@@ -3,13 +3,16 @@
  */
 package com.sqli.echallenge.jformation.web.responsableformation;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.sqli.echallenge.jformation.metier.FormationMetier;
 import com.sqli.echallenge.jformation.model.entity.Formation;
+import com.sqli.echallenge.jformation.model.entity.SessionFormation;
+import com.sqli.echallenge.jformation.util.SqliException;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -17,29 +20,27 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Controller
-public class FormationUpdateAction extends SqliActionSupport {
+public class FormationDeleteAction extends SqliActionSupport {
 	private static final long serialVersionUID = 4290228081029920376L;
 
 	@Autowired
 	public FormationMetier formationMetier;
-	
+
 	private Long idFormation;
-	private String titreFormation;
-	private String descriptionFormation;
 	
 	@Override
 	public String execute() throws Exception {
 		try {
-			//get & update formation from db
+			//validation formation (if formations has session can't be deleted)
 			Formation formation = formationMetier.get(idFormation);
-			formation.setTitreFormation(titreFormation);
-			formation.setDescriptionFormation(descriptionFormation);
+			Set<SessionFormation> sessions = formation.getSessionFormations();
+			if(sessions == null || sessions.size() == 0) throw new SqliException(getText("formation.delete.fail.has.sessions"));
 			
-			//merge formation
-			formationMetier.update(formation);
+			//delete formation
+			formationMetier.delete(idFormation);
 			
 			//show success message
-			setSessionActionErrorText(getText("formation.update.success"));
+			setSessionActionErrorText(getText("formation.delete.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 
@@ -48,27 +49,7 @@ public class FormationUpdateAction extends SqliActionSupport {
 			return SqliActionSupport.ERROR;
 		}
 	}
-
-	@RequiredFieldValidator(shortCircuit=true)
-	@RequiredStringValidator(shortCircuit=true)
-	public String getTitreFormation() {
-		return titreFormation;
-	}
-
-	public void setTitreFormation(String titreFormation) {
-		this.titreFormation = titreFormation;
-	}
-
-	@RequiredFieldValidator(shortCircuit=true)
-	@RequiredStringValidator(shortCircuit=true)
-	public String getDescriptionFormation() {
-		return descriptionFormation;
-	}
-
-	public void setDescriptionFormation(String descriptionFormation) {
-		this.descriptionFormation = descriptionFormation;
-	}
-
+	
 	@RequiredFieldValidator(shortCircuit=true)
 	public Long getIdFormation() {
 		return idFormation;

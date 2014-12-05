@@ -27,6 +27,31 @@
     		<result name="error" type="redirectAction">formations/list</result>
     		<result name="input" type="redirectAction">formations/list</result>
     	</action>
+    	<action name="formations/delete" class="com.sqli.echallenge.jformation.web.responsableformation.FormationDeleteAction">
+    		<result name="success" type="redirectAction">formations/list</result>
+    		<result name="error" type="redirectAction">formations/list</result>
+    		<result name="input" type="redirectAction">formations/list</result>
+    	</action>
+    	<action name="formations/sessions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationListAction">
+    		<result name="success">/pages/responsable_formation/formation_session_list.jsp</result>
+    		<result name="error" type="redirectAction">formations/list</result>
+    		<result name="input" type="redirectAction">formations/list</result>
+    	</action>
+    	<action name="formations/sessions/add" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationAddAction">
+    		<result name="success" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    	</action>
+    	<action name="formations/sessions/delete" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationDeleteAction">
+    		<result name="success" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    	</action>
+    	<action name="formations/sessions/update" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationUpdateAction">
+    		<result name="success" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    	</action>
     	
     </package>
     

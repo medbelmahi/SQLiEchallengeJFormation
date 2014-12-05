@@ -36,9 +36,13 @@ public class FormationDaoImpl implements FormationDao {
 	}
 	
 	public Formation get(Long idFormation) throws Exception {
-		Query query = entityManager.createQuery("from Formation where idFormation:=idFormation");
+		Query query = entityManager.createQuery("from Formation where idFormation=:idFormation");
 		query.setParameter("idFormation", idFormation);
 		return (Formation) query.getSingleResult();
+	}
+	
+	public void delete(Long idFormation) throws Exception {
+		entityManager.remove(get(idFormation));
 	}
 	
 	public void update(Formation formation) throws Exception {
@@ -52,5 +56,4 @@ public class FormationDaoImpl implements FormationDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }
