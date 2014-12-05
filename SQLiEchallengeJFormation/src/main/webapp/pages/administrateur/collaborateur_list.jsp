@@ -254,5 +254,3 @@
 		<s:include value="include/javascript_collaborateur_list.jsp"></s:include>
 	<!-- javascript of collaborateur_list page End -->
 	
-	
-	

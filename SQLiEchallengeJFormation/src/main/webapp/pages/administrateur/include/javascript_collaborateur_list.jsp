@@ -6,7 +6,7 @@
 	<script type="text/javascript">
 	function jsonGetCollaborateur(idCollaborateur){
 		//make ajax request to /ajax/getCollaborateur?idCollaborateur=x
-		$.getJSON('<s:url action="getCollaborateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
+		$.getJSON('<s:url action="get/collaborateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
 			//if satuts == "success" , do
 			if(jsonResponse.status === "success"){
 				
@@ -49,7 +49,7 @@
 	<script type="text/javascript">
 		function jsonGetCollaborateur_forSendEmail(idCollaborateur){
 			//make ajax request to /ajax/getCollaborateur?idCollaborateur=x
-			$.getJSON('<s:url action="getCollaborateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
+			$.getJSON('<s:url action="get/collaborateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
 				//if satuts == "success" , do
 				if(jsonResponse.status === "success"){
 					
@@ -65,39 +65,6 @@
 			$('#sendCollaborateurMessageModal').modal('show');
 		};
 		
-		function sendMessageToCollaboroateur_ajax(){
-			var idCollaborateur = document.getElementById("idCollaborateur_sendMessage").value;
-			var object = document.getElementById("subject").value;
-			var msg = document.getElementById("msg_").value;
-			
-			if(idCollaborateur != "" && object != "" && msg != ""){
-				$('#sendMessageModal').modal('hide');
-				$.getJSON('<s:url action="sendEmailToCollaborateurAjax" namespace="/ajax" />', {id : idCollaborateur, object : object, msg : msg}, function(jsonResponse) {
-					//if satuts == "success" , do
-					if(jsonResponse.status === "success"){
-						
-						$.gritter.add({
-				            // (string | mandatory) the heading of the notification
-				            title: 'Message !',
-				            // (string | mandatory) the text inside the notification
-				            text: 'Le message ("'+jsonResponse.object+'") été bien envoyé à '+jsonResponse.collaborateur.fullname+' .'
-				            
-				        });
-						
-						
-						//vider les champs :
-							document.getElementById("subject").value = "";
-							document.getElementById("msg_").value = "";
-					}else
-						{
-							alert("message nn envoyé");
-						}
-			  	});
-			}else
-				{
-					alert("remplir tout les champ");
-				}
-		}
 	</script>
 <!-- End envoyer un message à un collaborateur utilisant ajax -->
 	

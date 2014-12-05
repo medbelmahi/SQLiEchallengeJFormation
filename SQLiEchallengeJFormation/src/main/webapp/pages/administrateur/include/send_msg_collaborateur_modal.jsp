@@ -6,18 +6,6 @@
                 <h4 class="modal-title">Composez votre Email</h4>
             </div>
             <div class="modal-body">
-				
-				<!-- <div class="panel-body">
-                     <form action="#" class="form-horizontal ">
-                         <div class="form-group">
-                             <div class="col-md-12">
-                                 <textarea class="wysihtml5 form-control" rows="9"></textarea>
-                             </div>
-                         </div>
-                     </form>
-                 </div> -->
-                 
-                 
                   <section class="mail-box-info">
                   	<form role="form-horizontal" method="post" action="email">
                     <header class="header">
