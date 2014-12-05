@@ -13,14 +13,14 @@
 
 
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<!-- info collaborateur div Begin -->
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel">
 									<div class="panel-body" style="padding: 0px;">
 										<div class="profile-pic text-center">
-											<img alt="" src='<s:url value="/images/photos/user1.png"/>'>
+											<img alt="" src='<s:property value="collaborateur.urlPhotoCollaborateur" />'>
 											<h2>
 												<s:property value="collaborateur.fullname" />
 											</h2>
@@ -33,24 +33,24 @@
 									<div class="panel-body">
 										<ul class="p-info">
 											<li>
-												<div class="title">Gender</div>
-												<div class="desk">Male</div>
+												<div class="title">Email</div>
+												<div class="desk"><s:property value="collaborateur.emailCollaborateur" /></div>
 											</li>
 											<li>
-												<div class="title">Founder</div>
-												<div class="desk">ABC Inc.</div>
+												<div class="title">Telephone</div>
+												<div class="desk"><s:property value="collaborateur.telephoneCollaborateur" /></div>
 											</li>
 											<li>
-												<div class="title">Education</div>
-												<div class="desk">BSC. in CSE</div>
+												<div class="title">Date de naissance</div>
+												<div class="desk"><s:property value="collaborateur.dateNaissanceCollaborateur" /></div>
 											</li>
 											<li>
-												<div class="title">Project Done</div>
-												<div class="desk">50+</div>
+												<div class="title">Sexe</div>
+												<div class="desk"><s:property value="collaborateur.sexeCollaborateur" /></div>
 											</li>
 											<li>
-												<div class="title">Skills</div>
-												<div class="desk">HTML, CSS, JavaScript.</div>
+												<div class="title">Adresse</div>
+												<div class="desk"><s:property value="collaborateur.adresseCollaborateur" /></div>
 											</li>
 										</ul>
 									</div>
@@ -62,7 +62,7 @@
 
 					<!-- Begin gestion des habilitation d'un collaborateur -->
 
-					<div class="col-md-8">
+					<div class="col-md-7">
 
 						<div class="panel-group " id="accordion">
 							<%-- <div class="panel">
@@ -186,7 +186,7 @@
 														
 														<div class="row" style="width: 20px;"></div>
 														
-														<div class="row" style="margin-top: 50px;">
+														<div class="row" style="margin-top: 20px;">
 															<button type="submit" class="btn btn-success btn-lg btn-block">Mise à jour habilitation</button>
 														</div>
 														
