@@ -11,7 +11,7 @@
 			if(jsonResponse.status === "success"){
 				
 				//set inputs value from jsonResponse
-				document.getElementById("idCollaborateur").value = jsonResponse.idUtilisateur;
+				document.getElementById("idCollaborateur").value = jsonResponse.idCollaborateur;
 				document.getElementById("inputLastName").value = jsonResponse.nom;
 				document.getElementById("inputFirstName").value = jsonResponse.prenom;
 				document.getElementById("inputEmail").value = jsonResponse.email;
@@ -53,7 +53,7 @@
 	<script type="text/javascript">
 		function jsonGetCollaborateur_forSendEmail(idCollaborateur){
 			//make ajax request to /ajax/getCollaborateur?idCollaborateur=x
-			$.getJSON('<s:url action="get/utilisateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
+			$.getJSON('<s:url action="get/collaborateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
 				//if satuts == "success" , do
 				if(jsonResponse.status === "success"){
 					
