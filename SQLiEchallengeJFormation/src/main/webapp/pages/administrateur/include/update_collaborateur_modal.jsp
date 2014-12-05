@@ -37,7 +37,7 @@
 						<input type="hidden" id="idCollaborateur" name="idCollaborateur">
 						
 						<div class="form-group">
-							<label for="inputLastName" class="col-sm-3 control-label">Nom</label> <h5 class="text-danger" > *</h5>
+							<label for="inputLastName" class="col-sm-3 control-label">Nom<span class="text-danger" > *</span></label>
 							<div class="col-sm-9">
 								<input autocomplete="off" name="nom" class="form-control" id="inputLastName" placeholder="Nom" type="text" required>
 							</div>

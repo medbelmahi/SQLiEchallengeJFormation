@@ -19,6 +19,10 @@
 				document.getElementById("inputDateNaissance").value = jsonResponse.dateNaissance;
 				document.getElementById("inputAdress").value = jsonResponse.adresse; 
 				
+				//set image collaborateur
+				var imageCollaborateur = document.getElementById("imageCollaborateur");
+				imageCollaborateur.setAttribute("src",jsonResponse.imageProfil);
+				
 				//check sexe option
 				if(jsonResponse.sexe == "true"){
 					document.getElementById("optionHomme").checked = true;
