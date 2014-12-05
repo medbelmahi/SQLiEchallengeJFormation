@@ -53,7 +53,7 @@
 										<td class="center hidden-phone ">
 											<ul style="list-style: none;" class="navbar-nav nav-options">
 												<li style="padding-left: 15px;">
-													<a title="Habilitations" href='<s:url action="habilitationScores" ><s:param name="id"><s:property value="idCollaborateur"/></s:param></s:url>'>
+													<a title="Habilitations" href='<s:url action="collaborateurs/habilitations" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url>'>
 														<i class="fa fa-list"></i>
 													</a>
 												</li>

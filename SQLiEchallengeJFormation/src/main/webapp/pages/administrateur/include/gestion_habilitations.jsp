@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <div class="row">
@@ -70,7 +69,7 @@
 								<div class="panel-heading dark">
 									<h4 class="panel-title">
 										<a class="accordion-toggle" data-toggle="collapse"
-											data-parent="#accordion" href="#collapseOne"> Mise à jour
+											data-parent="#accordion" href="#collapseOne"> Supprimer
 											des habilitations </a>
 									</h4>
 								</div>
@@ -82,22 +81,23 @@
 											<div class="col-md-12">
 												<div class="panel">
 													<div class="panel-body">
-														<h4>Mise à jour des habilitations</h4>
+														<h4>Supprimer des habilitations</h4>
 														<div class="row">
 															<div class="col-md-6">
 																<div class="form-group last">
-																	<label class="control-label col-md-3">Searchable</label>
+																	<label class="control-label col-md-3">Chercher</label>
 
 																	<div class="col-md-9">
 																		<select name="country" class="multi-select"
 																			 id="my_multi_select3_costum_2">
 
-																			<s:iterator value="habilitationScores">
+																			<s:iterator value="collaborateurHabilitations">
 																				<option
-																					value='<s:property value="idHabilitationScore" />'
-																					data-description='<s:property value="habilitation.descriptionHabilitation" />'
-																					data-score='<s:property value="scoreHabilitation" />'><s:property
-																						value="habilitation.nomHabilitation" /></option>
+																					value='<s:property value="idHabilitation" />'
+																					data-description='<s:property value="descriptionHabilitation" />'
+<%-- 																					data-score='<s:property value="scoreHabilitation" />' --%>
+																					><s:property
+																						value="nomHabilitation" /></option>
 																			</s:iterator>
 																		</select>
 																	</div>
@@ -113,33 +113,12 @@
 																	</div>
 																</div>
 																<hr>
-																<div class="row">
-																	<div class="col-md-12">
-																		<div class="col-md-3">Score :</div>
-																		<div class="col-md-9">
-
-
-																			<input name="score_2" type="radio" class="star startRating_2" value="1" /> 
-																			<input name="score_2" type="radio" class="star startRating_2" value="2" /> 
-																			<input name="score_2" type="radio" class="star startRating_2" value="3" /> 
-																			<input name="score_2" type="radio" class="star startRating_2" value="4" /> 
-																			<input name="score_2" type="radio" class="star startRating_2" value="5" />
-																		</div>
-																	</div>
-																</div>
 																<hr>
 																<div class="row">
 																	<div class="col-md-12">
-																		<form id="update_habilitation_score" action="updateHabilitationScore" method="post" onsubmit="return jsonUpdateHabilitationScore();">
-																			<input id="theHabilitationScore_2" type="hidden" name="idHabilitation" value="" required="required">
-																			<input id="theScore_2" type="hidden" name="score" value="1" required="required">
-																			
-																			<button type="submit" name="actionButton" value="update"
-																				class="btn btn-warning btn-lg btn-block">Mettre
-																				à jour cette habilitation</button>
-																		</form>
-																		<form id="update_habilitation_score" action="deleteHabilitationScore" method="post">
-																			<input id="theHabilitationScore_3" type="hidden" name="id" value="" required="required">
+																		
+																		<form id="Spprimer_habilitation" action="delete" method="post">
+																			<input id="theHabilitation" type="hidden" name="idHabilitation" value="" required="required">
 																			<button type="submit" name="actionButton" value="delete"
 																				class="btn btn-danger btn-lg btn-block">Supprimer
 																				cette habilitation</button>
@@ -175,13 +154,13 @@
 														<div class="row">
 															<div class="col-md-6">
 																<div class="form-group last">
-																	<label class="control-label col-md-3">Searchable</label>
+																	<label class="control-label col-md-3">Chercher</label>
 
 																	<div class="col-md-9">
 																		<select name="country" class="multi-select"
 																			 id="my_multi_select3_costum">
 
-																			<s:iterator value="habilitations">
+																			<s:iterator value="nonCollaborateurHabilitations">
 																				<option
 																					value='<s:property value="idHabilitation" />'
 																					data-description='<s:property value="descriptionHabilitation" />'><s:property
@@ -201,35 +180,17 @@
 																	</div>
 																</div>
 																<hr>
-																<div class="row">
-																	<div class="col-md-12">
-																		<div class="col-md-3">Score :</div>
-																		<div class="col-md-9">
-
-
-																			<input name="score_" type="radio"
-																				class="star startRating" value="1" /> <input
-																				name="score_" type="radio" class="star startRating"
-																				value="2" /> <input name="score_" type="radio"
-																				class="star startRating" value="3" /> <input
-																				name="score_" type="radio" class="star startRating"
-																				value="4" /> <input name="score_" type="radio"
-																				class="star startRating" value="5" />
-																		</div>
-																	</div>
-																</div>
+																
 																<hr>
 																<div class="row">
 																	<div class="col-md-12">
 																		<form id="add_habilitation_score"
-																			action="addHabilitationScore" method="post"
-																			onsubmit="return jsonAddHabilitationScore();">
+																			action="add" method="post" >
 																			<s:hidden id="theIdCollaborateur"
 																				name="idCollaborateur" value="%{id}" />
 																			<input id="theHabilitation" type="hidden"
 																				name="idHabilitation" value="" required="required">
-																			<input id="theScore" type="hidden" name="score"
-																				value="1" required="required">
+																			
 
 																			<button type="submit"
 																				class="btn btn-success btn-lg btn-block">Ajouter
