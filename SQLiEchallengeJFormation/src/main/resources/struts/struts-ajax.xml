@@ -13,6 +13,9 @@
     <action name="get/utilisateur" class="com.sqli.echallenge.jformation.web.ajax.administrateur.UtilisateurGetAjaxAction">
      	 	<result name="none" type="json" />
     </action>
+     <action name="get/collaborateur" class="com.sqli.echallenge.jformation.web.ajax.administrateur.CollaborateurGetAjaxAction">
+     	 	<result name="none" type="json" />
+    </action>
     <action name="get/actions" class="com.sqli.echallenge.jformation.web.ajax.administrateur.ProfilGetActionsAjaxAction">
      	 	<result name="none" type="json" />
     </action>
