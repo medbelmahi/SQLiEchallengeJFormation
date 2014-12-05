@@ -137,6 +137,11 @@
     		<result name="error" type="redirectAction">collaborateurs/habilitations</result>
     		<result name="input" type="redirectAction">collaborateurs/habilitations</result>
     	</action>
+    	<action name="collaborateurs/habilitations/update" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurHabilitationUpdateAction">
+    		<result name="success"  type="redirectAction">collaborateurs/habilitations</result>
+    		<result name="error" type="redirectAction">collaborateurs/habilitations</result>
+    		<result name="input" type="redirectAction">collaborateurs/habilitations</result>
+    	</action>
     	<!-- End Collaborateurs actions -->
     	
     </package>

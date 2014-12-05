@@ -9,6 +9,25 @@
 
 	<!-- default package -->
     <package name="responsableFormation" namespace="/responsableFormation" extends="sqli_basic_package">
+    	<default-action-ref name="formations/list" />
+    
+    	<!-- Utilisateur actions -->
+    	<action name="formations/list" class="com.sqli.echallenge.jformation.web.responsableformation.FormationListAction">
+    		<result name="success">/pages/responsable_formation/formation_list.jsp</result>
+    		<result name="error">/pages/responsable_formation/formation_list.jsp</result>
+    		<result name="input">/pages/responsable_formation/formation_list.jsp</result>
+    	</action>
+    	<action name="formations/add" class="com.sqli.echallenge.jformation.web.responsableformation.FormationAddAction">
+    		<result name="success" type="redirectAction">formations/list</result>
+    		<result name="error" type="redirectAction">formations/list</result>
+    		<result name="input" type="redirectAction">formations/list</result>
+    	</action>
+    	<action name="formations/update" class="com.sqli.echallenge.jformation.web.responsableformation.FormationUpdateAction">
+    		<result name="success" type="redirectAction">formations/list</result>
+    		<result name="error" type="redirectAction">formations/list</result>
+    		<result name="input" type="redirectAction">formations/list</result>
+    	</action>
+    	
     </package>
     
 </struts>

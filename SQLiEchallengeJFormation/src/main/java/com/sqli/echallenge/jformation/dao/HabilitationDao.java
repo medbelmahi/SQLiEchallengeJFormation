@@ -20,4 +20,5 @@ public interface HabilitationDao {
 	public List<Object[]> getHabilitationNonCollaborateurs(Long idCollaborateur) throws Exception;
 	public void addHabilitationToCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception;
 	public void deleteHabilitationFromCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception;
+	public void deleteHabilitationsFromCollaborateur(Long idCollaborateur) throws Exception;
 }

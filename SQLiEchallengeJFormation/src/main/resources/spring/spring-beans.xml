@@ -39,4 +39,22 @@
 	<bean id="collaborateur_metier" class="com.sqli.echallenge.jformation.metier.CollaborateurMetierImpl">
 		<property name="dao" ref="collaborateur_dao"></property>
 	</bean>
+	
+	<!-- Formation -->	
+	<bean id="formation_dao" class="com.sqli.echallenge.jformation.dao.FormationDaoImpl"></bean>	
+	<bean id="formation_metier" class="com.sqli.echallenge.jformation.metier.FormationMetierImpl">
+		<property name="dao" ref="formation_dao"></property>
+	</bean>
+	
+	<!-- SessionFormation -->	
+	<bean id="session_dao" class="com.sqli.echallenge.jformation.dao.SessionFormationDaoImpl"></bean>	
+	<bean id="session_metier" class="com.sqli.echallenge.jformation.metier.SessionFormationMetierImpl">
+		<property name="dao" ref="session_dao"></property>
+	</bean>
+	
+	<!-- Seance -->	
+	<bean id="seance_dao" class="com.sqli.echallenge.jformation.dao.SeanceDaoImpl"></bean>	
+	<bean id="seance_metier" class="com.sqli.echallenge.jformation.metier.SeanceMetierImpl">
+		<property name="dao" ref="seance_dao"></property>
+	</bean>
 </beans>

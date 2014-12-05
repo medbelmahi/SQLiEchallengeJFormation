@@ -48,7 +48,7 @@ public class HabilitationDaoImpl implements HabilitationDao {
 	//native query!!!!
 	@SuppressWarnings("unchecked")
 	public List<Object[]> getHabilitationCollaborateurs(Long idCollaborateur)throws Exception {
-		Query query = entityManager.createNativeQuery("SELECT * FROM SQLI_HABILITATIONS WHERE ID_HABILITATION IN (SELECT ID_HABILITATION FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur)");
+		Query query = entityManager.createNativeQuery("SELECT ID_HABILITATION, NOM_HABILITATION, DESCRIPTION_HABILITATION FROM SQLI_HABILITATIONS WHERE ID_HABILITATION IN (SELECT ID_HABILITATION FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur)");
 		query.setParameter("idCollaborateur", idCollaborateur);
 		
 		return query.getResultList();
@@ -57,7 +57,7 @@ public class HabilitationDaoImpl implements HabilitationDao {
 	//native Queryy!!!
 	@SuppressWarnings("unchecked")
 	public List<Object[]> getHabilitationNonCollaborateurs(Long idCollaborateur) throws Exception {
-		Query query = entityManager.createNativeQuery("SELECT * FROM SQLI_HABILITATIONS WHERE ID_HABILITATION NOT IN (SELECT ID_HABILITATION FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur)");
+		Query query = entityManager.createNativeQuery("SELECT ID_HABILITATION, NOM_HABILITATION, DESCRIPTION_HABILITATION FROM SQLI_HABILITATIONS WHERE ID_HABILITATION NOT IN (SELECT ID_HABILITATION FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur)");
 		query.setParameter("idCollaborateur", idCollaborateur);
 		
 		return query.getResultList();
@@ -74,6 +74,14 @@ public class HabilitationDaoImpl implements HabilitationDao {
 	public void deleteHabilitationFromCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception {
 		Query query = entityManager.createNativeQuery("DELETE FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_HABILITATION=:idHabilitation AND ID_COLLABORATEUR=:idCollaborateur");
 		query.setParameter("idHabilitation", idHabilitation);
+		query.setParameter("idCollaborateur", idCollaborateur);
+		
+		query.executeUpdate();
+	}
+	
+	//native query !!
+	public void deleteHabilitationsFromCollaborateur(Long idCollaborateur) throws Exception {
+		Query query = entityManager.createNativeQuery("DELETE FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur");
 		query.setParameter("idCollaborateur", idCollaborateur);
 		
 		query.executeUpdate();

@@ -20,4 +20,6 @@ public interface HabilitationMetier {
 	public List<Habilitation> getHabilitationNonCollaborateurs(Long idCollaborateur) throws Exception;//
 	public void addHabilitationToCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception;
 	public void deleteHabilitationFromCollaborateur(Long idCollaborateur, Long idHabilitation) throws Exception;
+	public void addHabilitationsToCollaborateur(Long idCollaborateur, Long[] idHabilitations) throws Exception;
+	public void deleteHabilitationsFromCollaborateur(Long idCollaborateur) throws Exception;
 }

@@ -125,6 +125,25 @@ public class HablilitationMetierImpl implements HabilitationMetier {
 		}
 	}
 
+	public void addHabilitationsToCollaborateur(Long idCollaborateur, Long[] idHabilitations) throws Exception {
+		try{
+			for(Long idHabilitation : idHabilitations){
+				dao.addHabilitationToCollaborateur(idCollaborateur, idHabilitation);
+			}
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("collaborateur.habilitation.add.fail"));
+		}
+	}
+	
+	public void deleteHabilitationsFromCollaborateur(Long idCollaborateur) throws Exception {
+		try{
+			dao.deleteHabilitationsFromCollaborateur(idCollaborateur);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("collaborateur.habilitation.delete.fail"));
+		}
+	}
+
+
 	public HabilitationDao getDao() {
 		return dao;
 	}
