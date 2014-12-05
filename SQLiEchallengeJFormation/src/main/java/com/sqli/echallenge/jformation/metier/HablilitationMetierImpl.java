@@ -57,6 +57,22 @@ public class HablilitationMetierImpl implements HabilitationMetier {
 			throw new SqliException(propretiesHelper.getText("habilitation.id.notfound"));
 		}
 	}
+	
+	public List<Habilitation> getHabilitationCollaborateurs(Long idCollaborateur) throws Exception {
+		try{
+			return dao.getHabilitationCollaborateurs(idCollaborateur);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("habilitation.list.load.fail"));
+		}
+	}
+
+	public List<Habilitation> getHabilitationNonCollaborateurs(Long idCollaborateur) throws Exception {
+		try{
+			return dao.getHabilitationNonCollaborateurs(idCollaborateur);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("habilitation.list.load.fail"));
+		}
+	}
 
 	public HabilitationDao getDao() {
 		return dao;
@@ -73,4 +89,5 @@ public class HablilitationMetierImpl implements HabilitationMetier {
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
 	}
+
 }

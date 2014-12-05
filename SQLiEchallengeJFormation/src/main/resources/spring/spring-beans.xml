@@ -33,4 +33,10 @@
 	<bean id="habilitation_metier" class="com.sqli.echallenge.jformation.metier.HablilitationMetierImpl">
 		<property name="dao" ref="habilitation_dao"></property>
 	</bean>
+	
+	<!-- Collaborateur -->	
+	<bean id="collaborateur_dao" class="com.sqli.echallenge.jformation.dao.CollaborateurDaoImpl"></bean>	
+	<bean id="collaborateur_metier" class="com.sqli.echallenge.jformation.metier.CollaborateurMetierImpl">
+		<property name="dao" ref="collaborateur_dao"></property>
+	</bean>
 </beans>

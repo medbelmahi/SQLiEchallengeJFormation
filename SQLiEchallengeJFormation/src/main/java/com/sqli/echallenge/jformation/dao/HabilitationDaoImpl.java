@@ -44,6 +44,25 @@ public class HabilitationDaoImpl implements HabilitationDao {
 		query.setParameter("idHabilitation", idHabilitation);
 		return (Habilitation) query.getSingleResult();
 	}
+	
+	//native query!!!!
+	@SuppressWarnings("unchecked")
+	public List<Habilitation> getHabilitationCollaborateurs(Long idCollaborateur)throws Exception {
+		Query query = entityManager.createNativeQuery("SELECT * FROM SQLI_HABILITATIONS WHERE ID_HABILITATION IN (SELECT ID_HABILITATION FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur)");
+		query.setParameter("idCollaborateur", idCollaborateur);
+		
+		return query.getResultList();
+	}
+
+	//native Queryy!!!
+	@SuppressWarnings("unchecked")
+	public List<Habilitation> getHabilitationNonCollaborateurs(Long idCollaborateur) throws Exception {
+		Query query = entityManager.createNativeQuery("SELECT * FROM SQLI_HABILITATIONS WHERE ID_HABILITATION NOT IN (SELECT ID_HABILITATION FROM SQLI_COLLABORATEURS_HABILITATIONS WHERE ID_COLLABORATEUR=:idCollaborateur)");
+		query.setParameter("idCollaborateur", idCollaborateur);
+		
+		return query.getResultList();
+	}
+
 
 	public EntityManager getEntityManager() {
 		return entityManager;
@@ -52,5 +71,4 @@ public class HabilitationDaoImpl implements HabilitationDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }
