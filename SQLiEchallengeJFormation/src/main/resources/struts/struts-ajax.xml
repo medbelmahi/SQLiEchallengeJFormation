@@ -10,6 +10,7 @@
 	<!-- default package -->
     <package name="ajax" namespace="/ajax" extends="sqli_basic_package, json-default">
     
+    <!-- Administrateur -->
     <action name="get/utilisateur" class="com.sqli.echallenge.jformation.web.ajax.administrateur.UtilisateurGetAjaxAction">
      	 	<result name="none" type="json" />
     </action>
@@ -19,7 +20,15 @@
     <action name="get/actions" class="com.sqli.echallenge.jformation.web.ajax.administrateur.ProfilGetActionsAjaxAction">
      	 	<result name="none" type="json" />
     </action>
-     	 
+    
+    <!-- Responsable Formation -->
+    <action name="get/formation" class="com.sqli.echallenge.jformation.web.ajax.responsableformation.FormationGetAjaxAction">
+     	 	<result name="none" type="json" />
+    </action>
+    <action name="get/session" class="com.sqli.echallenge.jformation.web.ajax.responsableformation.SessionGetAjaxAction">
+     	 	<result name="none" type="json" />
+    </action>
+    
     </package>
     
 </struts>

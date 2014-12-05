@@ -39,7 +39,7 @@ public class FormationUpdateAction extends SqliActionSupport {
 			formationMetier.update(formation);
 			
 			//show success message
-			setSessionActionErrorText(getText("formation.update.success"));
+			setSessionActionMessageText(getText("formation.update.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 

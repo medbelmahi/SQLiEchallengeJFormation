@@ -40,7 +40,7 @@ public class FormationDeleteAction extends SqliActionSupport {
 			formationMetier.delete(idFormation);
 			
 			//show success message
-			setSessionActionErrorText(getText("formation.delete.success"));
+			setSessionActionMessageText(getText("formation.delete.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 

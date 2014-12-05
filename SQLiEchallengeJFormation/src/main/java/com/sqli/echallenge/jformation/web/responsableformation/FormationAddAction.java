@@ -41,7 +41,7 @@ public class FormationAddAction extends SqliActionSupport {
 			formationMetier.add(formation);
 			
 			//show success message
-			setSessionActionErrorText(getText("formation.add.success"));
+			setSessionActionMessageText(getText("formation.add.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 
