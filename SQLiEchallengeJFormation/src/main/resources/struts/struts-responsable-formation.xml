@@ -54,7 +54,7 @@
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
     	
-    	<action name="formations/sessions/inscriptions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationUpdateAction">
+    	<action name="formations/sessions/inscriptions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionInscriptionListAction">
     		<result name="success">/pages/responsable_formation/session_inscription_list.jsp</result>
     		<result name="error" >/pages/responsable_formation/session_inscription_list.jsp</result>
     		<result name="input">/pages/responsable_formation/session_inscription_list.jsp</result>
