@@ -193,7 +193,7 @@ $(function(){
             var nDate = new Date(ev.date);
 			var dateString = nDate.format("dd/mm/yyyy");
 			document.getElementById("inputDateDebutSession_1").value = dateString;
-			console.log(dateString);
+//			console.log(dateString);
         }).data('datepicker');
     var checkout = $('.dpd2').datepicker({
     	format: 'mm/dd/yyyy',
@@ -207,7 +207,7 @@ $(function(){
     		var dateString = nDate.format("dd/mm/yyyy");
     		console.log(dateString);
     		document.getElementById("inputDateFinSession_1").value = dateString;
-    		console.log(dateString);
+//    		console.log(dateString);
         }).data('datepicker');
 });
 
