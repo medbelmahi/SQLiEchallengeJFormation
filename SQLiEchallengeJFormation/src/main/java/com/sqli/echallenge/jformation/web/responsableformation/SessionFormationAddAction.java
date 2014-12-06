@@ -49,9 +49,6 @@ public class SessionFormationAddAction extends SqliActionSupport {
 	
 	public void sqlivalidate() throws Exception {
 		//validate Date?
-		System.out.println(">>debut: " + dateDebutSessionFormation);
-		System.out.println(">>fin: " + dateFinSessionFormation);
-		
     	Calendar caldebut = Calendar.getInstance(); caldebut.setTime(dateDebutSessionFormation);
     	Calendar calfin = Calendar.getInstance(); calfin.setTime(dateFinSessionFormation);
     	Calendar calToday = Calendar.getInstance(); 
