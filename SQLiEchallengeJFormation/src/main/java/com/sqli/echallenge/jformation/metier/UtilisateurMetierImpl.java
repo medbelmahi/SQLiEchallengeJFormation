@@ -16,7 +16,6 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 
 	@Autowired
 	private UtilisateurDao dao;
-	
 	@Autowired
 	private PropretiesHelper propretiesHelper;
 	

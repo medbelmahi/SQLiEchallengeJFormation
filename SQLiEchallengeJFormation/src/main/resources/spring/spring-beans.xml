@@ -57,4 +57,10 @@
 	<bean id="seance_metier" class="com.sqli.echallenge.jformation.metier.SeanceMetierImpl">
 		<property name="dao" ref="seance_dao"></property>
 	</bean>
+	
+	<!-- SessionInscription -->	
+	<bean id="session_inscription_dao" class="com.sqli.echallenge.jformation.dao.SessionInscriptionDaoImpl"></bean>	
+	<bean id="session_inscription_metier" class="com.sqli.echallenge.jformation.metier.SessionInscriptionMetierImpl">
+		<property name="dao" ref="session_inscription_dao"></property>
+	</bean>
 </beans>
