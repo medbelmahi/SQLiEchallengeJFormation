@@ -6,7 +6,7 @@
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
-				Liste des formations <span class="tools pull-right">
+				Liste des Sessions <span class="tools pull-right">
 					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
 <!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
@@ -15,8 +15,8 @@
 				<div class="adv-table">
 					<div class="clearfix">
 						<div class="btn-group">
-							<a href="#addFormationModal" data-toggle="modal" ><button class="btn btn-primary">
-								Ajouter Formation <i class="fa fa-plus"></i>
+							<a href="#addSessionModal" data-toggle="modal" ><button class="btn btn-primary">
+								Ajouter Session <i class="fa fa-plus"></i>
 							</button></a>
 						</div>
 					</div>
@@ -29,9 +29,11 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th>Titre formation</th>
+									<th>Titre Session</th>
 									<th>Desciption</th>
-									<th>Date de création</th>
+									<th>Lieu</th>
+									<th>Date de debut</th>
+									<th>Date de fin</th>
 									<th>Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
@@ -40,29 +42,31 @@
 							<tbody aria-relevant="all" aria-live="polite" role="alert">
 								<s:iterator value="formations">
 										<tr class="gradeA odd">
-											<td><s:property value="titreFormation" /></td>
-											<td><s:property value="descriptionFormation" /></td>
-											<td><s:property value="dateCreationFormation" /></td>
+											<td><s:property value="titreSessionFormation" /></td>
+											<td><s:property value="desciptionSessionFormation" /></td>
+											<td><s:property value="lieuSessionFormation" /></td>
+											<td><s:property value="dateDebutSessionFormation" /></td>
+											<td><s:property value="dateFinSessionFormation" /></td>
 											<td class="center hidden-phone ">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<li style="padding-left: 15px;">
-														<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
+													<%-- <li style="padding-left: 15px;">
+														<a title="Liste des sessions" href='<s:url action="habilitationScores" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
 															<i class="fa fa-list"></i>
 														</a>
-													</li>
+													</li> --%>
 													
 													<li style="padding-left: 15px;">
 														<a href='javascript:void(0);'
-														   onclick="jsonGetFormation(<s:property value="idFormation"/>);" 
+														   onclick="jsonGetSession(<s:property value="idSessionFormation"/>);" 
 														   title="Mise à jour">
 															<i class="fa fa-pencil"></i>
 														</a>
 													</li>
 													
 													<li style="padding-left: 15px;">
-														<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
+														<a data-href='<s:url action="sessions/delete" ><s:param name="idSessionFormation"><s:property value="idSessionFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 															<i class="fa fa-times"></i>
 														</a>
 													</li>
