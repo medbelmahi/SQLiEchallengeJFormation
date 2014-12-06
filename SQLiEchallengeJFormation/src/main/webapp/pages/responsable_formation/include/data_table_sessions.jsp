@@ -32,6 +32,7 @@
 									<th>Titre Session</th>
 									<th>Desciption</th>
 									<th>Lieu</th>
+									<th>Formateur</th>
 									<th>Date de debut</th>
 									<th>Date de fin</th>
 									<th>Options</th>
@@ -45,6 +46,7 @@
 											<td><s:property value="titreSessionFormation" /></td>
 											<td><s:property value="desciptionSessionFormation" /></td>
 											<td><s:property value="lieuSessionFormation" /></td>
+											<td><s:property value="formateur.fullname" /></td>
 											<td><s:property value="dateDebutSessionFormation" /></td>
 											<td><s:property value="dateFinSessionFormation" /></td>
 											<td class="center hidden-phone ">

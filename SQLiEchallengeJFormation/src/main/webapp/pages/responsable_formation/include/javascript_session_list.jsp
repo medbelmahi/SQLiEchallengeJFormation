@@ -9,11 +9,9 @@
 			if(jsonResponse.status === "success"){
 
 				//set inputs value from jsonResponse
-// 				document.getElementById("idFormationInputHidden").value = jsonResponse.idFormation;
 				document.getElementById("inputIdSessionFormation").value = idSession;
 				document.getElementById("inputTitreSessionFormation").value = jsonResponse.titreSessionFormation;
 				document.getElementById("inputLieuSessionFormation").value = jsonResponse.lieuSessionFormation;
-// 				document.getElementById("desciptionSessionFormation").innerHTML = jsonResponse.desciptionSessionFormation;
 				document.getElementById("inputDateDebutSession").value = jsonResponse.dateDebutSessionFormation;
 				document.getElementById("inputDateFinSession").value = jsonResponse.dateFinSessionFormation;
 				
@@ -31,8 +29,6 @@
 						selecteBox[i].selected = false;
 					}
 				}
-				
-// 				$('.wysihtml5').wysihtml5();
 				
 				$('#updateSessionModal').modal('show');
 			}

@@ -6,7 +6,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h4 class="modal-title">Ajouter Nouvelle session</h4>
+				<h4 class="modal-title">Mise à jour session</h4>
 			</div>
 
 			<div class="modal-body">
@@ -39,7 +39,7 @@
                                     <span class="input-group-addon">à</span>
                                     <input type="text" id="inputDateFinSession" class="form-control" name="dateFinSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="13/12/2014" size="16">
                                 </div>
-                                <span class="help-block">Choisir l'interval</span>
+<%--                                 <span class="help-block">Choisir l'interval</span> --%>
                             </div>
                         </div>
                         
