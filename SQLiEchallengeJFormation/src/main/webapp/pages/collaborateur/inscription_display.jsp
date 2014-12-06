@@ -161,12 +161,12 @@
             <div class="text-center ">
                 <a class="btn btn-success btn-lg" href='<s:url action="session/inscription/confirme" >
                 <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
-                <s:param name="confirmation">1</s:param>
+                <s:param name="confirmation">true</s:param>
                 </s:url>'><i class="fa fa-check"></i> Confirmation d'inscription </a>
                 
                 <a class="btn btn-primary btn-lg" target="_blank" href='<s:url action="session/inscription/confirme" >
                 <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
-                <s:param name="confirmation">0</s:param>
+                <s:param name="confirmation">false</s:param>
                 </s:url>'><i class="fa fa-print"></i> Annuler </a>
             </div>
 
