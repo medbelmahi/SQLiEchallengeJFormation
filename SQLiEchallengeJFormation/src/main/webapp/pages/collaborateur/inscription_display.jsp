@@ -101,20 +101,20 @@
 										<ul class="p-info">
 											<li>
 												<div class="title">Email</div>
-												<div class="desk"><s:property value="inscription.sessionFormation.formateur.emailFormateur" /></div>
+												<div class="desk"><s:property value="inscription.sessionFormation.formateur.emailUtilisateur" /></div>
 											</li>
 											<li>
 												<div class="title">Telephone</div>
-												<div class="desk"><s:property value="inscription.sessionFormation.formateur.telephoneFormateur" /></div>
+												<div class="desk"><s:property value="inscription.sessionFormation.formateur.telephoneUtilisateur" /></div>
 											</li>
 											<li>
 												<div class="title">Date de naissance</div>
-												<div class="desk"><s:property value="inscription.sessionFormation.formateur.dateNaissanceFormateur" /></div>
+												<div class="desk"><s:property value="inscription.sessionFormation.formateur.dateNaissanceUtilisateur" /></div>
 											</li>
 											
 											<li>
 												<div class="title">Adresse</div>
-												<div class="desk"><s:property value="inscription.sessionFormation.formateur.adresseFormateur" /></div>
+												<div class="desk"><s:property value="inscription.sessionFormation.formateur.adresseUtilisateur" /></div>
 											</li>
 										</ul>
 									</div>
@@ -160,12 +160,12 @@
             </div>
             <div class="text-center ">
                 <a class="btn btn-success btn-lg" href='<s:url action="session/inscription/confirme" >
-                <s:param name="idInscription"><s:property value="inscription.idSessionInscription"/></s:param>
+                <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
                 <s:param name="confirmation">1</s:param>
                 </s:url>'><i class="fa fa-check"></i> Confirmation d'inscription </a>
                 
                 <a class="btn btn-primary btn-lg" target="_blank" href='<s:url action="session/inscription/confirme" >
-                <s:param name="idInscription"><s:property value="inscription.idSessionInscription"/></s:param>
+                <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
                 <s:param name="confirmation">0</s:param>
                 </s:url>'><i class="fa fa-print"></i> Annuler </a>
             </div>
