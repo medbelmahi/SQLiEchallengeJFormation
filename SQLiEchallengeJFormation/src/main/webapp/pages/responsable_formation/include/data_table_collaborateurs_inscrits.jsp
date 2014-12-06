@@ -11,7 +11,7 @@
 	</div> -->
 
 	<div class="row">
-		<div id="hidden-table-info_wrapper_2"
+		<div id="hidden-table-info_wrapper"
 			class="dataTables_wrapper form-inline" role="grid">
 		
 			<table aria-describedby="hidden-table-info_info"
@@ -49,7 +49,6 @@
 								<s:else>
 									<td>non traité</td>
 								</s:else>
-								<td><s:property value="collaborateur.sexeCollaborateur" /></td>
 								<td class="center hidden-phone ">
 									
 									<ul style="list-style: none;" class="navbar-nav nav-options">

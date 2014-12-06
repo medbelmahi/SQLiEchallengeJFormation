@@ -14,15 +14,15 @@ function fnFormatDetails ( oTable, nTr )
     return sOut;
 }
 
-$(document).ready(function() {
-
-    $('#dynamic-table').dataTable( {
+function initTheTableData(){
+	$('#dynamic-table').dataTable( {
+		"aaSorting": [[ 1, "desc" ]]
+	} );
+	
+	$('#dynamic-table_2').dataTable( {
         "aaSorting": [[ 1, "desc" ]]
     } );
     
-    $('#dynamic-table_2').dataTable( {
-        "aaSorting": [[ 1, "desc" ]]
-    } );
 
     /*
      * Insert a 'details' column to the table
@@ -69,4 +69,10 @@ $(document).ready(function() {
             oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
         }
     } );
+}
+
+$(document).ready(function() {
+	
+	initTheTableData();
+    
 } );
