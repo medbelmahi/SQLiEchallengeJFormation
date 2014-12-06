@@ -21,7 +21,7 @@
         this.ranges = {};
         this.opens = 'right';
         this.cb = function () { };
-        this.format = 'dd/MM/yyyy';
+        this.format = 'dd/mm/yyyy';
         this.separator = ' - ';
         this.showWeekNumbers = false;
         this.buttonClasses = ['btn-primary'];

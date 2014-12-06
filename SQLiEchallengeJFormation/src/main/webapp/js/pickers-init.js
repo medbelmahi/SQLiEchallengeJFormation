@@ -140,7 +140,7 @@ if (top.location != location) {
 $(function(){
     window.prettyPrint && prettyPrint();
     $('.default-date-picker').datepicker({
-        format: 'mm-dd-yyyy'
+        format: 'dd/mm/yyyy'
     });
     $('.dpYears').datepicker();
     $('.dpMonths').datepicker();
@@ -182,17 +182,20 @@ $(function(){
         }
     }).on('changeDate', function(ev) {
 	    	
-            if (ev.date.valueOf() > checkout.date.valueOf()) {
+            /*if (ev.date.valueOf() > checkout.date.valueOf()) {
                 var newDate = new Date(ev.date)
                 newDate.setDate(newDate.getDate() + 1);
                 checkout.setValue(newDate);
-            }
+            }*/
             
             checkin.hide();
             $('.dpd2')[0].focus();
-            var nDate = new Date(ev.date);
+            /*var nDate = new Date(ev.date);
 			var dateString = nDate.format("dd/mm/yyyy");
 			document.getElementById("inputDateDebutSession_1").value = dateString;
+			var nDate = new Date(checkout.date);
+			var dateString = nDate.format("dd/mm/yyyy");
+			document.getElementById("inputDateFinSession_1").value = dateString;*/
 //			console.log(dateString);
         }).data('datepicker');
     var checkout = $('.dpd2').datepicker({
@@ -203,10 +206,10 @@ $(function(){
     }).on('changeDate', function(ev) {
     		
             checkout.hide();
-            var nDate = new Date(ev.date);
+            /*var nDate = new Date(ev.date);
     		var dateString = nDate.format("dd/mm/yyyy");
     		console.log(dateString);
-    		document.getElementById("inputDateFinSession_1").value = dateString;
+    		document.getElementById("inputDateFinSession_1").value = dateString;*/
 //    		console.log(dateString);
         }).data('datepicker');
 });

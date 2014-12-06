@@ -16,16 +16,16 @@
 						<input type="hidden" name="idFormation" value='<s:property value="idFormation" />' id="idFormation_session">
 						
 						<div class="form-group">
-							<label for="inputTitreSessionFormation_2" class="col-sm-3 control-label">Titre de session<span class="text-danger" > *</span></label> 
+							<label for="inputTitreSessionFormation_2" class="col-sm-3 control-label">Titre session<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="titreSessionFormation" class="form-control" id="inputTitreSessionFormation_2" placeholder="Nom" type="text" required>
+								<input autocomplete="on" name="titreSessionFormation" class="form-control" id="inputTitreSessionFormation_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label for="inputLieuSessionFormation_2" class="col-sm-3 control-label">Lieu<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="lieuSessionFormation" class="form-control" id="inputLieuSessionFormation_2" placeholder="Ex : atelier de programmation JEE" type="text">
+								<input autocomplete="on" name="lieuSessionFormation" class="form-control" id="inputLieuSessionFormation_2" placeholder="Ex : atelier de programmation JEE" type="text">
 							</div>
 						</div>
 						
@@ -34,9 +34,9 @@
                             <label class="control-label col-sm-3">Date <span class="text-danger" > *</span></label>
                             <div class="col-sm-9">
                                 <div class="input-group input-large custom-date-range" data-date="13/07/2013" data-date-format="dd/mm/yyyy">
-                                    <input type="text" id="inputDateDebutSession_1" class="form-control dpd1" name="dateDebutSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="12/12/2014" size="16">
+                                    <input type="text" id="inputDateDebutSession_1" class="form-control default-date-picker" name="dateDebutSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="12/12/2014" size="16">
                                     <span class="input-group-addon">à</span>
-                                    <input type="text" id="inputDateFinSession_1" class="form-control dpd2" name="dateFinSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="12/12/2014" size="16">
+                                    <input type="text" id="inputDateFinSession_1" class="form-control default-date-picker" name="dateFinSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="12/12/2014" size="16">
                                 </div>
                                 <span class="help-block">Choisir l'interval</span>
                             </div>
