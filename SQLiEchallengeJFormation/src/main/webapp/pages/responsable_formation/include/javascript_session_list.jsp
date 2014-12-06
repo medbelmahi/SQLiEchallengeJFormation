@@ -13,9 +13,13 @@
 				document.getElementById("inputIdSessionFormation").value = idSession;
 				document.getElementById("inputTitreSessionFormation").value = jsonResponse.titreSessionFormation;
 				document.getElementById("inputLieuSessionFormation").value = jsonResponse.lieuSessionFormation;
-				document.getElementById("desciptionSessionFormation").innerHTML = jsonResponse.desciptionSessionFormation;
+// 				document.getElementById("desciptionSessionFormation").innerHTML = jsonResponse.desciptionSessionFormation;
 				document.getElementById("inputDateDebutSession").value = jsonResponse.dateDebutSessionFormation;
 				document.getElementById("inputDateFinSession").value = jsonResponse.dateFinSessionFormation;
+				
+				//set description
+				$("#updateSessionModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.desciptionSessionFormation);
+				
 				
 				//set formateur
 				var selecteBox = document.getElementById("inputFormateur");
