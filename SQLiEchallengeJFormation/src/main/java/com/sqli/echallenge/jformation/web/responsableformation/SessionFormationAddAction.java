@@ -81,8 +81,8 @@ public class SessionFormationAddAction extends SqliActionSupport {
 			//get formateur (utilisateur) from db
 			Utilisateur formateur = formateurMetier.getUtilisateur(idFormateur);
 			//formateur should not have a session with the same date
-			boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
-			if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
+			//boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
+			//if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
 			
 			//Create new Session Formation
 			SessionFormation session = new SessionFormation();
