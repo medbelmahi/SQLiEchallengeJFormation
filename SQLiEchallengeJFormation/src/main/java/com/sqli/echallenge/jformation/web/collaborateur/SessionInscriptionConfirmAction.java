@@ -22,7 +22,7 @@ public class SessionInscriptionConfirmAction extends SqliActionSupport {
 	@Autowired
 	public SessionInscriptionMetier inscriptionMetier;
 	
-	private Long idInscription;
+	private String code;
 	private Boolean confirmation;
 	private SessionInscription inscription;
 	
@@ -30,7 +30,7 @@ public class SessionInscriptionConfirmAction extends SqliActionSupport {
 	public String execute() throws Exception {
 		try {
 			//get inscription form db
-			inscription = inscriptionMetier.get(idInscription);
+			inscription = inscriptionMetier.get(code);
 			
 			//Check: 
 			//1//if status != null means collaborateur already choose to confirm or decline inscription
@@ -57,12 +57,12 @@ public class SessionInscriptionConfirmAction extends SqliActionSupport {
 		}
 	}
 
-	public Long getIdInscription() {
-		return idInscription;
+	public String getCode() {
+		return code;
 	}
 
-	public void setIdInscription(Long idInscription) {
-		this.idInscription = idInscription;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getConfirmation() {
