@@ -66,7 +66,7 @@
 													</li>
 													
 													<li style="padding-left: 15px;">
-														<a data-href='<s:url action="sessions/delete" ><s:param name="idSessionFormation"><s:property value="idSessionFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
+														<a data-href='<s:url action="formations/sessions/delete" ><s:param name="idSessionFormation"><s:property value="idSessionFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 															<i class="fa fa-times"></i>
 														</a>
 													</li>

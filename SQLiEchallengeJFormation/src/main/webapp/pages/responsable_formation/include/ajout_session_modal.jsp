@@ -34,9 +34,9 @@
                             <label class="control-label col-sm-3">Date <span class="text-danger" > *</span></label>
                             <div class="col-sm-9">
                                 <div class="input-group input-large custom-date-range" data-date="13/07/2013" data-date-format="dd/mm/yyyy">
-                                    <input type="text" class="form-control dpd1" name="dateDebutSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" type="text" readonly="readonly" value="12/12/2014" size="16">
+                                    <input type="text" id="inputDateDebutSession_1" class="form-control dpd1" name="dateDebutSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="12/12/2014" size="16">
                                     <span class="input-group-addon">à</span>
-                                    <input type="text" class="form-control dpd2" name="dateFinSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" type="text" readonly="readonly" value="16/12/2014" size="16">
+                                    <input type="text" id="inputDateFinSession_1" class="form-control dpd2" name="dateFinSessionFormation" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" value="12/12/2014" size="16">
                                 </div>
                                 <span class="help-block">Choisir l'interval</span>
                             </div>
