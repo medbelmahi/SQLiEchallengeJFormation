@@ -20,4 +20,7 @@ public interface SessionInscriptionMetier {
 	//
 	public List<SessionInscription> getAll(Long idSession) throws Exception;
 	public void add(SessionInscription inscription) throws Exception;
+	public SessionInscription get(String code) throws Exception;
+	public SessionInscription get(Long idInscription) throws Exception;
+	public void update(SessionInscription inscription) throws Exception;
 }

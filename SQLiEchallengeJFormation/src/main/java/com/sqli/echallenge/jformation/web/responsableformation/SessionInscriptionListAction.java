@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
+import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
 import com.sqli.echallenge.jformation.model.entity.Collaborateur;
+import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
@@ -24,6 +26,8 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 
 	@Autowired
 	public SessionInscriptionMetier sessionInscriptionMetier;
+	@Autowired
+	public SessionFormationMetier sessionFormationMetier;
 	
 	private Long idFormation;
 	private Long idSession;
@@ -34,6 +38,10 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try{
+			//get session (for validation)
+			@SuppressWarnings("unused")
+			SessionFormation session = sessionFormationMetier.get(idSession);
+			
 			//get Collborateur Inscrit
 			try{
 				collaborateurInscrit = sessionInscriptionMetier.getAll(idSession);

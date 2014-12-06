@@ -60,6 +60,31 @@ public class SessionInscriptionMetierImpl implements SessionInscriptionMetier {
 		}
 	}
 	
+
+	public SessionInscription get(String code) throws Exception {
+		try {
+			return dao.get(code);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("collaborateur.show.inscription.fail"));
+		}
+	}
+	
+	public SessionInscription get(Long idInscription) throws Exception {
+		try {
+			return dao.get(idInscription);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("collaborateur.show.inscription.fail"));
+		}
+	}
+	
+	public void update(SessionInscription inscription) throws Exception {
+		try {
+			dao.update(inscription);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("collaborateur.update.inscription.fail"));
+		}
+	}
+	
 	public SessionInscriptionDao getDao() {
 		return dao;
 	}
@@ -75,5 +100,4 @@ public class SessionInscriptionMetierImpl implements SessionInscriptionMetier {
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
 	}
-
 }

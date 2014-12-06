@@ -54,6 +54,26 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 		return query.getResultList();
 	}
 	
+	public SessionInscription get(String code) throws Exception {
+		Query query = entityManager.createQuery("from SessionInscription where codeInscription=:code");
+		query.setParameter("code", code);
+		
+		return (SessionInscription) query.getSingleResult();
+		
+	}
+	
+	public SessionInscription get(Long idInscription)throws Exception {
+		Query query = entityManager.createQuery("from SessionInscription where idSessionInscription=:idInscription");
+		query.setParameter("idInscription", idInscription);
+		
+		return (SessionInscription) query.getSingleResult();
+		
+	}
+	
+	public void update(SessionInscription inscription) throws Exception {
+		entityManager.merge(inscription);
+	}
+	
 	public void add(SessionInscription inscription) throws Exception {
 		entityManager.persist(inscription);
 	}
@@ -65,5 +85,4 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }
