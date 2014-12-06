@@ -49,9 +49,6 @@ public class SessionFormationAddAction extends SqliActionSupport {
 	
 	public void sqlivalidate() throws Exception {
 		//validate Date?
-		System.out.println(">>debut: " + dateDebutSessionFormation);
-		System.out.println(">>fin: " + dateFinSessionFormation);
-		
     	Calendar caldebut = Calendar.getInstance(); caldebut.setTime(dateDebutSessionFormation);
     	Calendar calfin = Calendar.getInstance(); calfin.setTime(dateFinSessionFormation);
     	Calendar calToday = Calendar.getInstance(); 
@@ -81,8 +78,8 @@ public class SessionFormationAddAction extends SqliActionSupport {
 			//get formateur (utilisateur) from db
 			Utilisateur formateur = formateurMetier.getUtilisateur(idFormateur);
 			//formateur should not have a session with the same date
-			boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
-			if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
+			//boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
+			//if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
 			
 			//Create new Session Formation
 			SessionFormation session = new SessionFormation();

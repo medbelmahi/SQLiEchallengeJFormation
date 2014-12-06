@@ -18,6 +18,7 @@ import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Formation;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
+import com.sqli.echallenge.jformation.util.SqliException;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -45,8 +46,7 @@ public class SessionFormationUpdateAction extends SqliActionSupport {
 	private Date dateFinSessionFormation;
 	private String lieuSessionFormation;
 	
-	@Override
-	public void validate() {
+	public void sqlivalidate() throws Exception {
 		//validate Date?
     	Calendar caldebut = Calendar.getInstance(); caldebut.setTime(dateDebutSessionFormation);
     	Calendar calfin = Calendar.getInstance(); calfin.setTime(dateFinSessionFormation);
@@ -54,20 +54,23 @@ public class SessionFormationUpdateAction extends SqliActionSupport {
     	
 		//1// dateDebut before Today
     	if(calToday.after(caldebut)){
-    		addActionError(getText("session.add.today.after.datedebut"));//invoke input
-    		setSessionActionErrorText(getText("session.add.today.after.datedebut"));
+    		//addActionError(getText("session.add.today.after.datedebut"));//invoke input
+    		//setSessionActionErrorText(getText("session.add.today.after.datedebut"));
+    		throw new SqliException(getText("session.add.today.after.datedebut"));
     	}
     	
 		//2// dateDebut after dateFin
     	if(caldebut.after(calfin)){
-    		addActionError(getText("session.add.datedebut.after.datefin"));//invoke input
-    		setSessionActionErrorText(getText("session.add.datedebut.after.datefin"));
+    		throw new SqliException(getText("session.add.datedebut.after.datefin"));
     	}
 	}
 	
 	@Override
 	public String execute() throws Exception {
 		try {
+			//first validation
+			sqlivalidate();
+			
 			//get formation from db (for validation)
 			@SuppressWarnings("unused")
 			Formation formation = formationMetier.get(idFormation);
