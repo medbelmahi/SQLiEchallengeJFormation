@@ -46,7 +46,7 @@
                         <div class="form-group">
 							<label for="inputFormateur" class="col-sm-3 control-label">Formateur<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<select id="inputFormateur" name="idFormateur" class="form-control input-sm m-bot15">
+								<select id="inputFormateur_2" name="idFormateur" class="form-control input-sm m-bot15">
 										<s:iterator value="formateurs">
 											<option value='<s:property value="idUtilisateur" />'><s:property value="fullname" /></option>
 										</s:iterator>
