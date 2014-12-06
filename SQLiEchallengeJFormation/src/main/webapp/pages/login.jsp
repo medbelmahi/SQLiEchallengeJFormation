@@ -83,7 +83,7 @@
 	                    <form action="resetpassword" id="reset_password" method="post">
 		                    <div class="modal-body">
 		                        <p>Entrez votre adresse e-mail ci-dessous pour réinitialiser votre mot de passe.</p>
-		                        <input type="email" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                        <input type="email" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
 		
 		                    </div>
 		                    <div class="modal-footer">

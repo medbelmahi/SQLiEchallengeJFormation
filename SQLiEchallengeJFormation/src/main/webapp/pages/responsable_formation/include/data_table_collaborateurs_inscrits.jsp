@@ -40,10 +40,10 @@
 								<td><s:property value="collaborateur.telephoneCollaborateur" /></td>
 								<td><s:property value="collaborateur.emailCollaborateur" /></td>
 								<td><s:property value="collaborateur.sexeCollaborateur" /></td>
-								<s:if test='#status.equalsIgnoreCase("true")'>
+								<s:if test='#status.equals("true")'>
 									<td>confirmé</td>
 								</s:if>
-								<s:elseif test='#status.equalsIgnoreCase("false")'>
+								<s:elseif test='#status.equals("false")'>
 									<td>non confirmé</td>
 								</s:elseif>
 								<s:else>
