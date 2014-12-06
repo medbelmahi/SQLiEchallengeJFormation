@@ -52,6 +52,14 @@ public class SessionInscriptionMetierImpl implements SessionInscriptionMetier {
 		}
 	}
 	
+	public void add(SessionInscription inscription) throws Exception {
+		try {
+			dao.add(inscription);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("session.inscription.add.new.fail"));
+		}
+	}
+	
 	public SessionInscriptionDao getDao() {
 		return dao;
 	}

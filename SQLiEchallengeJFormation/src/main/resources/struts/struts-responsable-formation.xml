@@ -59,7 +59,20 @@
     		<result name="error" >/pages/responsable_formation/session_inscription_list.jsp</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
-    	
+    	<action name="formations/sessions/inscriptions/add" class="com.sqli.echallenge.jformation.web.responsableformation.SessionInscriptionAddAction">
+    		<result name="success" type="redirectAction">
+    			<param name="actionName">formations/sessions/inscriptions/list</param>
+        		<param name="idFormation">${idFormation}</param>
+        		<param name="idSession">${idSession}</param>
+    		</result>
+    		<result name="error" type="redirectAction">
+    			<param name="actionName">formations/sessions/inscriptions/list</param>
+        		<param name="idFormation">${idFormation}</param>
+        		<param name="idSession">${idSession}</param>
+    		</result>
+    		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    	</action>
+
     </package>
     
 </struts>

@@ -19,4 +19,5 @@ public interface SessionInscriptionMetier {
 	public List<Collaborateur> getUnregistredCollaborateurs(Long idSession) throws Exception;
 	//
 	public List<SessionInscription> getAll(Long idSession) throws Exception;
+	public void add(SessionInscription inscription) throws Exception;
 }

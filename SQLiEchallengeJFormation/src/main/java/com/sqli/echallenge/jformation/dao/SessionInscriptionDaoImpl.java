@@ -54,6 +54,10 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 		return query.getResultList();
 	}
 	
+	public void add(SessionInscription inscription) throws Exception {
+		entityManager.persist(inscription);
+	}
+	
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}

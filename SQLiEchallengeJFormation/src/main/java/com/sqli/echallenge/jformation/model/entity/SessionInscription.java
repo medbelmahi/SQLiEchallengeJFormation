@@ -83,9 +83,9 @@ public class SessionInscription {
 	
 	@Transient
 	public String getStatus(){
-		if(confirmedInscription == true) return "Confirmed";
-		if(confirmedInscription == false) return "Not Confirmed";
-		return "Not yet Traited"; //confirmedInscription == null
+		if(confirmedInscription == true) return "true";
+		if(confirmedInscription == false) return "false";
+		return "null"; //confirmedInscription == null
 	}
 	
 }
