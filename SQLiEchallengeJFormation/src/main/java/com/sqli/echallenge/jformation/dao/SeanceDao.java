@@ -9,5 +9,5 @@ package com.sqli.echallenge.jformation.dao;
  *
  */
 public interface SeanceDao {
-
+	public void deleteSeances(Long idSession) throws Exception;
 }

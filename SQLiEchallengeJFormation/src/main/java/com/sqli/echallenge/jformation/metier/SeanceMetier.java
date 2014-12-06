@@ -9,5 +9,5 @@ package com.sqli.echallenge.jformation.metier;
  *
  */
 public interface SeanceMetier {
-
+	public void deleteSeances(Long idSession) throws Exception;
 }

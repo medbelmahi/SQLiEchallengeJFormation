@@ -47,29 +47,34 @@ public class SessionFormationAddAction extends SqliActionSupport {
 	private Date dateFinSessionFormation;
 	private String lieuSessionFormation;
 	
-	@Override
-	public void validate() {
+	public void sqlivalidate() throws Exception {
 		//validate Date?
+		System.out.println(">>debut: " + dateDebutSessionFormation);
+		System.out.println(">>fin: " + dateFinSessionFormation);
+		
     	Calendar caldebut = Calendar.getInstance(); caldebut.setTime(dateDebutSessionFormation);
     	Calendar calfin = Calendar.getInstance(); calfin.setTime(dateFinSessionFormation);
     	Calendar calToday = Calendar.getInstance(); 
     	
 		//1// dateDebut before Today
     	if(calToday.after(caldebut)){
-    		addActionError(getText("session.add.today.after.datedebut"));//invoke input
-    		setSessionActionErrorText(getText("session.add.today.after.datedebut"));
+    		//addActionError(getText("session.add.today.after.datedebut"));//invoke input
+    		//setSessionActionErrorText(getText("session.add.today.after.datedebut"));
+    		throw new SqliException(getText("session.add.today.after.datedebut"));
     	}
     	
 		//2// dateDebut after dateFin
     	if(caldebut.after(calfin)){
-    		addActionError(getText("session.add.datedebut.after.datefin"));//invoke input
-    		setSessionActionErrorText(getText("session.add.datedebut.after.datefin"));
+    		throw new SqliException(getText("session.add.datedebut.after.datefin"));
     	}
 	}
 	
 	@Override
 	public String execute() throws Exception {
 		try {
+			//call validate first
+			sqlivalidate();
+			
 			//get formation from db
 			Formation formation = formationMetier.get(idFormation);
 			

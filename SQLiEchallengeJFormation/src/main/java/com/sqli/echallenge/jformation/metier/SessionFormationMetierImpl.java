@@ -25,6 +25,8 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 	private SessionFormationDao dao;
 	@Autowired
 	private PropretiesHelper propretiesHelper;
+	@Autowired
+	private SeanceMetier seanceMetier;
 	
 	public List<SessionFormation> getAll(Long idFormation) throws Exception {
 		try {
@@ -44,6 +46,10 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 	
 	public void remove(Long idSession) throws Exception {
 		try {
+			//1//delete all seances
+			seanceMetier.deleteSeances(idSession);
+			
+			//2//delete session
 			dao.remove(idSession);
 		} catch (Exception e) {
 			throw new SqliException(propretiesHelper.getText("session.delete.fail"));
@@ -105,5 +111,13 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
+	}
+
+	public SeanceMetier getSeanceMetier() {
+		return seanceMetier;
+	}
+
+	public void setSeanceMetier(SeanceMetier seanceMetier) {
+		this.seanceMetier = seanceMetier;
 	}
 }

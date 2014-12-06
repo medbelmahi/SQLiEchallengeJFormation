@@ -33,12 +33,15 @@ public class SessionFormationDaoImpl implements SessionFormationDao {
 	}
 	
 	public void remove(Long idSession) throws Exception {
-		entityManager.remove(get(idSession));
+		//entityManager.remove(get(idSession));
+		Query query = entityManager.createQuery("delete from SessionFormation where idSessionFormation=:idSession");
+		query.setParameter("idSession", idSession);
+		query.executeUpdate();
 	}
 
 	public SessionFormation get(Long idSession) throws Exception {
 		Query query = entityManager.createQuery("from SessionFormation where idSessionFormation=:idSession");
-		query.setParameter("idSessionFormation", idSession);
+		query.setParameter("idSession", idSession);
 		return (SessionFormation) query.getSingleResult();
 	}
 	

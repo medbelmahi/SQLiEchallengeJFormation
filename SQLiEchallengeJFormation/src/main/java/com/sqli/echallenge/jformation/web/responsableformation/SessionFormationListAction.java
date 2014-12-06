@@ -38,6 +38,7 @@ public class SessionFormationListAction extends SqliActionSupport {
 			//get List formateurs (for select(html) of addSessionModel)
 			formateurs = formateurMetier.getFormateurs();
 			
+			
 			//get All Sessions of Formation
 			sessions = sessionFormationMetier.getAll(idFormation);
 			System.out.println(">>Sessions: " + sessions);//Debug
