@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport"
@@ -144,7 +145,7 @@
 							</header>
 							<div class="panel-body">
 								<div class="tab-content">
-									<div class="tab-pane active" id="#collaborateruInscrits">
+									<div class="tab-pane active" id="collaborateruInscrits">
 										
 										<!-- Data table des collaborateurs inscrits Start -->
 											<s:include value="include/data_table_collaborateurs_inscrits.jsp"></s:include>
@@ -152,7 +153,7 @@
 
 									</div>
 									<div class="tab-pane" id="collaborateruNonInscrits">
-										
+										<s:fielderror></s:fielderror>
 										<!-- Data table des collaborateurs non inscrits Start -->
 											<s:include value="include/data_table_collaborateurs_non_inscrits.jsp"></s:include>
 										<!-- Data table des collaborateurs non inscrits End -->

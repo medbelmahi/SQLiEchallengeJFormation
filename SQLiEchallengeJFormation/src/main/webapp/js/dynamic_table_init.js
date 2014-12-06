@@ -17,7 +17,11 @@ function fnFormatDetails ( oTable, nTr )
 $(document).ready(function() {
 
     $('#dynamic-table').dataTable( {
-        "aaSorting": [[ 4, "desc" ]]
+        "aaSorting": [[ 1, "desc" ]]
+    } );
+    
+    $('#dynamic-table_2').dataTable( {
+        "aaSorting": [[ 1, "desc" ]]
     } );
 
     /*
