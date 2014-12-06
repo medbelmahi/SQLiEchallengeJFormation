@@ -3,11 +3,11 @@
 
 
 <div class="col-sm-12">
-	<form action="add"  method="get">
+	<form action="add"  method="post">
 	<div class="row" style="margin-top: 10px;">
 	
-		<input type="hidden" name="idSession" value="idSession">
-		<input type="hidden" name="idFormation" value="idFormation">
+		<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
+		<input type="hidden" name="idFormation" value='<s:property value="idFormation" />' >
 		<div class="col-sm-5">Selectionner tout les élement du tableau</div>
 		<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked/></div>
 		<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
