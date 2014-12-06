@@ -14,6 +14,7 @@
 					<form data-toggle="validator" id="add_session" action="update" method="post" role="form" class="form-horizontal adminex-form">
 
 						<input type="hidden" name="idFormation" value='<s:property value="idFormation" />' id="idFormation_session">
+						<input type="hidden" name="idSession" value="" id="inputIdSessionFormation">
 						
 						<div class="form-group">
 							<label for="inputTitreSessionFormation" class="col-sm-3 control-label">Titre session<span class="text-danger" > *</span></label> 
@@ -67,7 +68,7 @@
 
 						<div class="form-group">
 							<div class="col-sm-5">
-								<button type="submit" class="btn btn-primary">Ajouter Session</button>
+								<button type="submit" class="btn btn-primary">Mise à Session</button>
 							</div>
 							<div class="col-sm-7">
 								<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>

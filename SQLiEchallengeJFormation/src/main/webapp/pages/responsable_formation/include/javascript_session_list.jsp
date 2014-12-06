@@ -10,6 +10,7 @@
 
 				//set inputs value from jsonResponse
 // 				document.getElementById("idFormationInputHidden").value = jsonResponse.idFormation;
+				document.getElementById("inputIdSessionFormation").value = idSession;
 				document.getElementById("inputTitreSessionFormation").value = jsonResponse.titreSessionFormation;
 				document.getElementById("inputLieuSessionFormation").value = jsonResponse.lieuSessionFormation;
 				document.getElementById("desciptionSessionFormation").innerHTML = jsonResponse.desciptionSessionFormation;
