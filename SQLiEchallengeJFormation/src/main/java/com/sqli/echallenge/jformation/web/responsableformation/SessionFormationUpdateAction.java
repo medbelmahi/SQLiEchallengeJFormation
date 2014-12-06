@@ -82,8 +82,8 @@ public class SessionFormationUpdateAction extends SqliActionSupport {
 			SessionFormation session = sessionFormationMetier.get(idSession);
 			session.setTitreSessionFormation(titreSessionFormation);
 			session.setDesciptionSessionFormation(desciptionSessionFormation);
-			session.setDateDebutSessionFormation(dateDebutSessionFormation);
-			session.setDateFinSessionFormation(dateFinSessionFormation);
+			//session.setDateDebutSessionFormation(dateDebutSessionFormation);
+			//session.setDateFinSessionFormation(dateFinSessionFormation);
 			session.setLieuSessionFormation(lieuSessionFormation);
 			
 			session.setFormateur(formateur);

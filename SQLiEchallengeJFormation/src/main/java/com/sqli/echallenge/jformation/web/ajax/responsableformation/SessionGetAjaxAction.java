@@ -34,6 +34,7 @@ public class SessionGetAjaxAction extends SqliActionSupport {
 	private String lieuSessionFormation;
 	
 	private Long idFormation;
+	private Long idFormateur;
 	
 	@Override
 	public String execute() throws Exception {
@@ -48,7 +49,8 @@ public class SessionGetAjaxAction extends SqliActionSupport {
 			dateDebutSessionFormation = SqliDateHelper.getDateString(session.getDateDebutSessionFormation());
 			dateFinSessionFormation = SqliDateHelper.getDateString(session.getDateFinSessionFormation());
 			
-			idFormation = session.getFormateur().getIdUtilisateur();
+			idFormation = session.getFormation().getIdFormation();
+			idFormateur = session.getFormateur().getIdUtilisateur();
 			
 			//set success message
 			status = ActionSupport.SUCCESS;
@@ -132,5 +134,13 @@ public class SessionGetAjaxAction extends SqliActionSupport {
 
 	public void setIdFormation(Long idFormation) {
 		this.idFormation = idFormation;
+	}
+
+	public Long getIdFormateur() {
+		return idFormateur;
+	}
+
+	public void setIdFormateur(Long idFormateur) {
+		this.idFormateur = idFormateur;
 	}
 }
