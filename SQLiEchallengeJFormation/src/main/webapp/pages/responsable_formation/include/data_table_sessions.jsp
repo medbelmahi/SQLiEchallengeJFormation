@@ -53,11 +53,14 @@
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<%-- <li style="padding-left: 15px;">
-														<a title="Liste des sessions" href='<s:url action="habilitationScores" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
+													<li style="padding-left: 15px;">
+														<a title="Liste des collaborateurs" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
+														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
+														<s:property value="idFormation"/></s:param>
+														</s:url>'>
 															<i class="fa fa-list"></i>
 														</a>
-													</li> --%>
+													</li>
 													
 													<li style="padding-left: 15px;">
 														<a href='javascript:void(0);'
