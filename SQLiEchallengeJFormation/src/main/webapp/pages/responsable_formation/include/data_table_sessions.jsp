@@ -40,7 +40,7 @@
 							</thead>
 
 							<tbody aria-relevant="all" aria-live="polite" role="alert">
-								<s:iterator value="formations">
+								<s:iterator value="sessions">
 										<tr class="gradeA odd">
 											<td><s:property value="titreSessionFormation" /></td>
 											<td><s:property value="desciptionSessionFormation" /></td>
