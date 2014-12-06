@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sqli.echallenge.jformation.dao.UtilisateurDao;
+import com.sqli.echallenge.jformation.model.entity.Profil;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.PropretiesHelper;
 import com.sqli.echallenge.jformation.util.SqliException;
@@ -73,6 +74,14 @@ public class UtilisateurMetierImpl implements UtilisateurMetier {
 			dao.update(utilisateur);
 		} catch (Exception e) {
 			throw new SqliException(propretiesHelper.getText("utilisateur.update.email.deplicated"));
+		}
+	}
+	
+	public List<Utilisateur> getFormateurs() throws Exception {
+		try {
+			return dao.getAllByRole(Profil.ROLE_FORMATEUR);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("formateur.list.empty"));
 		}
 	}
 	

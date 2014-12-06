@@ -13,4 +13,5 @@ public interface UtilisateurDao {
 	public void add(Utilisateur utilisateur) throws Exception;
 	public void delete(Long idUtilisateur) throws Exception;
 	public void update(Utilisateur utilisateur) throws Exception;
+	public List<Utilisateur> getAllByRole(String role) throws Exception;
 }

@@ -50,6 +50,14 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 		return query.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Utilisateur> getAllByRole(String role) throws Exception {
+		Query query = entityManager.createQuery("from Utilisateur where profil.roleBase=:role order by prenomUtilisateur");
+		query.setParameter("role", role);
+		
+		return query.getResultList();
+	}
+	
 	public void delete(Long idUtilisateur) throws Exception {
 		entityManager.remove(getUtilisateur(idUtilisateur));
 	}

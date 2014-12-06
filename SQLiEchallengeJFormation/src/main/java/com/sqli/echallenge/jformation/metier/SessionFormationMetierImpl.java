@@ -3,6 +3,7 @@
  */
 package com.sqli.echallenge.jformation.metier;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,31 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 			dao.update(session);
 		} catch (Exception e) {
 			throw new SqliException(propretiesHelper.getText("session.update.fail"));
+		}
+	}
+	
+	public boolean hasSessionBetweenInterval(Long idFormateur, Date debut, Date fin) throws Exception {
+		try {
+			//get All sessions
+			List<SessionFormation> sessions = null;
+			try{
+				sessions = dao.getAllOfFormateur(idFormateur);
+			}catch(Exception ee){}
+			
+			//iterate over sessions
+			if(sessions != null){
+				for(SessionFormation session : sessions){
+					//cond1
+					if(session.getDateDebutSessionFormation().after(debut) && session.getDateDebutSessionFormation().before(debut)) return true;
+					
+					//cond2
+					if(session.getDateFinSessionFormation().after(debut) && session.getDateFinSessionFormation().before(fin)) return true;
+				}
+			}
+			
+			return false;
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("session.interval.test.fail"));
 		}
 	}
 	

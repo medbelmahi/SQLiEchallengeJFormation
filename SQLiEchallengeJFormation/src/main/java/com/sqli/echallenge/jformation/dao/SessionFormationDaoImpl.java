@@ -41,6 +41,13 @@ public class SessionFormationDaoImpl implements SessionFormationDao {
 		query.setParameter("idSessionFormation", idSession);
 		return (SessionFormation) query.getSingleResult();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<SessionFormation> getAllOfFormateur(Long idFormateur) throws Exception {
+		Query query = entityManager.createQuery("from SessionFormation where formateur.idFormateur=:idFormateur");
+		query.setParameter("idFormateur", idFormateur);
+		return query.getResultList();
+	}
 
 	public void update(SessionFormation session) throws Exception {
 		entityManager.merge(session);

@@ -3,6 +3,7 @@
  */
 package com.sqli.echallenge.jformation.metier;
 
+import java.util.Date;
 import java.util.List;
 
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
@@ -19,5 +20,5 @@ public interface SessionFormationMetier {
 	public void remove(Long idSession) throws Exception;
 	public SessionFormation get(Long idSession) throws Exception;
 	public void update(SessionFormation session) throws Exception;
-
+	public boolean hasSessionBetweenInterval(Long idFormateur, Date debut, Date fin) throws Exception;
 }

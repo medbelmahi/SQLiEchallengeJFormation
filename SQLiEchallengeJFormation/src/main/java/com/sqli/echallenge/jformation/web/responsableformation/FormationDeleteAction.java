@@ -34,7 +34,7 @@ public class FormationDeleteAction extends SqliActionSupport {
 			//validation formation (if formations has session can't be deleted)
 			Formation formation = formationMetier.get(idFormation);
 			Set<SessionFormation> sessions = formation.getSessionFormations();
-			if(sessions == null || sessions.size() == 0) throw new SqliException(getText("formation.delete.fail.has.sessions"));
+			if(sessions != null && sessions.size() > 0) throw new SqliException(getText("formation.delete.fail.has.sessions"));
 			
 			//delete formation
 			formationMetier.delete(idFormation);
@@ -43,7 +43,7 @@ public class FormationDeleteAction extends SqliActionSupport {
 			setSessionActionMessageText(getText("formation.delete.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
-
+			
 			//show error message
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;

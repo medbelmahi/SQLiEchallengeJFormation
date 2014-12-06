@@ -19,5 +19,6 @@ public interface SessionFormationDao {
 	public void remove(Long idSession) throws Exception;
 	public SessionFormation get(Long idSession) throws Exception;
 	public void update(SessionFormation session) throws Exception;
+	public List<SessionFormation> getAllOfFormateur(Long idFormateur) throws Exception;
 
 }

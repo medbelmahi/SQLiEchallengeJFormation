@@ -5,8 +5,12 @@ import java.util.Date;
 
 public class SqliDateHelper {
 
-	public static String getDateString(Date dateNaissanceUtilisateur) {
-		return new SimpleDateFormat("dd/MM/yyyy").format(dateNaissanceUtilisateur);
+	public static String getDateString(Date date) {
+		return new SimpleDateFormat("dd/MM/yyyy").format(date);
+	}
+	
+	public static String getHeureString(Date date) {
+		return new SimpleDateFormat("hh:mm").format(date);
 	}
 
 }
