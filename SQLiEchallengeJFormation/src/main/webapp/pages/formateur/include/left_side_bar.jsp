@@ -44,21 +44,43 @@
 			<li class="menu-list nav-active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i
 					class="fa fa-laptop"></i> <span>Gestion collaborateur</span></a>
 				<ul class="sub-menu-list">
-					<li class="active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'>Liste des collaborateurs</a></li>
-					<li><a href='<s:url value="/administrateur/habilitations/list"/>'> Gestion des habilitations</a></li>
+					<li class="active"><a href='<s:url value="/administrateur/habilitations/list"/>'>Gestion des habilitations</a></li>
+					<li><a href="boxed_view.html"> Boxed Page</a></li>
+					<li><a href="leftmenu_collapsed_view.html"> Sidebar
+							Collapsed</a></li>
+					<li><a href="horizontal_menu.html"> Horizontal Menu</a></li>
+
 				</ul></li>
 			<li class="menu-list"><a href='<s:url value="/administrateur/profils/list"/>'><i class="fa fa-book"></i>
 					<span>Gestion profil</span></a>
 				<ul class="sub-menu-list">
-					<li><a href='<s:url value="/administrateur/profils/list"/>' > Listes des profils</a></li>
+					<li><a href="general.html"> General</a></li>
+					<li><a href="buttons.html"> Buttons</a></li>
+					<li><a href="tabs-accordions.html"> Tabs &amp; Accordions</a></li>
+					<li><a href="typography.html"> Typography</a></li>
+					<li><a href="slider.html"> Slider</a></li>
+					<li><a href="panels.html"> Panels</a></li>
 				</ul>
 			</li>
 				
+			<li class="menu-list"><a href=""><i class="fa fa-cogs"></i>
+					<span>Components</span></a>
+				<ul class="sub-menu-list">
+					<li><a href="grids.html"> Grids</a></li>
+					<li><a href="gallery.html"> Media Gallery</a></li>
+					<li><a href="calendar.html"> Calendar</a></li>
+					<li><a href="tree_view.html"> Tree View</a></li>
+					<li><a href="nestable.html"> Nestable</a></li>
+
+				</ul></li>
+
 
 			<li class="menu-list"><a href='<s:url value="/administrateur/utilitateurs/list"/>'><i class="fa fa-envelope"></i>
 					<span>Gestion utilisateur</span></a>
 				<ul class="sub-menu-list">
-					<li><a href='<s:url value="/administrateur/utilitateurs/list"/>'> Liste des utilisateurs</a></li>
+					<li><a href="mail.html"> Inbox</a></li>
+					<li><a href="mail_compose.html"> Compose Mail</a></li>
+					<li><a href="mail_view.html"> View Mail</a></li>
 				</ul>
 			</li>
 
