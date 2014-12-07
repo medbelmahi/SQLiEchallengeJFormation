@@ -130,14 +130,7 @@
 					<s:include value="include/data_table_sessions.jsp"></s:include>
 				<!-- Data table des sessions End -->
 				
-				<!-- Ajout Session Modal Form -->
-					<s:include value="include/ajout_session_modal.jsp"></s:include>
-				<!-- End Ajout Session Modal Form -->
 				
-				<!-- Update Session Modal Form -->
-					<s:include value="include/update_session_modal.jsp"></s:include>
-				<!-- End Update Session Modal Form -->
-			
 	        </div>
 	        <!--body wrapper end-->
 	
@@ -232,9 +225,9 @@
 	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
 	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
 	
-	<!-- javascript of session_list page Begin -->
+	<%-- <!-- javascript of session_list page Begin -->
 		<s:include value="include/javascript_session_list.jsp"></s:include>
-	<!-- javascript of session_list page End -->
+	<!-- javascript of session_list page End --> --%>
 	
 </body>
 </html>
