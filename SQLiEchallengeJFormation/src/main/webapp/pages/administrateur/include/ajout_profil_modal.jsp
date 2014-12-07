@@ -16,14 +16,14 @@
 						<div class="form-group">
 							<label for="inputLastName_2" class="col-sm-3 control-label">Nom<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="nom" class="form-control" id="inputProfilName_2" placeholder="Nom" type="text" required>
+								<input autocomplete="on" name="nom" class="form-control" id="inputProfilName_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="inputAdress_2" class="col-sm-3 control-label">Description<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="description" class="form-control" id="inputDescription_2" placeholder="Ex : ce profil dédié aux personnes..." type="text">
+								<input autocomplete="on" name="description" class="form-control" id="inputDescription_2" placeholder="Ex : ce profil dédié aux personnes..." type="text">
 							</div>
 						</div>
 						

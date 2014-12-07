@@ -32,21 +32,21 @@
 						<div class="form-group">
 							<label for="inputLastName_2" class="col-sm-3 control-label">Nom<span class="text-danger" > *</span></label>
 							<div class="col-sm-9">
-								<input autocomplete="off" name="nom" class="form-control" id="inputLastName_2" placeholder="Nom" type="text" required>
+								<input autocomplete="on" name="nom" class="form-control" id="inputLastName_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="inputFirstName_2" class="col-sm-3 control-label">Prenom<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="prenom" class="form-control"id="inputFirstName_2" placeholder="Prenom" type="text" required>
+								<input autocomplete="on" name="prenom" class="form-control"id="inputFirstName_2" placeholder="Prenom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="inputEmail_2" class="col-sm-3 control-label">Email<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="email" class="form-control" id="inputEmail_2" placeholder="Email" type="email" required>
+								<input autocomplete="on" name="email" class="form-control" id="inputEmail_2" placeholder="Email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" type="email" required>
 							</div>
 						</div>
 

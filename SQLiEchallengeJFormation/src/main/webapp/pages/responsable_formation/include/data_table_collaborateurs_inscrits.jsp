@@ -40,14 +40,14 @@
 								<td><s:property value="collaborateur.telephoneCollaborateur" /></td>
 								<td><s:property value="collaborateur.emailCollaborateur" /></td>
 								<td><s:property value="collaborateur.sexeCollaborateur" /></td>
-								<s:if test='#status.equals("true")'>
+								<s:if test='%{status==1}'>  
 									<td>confirmé</td>
 								</s:if>
-								<s:elseif test='#status.equals("false")'>
+								<s:elseif test='%{status==0}'>
 									<td>non confirmé</td>
 								</s:elseif>
 								<s:else>
-									<td>non traité</td>
+									<td>non traité (<s:property value="status" />)</td>
 								</s:else>
 								<td class="center hidden-phone ">
 									

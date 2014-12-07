@@ -32,21 +32,21 @@
 						<div class="form-group">
 							<label for="inputLastName_2" class="col-sm-3 control-label">Nom<span class="text-danger" > *</span></label>
 							<div class="col-sm-9">
-								<input autocomplete="off" name="nom" class="form-control" id="inputLastName_2" placeholder="Nom" type="text" required>
+								<input autocomplete="on" name="nom" class="form-control" id="inputLastName_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="inputFirstName_2" class="col-sm-3 control-label">Prenom<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="prenom" class="form-control"id="inputFirstName_2" placeholder="Prenom" type="text" required>
+								<input autocomplete="on" name="prenom" class="form-control"id="inputFirstName_2" placeholder="Prenom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="inputEmail_2" class="col-sm-3 control-label">Email<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="email" class="form-control" id="inputEmail_2" placeholder="Email" type="email" required>
+								<input autocomplete="on" name="email" class="form-control" id="inputEmail_2" placeholder="Email" type="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
 							</div>
 						</div>
 
@@ -68,7 +68,7 @@
 						<div class="form-group">
 							<label for="inputTelephone_2" class="col-sm-3 control-label">Telephone<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone_2" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required="required">
+								<input autocomplete="on" name="telephone" class="form-control" id="inputTelephone_2" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required="required">
 							</div>
 						</div>
 
@@ -76,7 +76,7 @@
 						<div class="form-group">
 							<label for="inputAdress_2" class="col-sm-3 control-label">Adresse<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress_2" placeholder="Ex : Casablanca Rue 10 N80" type="text" required="required">
+								<input autocomplete="on" name="adresse" class="form-control" id="inputAdress_2" placeholder="Ex : Casablanca Rue 10 N80" type="text" required="required">
 							</div>
 						</div>
 						
