@@ -3,6 +3,8 @@
  */
 package com.sqli.echallenge.jformation.web.formateur;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -10,6 +12,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
+import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.SqliException;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
@@ -31,6 +34,8 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 	private Long idSeance;
 	private SessionFormation sessionFormation;
 	
+	List<SessionInscription> inscriptions;
+	
 	@Override
 	public String execute() throws Exception {
 		try {
@@ -46,8 +51,10 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 				throw new SqliException(getText("session.id.notfound"));
 			}
 			
-			//get collaborateur with confirmed inscription
-			inscriptionMetier.getConfirmedInscription(idSession);
+			//2// is absence already marked for this seance
+			
+			//get collaborateur with confirmed inscription (true)
+			inscriptions = inscriptionMetier.getConfirmedInscription(idSession);
 			
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {

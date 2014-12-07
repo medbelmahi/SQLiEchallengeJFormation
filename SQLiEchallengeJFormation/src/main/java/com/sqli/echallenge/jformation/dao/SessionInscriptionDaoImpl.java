@@ -68,8 +68,13 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 		return (SessionInscription) query.getSingleResult();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<SessionInscription> getConfirmedInscription(Long idSession) throws Exception {
-		return null;
+		Query query = entityManager.createQuery("from SessionInscription where sessionFormation.idSessionFormation=:idSession and confirmedInscription=:confirme");
+		query.setParameter("idSession", idSession);
+		query.setParameter("confirme", true);
+		
+		return query.getResultList();
 	}
 	
 	public void update(SessionInscription inscription) throws Exception {

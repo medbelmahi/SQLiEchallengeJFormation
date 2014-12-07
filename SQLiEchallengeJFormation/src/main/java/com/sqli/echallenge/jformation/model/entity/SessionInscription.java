@@ -81,11 +81,18 @@ public class SessionInscription {
 		this.collaborateur = collaborateur;
 	}
 	
-	@Transient
+	/*@Transient
 	public String getStatus(){
 		if(confirmedInscription == true) return "true";
 		if(confirmedInscription == false) return "false";
 		return "null"; //confirmedInscription == null
+	}*/
+	
+	@Transient
+	public int getStatus(){
+		if(confirmedInscription == true) return 1;
+		if(confirmedInscription == false) return 2;
+		return -1; //confirmedInscription == null
 	}
 	
 }

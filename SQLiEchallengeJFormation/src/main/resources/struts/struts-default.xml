@@ -37,6 +37,7 @@
     	<action name="test" class="com.sqli.echallenge.jformation.web.TestAction">
     		<result>/pages/login.jsp</result>
     	</action>
+    	
     </package>
     
 </struts>
