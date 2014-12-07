@@ -14,11 +14,11 @@
 			<div class="panel-body">
 				<div class="adv-table">
 					<div class="clearfix">
-						<div class="btn-group">
+						<!-- <div class="btn-group">
 							<a href="#addSessionModal" data-toggle="modal" ><button class="btn btn-primary">
 								Ajouter Session <i class="fa fa-plus"></i>
 							</button></a>
-						</div>
+						</div> -->
 					</div>
 					<div id="hidden-table-info_wrapper"
 						class="dataTables_wrapper form-inline" role="grid">

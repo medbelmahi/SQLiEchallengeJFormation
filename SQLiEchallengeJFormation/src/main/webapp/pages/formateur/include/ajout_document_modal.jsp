@@ -12,7 +12,7 @@
 			<div class="modal-body">
 				<div class="panel-body">
 					<form data-toggle="validator" id="add_document" action="add" method="post" role="form" class="form-horizontal adminex-form" enctype="multipart/form-data" >
-						<input name="idSession" value="idSession" type="hidden">
+						<input name="idSession" value='<s:property value="idSession"/>' type="hidden">
 						<div class="form-group">
 							<label for="inputTitleFormation_2" class="col-sm-3 control-label">Titre du document<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
