@@ -14,12 +14,12 @@ public class SqliDateHelper {
 	}
 	
 	public static Date getHeure(String heure) throws Exception {
-		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
 		return formatter.parse(heure);
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(getHeure("12:45:0"));
+		System.out.println(getHeure("12:45"));
 	}
 
 }

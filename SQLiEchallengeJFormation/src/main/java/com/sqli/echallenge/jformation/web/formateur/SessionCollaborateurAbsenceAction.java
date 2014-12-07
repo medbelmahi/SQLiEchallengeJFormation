@@ -3,18 +3,17 @@
  */
 package com.sqli.echallenge.jformation.web.formateur;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
+import com.sqli.echallenge.jformation.metier.CollaborateurMetier;
 import com.sqli.echallenge.jformation.metier.SeanceAbsenceMetier;
+import com.sqli.echallenge.jformation.metier.SeanceMetier;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
-import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
+import com.sqli.echallenge.jformation.model.entity.Seance;
 import com.sqli.echallenge.jformation.model.entity.SeanceAbsence;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
-import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.SqliException;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
@@ -24,13 +23,15 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Controller
-public class SessionCollaborateurListAction extends SqliActionSupport {
+public class SessionCollaborateurAbsenceAction extends SqliActionSupport {
 	private static final long serialVersionUID = 1518719205870965502L;
 
 	@Autowired
 	public SessionFormationMetier sessionMetier;
 	@Autowired
-	public SessionInscriptionMetier inscriptionMetier;
+	public SeanceMetier seanceMetier;
+	@Autowired
+	public CollaborateurMetier collaborateurMetier;
 	@Autowired
 	public SeanceAbsenceMetier absenceMetier;
 	
@@ -38,7 +39,7 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 	private Long idSeance;
 	private SessionFormation sessionFormation;
 	
-	List<SessionInscription> inscriptions;
+	private Long[] idCollaborateurs;
 	
 	@Override
 	public String execute() throws Exception {
@@ -56,17 +57,25 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 			}
 			
 			//2// is absence already marked for this seance
-			List<SeanceAbsence> absences = null;
-			try {
-				 absences = absenceMetier.getOfSeance(idSeance);
-			} catch (Exception e) {
-				//do nothing
+			
+			//3// get seance from db
+			Seance seance = seanceMetier.get(idSeance);
+			
+			//4// verify if this seance is for this session
+			
+			//5// mark absences for this seance
+			for(Long id : idCollaborateurs){
+				SeanceAbsence absence = new SeanceAbsence();
+				absence.setCollaborateur(collaborateurMetier.get(id));
+				absence.setSeance(seance);
+				
+				absenceMetier.add(absence);
 			}
-			if(absences != null && absences.size() > 0) throw new SqliException(getText("absence.seance.already.marked"));
 			
-			//3// get collaborateur with confirmed inscription (true)
-			inscriptions = inscriptionMetier.getConfirmedInscription(idSession);
+			//get collaborateur with confirmed inscription (true)
 			
+			//show success message
+			setSessionActionMessageText(getText("absence.add.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 
@@ -101,5 +110,16 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 	public void setIdSeance(Long idSeance) {
 		this.idSeance = idSeance;
 	}
+
+	@RequiredFieldValidator(shortCircuit=true)
+	public Long[] getIdCollaborateurs() {
+		return idCollaborateurs;
+	}
+
+	public void setIdCollaborateurs(Long[] idCollaborateurs) {
+		this.idCollaborateurs = idCollaborateurs;
+	}
+	
+	
 
 }

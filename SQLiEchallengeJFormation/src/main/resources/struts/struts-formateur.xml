@@ -53,6 +53,23 @@
     		<result name="error" type="redirectAction">sessions/list</result>
     		<result name="input" type="redirectAction">sessions/list</result>
     	</action> 
+    	<action name="sessions/collaborateurs/absence" class="com.sqli.echallenge.jformation.web.formateur.SessionCollaborateurAbsenceAction">
+    		<result name="success" type="redirectAction">
+    			<param name="actionName">sessions/collaborateurs/list</param>
+        		<param name="idSession">${idSession}</param>
+        		<param name="idSeance">${idSeance}</param>
+    		</result>
+    		<result name="error" type="redirectAction">
+    			<param name="actionName">sessions/collaborateurs/list</param>
+        		<param name="idSession">${idSession}</param>
+        		<param name="idSeance">${idSeance}</param>
+    		</result>
+    		<result name="input" type="redirectAction">
+    			<param name="actionName">sessions/collaborateurs/list</param>
+        		<param name="idSession">${idSession}</param>
+        		<param name="idSeance">${idSeance}</param>
+    		</result>
+    	</action> 
     </package>
     
 </struts>
