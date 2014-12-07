@@ -36,6 +36,14 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 		}
 	}
 	
+	public List<SessionFormation> getAllOfFormateur(Long idFormation) throws Exception {
+		try {
+			return dao.getAllOfFormateur(idFormation);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("session.list.load.fail"));
+		}
+	}
+	
 	public void add(SessionFormation session) throws Exception {
 		try {
 			dao.add(session);

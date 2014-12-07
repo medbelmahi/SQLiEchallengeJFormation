@@ -59,7 +59,6 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 		query.setParameter("code", code);
 		
 		return (SessionInscription) query.getSingleResult();
-		
 	}
 	
 	public SessionInscription get(Long idInscription)throws Exception {

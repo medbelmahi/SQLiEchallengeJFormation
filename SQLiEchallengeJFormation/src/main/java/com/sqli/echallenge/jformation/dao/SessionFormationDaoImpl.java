@@ -47,7 +47,7 @@ public class SessionFormationDaoImpl implements SessionFormationDao {
 	
 	@SuppressWarnings("unchecked")
 	public List<SessionFormation> getAllOfFormateur(Long idFormateur) throws Exception {
-		Query query = entityManager.createQuery("from SessionFormation where formateur.idFormateur=:idFormateur");
+		Query query = entityManager.createQuery("from SessionFormation where formateur.idUtilisateur=:idFormateur");
 		query.setParameter("idFormateur", idFormateur);
 		return query.getResultList();
 	}

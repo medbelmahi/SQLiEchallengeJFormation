@@ -30,7 +30,11 @@ public class SessionInscriptionConfirmAction extends SqliActionSupport {
 	public String execute() throws Exception {
 		try {
 			//get inscription form db
-			inscription = inscriptionMetier.get(code);
+			try {
+				inscription = inscriptionMetier.get(code);
+			} catch (Exception e) {
+				throw new SqliException(getText("collaborateur.show.inscription.fail"));
+			}
 			
 			//Check: 
 			//1//if status != null means collaborateur already choose to confirm or decline inscription

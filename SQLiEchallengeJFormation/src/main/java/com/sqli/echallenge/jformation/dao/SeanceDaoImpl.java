@@ -10,6 +10,8 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sqli.echallenge.jformation.model.entity.Seance;
+
 /**
  * @author Mouad
  *
@@ -27,6 +29,16 @@ public class SeanceDaoImpl implements SeanceDao {
 		query.executeUpdate();
 	}
 	
+	public Seance get(Long idSeance) throws Exception {
+		Query query = entityManager.createQuery("from Seance where idSeance=:idSeance");
+		query.setParameter("idSeance", idSeance);
+		return (Seance) query.getSingleResult();
+	}
+	
+	public void update(Seance seance) throws Exception {
+		entityManager.merge(seance);
+	}
+	
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
@@ -34,5 +46,4 @@ public class SeanceDaoImpl implements SeanceDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }
