@@ -61,6 +61,14 @@ public class DocumentMetierImpl implements DocumentMetier {
 			throw new SqliException(propretiesHelper.getText("document.add.fail"));
 		}
 	}
+	
+	public void add(Document document) throws Exception {
+		try{
+			dao.add(document);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("document.add.fail"));
+		}
+	}
 
 	public DocumentDao getDao() {
 		return dao;

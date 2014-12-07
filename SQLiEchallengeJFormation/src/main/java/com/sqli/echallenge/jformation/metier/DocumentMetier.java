@@ -16,4 +16,5 @@ public interface DocumentMetier {
 	public Document get(Long idDocument) throws Exception;
 	public void remove(Long[] idDocument) throws Exception;
 	public void add(Document[] document) throws Exception;
+	public void add(Document document) throws Exception;
 }
