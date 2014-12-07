@@ -50,7 +50,11 @@ public class SessionDocumentListAction extends SqliActionSupport {
 			}
 			
 			//get files (document)
-			setDocuments(documentMetier.getAll(idSession));
+			try{
+				documents = documentMetier.getAll(idSession);
+			}catch(Exception x){
+				//do nothing
+			}
 			
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {

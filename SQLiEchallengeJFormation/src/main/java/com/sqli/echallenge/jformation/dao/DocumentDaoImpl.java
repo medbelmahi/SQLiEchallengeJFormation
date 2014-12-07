@@ -27,7 +27,7 @@ public class DocumentDaoImpl implements DocumentDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Document> getAll(Long idSession) throws Exception {
-		Query query = entityManager.createQuery("from Document where sessionFormation.idSession=:idSession");
+		Query query = entityManager.createQuery("from Document where sessionFormation.idSessionFormation=:idSession");
 		query.setParameter("idSession", idSession);
 		return query.getResultList();
 	}

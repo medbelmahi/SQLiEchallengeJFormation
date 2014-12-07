@@ -37,6 +37,12 @@
     		<result name="input" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     	</action> 	
     	<action name="sessions/documents/add" class="com.sqli.echallenge.jformation.web.formateur.SessionDocumentAddAction">
+    		<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/msword, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.ms-powerpoint</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+    	
     		<result name="success" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="error" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="input" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
