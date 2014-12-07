@@ -91,7 +91,7 @@ public class SessionInscription {
 	@Transient
 	public int getStatus(){
 		if(confirmedInscription == true) return 1;
-		if(confirmedInscription == false) return 2;
+		if(confirmedInscription == false) return 0;
 		return -1; //confirmedInscription == null
 	}
 	
