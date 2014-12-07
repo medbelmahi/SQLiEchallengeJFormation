@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.sqli.echallenge.jformation.metier.DocumentMetier;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.model.entity.Document;
@@ -42,18 +43,14 @@ public class SessionDocumentAddAction extends SqliActionSupport implements Servl
 	private Long idSession;
 	private SessionFormation sessionFormation;
 	
-	private File[] document;
-	private String[] documentContentType;
-	private String[] documentFileName;
+	private File document;
+	private String documentContentType;
+	private String documentFileName;
 	
-	private String[] descriptionDocument;
+	private String descriptionDocument;
+	private String nomDocument;
 	
-	private void sqlivalidate() throws Exception {
-		//1// parmas
-		if(document.length != descriptionDocument.length){
-			throw new SqliException(getText("global.param.error"));
-		}
-	}
+	private void sqlivalidate() throws Exception {	}
 	
 	@Override
 	public String execute() throws Exception {
@@ -74,20 +71,18 @@ public class SessionDocumentAddAction extends SqliActionSupport implements Servl
 			}
 			
 			//add documents
-			for(int i=0; i<document.length; i++){
-				//1// save file physically
-				String urlDocument = saveDocument(document[i], documentFileName[i]);
-				
-				//2// create new document + inflate it 
-				Document doc = new Document();
-				doc.setNomDocument(documentFileName[i]);
-				doc.setDescriptionDocument(descriptionDocument[i]);
-				doc.setUrlDocument(urlDocument);
-				doc.setSessionFormation(sessionFormation);
-				
-				//3// save file in db
-				documentMetier.add(doc);
-			}
+			//1// save file physically
+			String urlDocument = saveDocument(document, documentFileName);
+			
+			//2// create new document + inflate it 
+			Document doc = new Document();
+			doc.setNomDocument(documentFileName);
+			doc.setDescriptionDocument(descriptionDocument);
+			doc.setUrlDocument(urlDocument);
+			doc.setSessionFormation(sessionFormation);
+			
+			//3// save file in db
+			documentMetier.add(doc);
 			
 			//show message success
 			setSessionActionMessageText(getText("document.add.success"));
@@ -118,37 +113,48 @@ public class SessionDocumentAddAction extends SqliActionSupport implements Servl
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)
-	public File[] getDocument() {
+	public File getDocument() {
 		return document;
 	}
 
-	public void setDocument(File[] document) {
+	public void setDocument(File document) {
 		this.document = document;
 	}
 
-	public String[] getDocumentContentType() {
+	public String getDocumentContentType() {
 		return documentContentType;
 	}
 
-	public void setDocumentContentType(String[] documentContentType) {
+	public void setDocumentContentType(String documentContentType) {
 		this.documentContentType = documentContentType;
 	}
 
-	public String[] getDocumentFileName() {
+	public String getDocumentFileName() {
 		return documentFileName;
 	}
 
-	public void setDocumentFileName(String[] documentFileName) {
+	public void setDocumentFileName(String documentFileName) {
 		this.documentFileName = documentFileName;
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)
-	public String[] getDescriptionDocument() {
+	@RequiredStringValidator(shortCircuit=true)
+	public String getDescriptionDocument() {
 		return descriptionDocument;
 	}
 
-	public void setDescriptionDocument(String[] descriptionDocument) {
+	public void setDescriptionDocument(String descriptionDocument) {
 		this.descriptionDocument = descriptionDocument;
+	}
+	
+	@RequiredFieldValidator(shortCircuit=true)
+	@RequiredStringValidator(shortCircuit=true)
+	public String getNomDocument() {
+		return nomDocument;
+	}
+
+	public void setNomDocument(String nomDocument) {
+		this.nomDocument = nomDocument;
 	}
 	
 	public void setServletRequest(HttpServletRequest servletRequest) {

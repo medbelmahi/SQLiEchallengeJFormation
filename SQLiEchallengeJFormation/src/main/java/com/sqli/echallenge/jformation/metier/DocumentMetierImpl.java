@@ -42,11 +42,19 @@ public class DocumentMetierImpl implements DocumentMetier {
 		}
 	}
 
-	public void remove(Long[] idDocument) throws Exception {
+	public void remove(Long[] idDocuments) throws Exception {
 		try{
-			for(Long id : idDocument){
+			for(Long id : idDocuments){
 				dao.remove(id);
 			}
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("document.remove.fail"));
+		}
+	}
+	
+	public void remove(Long idDocument) throws Exception {
+		try{
+			dao.remove(idDocument);
 		}catch(Exception e){
 			throw new SqliException(propretiesHelper.getText("document.remove.fail"));
 		}

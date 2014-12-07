@@ -29,7 +29,8 @@ public class SessionDocumentDeleteAction extends SqliActionSupport {
 	
 	private Long idSession;
 	private SessionFormation sessionFormation;
-	private Long[] idDocuments;
+	
+	private Long idDocument;
 	
 	@Override
 	public String execute() throws Exception {
@@ -49,9 +50,7 @@ public class SessionDocumentDeleteAction extends SqliActionSupport {
 			}
 			
 			//delete document
-			if(idDocuments != null){
-				documentMetier.remove(idDocuments);
-			}
+			documentMetier.remove(idDocument);
 			
 			//show message success
 			setSessionActionMessageText(getText("document.delete.success"));
@@ -81,12 +80,12 @@ public class SessionDocumentDeleteAction extends SqliActionSupport {
 		this.sessionFormation = sessionFormation;
 	}
 
-	public Long[] getIdDocuments() {
-		return idDocuments;
+	public Long getIdDocument() {
+		return idDocument;
 	}
 
-	public void setIdDocuments(Long[] idDocuments) {
-		this.idDocuments = idDocuments;
+	public void setIdDocument(Long idDocument) {
+		this.idDocument = idDocument;
 	}
 
 }

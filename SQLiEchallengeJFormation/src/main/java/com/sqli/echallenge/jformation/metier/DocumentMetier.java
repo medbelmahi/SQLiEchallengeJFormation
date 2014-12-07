@@ -14,7 +14,8 @@ import com.sqli.echallenge.jformation.model.entity.Document;
 public interface DocumentMetier {
 	public List<Document> getAll(Long idSession) throws Exception;
 	public Document get(Long idDocument) throws Exception;
-	public void remove(Long[] idDocument) throws Exception;
+	public void remove(Long[] idDocuments) throws Exception;
+	public void remove(Long idDocument) throws Exception;
 	public void add(Document[] document) throws Exception;
 	public void add(Document document) throws Exception;
 }
