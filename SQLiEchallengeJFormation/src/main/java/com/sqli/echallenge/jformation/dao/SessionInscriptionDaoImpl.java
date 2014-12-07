@@ -66,7 +66,10 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 		query.setParameter("idInscription", idInscription);
 		
 		return (SessionInscription) query.getSingleResult();
-		
+	}
+	
+	public List<SessionInscription> getConfirmedInscription(Long idSession) throws Exception {
+		return null;
 	}
 	
 	public void update(SessionInscription inscription) throws Exception {

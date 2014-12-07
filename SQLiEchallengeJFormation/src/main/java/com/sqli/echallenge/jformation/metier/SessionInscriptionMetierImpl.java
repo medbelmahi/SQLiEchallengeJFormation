@@ -85,6 +85,14 @@ public class SessionInscriptionMetierImpl implements SessionInscriptionMetier {
 		}
 	}
 	
+	public List<SessionInscription> getConfirmedInscription(Long idSession) throws Exception {
+		try {
+			return dao.getConfirmedInscription(idSession);
+		} catch (Exception e) {
+			throw new SqliException(propretiesHelper.getText("session.inscription.confirmedList.empty"));
+		}
+	}
+	
 	public SessionInscriptionDao getDao() {
 		return dao;
 	}

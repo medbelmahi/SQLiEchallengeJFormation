@@ -23,4 +23,5 @@ public interface SessionInscriptionDao {
 	public SessionInscription get(String code) throws Exception;
 	public SessionInscription get(Long idInscription) throws Exception;
 	public void update(SessionInscription inscription) throws Exception;
+	public List<SessionInscription> getConfirmedInscription(Long idSession) throws Exception;
 }

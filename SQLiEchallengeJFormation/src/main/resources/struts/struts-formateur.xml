@@ -47,6 +47,12 @@
     		<result name="error" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="input" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     	</action> 
+    	
+    	<action name="sessions/collaborateurs/list" class="com.sqli.echallenge.jformation.web.formateur.SessionCollaborateurListAction">
+    		<result name="success">/pages/formateur/session_collaborateur_list.jsp</result>
+    		<result name="error" type="redirectAction">sessions/list</result>
+    		<result name="input" type="redirectAction">sessions/list</result>
+    	</action> 
     </package>
     
 </struts>
