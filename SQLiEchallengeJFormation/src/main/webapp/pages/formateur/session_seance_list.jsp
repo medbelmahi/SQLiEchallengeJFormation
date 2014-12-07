@@ -229,5 +229,16 @@
 		<s:include value="include/javascript_session_list.jsp"></s:include>
 	<!-- javascript of session_list page End --> --%>
 	
+	
+	<!--script for editable table-->
+	<script src='<s:url value="/js/editable-table.js"/>'></script>
+	
+	<!-- END JAVASCRIPTS -->
+	<script>
+	    jQuery(document).ready(function() {
+	        EditableTable.init();
+	    });
+	</script>
+	
 </body>
 </html>
