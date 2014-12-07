@@ -17,6 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import com.sqli.echallenge.jformation.util.SqliDateHelper;
 
 /**
  * @author Mouad
@@ -107,6 +110,16 @@ public class Seance {
 
 	public void setSessionFormation(SessionFormation sessionFormation) {
 		this.sessionFormation = sessionFormation;
+	}
+	
+	@Transient
+	public String getHeureFin(){
+		return SqliDateHelper.getHeureString(heureFinSeance);
+	}
+	
+	@Transient
+	public String getHeureDebut(){
+		return SqliDateHelper.getHeureString(heureDebutSeance);
 	}
 	
 }
