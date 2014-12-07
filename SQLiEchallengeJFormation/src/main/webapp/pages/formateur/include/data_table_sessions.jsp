@@ -54,9 +54,9 @@
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
 													<li style="padding-left: 15px;">
-														<a title="Liste des séances" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
-														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
-														<s:property value="idFormation"/></s:param>
+														<a title="Liste des séances" href='<s:url action="sessions/documents/list" >
+														<s:param name="idSession"><s:property value="idSession"/></s:param>
+														
 														</s:url>'>
 															<i class="fa fa-list"></i>
 														</a>
