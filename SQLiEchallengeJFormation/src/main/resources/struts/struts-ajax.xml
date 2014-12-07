@@ -29,6 +29,11 @@
      	 	<result name="none" type="json" />
     </action>
     
+    <!-- Formateur -->
+    <action name="update/seance" class="com.sqli.echallenge.jformation.web.ajax.formateur.SeanceUpdateAjaxAction">
+     	 	<result name="none" type="json" />
+    </action>
+    
     </package>
     
 </struts>
