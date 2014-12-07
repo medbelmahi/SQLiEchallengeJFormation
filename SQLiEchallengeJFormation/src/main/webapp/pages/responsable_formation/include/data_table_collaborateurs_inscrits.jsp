@@ -47,7 +47,7 @@
 									<td>non confirmé</td>
 								</s:elseif>
 								<s:else>
-									<td>non traité (<s:property value="status" />)</td>
+									<td>non traité </td>
 								</s:else>
 								<td class="center hidden-phone ">
 									
