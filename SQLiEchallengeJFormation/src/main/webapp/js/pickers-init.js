@@ -251,9 +251,10 @@ $('.timepicker-default').timepicker();
 
 
 $('.timepicker-24').timepicker({
+	defaultTime:'value',
     autoclose: true,
-    minuteStep: 1,
-    showSeconds: true,
+    minuteStep: 10,
+    showSeconds: false,
     showMeridian: false
 });
 

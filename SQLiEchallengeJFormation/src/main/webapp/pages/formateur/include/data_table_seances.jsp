@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <div class="row">
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
-				Editable Table <span class="tools pull-right"> <a
+				Liste des seances<span class="tools pull-right"> <a
 					href="javascript:;" class="fa fa-chevron-down"></a> <a
 					href="javascript:;" class="fa fa-times"></a>
 				</span>
@@ -36,24 +35,27 @@
 						id="editable-sample">
 						<thead>
 							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Points</th>
-								<th>Status</th>
-								<th>Edit</th>
-								<th>Delete</th>
+								<th>Titre</th>
+								<th>Description</th>
+		                        <th class="text-center">Date</th>
+		                        <th class="text-center">Heure dèbut</th>
+		                        <th class="text-center">Heure fin</th>
+		                        <th>Mise à jour</th>
 							</tr>
 						</thead>
 						<tbody>
+						<s:iterator value="sessionFormation.sceances" >
 							<tr class="">
-								<td>Jonathan</td>
-								<td>Smith</td>
-								<td>3455</td>
-								<td class="center">Lorem ipsume</td>
-								<td><a class="edit" href="javascript:;">Edit</a></td>
-								<td><a class="delete" href="javascript:;">Delete</a></td>
+								<input type="hidden" id="idSeance" value="<s:property value="idSeance" />" />
+								<td class="text-center"><s:property value="titreSeance" /></td>
+								<td class="text-center"><s:property value="descriptionSeance" /></td>
+								<td class="text-center"><s:property value="dateSeance" /></td>
+		                        <td class="text-center"><s:property value="heureDebut" /></td>
+		                        <td class="text-center"><s:property value="heureFin" /></td>
+								<td class="text-center"><a class="edit" href="javascript:;">Mise à jour</a></td>
+<!-- 								<td><a class="delete" href="javascript:;">Delete</a></td> -->
 							</tr>
-
+						</s:iterator>
 						</tbody>
 					</table>
 				</div>

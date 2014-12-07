@@ -225,10 +225,6 @@
 	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
 	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
 	
-	<%-- <!-- javascript of session_list page Begin -->
-		<s:include value="include/javascript_session_list.jsp"></s:include>
-	<!-- javascript of session_list page End --> --%>
-	
 	
 	<!--script for editable table-->
 	<script src='<s:url value="/js/editable-table.js"/>'></script>
@@ -239,6 +235,10 @@
 	        EditableTable.init();
 	    });
 	</script>
+	
+	<!-- javascript of session_seance_list page Begin -->
+		<s:include value="include/javascript_session_seance_list.jsp"></s:include>
+	<!-- javascript of session_seance_list page End -->
 	
 </body>
 </html>

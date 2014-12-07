@@ -27,7 +27,7 @@
 						<th>Email</th>
 						<th>Sexe</th>
 						<th>Status</th>
-						<th>Options</th>
+<!-- 						<th>Options</th> -->
 						<!-- <th style="display: none;">Actions</th> -->
 					</tr>
 				</thead>
@@ -41,19 +41,19 @@
 								<td><s:property value="collaborateur.emailCollaborateur" /></td>
 								<td><s:property value="collaborateur.sexeCollaborateur" /></td>
 								<s:if test='%{status==1}'>  
-									<td>confirmé</td>
+									<td><span class="label label-success">Confirmer</span></td>
 								</s:if>
 								<s:elseif test='%{status==0}'>
-									<td>non confirmé</td>
+									<td><span class="label label-danger">Annuler</span></td>
 								</s:elseif>
 								<s:else>
-									<td>non traité </td>
+									<td><span class="label label-warning">Non traiter</span></td>
 								</s:else>
 								<td class="center hidden-phone ">
 									
-									<ul style="list-style: none;" class="navbar-nav nav-options">
+									<%--<ul style="list-style: none;" class="navbar-nav nav-options">
 										
-										<%-- <li style="padding-left: 15px;">
+										 <li style="padding-left: 15px;">
 											<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
 												<i class="fa fa-list"></i>
 											</a>
@@ -71,8 +71,8 @@
 											<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 												<i class="fa fa-times"></i>
 											</a>
-										</li> --%>
-									</ul>
+										</li> 
+									</ul>--%>
 								</td>
 							</tr>
 					</s:iterator>
