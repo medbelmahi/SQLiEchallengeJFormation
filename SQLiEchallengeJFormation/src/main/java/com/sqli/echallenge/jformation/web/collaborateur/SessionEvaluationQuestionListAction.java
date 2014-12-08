@@ -16,6 +16,8 @@ import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
 import com.sqli.echallenge.jformation.model.entity.Collaborateur;
 import com.sqli.echallenge.jformation.model.entity.EvaluationQuestion;
 import com.sqli.echallenge.jformation.model.entity.EvaluationReponse;
+import com.sqli.echallenge.jformation.model.entity.SessionFormation;
+import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.util.SqliException;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
@@ -35,28 +37,32 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 	public EvaluationReponseMetier reponseMetier;
 	
 	private String code;//code d'inscription a la session
-	private Long idSession;
 	
 	List<EvaluationQuestion> questions;
 	
 	public String execute() throws Exception {
 		try {
 			//1// get collaborateur from db using code
+			//2// get session from db using code
 			Collaborateur collaborateur = null;
+			SessionFormation session = null;
 			try {
-				collaborateur = inscriptionMetier.get(code).getCollaborateur();
+				SessionInscription inscription = inscriptionMetier.get(code);
+				
+				collaborateur = inscription.getCollaborateur();
+				session = inscription.getSessionFormation();
 			} catch (Exception e) {
 				throw new SqliException(getText("collaborateur.show.inscription.fail"));
 			}
 			
-			//2// verify if user already evaluate session
+			//3// verify if user already evaluate session
 			List<EvaluationReponse> reponses = null;
 			try {
-				reponses = reponseMetier.getAll(collaborateur.getIdCollaborateur(), idSession);
+				reponses = reponseMetier.getAll(collaborateur.getIdCollaborateur(), session.getIdSessionFormation());
 			} catch (Exception e) {
 				//do nothing
 			}
-			if(reponses != null && reponses.size()>0) throw new SqliException(getText("question.response.already"));
+			if(reponses != null && reponses.size() > 0) throw new SqliException(getText("question.response.already"));
 			
 			//3// get questions from db
 			questions = questionMetier.getAll();
@@ -78,14 +84,5 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	@RequiredFieldValidator(shortCircuit=true)
-	public Long getIdSession() {
-		return idSession;
-	}
-
-	public void setIdSession(Long idSession) {
-		this.idSession = idSession;
 	}
 }

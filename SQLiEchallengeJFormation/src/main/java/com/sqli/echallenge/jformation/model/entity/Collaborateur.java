@@ -49,7 +49,7 @@ public class Collaborateur {
 	@Column(name="URL_PHOTO_COLLABORATEUR")
 	private String urlPhotoCollaborateur;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable(name="SQLI_COLLABORATEURS_HABILITATIONS", joinColumns = { 
 			@JoinColumn(name = "ID_COLLABORATEUR", nullable = false, updatable = false) }, 
 			inverseJoinColumns = { @JoinColumn(name = "ID_HABILITATION", nullable = false, updatable = false) })

@@ -37,6 +37,14 @@ public class EvaluationQuestionDaoImpl implements EvaluationQuestionDao {
 		return (EvaluationQuestion) query.getSingleResult();
 	}
 	
+	public void delete(Long idQuestion) throws Exception {
+		entityManager.remove(get(idQuestion));
+	}
+
+	public void add(EvaluationQuestion question) throws Exception {
+		entityManager.persist(question);
+	}
+	
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}

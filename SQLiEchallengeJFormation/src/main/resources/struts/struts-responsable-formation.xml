@@ -73,6 +73,22 @@
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
 
+		<!-- Questions actions -->
+    	<action name="formations/evaluation/questions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionEvaluationQuestionListAction">
+    		<result name="success">/pages/responsable_formation/question_list.jsp</result>
+    		<result name="error">/pages/responsable_formation/question_list.jsp</result>
+    		<result name="input">/pages/responsable_formation/question_list.jsp</result>
+    	</action>
+    	<action name="formations/evaluation/questions/delete" class="com.sqli.echallenge.jformation.web.responsableformation.SessionEvaluationQuestionDeleteAction">
+    		<result name="success" type="redirectAction">formations/evaluation/questions/list</result>
+    		<result name="error" type="redirectAction">formations/evaluation/questions/list</result>
+    		<result name="input" type="redirectAction">formations/evaluation/questions/list</result>
+    	</action>
+    	<action name="formations/evaluation/questions/add" class="com.sqli.echallenge.jformation.web.responsableformation.SessionEvaluationQuestionAddAction">
+    		<result name="success" type="redirectAction">formations/evaluation/questions/list</result>
+    		<result name="error" type="redirectAction">formations/evaluation/questions/list</result>
+    		<result name="input" type="redirectAction">formations/evaluation/questions/list</result>
+    	</action>
     </package>
     
 </struts>

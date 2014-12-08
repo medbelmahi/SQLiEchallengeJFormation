@@ -14,4 +14,6 @@ import com.sqli.echallenge.jformation.model.entity.EvaluationQuestion;
 public interface EvaluationQuestionMetier {
 	public List<EvaluationQuestion> getAll() throws Exception;
 	public EvaluationQuestion get(Long idQuestion) throws Exception;
+	public void delete(Long idQuestion) throws Exception;
+	public void add(EvaluationQuestion question) throws Exception;
 }

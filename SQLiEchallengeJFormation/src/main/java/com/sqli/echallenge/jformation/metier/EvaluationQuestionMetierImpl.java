@@ -38,7 +38,23 @@ public class EvaluationQuestionMetierImpl implements EvaluationQuestionMetier {
 		try{
 			return dao.get(idQuestion);
 		}catch(Exception e){
-			throw new SqliException(propretiesHelper.getText("quetion.id.notfound"));
+			throw new SqliException(propretiesHelper.getText("question.id.notfound"));
+		}
+	}
+	
+	public void delete(Long idQuestion) throws Exception {
+		try{
+			dao.delete(idQuestion);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("question.delete.fail"));
+		}
+	}
+
+	public void add(EvaluationQuestion question) throws Exception {
+		try{
+			dao.add(question);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("question.add.fail"));
 		}
 	}
 	
@@ -55,4 +71,5 @@ public class EvaluationQuestionMetierImpl implements EvaluationQuestionMetier {
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
 	}
+
 }
