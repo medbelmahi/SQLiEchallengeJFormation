@@ -33,6 +33,12 @@ public class EvaluationReponseDaoImpl implements EvaluationReponseDao {
 		return query.getResultList();
 	}
 	
+	public void deleteAll(Long idSession) throws Exception {
+		Query query = entityManager.createQuery("delete from EvaluationReponse where session.idSessionFormation=:idSession");
+		query.setParameter("idSession", idSession);
+		query.executeUpdate();
+	}
+	
 	public void add(EvaluationReponse reponse) throws Exception {
 		entityManager.persist(reponse);
 	}
@@ -44,5 +50,4 @@ public class EvaluationReponseDaoImpl implements EvaluationReponseDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }

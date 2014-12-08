@@ -35,15 +35,15 @@ public class SessionFormationDeleteAction extends SqliActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try {
-			//get formation from db (for validation)
+			//1// get formation from db (for validation)
 			@SuppressWarnings("unused")
 			Formation formation = formationMetier.get(idFormation);
 			
-			//get Session from db
+			//2// get Session from db
 			SessionFormation session = sessionFormationMetier.get(idSession);
 						
-			//Valid dates!!!
-			//is session already started but not ended yet
+			//3// Valid dates!!!
+			//3.1// is session already started but not ended yet
 			Calendar caldebut = Calendar.getInstance(); caldebut.setTime(session.getDateDebutSessionFormation());
 	    	Calendar calfin = Calendar.getInstance(); calfin.setTime(session.getDateFinSessionFormation());
 	    	Calendar caltoday = Calendar.getInstance();
@@ -52,9 +52,10 @@ public class SessionFormationDeleteAction extends SqliActionSupport {
 	    		throw new SqliException(getText("session.delete.fail.session_in_progress"));
 	    	}
 			
-			//remove session
+			//4// remove session
 			sessionFormationMetier.remove(idSession);
 			
+			//5/show success message
 			setSessionActionMessageText(getText("session.delete.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {

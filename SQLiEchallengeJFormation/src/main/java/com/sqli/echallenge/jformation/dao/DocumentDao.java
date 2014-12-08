@@ -16,4 +16,5 @@ public interface DocumentDao {
 	public Document get(Long idDocument) throws Exception;
 	public void remove(Long idDocument) throws Exception;
 	public void add(Document document) throws Exception;
+	public void deleteAll(Long idSession) throws Exception;
 }

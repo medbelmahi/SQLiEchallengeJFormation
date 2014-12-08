@@ -14,4 +14,5 @@ import com.sqli.echallenge.jformation.model.entity.SeanceAbsence;
 public interface SeanceAbsenceMetier {
 	public void add(SeanceAbsence absence) throws Exception;
 	public List<SeanceAbsence> getOfSeance(Long idSeance) throws Exception;
+	public void deleteAll(Long idSession) throws Exception;
 }

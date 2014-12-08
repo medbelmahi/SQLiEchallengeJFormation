@@ -93,6 +93,15 @@ public class SessionInscriptionMetierImpl implements SessionInscriptionMetier {
 		}
 	}
 	
+	public void deleteAll(Long idSession) throws Exception {
+		try {
+			dao.deleteAll(idSession);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SqliException(propretiesHelper.getText("session.inscription.deleteAll.fail"));
+		}
+	}
+	
 	public SessionInscriptionDao getDao() {
 		return dao;
 	}

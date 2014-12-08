@@ -68,17 +68,21 @@ public class SessionFormationUpdateAction extends SqliActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try {
-			//first validation
+			//1// first validation
 			sqlivalidate();
 			
-			//get formation from db (for validation)
+			//2// get formation from db (for validation)
 			@SuppressWarnings("unused")
 			Formation formation = formationMetier.get(idFormation);
 			
-			//get formateur (utilisateur) from db
+			//3// get formateur (utilisateur) from db
 			Utilisateur formateur = formateurMetier.getUtilisateur(idFormateur);
 			
-			//get session from db + update it
+			//4// formateur should not be affected to a session with the same date
+			boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
+			if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
+			
+			//5// get session from db + update it
 			SessionFormation session = sessionFormationMetier.get(idSession);
 			session.setTitreSessionFormation(titreSessionFormation);
 			session.setDesciptionSessionFormation(desciptionSessionFormation);
@@ -88,10 +92,10 @@ public class SessionFormationUpdateAction extends SqliActionSupport {
 			
 			session.setFormateur(formateur);
 			
-			//Session merge
+			//6// Session merge
 			sessionFormationMetier.update(session);
 			
-			//show success message
+			//7// show success message
 			setSessionActionMessageText(getText("session.update.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {

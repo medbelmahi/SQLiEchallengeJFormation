@@ -77,6 +77,13 @@ public class SessionInscriptionDaoImpl implements SessionInscriptionDao {
 		return query.getResultList();
 	}
 	
+	public void deleteAll(Long idSession) throws Exception {
+		//Query query = entityManager.createNativeQuery("DELETE FROM SQLI_SESSIONS_INSCRIPTIONS WHERE ID_SESSION_FORMATION=:idSession");
+		Query query = entityManager.createQuery("delete from SessionInscription where sessionFormation.idSessionFormation=:idSession");
+		query.setParameter("idSession", idSession);
+		query.executeUpdate();
+	}
+	
 	public void update(SessionInscription inscription) throws Exception {
 		entityManager.merge(inscription);
 	}

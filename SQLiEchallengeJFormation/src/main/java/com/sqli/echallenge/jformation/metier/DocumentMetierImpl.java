@@ -78,6 +78,14 @@ public class DocumentMetierImpl implements DocumentMetier {
 		}
 	}
 
+	public void deleteAll(Long idSession) throws Exception {
+		try{
+			dao.deleteAll(idSession);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("document.deleteAll.fail"));
+		}
+	}
+	
 	public DocumentDao getDao() {
 		return dao;
 	}
@@ -93,4 +101,5 @@ public class DocumentMetierImpl implements DocumentMetier {
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
 	}
+
 }

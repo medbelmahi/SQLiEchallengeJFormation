@@ -25,4 +25,5 @@ public interface SessionInscriptionMetier {
 	public void update(SessionInscription inscription) throws Exception;
 	
 	public  List<SessionInscription> getConfirmedInscription(Long idSession) throws Exception;
+	public void deleteAll(Long idSession) throws Exception;
 }

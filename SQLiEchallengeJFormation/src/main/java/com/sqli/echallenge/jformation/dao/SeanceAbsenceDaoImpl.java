@@ -36,6 +36,13 @@ public class SeanceAbsenceDaoImpl implements SeanceAbsenceDao {
 		return query.getResultList();
 	}
 	
+	public void delete(Long idSeance) throws Exception {
+		Query query = entityManager.createQuery("from SeanceAbsence where seance.idSeance.=:idSeance");
+		query.setParameter("idSeance", idSeance);
+		query.executeUpdate();
+		
+	}
+	
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
@@ -43,5 +50,4 @@ public class SeanceAbsenceDaoImpl implements SeanceAbsenceDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
 }

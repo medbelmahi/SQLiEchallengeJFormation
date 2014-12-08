@@ -42,6 +42,14 @@ public class EvaluationReponseMetierImpl implements EvaluationReponseMetier {
 		}
 	}
 	
+	public void deleteAll(Long idSession) throws Exception {
+		try{
+			dao.deleteAll(idSession);
+		}catch(Exception e){
+			throw new SqliException(propretiesHelper.getText("reponse.deletAll.fail"));
+		}
+	}
+	
 	public EvaluationReponseDao getDao() {
 		return dao;
 	}

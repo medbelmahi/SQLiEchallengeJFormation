@@ -69,19 +69,19 @@ public class SessionFormationAddAction extends SqliActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try {
-			//call validate first
+			//1// call validate first
 			sqlivalidate();
 			
-			//get formation from db
+			//2// get formation from db
 			Formation formation = formationMetier.get(idFormation);
 			
-			//get formateur (utilisateur) from db
+			//3// get formateur (utilisateur) from db
 			Utilisateur formateur = formateurMetier.getUtilisateur(idFormateur);
-			//formateur should not have a session with the same date
-			//boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
-			//if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
+			//4// formateur should not be affected to a session with the same date
+			boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
+			if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
 			
-			//Create new Session Formation
+			//5// Create new Session Formation
 			SessionFormation session = new SessionFormation();
 			session.setTitreSessionFormation(titreSessionFormation);
 			session.setDesciptionSessionFormation(desciptionSessionFormation);
@@ -93,7 +93,7 @@ public class SessionFormationAddAction extends SqliActionSupport {
 			session.setFormation(formation);
 			session.setFormateur(formateur);
 			
-			//Create Seances between datedebut & datefin
+			//6// Create Seances between datedebut & datefin (seance for each day) + (to be added to session)
 			Calendar caldebut = Calendar.getInstance(); caldebut.setTime(dateDebutSessionFormation);
 	    	Calendar calfin = Calendar.getInstance(); calfin.setTime(dateFinSessionFormation);
 	    	
@@ -101,7 +101,7 @@ public class SessionFormationAddAction extends SqliActionSupport {
 			while (!caldebut.after(calfin)) {
 				Date date = caldebut.getTime();
 				
-				//creante & inflate new seance
+				//6.1// creante & inflate new seance
 				Seance seance = new Seance();
 				seance.setDateSeance(date);
 				seance.setTitreSeance("Seance numero " + numeroSeance++);//Generate Seance name "seance numero x"
@@ -109,19 +109,20 @@ public class SessionFormationAddAction extends SqliActionSupport {
 				seance.setHeureDebutSeance(SessionFormationUtil.getHeureDebut(date));//set heureDebut 08:30
 				seance.setHeureFinSeance(SessionFormationUtil.getHeureFin(date));//set heureFin 11:30
 				
-				//add seance to session & session to seance
+				//6.2// add seance to session & session to seance
 				session.getSceances().add(seance);
 				seance.setSessionFormation(session);
 				
-				//increment caldebut by 1 day
+				//6.3// increment caldebut by 1 day
 				caldebut.add(Calendar.DATE, 1);
 			}
 			
-			//Session Persist
+			//7// Session Persist
 			sessionFormationMetier.add(session);
 			
-			//finalement send mail to formateur (include session informations)
+			//8// finalement send mail to formateur (include session informations)
 			
+			//9// show success message
 			setSessionActionMessageText(getText("session.add.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {

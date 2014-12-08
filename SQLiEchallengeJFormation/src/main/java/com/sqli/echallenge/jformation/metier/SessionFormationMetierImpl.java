@@ -27,6 +27,12 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 	private PropretiesHelper propretiesHelper;
 	@Autowired
 	private SeanceMetier seanceMetier;
+	@Autowired
+	private SessionInscriptionMetier inscriptionMetier;
+	@Autowired
+	private DocumentMetier documentMetier;
+	@Autowired
+	private EvaluationReponseMetier reponseMetier;
 	
 	public List<SessionFormation> getAll(Long idFormation) throws Exception {
 		try {
@@ -57,9 +63,19 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 			//1//delete all seances
 			seanceMetier.deleteSeances(idSession);
 			
-			//2//delete session
+			//2// delete inscriptions
+			inscriptionMetier.deleteAll(idSession);
+			
+			//3// delete documents
+			documentMetier.deleteAll(idSession);
+
+			//4// evaluation response
+			reponseMetier.deleteAll(idSession);
+			
+			//5//delete session
 			dao.remove(idSession);
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new SqliException(propretiesHelper.getText("session.delete.fail"));
 		}
 	}
@@ -82,23 +98,29 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 	
 	public boolean hasSessionBetweenInterval(Long idFormateur, Date debut, Date fin) throws Exception {
 		try {
-			//get All sessions
+			//1// get All sessions
 			List<SessionFormation> sessions = null;
 			try{
 				sessions = dao.getAllOfFormateur(idFormateur);
-			}catch(Exception ee){}
+			}catch(Exception x){
+				//cuz formateur does not have any sessions
+				return false;
+			}
 			
-			//iterate over sessions
+			//2// iterate over sessions
 			if(sessions != null){
 				for(SessionFormation session : sessions){
-					//cond1
-					if(session.getDateDebutSessionFormation().after(debut) && session.getDateDebutSessionFormation().before(debut)) return true;
-					
-					//cond2
-					if(session.getDateFinSessionFormation().after(debut) && session.getDateFinSessionFormation().before(fin)) return true;
+					//2.1// datedebut (new) between datedebut (session) & datefin(session)
+					if((debut.after(session.getDateDebutSessionFormation()) || debut.equals(session.getDateDebutSessionFormation())) 
+						&& 
+						(debut.before(session.getDateFinSessionFormation()) || debut.equals(session.getDateFinSessionFormation())))
+					{
+						return true;
+					}
 				}
 			}
 			
+			//3// return false (can have session)
 			return false;
 		} catch (Exception e) {
 			throw new SqliException(propretiesHelper.getText("session.interval.test.fail"));

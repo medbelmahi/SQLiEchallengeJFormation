@@ -37,6 +37,12 @@ public class DocumentDaoImpl implements DocumentDao {
 		query.setParameter("idDocument", idDocument);
 		return (Document) query.getSingleResult();
 	}
+	
+	public void deleteAll(Long idSession) throws Exception {
+		Query query = entityManager.createQuery("delete from Document where sessionFormation.idSessionFormation=:idSession");
+		query.setParameter("idSession", idSession);
+		query.executeUpdate();
+	}
 
 	public void remove(Long idDocument) throws Exception {
 		entityManager.remove(get(idDocument));

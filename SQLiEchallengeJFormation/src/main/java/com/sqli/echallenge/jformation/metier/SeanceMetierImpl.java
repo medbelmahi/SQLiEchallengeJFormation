@@ -22,11 +22,18 @@ public class SeanceMetierImpl implements SeanceMetier {
 	private SeanceDao dao;
 	@Autowired
 	private PropretiesHelper propretiesHelper;
+	@Autowired
+	SeanceAbsenceMetier absenceMetier;
 	
 	public void deleteSeances(Long idSession) throws Exception {
 		try {
+			//1// delete absences
+			absenceMetier.deleteAll(idSession);
+			
+			//2// delete seances 
 			dao.deleteSeances(idSession);
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new SqliException(propretiesHelper.getText("session.seances.delete.fail"));
 		}
 	}
