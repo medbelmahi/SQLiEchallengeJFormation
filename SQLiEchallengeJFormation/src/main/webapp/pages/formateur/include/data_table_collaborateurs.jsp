@@ -4,7 +4,7 @@
 
 <!-- Tableau des collaborateurs Start -->
 <div class="row">
-	<form action="add"  method="post">
+	<form action="absence"  method="post">
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
@@ -24,7 +24,7 @@
 								<div class="col-sm-5">Choisir une seance</div>
 									<div class="col-sm-7">
 										<select name="idSeance" class="form-control m-bot15">
-							                <s:iterator value="sessionFormation.seances" >
+							                <s:iterator value="sessionFormation.sceances" >
 							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( Date début :  <s:property value="heureDebutSeance" /> -> Date fin : <s:property value="heureFinSeance" /> )</option>
 							                </s:iterator>
 							            </select>
@@ -33,7 +33,7 @@
 								<div class="row" style="margin-left: 20px; margin-right: 20px; margin-bottom: 10px;">
 									<div class="col-sm-5">Selectionner tout les élement du tableau</div>
 									<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked /></div>
-									<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
+									<div class="col-sm-5"><button type="submit" class="btn btn-primary">Marquer comme absence</button></div>
 								</div>
 							</div>
 						
