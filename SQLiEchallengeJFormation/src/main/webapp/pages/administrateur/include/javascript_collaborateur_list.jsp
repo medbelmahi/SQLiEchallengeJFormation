@@ -77,14 +77,20 @@
 		function fnFormatDetails ( oTable, nTr )
 		{
 		    var aData = oTable.fnGetData( nTr );
-		    var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-		    sOut += '<tr><td>Nom & Prénom:</td><td>'+aData[1]+'</td></tr>';
+		    var sOut = '<table width="100%" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+		    /* sOut += '<tr><td>Nom & Prénom:</td><td>'+aData[1]+'</td></tr>';
 		    sOut += '<tr><td>Email:</td><td>'+aData[2]+'</td></tr>';
 		    sOut += '<tr><td>Telephone:</td><td>'+aData[3]+'</td></tr>';
 		    sOut += '<tr><td>Sexe:</td><td>'+aData[4]+'</td></tr>';
-		    sOut += '<tr><td>Adresse:</td><td>'+aData[7]+'</td></tr>';
-		    sOut += '<tr><td>Date de naissance:</td><td>'+aData[8]+'</td></tr>';
-		    sOut += '<tr><td>Profil:</td><td>'+aData[5]+'</td></tr>';
+		    sOut += '<tr><td>Adresse:</td><td>'+aData[6]+'</td></tr>';
+		    sOut += '<tr><td>Date de naissance:</td><td>'+aData[7]+'</td></tr>';
+		    sOut += '<tr><td>Habilitations:</td><td>'+aData[8]+'</td></tr>'; */
+		    sOut += '<tr><td colspan="2" rowspan="2"><div class="profile-pic text-center"><img alt="" src="'+aData[9]+'"></div>';
+		    sOut += '</td><td width="130">Sexe : </td><td width="108">'+aData[4]+'</td></tr>';
+		    sOut += '<tr><td>Date de naissance : </td><td>'+aData[7]+'</td></tr>';
+		    sOut += '<tr><td width="121">Nom & Prénom : </td><td width="213">'+aData[1]+'</td><td>Adresse : </td><td>'+aData[6]+'</td></tr>';
+		    sOut += '<tr><td>Email : </td><td>'+aData[2]+'</td><td rowspan="2">habilitaition</td><td rowspan="2">'+aData[8]+'</td></tr>';
+		    sOut += '<tr><td>Telephone : </td><td>'+aData[3]+'</td></tr>';
 		    sOut += '</table>';
 		
 		    return sOut;

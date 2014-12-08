@@ -49,9 +49,9 @@
 								<s:else>
 									<td><span class="label label-warning">Non traiter</span></td>
 								</s:else>
-								<td class="center hidden-phone ">
+								<%--<td class="center hidden-phone ">
 									
-									<%--<ul style="list-style: none;" class="navbar-nav nav-options">
+									<ul style="list-style: none;" class="navbar-nav nav-options">
 										
 										 <li style="padding-left: 15px;">
 											<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
@@ -72,8 +72,8 @@
 												<i class="fa fa-times"></i>
 											</a>
 										</li> 
-									</ul>--%>
-								</td>
+									</ul>
+								</td>--%>
 							</tr>
 					</s:iterator>
 				</tbody>

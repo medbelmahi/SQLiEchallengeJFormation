@@ -88,7 +88,7 @@
 										<td style="display: none;">
 											<ul>
 												<s:iterator value="habilitations">
-													<li><s:property value="habilitation.nomHabilitation" /></li>
+													<li><s:property value="nomHabilitation" /></li>
 												</s:iterator>
 											</ul>
 										</td>
