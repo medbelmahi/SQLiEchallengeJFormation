@@ -128,7 +128,7 @@
 	        	
 	        	
 				<!-- Message action start-->
-		        	<s:include value="include/message_action.jsp"></s:include>
+		        	<s:include value="/pages/administrateur/include/message_action.jsp"></s:include>
 		        <!-- Message action end-->
 				
 				
@@ -236,8 +236,8 @@
 	
 	
 	<!-- javascript of session_seance_absence_list.jsp page Begin -->
-		<s:include value="include/javascript_collaborateur_list.jsp"></s:include>
-	<!-- javascript of collaborateur_list page End -->
+		<s:include value="include/javascript_session_seance_absence_list.jsp"></s:include>
+	<!-- javascript of session_seance_absence_list.jsp page End -->
 	
 	</body>
 </html>

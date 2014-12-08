@@ -5,25 +5,6 @@
 <!-- Tableau des collaborateurs Start -->
 <div class="row">
 	<form action="add"  method="post">
-	<div class="row" style="margin-top: 10px;">
-	
-		<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
-		<div class="row">
-		<div class="col-sm-5">Choisir une seance</div>
-			<div class="col-sm-7">
-				<select name="idSeance" class="form-control m-bot15">
-	                <s:iterator value="seances" >
-	                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( Date début :  <s:property value="heureDebutSeance" /> -> Date fin : <s:property value="heureFinSeance" /> )</option>
-	                </s:iterator>
-	            </select>
-	        </div>
-		</div>
-		<div class="row">
-			<div class="col-sm-5">Selectionner tout les élement du tableau</div>
-			<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked /></div>
-			<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
-		</div>
-	</div>
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
@@ -34,13 +15,28 @@
 			<div class="panel-body">
 				<div class="adv-table">
 					<div class="clearfix">
-						<div class="btn-group">
-							<a href="#addCollaborateurModal" data-toggle="modal">
-								<button  class="btn btn-primary" >
-									Ajouter Collaborateur <i class="fa fa-plus"></i>
-								</button>
-							</a>
-						</div>
+						
+						
+							<div class="row" style="margin-top: 10px; margin-left: 20px; margin-right: 20px;">
+							
+								<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
+								<div class="row">
+								<div class="col-sm-5">Choisir une seance</div>
+									<div class="col-sm-7">
+										<select name="idSeance" class="form-control m-bot15">
+							                <s:iterator value="seances" >
+							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( Date début :  <s:property value="heureDebutSeance" /> -> Date fin : <s:property value="heureFinSeance" /> )</option>
+							                </s:iterator>
+							            </select>
+							        </div>
+								</div>
+								<div class="row" style="margin-left: 20px; margin-right: 20px; margin-bottom: 10px;">
+									<div class="col-sm-5">Selectionner tout les élement du tableau</div>
+									<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked /></div>
+									<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
+								</div>
+							</div>
+						
 					</div>
 					<div id="hidden-table-info_wrapper"
 						class="dataTables_wrapper form-inline" role="grid">
@@ -50,27 +46,29 @@
 							id="hidden-table-info">
 							<thead>
 								<tr role="row">
+									<th>Cocher</th>
 									<th>Prénom &amp; Nom</th>
 									<th>Email</th>
 									<th>Telephone</th>
 									<th>Sexe</th>
-									<th>Options</th>
+<!-- 									<th>Options</th> -->
 									<th style="display: none;">Adresse</th>
-									<th style="display: none;">Date de naissance</th>
+									<th>Date de naissance</th>
 									<th style="display: none;">habilitations</th>
 									<th style="display: none;">image</th>
 								</tr>
 							</thead>
 
 							<tbody aria-relevant="all" aria-live="polite" role="alert">
-								<s:iterator value="collaborateurs">
+								<s:iterator value="inscriptions">
 									<tr class="gradeA odd">
-										<td class="  sorting_1"><s:property value="fullname" /></td>
-										<td class=" "><s:property value="emailCollaborateur" /></td>
-										<td class="hidden-phone "><s:property value="telephoneCollaborateur" /></td>
-										<td class="center hidden-phone "><s:property value="sexeCollaborateur" /></td>
+										<td><input name="idCollaborateurs" value='<s:property value="collaborateur.idCollaborateur" />' type="checkbox" class="js-switch"/></td>
+										<td class="  sorting_1"><s:property value="collaborateur.fullname" /></td>
+										<td class=" "><s:property value="collaborateur.emailCollaborateur" /></td>
+										<td class="hidden-phone "><s:property value="collaborateur.telephoneCollaborateur" /></td>
+										<td class="center hidden-phone "><s:property value="collaborateur.sexeCollaborateur" /></td>
 										
-										<td class="center hidden-phone ">
+										<%-- <td class="center hidden-phone ">
 											<ul style="list-style: none;" class="navbar-nav nav-options">
 												<li style="padding-left: 15px;">
 													<a title="Habilitations" href='<s:url action="collaborateurs/habilitations" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url>'>
@@ -100,19 +98,19 @@
 													</a>
 												</li>
 											</ul>
-										</td>
+										</td> --%>
 										
-										<td style="display: none;"><s:property value="adresseCollaborateur" /></td>
-										<td style="display: none;"><s:property value="dateNaissanceCollaborateur" /></td>
+										<td style="display: none;"><s:property value="collaborateur.adresseCollaborateur" /></td>
+										<td><s:property value="collaborateur.dateNaissanceCollaborateur" /></td>
 										
 										<td style="display: none;">
 											<ul>
-												<s:iterator value="habilitations">
+												<s:iterator value="collaborateur.habilitations">
 													<li><s:property value="nomHabilitation" /></li>
 												</s:iterator>
 											</ul>
 										</td>
-										<td style="display: none;"><s:property value="urlPhotoCollaborateur" /></td>
+										<td style="display: none;"><s:property value="collaborateur.urlPhotoCollaborateur" /></td>
 									</tr>
 								</s:iterator>
 							</tbody>
