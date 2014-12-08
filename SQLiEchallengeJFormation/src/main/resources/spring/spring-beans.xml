@@ -69,4 +69,22 @@
 	<bean id="document_metier" class="com.sqli.echallenge.jformation.metier.DocumentMetierImpl">
 		<property name="dao" ref="document_dao"></property>
 	</bean>
+	
+	<!-- SeanceAbsence -->	
+	<bean id="seance_absence_dao" class="com.sqli.echallenge.jformation.dao.SeanceAbsenceDaoImpl"></bean>	
+	<bean id="seance_absence_metier" class="com.sqli.echallenge.jformation.metier.SeanceAbsenceMetierImpl">
+		<property name="dao" ref="seance_absence_dao"></property>
+	</bean>
+	
+	<!-- EvaluationQuestion -->	
+	<bean id="evaluation_question_dao" class="com.sqli.echallenge.jformation.dao.EvaluationQuestionDaoImpl"></bean>	
+	<bean id="evaluation_question_metier" class="com.sqli.echallenge.jformation.metier.EvaluationQuestionMetierImpl">
+		<property name="dao" ref="evaluation_question_dao"></property>
+	</bean>
+	
+	<!-- EvaluationReponse -->	
+	<bean id="evaluation_reponse_dao" class="com.sqli.echallenge.jformation.dao.EvaluationReponseDaoImpl"></bean>	
+	<bean id="evaluation_reponse_metier" class="com.sqli.echallenge.jformation.metier.EvaluationReponseMetierImpl">
+		<property name="dao" ref="evaluation_reponse_dao"></property>
+	</bean>
 </beans>

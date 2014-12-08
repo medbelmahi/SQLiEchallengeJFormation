@@ -20,6 +20,17 @@
     		<result name="error">/pages/collaborateur/inscription_confirme.jsp</result>
     		<result name="input">/pages/collaborateur/inscription_confirme.jsp</result>
     	</action>
+    	
+    	<action name="session/evaluation/question" class="com.sqli.echallenge.jformation.web.collaborateur.SessionEvaluationQuestionListAction">
+    		<result name="success">/pages/collaborateur/evaluation_question.jsp</result>
+    		<result name="error">/pages/collaborateur/evaluation_question.jsp</result>
+    		<result name="input">/pages/collaborateur/evaluation_question.jsp</result>
+    	</action>
+    	<action name="session/evaluation/reponse" class="com.sqli.echallenge.jformation.web.collaborateur.SessionEvaluationQuestionReponseAction">
+    		<result name="success">/pages/collaborateur/evaluation_reponse.jsp</result>
+    		<result name="error">/pages/collaborateur/evaluation_reponse.jsp</result>
+    		<result name="input">/pages/collaborateur/evaluation_reponse.jsp</result>
+    	</action>
     </package>
     
 </struts>
