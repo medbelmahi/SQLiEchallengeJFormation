@@ -6,7 +6,18 @@
 
 	<!-- global package -->
 	<package name="sqli_basic_package" extends="struts-default">
-	
+		<interceptors>	
+			<!-- Custom interceptors -->
+			<interceptor name="sqliRoleValidatorInterceptor" class="com.sqli.echallenge.jformation.web.interceptor.SqliRoleValidatorInterceptor"></interceptor>
+			<interceptor name="sqliSessionValidatorInterceptor" class="com.sqli.echallenge.jformation.web.interceptor.SqliSessionValidatorInterceptor"></interceptor>
+			<interceptor name="annotationInterceptor" class="com.opensymphony.xwork2.interceptor.annotations.AnnotationWorkflowInterceptor"/>
+			
+			<!-- Custom stacks -->
+			<interceptor-stack name="sqliSessionValidatorStack">
+				<interceptor-ref name="sqliSessionValidatorInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
 	</package>
 
 </struts>
