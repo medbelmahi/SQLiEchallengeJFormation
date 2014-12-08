@@ -71,6 +71,15 @@
 														</a>
 													</li>
 													
+													<li style="padding-left: 15px;">
+														<a title="Gestion d'absence" href='<s:url action="sessions/collaborateurs/list" >
+														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
+														
+														</s:url>'>
+															<i class="fa fa-list"></i>
+														</a>
+													</li>
+													
 													<%-- <li style="padding-left: 15px;">
 														<a href='javascript:void(0);'
 														   onclick="jsonGetSession(<s:property value="idSessionFormation"/>);" 

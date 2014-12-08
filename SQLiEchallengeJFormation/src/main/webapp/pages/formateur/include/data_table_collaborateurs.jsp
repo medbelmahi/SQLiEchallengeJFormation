@@ -4,6 +4,26 @@
 
 <!-- Tableau des collaborateurs Start -->
 <div class="row">
+	<form action="add"  method="post">
+	<div class="row" style="margin-top: 10px;">
+	
+		<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
+		<div class="row">
+		<div class="col-sm-5">Choisir une seance</div>
+			<div class="col-sm-7">
+				<select name="idSeance" class="form-control m-bot15">
+	                <s:iterator value="seances" >
+	                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( Date début :  <s:property value="heureDebutSeance" /> -> Date fin : <s:property value="heureFinSeance" /> )</option>
+	                </s:iterator>
+	            </select>
+	        </div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">Selectionner tout les élement du tableau</div>
+			<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked /></div>
+			<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
+		</div>
+	</div>
 	<div class="col-sm-12">
 		<section class="panel">
 			<header class="panel-heading">
@@ -13,7 +33,7 @@
 			</header>
 			<div class="panel-body">
 				<div class="adv-table">
-					<!-- <div class="clearfix">
+					<div class="clearfix">
 						<div class="btn-group">
 							<a href="#addCollaborateurModal" data-toggle="modal">
 								<button  class="btn btn-primary" >
@@ -21,7 +41,7 @@
 								</button>
 							</a>
 						</div>
-					</div> -->
+					</div>
 					<div id="hidden-table-info_wrapper"
 						class="dataTables_wrapper form-inline" role="grid">
 
@@ -102,5 +122,6 @@
 			</div>
 		</section>
 	</div>
+	</form>
 </div>
 <!-- Tableau des collaborateurs End -->
