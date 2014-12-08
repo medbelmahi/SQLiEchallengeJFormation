@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.sqli.echallenge.jformation.metier.SeanceAbsenceMetier;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
-import com.sqli.echallenge.jformation.model.entity.SeanceAbsence;
+import com.sqli.echallenge.jformation.model.entity.Seance;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
@@ -35,18 +35,18 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 	public SeanceAbsenceMetier absenceMetier;
 	
 	private Long idSession;
-	private Long idSeance;
 	private SessionFormation sessionFormation;
 	
+	List<Seance> seances;
 	List<SessionInscription> inscriptions;
 	
 	@Override
 	public String execute() throws Exception {
 		try {
-			//get Formateur from session
+			//-1// get Formateur from session
 			Utilisateur formateur = getSessionUser();
 			
-			//get session from db (get seances inside sessionFormation)
+			//0// get session from db (get seances inside sessionFormation)
 			sessionFormation = sessionMetier.get(idSession);
 			
 			//Check:
@@ -54,15 +54,6 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 			if(!sessionFormation.getFormateur().getIdUtilisateur().equals(formateur.getIdUtilisateur())){
 				throw new SqliException(getText("session.id.notfound"));
 			}
-			
-			//2// is absence already marked for this seance
-			List<SeanceAbsence> absences = null;
-			try {
-				 absences = absenceMetier.getOfSeance(idSeance);
-			} catch (Exception e) {
-				//do nothing
-			}
-			if(absences != null && absences.size() > 0) throw new SqliException(getText("absence.seance.already.marked"));
 			
 			//3// get collaborateur with confirmed inscription (true)
 			inscriptions = inscriptionMetier.getConfirmedInscription(idSession);
@@ -93,13 +84,20 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 		this.sessionFormation = sessionFormation;
 	}
 
-	@RequiredFieldValidator(shortCircuit=true)
-	public Long getIdSeance() {
-		return idSeance;
+	public List<Seance> getSeances() {
+		return seances;
 	}
 
-	public void setIdSeance(Long idSeance) {
-		this.idSeance = idSeance;
+	public void setSeances(List<Seance> seances) {
+		this.seances = seances;
+	}
+
+	public List<SessionInscription> getInscriptions() {
+		return inscriptions;
+	}
+
+	public void setInscriptions(List<SessionInscription> inscriptions) {
+		this.inscriptions = inscriptions;
 	}
 
 }
