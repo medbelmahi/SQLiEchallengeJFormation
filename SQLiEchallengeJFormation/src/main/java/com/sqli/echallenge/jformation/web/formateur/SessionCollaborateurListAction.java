@@ -37,7 +37,6 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 	private Long idSession;
 	private SessionFormation sessionFormation;
 	
-	List<Seance> seances;
 	List<SessionInscription> inscriptions;
 	
 	@Override
@@ -82,14 +81,6 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 
 	public void setSessionFormation(SessionFormation sessionFormation) {
 		this.sessionFormation = sessionFormation;
-	}
-
-	public List<Seance> getSeances() {
-		return seances;
-	}
-
-	public void setSeances(List<Seance> seances) {
-		this.seances = seances;
 	}
 
 	public List<SessionInscription> getInscriptions() {
