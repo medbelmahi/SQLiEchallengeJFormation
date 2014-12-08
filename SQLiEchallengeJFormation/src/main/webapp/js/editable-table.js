@@ -51,11 +51,11 @@ var EditableTable = function () {
 
             function saveRow(oTable, nRow) {
                 var jqInputs = $('input', nRow);
-                oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
-                oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
-                oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
-                oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
-                oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
+                oTable.fnUpdate(jqInputs[1].value, nRow, 0, false);
+                oTable.fnUpdate(jqInputs[2].value, nRow, 1, false);
+                oTable.fnUpdate(jqInputs[3].value, nRow, 2, false);
+                oTable.fnUpdate(jqInputs[4].value, nRow, 3, false);
+                oTable.fnUpdate(jqInputs[5].value, nRow, 4, false);
                 oTable.fnUpdate('<a class="edit" href="">Mise à jour</a>', nRow, 5, false);
 //                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 5, false);
                 oTable.fnDraw();
@@ -153,12 +153,25 @@ var EditableTable = function () {
                 	var heureDebutSeance = document.getElementById("heureDebutSeance").value;
                 	var heureFinSeance = document.getElementById("heureFinSeance").value;
                 	
-                	if(jsonUpdateSeance(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance) == "success"){
-                		saveRow(oTable, nEditing);
-                        nEditing = null;
-                	}else{
-                		alert("mise à jour n'est po effectuée")
-                	}
+                	
+                	
+//                	var status = jsonUpdateSeance(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance);
+                	
+                	jsonUpdateSeance(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance);
+                	setTimeout(function(){
+                		
+                		console.log(globaleStatus);
+                    	if(globaleStatus == "success"){
+                    		saveRow(oTable, nEditing);
+                            nEditing = null;
+                    	}else{
+                    		console.log("mise à jour n'est po effectuée");
+//                    		alert("mise à jour n'est po effectuée")
+                    	}
+                	
+                	}, 1000);
+                	
+                	
                     
                 } else {
                     /* No edit in progress - let's start one */
