@@ -3,6 +3,8 @@
  */
 package com.sqli.echallenge.jformation.web.formateur;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -56,12 +58,19 @@ public class SessionCollaborateurAbsenceAction extends SqliActionSupport {
 				throw new SqliException(getText("session.id.notfound"));
 			}
 			
-			//2// is absence already marked for this seance
-			
-			//3// get seance from db
+			//2// get seance from db
 			Seance seance = seanceMetier.get(idSeance);
 			
-			//4// verify if this seance is for this session
+			//3// verify if this seance is for this session
+			
+			//4// is absences already marked for this seance
+			List<SeanceAbsence> absences = null;
+			try{
+				absences = absenceMetier.getOfSeance(idSeance);
+			}catch(Exception x){
+				//do nothing
+			}
+			if(absences != null && absences.size() > 0) throw new SqliException(getText("absence.seance.already.marked"));
 			
 			//5// mark absences for this seance
 			for(Long id : idCollaborateurs){

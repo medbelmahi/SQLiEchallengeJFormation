@@ -12,7 +12,6 @@ import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.sqli.echallenge.jformation.metier.SeanceAbsenceMetier;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
-import com.sqli.echallenge.jformation.model.entity.Seance;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
@@ -53,6 +52,8 @@ public class SessionCollaborateurListAction extends SqliActionSupport {
 			if(!sessionFormation.getFormateur().getIdUtilisateur().equals(formateur.getIdUtilisateur())){
 				throw new SqliException(getText("session.id.notfound"));
 			}
+			
+			System.out.println(">>DEBUG: SEANCES:" + sessionFormation.getSceances());
 			
 			//3// get collaborateur with confirmed inscription (true)
 			inscriptions = inscriptionMetier.getConfirmedInscription(idSession);
