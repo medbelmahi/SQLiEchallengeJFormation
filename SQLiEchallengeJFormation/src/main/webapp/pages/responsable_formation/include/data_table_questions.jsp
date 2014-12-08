@@ -14,7 +14,7 @@
 				<div class="adv-table">
 					<div class="clearfix">
 						<div class="btn-group">
-							<a href="#addFormationModal" data-toggle="modal" ><button class="btn btn-primary">
+							<a href="#addQuestionModal" data-toggle="modal" ><button class="btn btn-primary">
 								Ajouter Question <i class="fa fa-plus"></i>
 							</button></a>
 						</div>
