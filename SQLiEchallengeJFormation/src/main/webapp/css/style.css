@@ -10,7 +10,7 @@ Author: ThemeBucket
 @import url('../fonts/css/font-awesome.min.css');
 
 body {
-    background: #424f63;
+    background: #D9534F;
     font-family: 'Open Sans', sans-serif;
     color: #7a7676;
     line-height: 20px;
@@ -24,7 +24,7 @@ input, select, textarea {
 }
 
 a {
-    color: #65CEA7;
+    color: #D9534F;
 }
 
 a:focus, a:active, a:hover {
@@ -298,8 +298,8 @@ hr {
 
 .custom-nav > li > a:hover,
 .custom-nav > li > a:active {
-    background-color: #353f4f;
-    color: #65cea7;
+    background-color: #a94442;
+    color: #E0F8F7;
     border-radius: 0;
     -webkit-border-radius: 0;
 }
@@ -309,14 +309,14 @@ hr {
 }
 
 .custom-nav > li.menu-list > a:hover {
-    background-color: #353f4f;
+    background-color: #a94442;
     background-image: url(../images/plus.png);
 }
 
 .custom-nav > li.nav-active > a {
     background-color: #353f4f;
     background-image: url(../images/minus.png);
-    color: #65cea7;
+    color: #E0F8F7;
 }
 
 .custom-nav > li.nav-active > ul{
@@ -331,7 +331,7 @@ hr {
 .custom-nav > li.active > a:hover,
 .custom-nav > li.active > a:focus {
     background-color: #353f4f;
-    color: #65cea7;
+    color: #E0F8F7;
 }
 
 .custom-nav > li.menu-list.active > a {
@@ -376,7 +376,7 @@ hr {
 .custom-nav .sub-menu-list > li > a:active,
 .custom-nav .sub-menu-list > li > a:focus {
     text-decoration: none;
-    color: #65cea7;
+    color: #E0F8F7;
     background: #2a323f;
 }
 
@@ -390,7 +390,7 @@ hr {
 }
 
 .custom-nav .sub-menu-list > li.active > a {
-    color: #65CEA7;
+    color: #E0F8F7;
     background-color: #2A323F;
 }
 
@@ -445,7 +445,7 @@ h5.left-nav-title {
 
 .left-side-collapsed .custom-nav li a span {
     position: absolute;
-    background: #65CEA7;
+    background: #a94442;
     padding: 10px;
     left: 52px;
     top: 0;
@@ -465,7 +465,7 @@ h5.left-nav-title {
     position: absolute;
     pointer-events: none;
     border-color: rgba(0, 0, 0, 0);
-    border-right-color: #65CEA7;
+    border-right-color: #a94442;
     border-width: 6px;
     margin-top: -6px;
 }
@@ -568,9 +568,9 @@ h5.left-nav-title {
 }
 
 .toggle-btn:hover {
-    background: #65CEA7;
+    background: #D9534F;
     color: #fff;
-    border-right-color: #65CEA7;
+    border-right-color: #D9534F;
 }
 
 .searchform input {
@@ -845,7 +845,7 @@ h5.left-nav-title {
     left: 0;
     width: 240px;
     z-index: 100;
-    background: #424f63;
+    background: #a94442;
 
 }
 
@@ -927,7 +927,7 @@ h5.left-nav-title {
 }
 
 .page-heading .breadcrumb li.active {
-    color: #65CEA7;
+    color: #D9534F;
 }
 
 .wrapper {
@@ -1856,32 +1856,15 @@ ul.user-states li {
     cursor: pointer;
 }
 
- .rating span.star:before, .rating span.star:before {
+.rating span.star:before, .rating span.star:before {
     content: "\f006";
     padding-right: 5px;
     color: #BEC3C7;
 }
 
 .rating span.star:hover:before, .rating span.star:hover:before, .rating span.star:hover ~ span.star:before, .rating span.star:hover ~ span.star:before {
-	content: "\f005";
-	color: #65CEA7; 
-}
-
-.theSpanStar ~ span.star:before {
-	content: "\f005";
-	color: #65CEA7; 
-} 
-
-.theSpanStar::before {
-	
-	content: "\f005";
-	color: #65CEA7; 
-}
-
-.theSpanStar_ {
-	content: "\f006";
-    padding-right: 5px;
-    color: #BEC3C7;
+    content: "\f005";
+    color: #65CEA7;
 }
 
 /*----------------------------
@@ -2225,13 +2208,13 @@ ul.user-states li {
 
 .dataTables_paginate.paging_bootstrap.pagination li:hover a, .dataTables_paginate.paging_bootstrap.pagination li.active a {
     color: #fff;
-    background: #65cea7;
+    background: #D9534F;
     text-decoration: none;
 }
 
 .dataTables_paginate.paging_bootstrap.pagination li:hover,
 .dataTables_paginate.paging_bootstrap.pagination li.active {
-    border-color: #65cea7;
+    border-color: #a94442;
 }
 
 .dataTables_paginate.paging_bootstrap.pagination li.disabled:hover,
@@ -2703,7 +2686,7 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 --------------------------*/
 
 .ms-container .ms-selectable li.ms-hover, .ms-container .ms-selection li.ms-hover {
-    background-color: #65CEA7;
+    background-color: #D9534F;
     color: #FFFFFF;
     cursor: pointer;
     text-decoration: none;
@@ -3069,7 +3052,7 @@ div.tagsinput span.tag a {
 --------------------------------*/
 
 .invoice-title {
-    color: #6bc5a4;
+    color: #D9534F;
     font-size: 48px;
     text-transform: uppercase;
     margin-top: 30px;
@@ -3096,12 +3079,12 @@ div.tagsinput span.tag a {
 }
 
 .inv-col span {
-    color: #6bc5a4;
+    color: #D9534F;
 }
 
 .t-due, .inv-label {
     font-size: 22px;
-    color: #6bc5a4;
+    color: #D9534F;
 }
 
 .inv-label {
@@ -3614,7 +3597,7 @@ ul.p-info .title {
 
 ul.p-info .desk {
     width: 60%;
-    color: #65cea7;
+    color: #D9534F;
 }
 
 
@@ -4048,7 +4031,7 @@ ul.labels-info li a:hover, ul.labels-info li a:focus {
 
 .compose-mail .form-group label {
     line-height: 34px;
-    width: 13%;
+    width: 10%;
     float: left;
     padding-left: 10px;
     margin-bottom: 0;
