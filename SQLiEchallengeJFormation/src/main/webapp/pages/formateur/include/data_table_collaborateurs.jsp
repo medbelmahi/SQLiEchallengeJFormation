@@ -25,7 +25,7 @@
 									<div class="col-sm-7">
 										<select name="idSeance" class="form-control m-bot15">
 							                <s:iterator value="sessionFormation.sceances" >
-							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( Date début :  <s:property value="heureDebutSeance" /> -> Date fin : <s:property value="heureFinSeance" /> )</option>
+							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( De :  <s:property value="heureDebut" /> -> à : <s:property value="heureFin" /> )</option>
 							                </s:iterator>
 							            </select>
 							        </div>
