@@ -37,7 +37,7 @@
 							<tbody aria-relevant="all" aria-live="polite" role="alert">
 								<s:iterator value="questions">
 										<tr class="gradeA odd">
-											<td><s:property value="titreFormation" /></td>
+											<td><s:property value="question" /></td>
 											<td class="center hidden-phone ">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
@@ -57,7 +57,7 @@
 													</li> --%>
 													
 													<li style="padding-left: 15px;">
-														<a data-href='<s:url action="formations/delete" ><s:param name="idEvaluationQuestion"><s:property value="idEvaluationQuestion"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
+														<a data-href='<s:url action="formations/evaluation/questions/delete" ><s:param name="idQuestion"><s:property value="idEvaluationQuestion"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 															<i class="fa fa-times"></i>
 														</a>
 													</li>

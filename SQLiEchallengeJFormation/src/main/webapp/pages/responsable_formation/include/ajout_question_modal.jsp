@@ -16,7 +16,7 @@
 						<div class="form-group">
 							<label for="inputQuestion_2" class="col-sm-3 control-label">Question<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="on" name="question" class="form-control" id="inputQuestion_2" placeholder="Nom" type="text" required>
+								<input autocomplete="on" name="questionText" class="form-control" id="inputQuestion_2" placeholder="Votre niveau de satisfaction ?" type="text" required>
 							</div>
 						</div>
 
