@@ -13,53 +13,117 @@
     
     	<!-- Utilisateur actions -->
     	<action name="formations/list" class="com.sqli.echallenge.jformation.web.responsableformation.FormationListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/responsable_formation/formation_list.jsp</result>
     		<result name="error">/pages/responsable_formation/formation_list.jsp</result>
     		<result name="input">/pages/responsable_formation/formation_list.jsp</result>
     	</action>
+    	
     	<action name="formations/add" class="com.sqli.echallenge.jformation.web.responsableformation.FormationAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: add_formation;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">formations/list</result>
     		<result name="error" type="redirectAction">formations/list</result>
     		<result name="input" type="redirectAction">formations/list</result>
-    	</action>
-    	<action name="formations/update" class="com.sqli.echallenge.jformation.web.responsableformation.FormationUpdateAction">
-    		<result name="success" type="redirectAction">formations/list</result>
-    		<result name="error" type="redirectAction">formations/list</result>
-    		<result name="input" type="redirectAction">formations/list</result>
-    	</action>
-    	<action name="formations/delete" class="com.sqli.echallenge.jformation.web.responsableformation.FormationDeleteAction">
-    		<result name="success" type="redirectAction">formations/list</result>
-    		<result name="error" type="redirectAction">formations/list</result>
-    		<result name="input" type="redirectAction">formations/list</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/list</result>
     	</action>
     	
+    	<action name="formations/update" class="com.sqli.echallenge.jformation.web.responsableformation.FormationUpdateAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: update_formation;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result name="success" type="redirectAction">formations/list</result>
+    		<result name="error" type="redirectAction">formations/list</result>
+    		<result name="input" type="redirectAction">formations/list</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/list</result>
+    	</action>
+    	
+    	<action name="formations/delete" class="com.sqli.echallenge.jformation.web.responsableformation.FormationDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: delete_formation;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result name="success" type="redirectAction">formations/list</result>
+    		<result name="error" type="redirectAction">formations/list</result>
+    		<result name="input" type="redirectAction">formations/list</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/list</result>
+    	</action>
+    	
+    	
     	<action name="formations/sessions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/responsable_formation/formation_session_list.jsp</result>
     		<result name="error" type="redirectAction">formations/list</result>
     		<result name="input" type="redirectAction">formations/list</result>
     	</action>
+    	
     	<action name="formations/sessions/add" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: add_formation_sessions;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
+    	
     	<action name="formations/sessions/delete" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: delete_formation_sessions;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
+    	
     	<action name="formations/sessions/update" class="com.sqli.echallenge.jformation.web.responsableformation.SessionFormationUpdateAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: update_formation_sessions;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
     	
     	<action name="formations/sessions/inscriptions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionInscriptionListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/responsable_formation/session_inscription_list.jsp</result>
     		<result name="error" >/pages/responsable_formation/session_inscription_list.jsp</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
+    	
     	<action name="formations/sessions/inscriptions/add" class="com.sqli.echallenge.jformation.web.responsableformation.SessionInscriptionAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: add_formation_session_inscription;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">
     			<param name="actionName">formations/sessions/inscriptions/list</param>
         		<param name="idFormation">${idFormation}</param>
@@ -71,23 +135,48 @@
         		<param name="idSession">${idSession}</param>
     		</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
+    		<result name="forbiddenAction" type="redirectAction">
+    			<param name="actionName">formations/sessions/inscriptions/list</param>
+        		<param name="idFormation">${idFormation}</param>
+        		<param name="idSession">${idSession}</param>
+    		</result>
     	</action>
+
 
 		<!-- Questions actions -->
     	<action name="formations/evaluation/questions/list" class="com.sqli.echallenge.jformation.web.responsableformation.SessionEvaluationQuestionListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/responsable_formation/question_list.jsp</result>
     		<result name="error">/pages/responsable_formation/question_list.jsp</result>
     		<result name="input">/pages/responsable_formation/question_list.jsp</result>
     	</action>
+    	
     	<action name="formations/evaluation/questions/delete" class="com.sqli.echallenge.jformation.web.responsableformation.SessionEvaluationQuestionDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: delete_formation_evaluation_question;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">formations/evaluation/questions/list</result>
     		<result name="error" type="redirectAction">formations/evaluation/questions/list</result>
     		<result name="input" type="redirectAction">formations/evaluation/questions/list</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/evaluation/questions/list</result>
     	</action>
+    	
     	<action name="formations/evaluation/questions/add" class="com.sqli.echallenge.jformation.web.responsableformation.SessionEvaluationQuestionAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: add_formation_evaluation_question;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">formations/evaluation/questions/list</result>
     		<result name="error" type="redirectAction">formations/evaluation/questions/list</result>
     		<result name="input" type="redirectAction">formations/evaluation/questions/list</result>
+    		<result name="forbiddenAction" type="redirectAction">formations/evaluation/questions/list</result>
     	</action>
     </package>
     

@@ -9,34 +9,71 @@
 
 	<!-- default package -->
     <package name="formateur" namespace="/formateur" extends="sqli_basic_package">
+    	<default-action-ref name="sessions/list" />
+    
     	<action name="sessions/list" class="com.sqli.echallenge.jformation.web.formateur.SessionFormationListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/formateur/session_list.jsp</result>
     		<result name="error">/pages/formateur/session_list.jsp</result>
     		<result name="input">/pages/formateur/session_list.jsp</result>
     	</action>
     	
     	<action name="sessions/seances/list" class="com.sqli.echallenge.jformation.web.formateur.SessionSeanceListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/formateur/session_seance_list.jsp</result>
     		<result name="error" type="redirectAction">sessions/list</result>
     		<result name="input" type="redirectAction">sessions/list</result>
     	</action>
+    	
 		<action name="sessions/seances/update" class="com.sqli.echallenge.jformation.web.formateur.SessionSeanceUpdateAction">
+			<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: update_session_seances;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">sessions/seances/list?idSession=${idSession}</result>
     		<result name="error" type="redirectAction">sessions/seances/list?idSession=${idSession}</result>
     		<result name="input" type="redirectAction">sessions/seances/list?idSession=${idSession}</result>
+    		<result name="forbiddenAction" type="redirectAction">sessions/seances/list?idSession=${idSession}</result>
     	</action>   
     	
     	<action name="sessions/documents/list" class="com.sqli.echallenge.jformation.web.formateur.SessionDocumentListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/formateur/session_document_list.jsp</result>
     		<result name="error" type="redirectAction">sessions/list</result>
     		<result name="input" type="redirectAction">sessions/list</result>
     	</action> 
+    	
     	<action name="sessions/documents/delete" class="com.sqli.echallenge.jformation.web.formateur.SessionDocumentDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: delete_session_documents;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="error" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="input" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
+    		<result name="forbiddenAction" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     	</action> 	
+    	
     	<action name="sessions/documents/add" class="com.sqli.echallenge.jformation.web.formateur.SessionDocumentAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: add_session_documents;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<interceptor-ref name="fileUpload">
 				<param name="maximumSize">2097152</param>
 				<param name="allowedTypes">application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/msword, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.ms-powerpoint</param>
@@ -46,14 +83,26 @@
     		<result name="success" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="error" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     		<result name="input" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
+    		<result name="forbiddenAction" type="redirectAction">sessions/documents/list?idSession=${idSession}</result>
     	</action> 
     	
     	<action name="sessions/collaborateurs/list" class="com.sqli.echallenge.jformation.web.formateur.SessionCollaborateurListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/formateur/session_seance_absence_list.jsp</result>
     		<result name="error" type="redirectAction">sessions/list</result>
     		<result name="input" type="redirectAction">sessions/list</result>
     	</action> 
+    	
     	<action name="sessions/collaborateurs/absence" class="com.sqli.echallenge.jformation.web.formateur.SessionCollaborateurAbsenceAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: add_session_absences;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">
     			<param name="actionName">sessions/collaborateurs/list</param>
         		<param name="idSession">${idSession}</param>
@@ -69,7 +118,13 @@
         		<param name="idSession">${idSession}</param>
         		<param name="idSeance">${idSeance}</param>
     		</result>
+    		<result name="forbiddenAction" type="redirectAction">
+    			<param name="actionName">sessions/collaborateurs/list</param>
+        		<param name="idSession">${idSession}</param>
+        		<param name="idSeance">${idSeance}</param>
+    		</result>
     	</action> 
+    	
     </package>
     
 </struts>

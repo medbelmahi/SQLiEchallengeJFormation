@@ -2,6 +2,7 @@ package com.sqli.echallenge.jformation.web.interceptor;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -28,7 +29,13 @@ public class SqliRoleValidatorInterceptor extends AbstractInterceptor {
 				return invocation.invoke();
 				
 			}else{
-				((SqliActionSupport) invocation.getAction()).addActionError(((SqliActionSupport) invocation.getAction()).getText("role.error.unauthorized"));
+				//!!!!!!!Exception
+				//((SqliActionSupport) invocation.getAction()).setSessionActionErrorText(((SqliActionSupport) invocation.getAction()).getText("role.action.not.autorized"));
+				
+				//set Warning message
+				String errorMessage = ((SqliActionSupport) invocation.getAction()).getText("role.action.not.autorized");
+				invocation.getInvocationContext().getSession().put(SqliActionSupport.SESSION_ACTION_ERROR_FIELD, errorMessage);
+				
 				return SqliActionSupport.PARTIAL_AUTHORIZATION_REQUIRED_RESULT;
 			}
 		}
@@ -55,15 +62,6 @@ public class SqliRoleValidatorInterceptor extends AbstractInterceptor {
         System.out.println(roleActions);
 	}
 	
-	/*private boolean isAllowed(Utilisateur utilisateur){
-		if(isUtilisateurInRole(utilisateur)){
-			if(isUtilisateurHasActions(utilisateur)){
-				return true;//Utilisateur has Role and Actions to invoke the Action.
-			}
-		}
-		
-		return false;
-	}*/
 	
 	private boolean isUtilisateurInRole(Utilisateur utilisateur){
 		//Get role if existe
@@ -75,9 +73,11 @@ public class SqliRoleValidatorInterceptor extends AbstractInterceptor {
 		}
 		
 		//Check if the utilisateur is In role to invoke the Action
-		/*if(utilisateur!= null && utilisateur.isInRole(role)){
-			return true;
-		}*/
+		if(utilisateur!= null){
+			if(utilisateur.getProfil() != null && utilisateur.getProfil().getRoleBase().toLowerCase().equals(role)){
+				return true;
+			}
+		}
 		
 		//The utilisateur is not allowed to invoke the Action
 		return false;
@@ -93,11 +93,18 @@ public class SqliRoleValidatorInterceptor extends AbstractInterceptor {
 		}
 		
 		//Check if utilisateur has ALL the priviliges "actions" that must have to invoke the Action
-		/*for(String action : actions){
-			if(!utilisateur.isHasAction(action)){
+		//1// 
+		if(utilisateur.getProfil().getActions() == null || utilisateur.getProfil().getActions().size() < 1){
+			return false;
+		}
+		
+		//2// 
+		List<String> userActions = utilisateur.getProfil().getActions();
+		for(String action : actions){
+			if(!userActions.contains(action)){
 				return false;
 			}
-		}*/
+		}
 		return true;
 	}
 	

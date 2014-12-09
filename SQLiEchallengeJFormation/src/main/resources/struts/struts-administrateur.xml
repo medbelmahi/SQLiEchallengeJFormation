@@ -13,21 +13,46 @@
     
     	<!-- Utilisateur actions -->
     	<action name="utilisateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurListAction">
+	    	<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/administrateur/utilisateur_list.jsp</result>
     		<result name="error">/pages/administrateur/utilisateur_list.jsp</result>
     		<result name="input">/pages/administrateur/utilisateur_list.jsp</result>
     	</action>
+    	
     	<action name="utilisateurs/delete" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: delete_utilisateur;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
     	</action>
+    	
     	<action name="utilisateurs/email" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurSendEmailAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: email_utilisateur;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
     	</action>
+    	
     	<action name="utilisateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: add_utilisateur;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
 	    	<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
 			</interceptor-ref>
@@ -35,102 +60,200 @@
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
     	</action>
+    	
     	<action name="utilisateurs/update" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurUpdateAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: update_utilisateur;</param>
+	    	</interceptor-ref>
 	    	<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
     		<result name="success" type="redirectAction">utilisateurs/list</result>
     		<result name="error" type="redirectAction">utilisateurs/list</result>
     		<result name="input" type="redirectAction">utilisateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
     	</action>
     	<!-- End utilisateur actions -->
     	
     	<!-- Profil actions -->
     	<action name="profils/list" class="com.sqli.echallenge.jformation.web.administrateur.ProfilListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/administrateur/profil_list.jsp</result>
     		<result name="error">/pages/administrateur/profil_list.jsp</result>
     		<result name="input">/pages/administrateur/profil_list.jsp</result>
     	</action>
+    	
     	<action name="profils/delete" class="com.sqli.echallenge.jformation.web.administrateur.ProfilDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: delete_profil;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">profils/list</result>
     		<result name="error" type="redirectAction">profils/list</result>
     		<result name="input" type="redirectAction">profils/list</result>
+    		<result name="forbiddenAction" type="redirectAction">profils/list</result>
     	</action>
+    	
     	<action name="profils/actions/update" class="com.sqli.echallenge.jformation.web.administrateur.ProfilUpdateActionsAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: update_profil_actions;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">profils/list</result>
     		<result name="error" type="redirectAction">profils/list</result>
     		<result name="input" type="redirectAction">profils/list</result>
+    		<result name="forbiddenAction" type="redirectAction">profils/list</result>
     	</action>
+    	
     	<action name="profils/add" class="com.sqli.echallenge.jformation.web.administrateur.ProfilAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: add_profil;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">profils/list</result>
     		<result name="error" type="redirectAction">profils/list</result>
     		<result name="input" type="redirectAction">profils/list</result>
+    		<result name="forbiddenAction" type="redirectAction">profils/list</result>
     	</action>
     	<!-- End profil actions -->
     
     	<!-- Habilitations actions -->
     	<action name="habilitations/list" class="com.sqli.echallenge.jformation.web.administrateur.HabilitationListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/administrateur/habilitation_list.jsp</result>
     		<result name="error">/pages/administrateur/habilitation_list.jsp</result>
     		<result name="input">/pages/administrateur/habilitation_list.jsp</result>
     	</action>
+    	
     	<action name="habilitations/add" class="com.sqli.echallenge.jformation.web.administrateur.HabilitationAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: add_habilitation;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">habilitations/list</result>
     		<result name="error" type="redirectAction">habilitations/list</result>
     		<result name="input" type="redirectAction">habilitations/list</result>
+    		<result name="forbiddenAction" type="redirectAction">habilitations/list</result>
     	</action>
+    	
     	<action name="habilitations/delete" class="com.sqli.echallenge.jformation.web.administrateur.HabilitationDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: delete_habilitation;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
 			<result name="success" type="redirectAction">habilitations/list</result>
     		<result name="error" type="redirectAction">habilitations/list</result>
     		<result name="input" type="redirectAction">habilitations/list</result>
+    		<result name="forbiddenAction" type="redirectAction">habilitations/list</result>
     	</action>
     	<!-- End habilitations actions -->
     	
     	<!-- Collaborateur actions -->
     	<action name="collaborateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/administrateur/collaborateur_list.jsp</result>
     		<result name="error">/pages/administrateur/collaborateur_list.jsp</result>
     		<result name="input">/pages/administrateur/collaborateur_list.jsp</result>
+    		
     	</action>
+    	
     	<action name="collaborateurs/add" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurAddAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: add_collaborateur;</param>
+	    	</interceptor-ref>
     		<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
     		<result name="success" type="redirectAction">collaborateurs/list</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">collaborateurs/list</result>
     	</action>
+    	
     	<action name="collaborateurs/update" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurUpdateAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: update_collaborateur;</param>
+	    	</interceptor-ref>
     		<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/jpeg, image/png</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
     		<result name="success" type="redirectAction">collaborateurs/list</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">collaborateurs/list</result>
     	</action>
+    	
     	<action name="collaborateurs/delete" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurDeleteAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: delete_collaborateur;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">collaborateurs/list</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">collaborateurs/list</result>
     	</action>
+    	
     	<action name="collaborateurs/email" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurSendEmailAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: email_collaborateur;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success" type="redirectAction">collaborateurs/list</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">collaborateurs/list</result>
     	</action>
+    	
     	<action name="collaborateurs/habilitations" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurHabilitationListAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success">/pages/administrateur/collaborateur_habilitation_list.jsp</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">collaborateurs/list</result>
     	</action>
+    	
     	<action name="collaborateurs/habilitations/update" class="com.sqli.echallenge.jformation.web.administrateur.CollaborateurHabilitationUpdateAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Administrateur: update_collaborateur_habilitation;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
     		<result name="success"  type="redirectAction">collaborateurs/habilitations?idCollaborateur=${idCollaborateur}</result>
     		<result name="error" type="redirectAction">collaborateurs/list</result>
     		<result name="input" type="redirectAction">collaborateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">collaborateurs/habilitations?idCollaborateur=${idCollaborateur}</result>
     	</action>
     	<!-- End Collaborateurs actions -->
     	

@@ -16,8 +16,8 @@ public class SqliActionSupport extends ActionSupport implements SessionAware {
 	public static final String SESSION_ACTION_MESSAGE_FIELD = "action_message";
 	
 	
-	public static final String PARTIAL_AUTHORIZATION_REQUIRED_RESULT = "partial_authorization_required";
-	public static final String COMPLETE_AUTHORIZATION_REQUIRED_RESULT = "complete_authorization_required";
+	public static final String PARTIAL_AUTHORIZATION_REQUIRED_RESULT = "forbiddenAction";
+	public static final String COMPLETE_AUTHORIZATION_REQUIRED_RESULT = "forbiddenRessource";
 	
 	public static final String INDEX_ADMINISTRATEUR_RESULT = "index_administrateur";
 	public static final String INDEX_RESPO_FORMATION_RESULT = "index_respo_formation";

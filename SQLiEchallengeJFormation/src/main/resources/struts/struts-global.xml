@@ -18,6 +18,15 @@
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
+		
+	<!-- global result -->
+	<global-results>
+		<!-- Forbidden Ressource redirect action -->
+		<result name="forbiddenRessource" type="redirectAction">
+    		<param name="actionName">index</param>
+      		<param name="namespace">/</param>
+    	</result>
+	</global-results>
 	</package>
-
+	
 </struts>
