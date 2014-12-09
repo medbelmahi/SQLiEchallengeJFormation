@@ -7,8 +7,8 @@ $('#my_multi_select2').multiSelect({
 });
 
 $('#my_multi_select3').multiSelect({
-    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
-    selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='Les habilitations'>",
+    selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='Ses habilitation'>",
     afterInit: function (ms) {
         var that = this,
             $selectableSearch = that.$selectableUl.prev(),
@@ -43,8 +43,8 @@ $('#my_multi_select3').multiSelect({
 });
 
 $('#my_multi_select3_costum').multiSelect({
-    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
-    selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='Les habilitations'>",
+    selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='Ses habilitations'>",
     afterInit: function (ms) {
         var that = this,
             $selectableSearch = that.$selectableUl.prev(),

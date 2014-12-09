@@ -40,17 +40,18 @@
 		<!--sidebar nav start-->
 		<ul class="nav nav-pills nav-stacked custom-nav">
 		
-			<li><a href="index.html"><i class="fa fa-home"></i> <span>Profil</span></a></li>
+			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li>
 			<li class="menu-list nav-active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i
-					class="fa fa-laptop"></i> <span>Gestion collaborateur</span></a>
+					class="fa fa-laptop"></i> <span>Gestion utilisateurs</span></a>
 				<ul class="sub-menu-list">
-					<li class="active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'>Liste des collaborateurs</a></li>
-					<li><a href='<s:url value="/administrateur/habilitations/list"/>'> Gestion des habilitations</a></li>
+					<li class="active"><a href='<s:url value="/administrateur/utilitateurs/list"/>'>Liste des utilisateurs</a></li>
+					<li><a href='<s:url value="/administrateur/profils/list"/>'> Gestion des Profils</a></li>
 				</ul></li>
-			<li class="menu-list"><a href='<s:url value="/administrateur/profils/list"/>'><i class="fa fa-book"></i>
-					<span>Gestion profil</span></a>
+			<li class="menu-list"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i class="fa fa-book"></i>
+					<span>Gestion collaborateur</span></a>
 				<ul class="sub-menu-list">
-					<li><a href='<s:url value="/administrateur/profils/list"/>' > Listes des profils</a></li>
+					<li><a href='<s:url value="/administrateur/collaborateurs/list"/>' > Listes des collaborateur</a></li>
+					<li><a href='<s:url value="/administrateur/habilitations/list"/>' > Listes des collaborateur</a></li>
 				</ul>
 			</li>
 				

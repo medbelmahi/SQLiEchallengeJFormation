@@ -75,9 +75,9 @@
 														<div class="row">
 															<div class="col-md-12">
 																<div class="form-group last">
-																	<label class="control-label col-md-3">Chercher</label>
+<!-- 																	<label class="control-label col-md-3">Chercher</label> -->
 																	<input type="hidden" name="idCollaborateur" value="<s:property value="idCollaborateur" />" required="required">
-																	<div class="col-md-9">
+																	<div class="col-md-12">
 																		<select name="idHabilitations" class="multi-select" id="my_multi_select3_costum" multiple="multiple" >
 																			<s:iterator value="collaborateurHabilitations">
 																				<option selected="selected" id='habilitationOptionId_<s:property value="idHabilitation" />' data-score="1" value="<s:property value="idHabilitation" />" data-description="<s:property value="descriptionHabilitation" />" ><s:property value="nomHabilitation" /></option>	
@@ -92,7 +92,7 @@
 															</div>
 														<div class="row" style="margin-top: 5px;">
 														</div>
-														<div class="row" style="margin-top: 20px;">
+														<div class="row" style="margin-top: 30px;">
 															<button type="submit" class="btn btn-success btn-lg btn-block">Mise à jour habilitation</button>
 														</div>
 														</div>
