@@ -53,7 +53,7 @@
 						<div class="form-group">
 							<label for="inputEmail" class="col-sm-3 control-label">Email<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="email" class="form-control" id="inputEmail" placeholder="Email" type="email" required>
+								<input autocomplete="off" name="email" class="form-control" id="inputEmail" placeholder="Email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" type="email" required>
 							</div>
 						</div>
 
@@ -75,7 +75,7 @@
 						<div class="form-group" >
 							<label for="inputTelephone" class="col-sm-3 control-label">Telephone<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}">
+								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required>
 							</div>
 						</div>
 
@@ -83,7 +83,7 @@
 						<div class="form-group">
 							<label for="inputAdress" class="col-sm-3 control-label">Adresse<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress" placeholder="Ex : Casablanca Rue 10 N80" type="text">
+								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress" placeholder="Ex : Casablanca Rue 10 N80" type="text" required>
 							</div>
 						</div>
 
