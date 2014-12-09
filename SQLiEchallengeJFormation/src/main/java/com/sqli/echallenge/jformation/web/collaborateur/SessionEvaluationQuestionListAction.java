@@ -85,4 +85,21 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 	public void setCode(String code) {
 		this.code = code;
 	}
+
+	public List<EvaluationQuestion> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<EvaluationQuestion> questions) {
+		this.questions = questions;
+	}
+
+	public Collaborateur getCollaborateur() {
+		return collaborateur;
+	}
+
+	public void setCollaborateur(Collaborateur collaborateur) {
+		this.collaborateur = collaborateur;
+	}
+	
 }
