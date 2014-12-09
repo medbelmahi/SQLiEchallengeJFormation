@@ -77,11 +77,11 @@
                             <tr>
                                 <th>#</th>
                                 <th>Question</th>
-                                <th>Très satisfait</th>
-                                <th>Satisfait</th>
-                                <th>Peu  satisfait</th>
-                                <th>Pas du tout satisfait</th>
                                 <th>Non concerné</th>
+                                <th>Pas du tout satisfait</th>
+                                <th>Peu  satisfait</th>
+                                <th>Satisfait</th>
+                                <th>Très satisfait</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -95,25 +95,7 @@
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" checked="checked" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="5">
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>
-											<div class="icheck ">
-												<div class="square single-row">
-													<div class="radio ">
-														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="4">
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>
-											<div class="icheck ">
-												<div class="square single-row">
-													<div class="radio ">
-														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="3">
+														<input tabindex="3" checked="checked" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="1">
 													</div>
 												</div>
 											</div>
@@ -131,7 +113,25 @@
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="1">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="3">
+													</div>
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="icheck ">
+												<div class="square single-row">
+													<div class="radio ">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="4">
+													</div>
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="icheck ">
+												<div class="square single-row">
+													<div class="radio ">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="5">
 													</div>
 												</div>
 											</div>
