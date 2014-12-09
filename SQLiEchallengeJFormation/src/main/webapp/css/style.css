@@ -3160,7 +3160,7 @@ div.tagsinput span.tag a {
 ----------------------------*/
 
 .error-page {
-    background: #6bc5a4;
+    background: #D9534F;
 }
 
 .error-wrapper {
@@ -3176,7 +3176,7 @@ div.tagsinput span.tag a {
 
 .error-wrapper h3 {
     font-size: 32px;
-    color: #474747;
+    color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     line-height: 30px;
