@@ -72,8 +72,7 @@
 					
 					//set inputs value from jsonResponse
 					document.getElementById("idUtilisateur_sendMessage").value = jsonResponse.idUtilisateur;
-					var fullName = jsonResponse.nom + " " + jsonResponse.prenom;
-					document.getElementById("fullnameTo").innerHTML = fullName;
+					document.getElementById("fullnameTo").innerHTML = jsonResponse.fullname;
 					document.getElementById("to").value = jsonResponse.email;
 	
 				}

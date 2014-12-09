@@ -36,28 +36,28 @@
 						<input type="hidden" id="idUtilisateur" name="idUtilisateur">
 						
 						<div class="form-group">
-							<label for="inputLastName" class="col-sm-2 col-sm-2 control-label">Nom</label> 
-							<div class="col-sm-10">
+							<label for="inputLastName" class="col-sm-3 control-label">Nom<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<input autocomplete="off" name="nom" class="form-control" id="inputLastName" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputFirstName" class="col-sm-2 col-sm-2 control-label">Prenom</label> 
-							<div class="col-sm-10">
-								<input autocomplete="off" name="prenom" class="form-control" id="inputFirstName" placeholder="Prenom" type="text" required>
+							<label for="inputFirstName" class="col-sm-3 control-label">Prenom<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
+								<input autocomplete="on" name="prenom" class="form-control" id="inputFirstName" placeholder="Prenom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputEmail" class="col-sm-2 col-sm-2 control-label">Email</label> 
-							<div class="col-sm-10">
-								<input autocomplete="off" name="email" class="form-control" id="inputEmail" placeholder="Email" type="email" required>
+							<label for="inputEmail" class="col-sm-3 control-label">Email<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
+								<input autocomplete="on" name="email" class="form-control" id="inputEmail" placeholder="Email" type="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
 							</div>
 						</div>
 
 						<div class="form-group" >
-							<label for="thedateDiv" class="col-sm-2 col-sm-2 control-label">Date de naissance</label>
+							<label for="thedateDiv" class="col-sm-3 control-label">Date de naissance<span class="text-danger" > *</span></label>
 							<div id="thedateDiv" class="">
 
 								<div data-date-viewmode="years" data-date-format="dd/mm/yyyy" data-date="12/02/1990" class="col-sm-9 input-append date dpYears">
@@ -72,23 +72,23 @@
 						</div>
 
 						<div class="form-group" >
-							<label for="inputTelephone" class="col-sm-2 col-sm-2 control-label">Telephone</label> 
-							<div class="col-sm-10">
-								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}">
+							<label for="inputTelephone" class="col-sm-3 control-label">Telephone<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
+								<input autocomplete="off" name="telephone" class="form-control" id="inputTelephone" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required="required">
 							</div>
 						</div>
 
 
 						<div class="form-group">
-							<label for="inputAdress" class="col-sm-2 col-sm-2 control-label">Adresse</label> 
-							<div class="col-sm-10">
-								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress" placeholder="Ex : Casablanca Rue 10 N80" type="text">
+							<label for="inputAdress" class="col-sm-3 control-label">Adresse<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
+								<input autocomplete="off" name="adresse" class="form-control" id="inputAdress" placeholder="Ex : Casablanca Rue 10 N80" type="text" required="required">
 							</div>
 						</div>
 						
 						
 						<div class="form-group">
-							<label for="inputAdress_2" class="col-sm-2 col-sm-2 control-label">Profil</label> 
+							<label for="inputAdress_2" class="col-sm-2 col-sm-2 control-label">Profil<span class="text-danger" > *</span></label> 
 							<div class="col-sm-10">
 								<select id="profilSelected" name="profil" class="form-control input-sm m-bot15">
 	                                <s:iterator value="profils">
@@ -99,10 +99,10 @@
 						</div>
 
 						<div class="form-group">
-							<div style="display: flex; align-items: center;" class="col-sm-2 col-sm-2 control-label"> 
-								<label class="control-label">Sexe</label>
+							<div style="display: flex; align-items: center;" class="col-sm-3 control-label"> 
+								<label class="control-label">Sexe<span class="text-danger" > *</span></label>
 							</div>
-							<div class="col-lg-8 vcenter">
+							<div class="col-sm-9 vcenter">
 								<div class="col-sm-9 icheck ">
 									<div class="square-green single-row col-sm-6">
 										<div class="radio ">
@@ -119,10 +119,7 @@
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary" >Mise à jour</button>
-						<!-- <div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-							<button type="submit" class="btn btn-success">Mise à jour</button>
-						</div> -->
+						
 					</form>
 				</div>
 			</div>
