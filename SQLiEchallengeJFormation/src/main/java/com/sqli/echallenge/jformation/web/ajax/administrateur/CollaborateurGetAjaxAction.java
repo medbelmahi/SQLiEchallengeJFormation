@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sqli.echallenge.jformation.metier.CollaborateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Collaborateur;
 import com.sqli.echallenge.jformation.util.SqliDateHelper;
+import com.sqli.echallenge.jformation.util.UserHelper;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -137,4 +138,7 @@ public class CollaborateurGetAjaxAction extends SqliActionSupport {
 		this.idCollaborateur = idCollaborateur;
 	}
 	
+	public String getFullname(){
+		return UserHelper.getFullname(nom, prenom);
+	}
 }
