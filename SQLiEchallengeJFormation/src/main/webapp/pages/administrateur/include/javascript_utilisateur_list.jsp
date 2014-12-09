@@ -125,14 +125,18 @@
 		{
 		    var aData = oTable.fnGetData( nTr );
 		    var sOut = '<table width="100%" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-		    sOut += '<tr><td colspan="2" rowspan="3"><div class="profile-pic text-center"><img alt="" src="'+aData[9]+'"></div></td><td>Telephone : </td><td>'+aData[3]+'</td></tr>';
+		    sOut += '<tr><td colspan="2" rowspan="3"><div class="profile-pic text-center"><img class="image-profil" alt="" src="'+aData[9]+'"></div></td><td>Telephone : </td><td>'+aData[3]+'</td></tr>';
 		    sOut += '<tr><td>Date de naissance : </td><td>'+aData[8]+'</td></tr>';
     		sOut += '<tr><td>Sexe : </td><td>'+aData[4]+'</td></tr>';
     		sOut += '<tr><td>Nom &amp; Prènom : </td><td>'+aData[1]+'</td><td>Adresse : </td><td>'+aData[7]+'</td></tr>';
     		sOut += '<tr><td>Email : </td><td>'+aData[2]+'</td><td>Profil : </td><td>'+aData[5]+'</td></tr>';
 		    sOut += '</table>';
-		
+		    $('.image-profil').off( "click", "**" );
+		    $('.image-profil').click(false);
 		    return sOut;
 		}
+		
+		$('.image-profil').off( "click", "**" );
+		$('.image-profil').click(false);
 	</script>
 <!-- End Initialisation de cellspacing table utilisateur -->

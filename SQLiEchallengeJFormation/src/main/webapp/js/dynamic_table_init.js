@@ -55,6 +55,8 @@ function initTheTableData(){
      * rather it is done here
      */
     $(document).on('click','#hidden-table-info tbody td img',function () {
+    	
+	    
         var nTr = $(this).parents('tr')[0];
         if ( oTable.fnIsOpen(nTr) )
         {
@@ -68,6 +70,8 @@ function initTheTableData(){
             this.src = "../../images/details_close.png";
             oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
         }
+        $('.image-profil').off( "click", "**" );
+	    $('.image-profil').click(false);
     } );
 }
 

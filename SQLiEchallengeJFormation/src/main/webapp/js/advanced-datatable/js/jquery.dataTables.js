@@ -5824,9 +5824,13 @@
 			{
 				if ( oSettings.aoOpenRows[i].nParent == nTr )
 				{
+					$('.image-profil').off( "click", "**" );
+				    $('.image-profil').click(false);
 					return true;
 				}
 			}
+			$('.image-profil').off( "click", "**" );
+		    $('.image-profil').click(false);
 			return false;
 		};
 		

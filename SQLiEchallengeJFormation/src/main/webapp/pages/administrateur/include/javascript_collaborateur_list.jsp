@@ -77,7 +77,7 @@
 		{
 		    var aData = oTable.fnGetData( nTr );
 		    var sOut = '<table width="100%" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-		    sOut += '<tr><td colspan="2" rowspan="3"><div class="profile-pic text-center"><img alt="" src="'+aData[9]+'"></div>';
+		    sOut += '<tr><td colspan="2" rowspan="3"><div class="profile-pic text-center"><img class="image-profil" alt="" src="'+aData[9]+'"></div>';
 		    sOut += '</td><td width="130">Sexe : </td><td width="108">'+aData[4]+'</td></tr>';
 		    sOut += '<tr><td>Date de naissance : </td><td>'+aData[7]+'</td></tr>';
 		    sOut += '<tr><td>Adresse : </td><td>'+aData[6]+'</td></tr>';
@@ -85,8 +85,13 @@
 		    sOut += '<tr><td>Email : </td><td>'+aData[2]+'</td><td rowspan="3">habilitaition</td><td rowspan="3">'+aData[8]+'</td></tr>';
 		    sOut += '<tr><td>Telephone : </td><td>'+aData[3]+'</td></tr>';
 		    sOut += '</table>';
-		
+		    
 		    return sOut;
 		}
+		$('.image-profil').off( "click", "**" );
+	    $('.image-profil').click(false);
+		
+		$('.image-profil').off( "click", "**" );
+		$('.image-profil').click(false);
 	</script>
 <!-- End Initialisation du tableua Collaborateur -->

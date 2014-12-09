@@ -13,7 +13,7 @@
 			</header>
 			<div class="panel-body">
 				<div class="adv-table">
-					<!-- <div class="clearfix">
+					<div class="clearfix">
 						<div class="btn-group">
 							<a href="#addCollaborateurModal" data-toggle="modal">
 								<button  class="btn btn-primary" >
@@ -21,7 +21,7 @@
 								</button>
 							</a>
 						</div>
-					</div> -->
+					</div>
 					<div id="hidden-table-info_wrapper"
 						class="dataTables_wrapper form-inline" role="grid">
 

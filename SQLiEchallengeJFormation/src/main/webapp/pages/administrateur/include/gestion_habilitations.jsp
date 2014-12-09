@@ -5,7 +5,7 @@
 	<div class="col-md-12">
 		<section class="panel">
 			<header id="gestion_habilitation_panel" class="panel-heading">
-				Gestion des habilitations <span class="tools pull-right">
+				Affectation des habilitations <span class="tools pull-right">
 				<a style="display: none;" class="fa fa-chevron-down" href="javascript:;" id="downUphabilitation"></a> 
 				</span>
 			</header>
@@ -70,7 +70,7 @@
 											<div class="col-md-12">
 												<div class="panel">
 													<div class="panel-body">
-														<h4>Mise à jour des habilitations</h4>
+<!-- 														<h4>Mise à jour des habilitations</h4> -->
 														<form action="habilitations/update" method="post">
 														<div class="row">
 															<div class="col-md-12">
