@@ -35,7 +35,7 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
 public class CollaborateurAddAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = -7968028204363016406L;
 	private static final String SAVE_DIR = "src/main/resources/avatars";
-	private static final String DEFAULT_AVATAR = "avatar.png";
+	private static final String DEFAULT_AVATAR = "/images/avatar.png";
 	private static final String TEMPLATE_MAIL = "template/collaborateur-new-created-template.vm";
 	
 	@Autowired
@@ -200,10 +200,8 @@ public class CollaborateurAddAction extends SqliActionSupport implements Servlet
 	private String saveImage() throws IOException{
 		if(fileImage == null){
 			String contextPath = servletRequest.getContextPath();
-			File saveDirContext = new File(contextPath, SAVE_DIR);
-			File fileToSaveContext = new File(saveDirContext, DEFAULT_AVATAR);
 			
-			return fileToSaveContext.toString();
+			return contextPath + DEFAULT_AVATAR;
 		}
 		
 		//Get paths reat + context
