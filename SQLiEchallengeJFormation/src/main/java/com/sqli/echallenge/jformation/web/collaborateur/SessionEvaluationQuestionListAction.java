@@ -39,12 +39,12 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 	private String code;//code d'inscription a la session
 	
 	List<EvaluationQuestion> questions;
+	Collaborateur collaborateur;
 	
 	public String execute() throws Exception {
 		try {
 			//1// get collaborateur from db using code
 			//2// get session from db using code
-			Collaborateur collaborateur = null;
 			SessionFormation session = null;
 			try {
 				SessionInscription inscription = inscriptionMetier.get(code);
