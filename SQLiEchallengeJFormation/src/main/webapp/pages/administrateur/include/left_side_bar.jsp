@@ -25,7 +25,7 @@
 					<h4>
 						<a href="#"><s:property value="%{#session.utilisateur.fullname}" /></a>
 					</h4>
-					<span>"Hello There..."</span>
+					<span>"Bienvenu..."</span>
 				</div>
 			</div>
 
