@@ -47,7 +47,7 @@
 
 <div class="container">
 
-    <form class="form-signin" action="index.html" style="max-width: 100%">
+    <form class="form-signin" action="reponses" style="max-width: 100%" method="get">
         <div class="form-signin-heading text-center">
             <h1 class="sign-title">Evaluation</h1>
             <img src="images/login-logo.png" alt=""/>
@@ -56,15 +56,7 @@
 
         <div class="login-wrap">
         	<div class="row">
-        		<div class="col-lg-5 col-sm-5">choisir le dogré de votre satifaction</div>
-        		<div class="col-lg-7 col-sm-7">
-<!--         			<div class="col-lg-2 col-sm-2 text-center"></div> -->
-        			<div class="col-lg-3 col-sm-3 text-center">Très satisfait</div>
-        			<div class="col-lg-2 col-sm-2 text-center">Satisfait</div>
-        			<div class="col-lg-2 col-sm-2 text-center">Peu  satisfait</div>
-        			<div class="col-lg-3 col-sm-3 text-center">Pas du tout satisfait</div>
-        			<div class="col-lg-2 col-sm-2 text-center">Non concerné</div>
-        		</div>
+        		
         	</div>
         	<hr />
         	<div class="row">
@@ -92,16 +84,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            	<s:iterator value="questions">
+                            	<s:iterator value="questions" status="itStatus">
 									<tr><!-- row table begin -->
-										<input type="hidden" name="idQuestions" value='<s:property value="idEvaluationQuestion" />' />
-										<td>1</td>
+										<input type="hidden" name='idQuestions[<s:property value="%{#itStatus.count-1}" />]' value='<s:property value="idEvaluationQuestion" />' />
+										<td><s:property value="#itStatus.count" /></td>
 										<td><s:property value="question" /></td>
 										<td>
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name="scores" value="5">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="5">
 													</div>
 												</div>
 											</div>
@@ -110,7 +102,7 @@
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name="scores" value="4">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="4">
 													</div>
 												</div>
 											</div>
@@ -119,7 +111,7 @@
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name="scores" value="3">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="3">
 													</div>
 												</div>
 											</div>
@@ -128,7 +120,7 @@
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name="scores" value="2">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="2">
 													</div>
 												</div>
 											</div>
@@ -137,7 +129,7 @@
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name="scores" value="1">
+														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="1">
 													</div>
 												</div>
 											</div>
@@ -152,37 +144,17 @@
                 
             </div>
             <hr />
-            <p>Enter your personal details below</p>
-            <input type="text" autofocus="" placeholder="Full Name" class="form-control">
-            <input type="text" autofocus="" placeholder="Address" class="form-control">
-            <input type="text" autofocus="" placeholder="Email" class="form-control">
-            <input type="text" autofocus="" placeholder="City/Town" class="form-control">
-            <div class="radios">
-                <label for="radio-01" class="label_radio col-lg-6 col-sm-6">
-                    <input type="radio" checked="" value="1" id="radio-01" name="sample-radio"> Male
-                </label>
-                <label for="radio-02" class="label_radio col-lg-6 col-sm-6">
-                    <input type="radio" value="1" id="radio-02" name="sample-radio"> Female
-                </label>
-            </div>
-
-            <p> Enter your account details below</p>
-            <input type="text" autofocus="" placeholder="User Name" class="form-control">
-            <input type="password" placeholder="Password" class="form-control">
-            <input type="password" placeholder="Re-type Password" class="form-control">
-            <label class="checkbox">
-                <input type="checkbox" value="agree this condition"> I agree to the Terms of Service and Privacy Policy
-            </label>
+            
             <button type="submit" class="btn btn-lg btn-login btn-block">
                 <i class="fa fa-check"></i>
             </button>
 
-            <div class="registration">
+            <!-- <div class="registration">
                 Already Registered.
                 <a href="login.html" class="">
                     Login
                 </a>
-            </div>
+            </div> -->
 
         </div>
 
