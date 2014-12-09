@@ -56,12 +56,12 @@
 			</li>
 				
 
-			<li class="menu-list"><a href='<s:url value="/administrateur/utilitateurs/list"/>'><i class="fa fa-envelope"></i>
+			<%-- <li class="menu-list"><a href='<s:url value="/administrateur/utilitateurs/list"/>'><i class="fa fa-envelope"></i>
 					<span>Gestion utilisateur</span></a>
 				<ul class="sub-menu-list">
 					<li><a href='<s:url value="/administrateur/utilitateurs/list"/>'> Liste des utilisateurs</a></li>
 				</ul>
-			</li>
+			</li> --%>
 
 		</ul>
 		<!--sidebar nav end-->
