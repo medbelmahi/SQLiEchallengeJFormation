@@ -24,7 +24,6 @@
 
                     <section class="mail-list">
                         <div class="compose-mail">
-                            
                             	<input type="hidden" id="idUtilisateur_sendMessage" name="idUtilisateur">
                                 <div class="form-group">
                                     <label for="to" class="col-md-3">A:</label>
@@ -37,9 +36,8 @@
                                 </div>
 
                                 <div class="compose-editor">
-                                    <textarea class="wysihtml5 form-control" rows="9" name="msg" id="msg_"></textarea>
+                                    <textarea class="wysihtml5 form-control" rows="6" name="msg" id="msg_"></textarea>
                                 </div>
-                           
                         </div>
                     </section>
                      </form>

@@ -3981,7 +3981,7 @@ ul.labels-info li a:hover, ul.labels-info li a:focus {
 .mail-list {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 657px;
+    height: 360px;
 }
 
 .mail-list .list-group-item {

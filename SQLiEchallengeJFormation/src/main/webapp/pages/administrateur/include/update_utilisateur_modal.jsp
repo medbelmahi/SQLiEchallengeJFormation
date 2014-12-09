@@ -88,8 +88,8 @@
 						
 						
 						<div class="form-group">
-							<label for="inputAdress_2" class="col-sm-2 col-sm-2 control-label">Profil<span class="text-danger" > *</span></label> 
-							<div class="col-sm-10">
+							<label for="inputAdress_2" class="col-sm-3 control-label">Profil<span class="text-danger" > *</span></label> 
+							<div class="col-sm-9">
 								<select id="profilSelected" name="profil" class="form-control input-sm m-bot15">
 	                                <s:iterator value="profils">
 										<option value='<s:property value="idProfil" />'><s:property value="nomProfil" /></option>
@@ -103,7 +103,7 @@
 								<label class="control-label">Sexe<span class="text-danger" > *</span></label>
 							</div>
 							<div class="col-sm-9 vcenter">
-								<div class="col-sm-9 icheck ">
+								<div class="col-sm-12 icheck ">
 									<div class="square-green single-row col-sm-6">
 										<div class="radio ">
 											<input tabindex="3" type="radio" name="sexe" id="optionHomme" value="Homme"> <label> Male </label>
