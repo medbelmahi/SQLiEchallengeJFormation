@@ -37,7 +37,7 @@ public class SeanceAbsenceDaoImpl implements SeanceAbsenceDao {
 	}
 	
 	public void delete(Long idSeance) throws Exception {
-		Query query = entityManager.createQuery("from SeanceAbsence where seance.idSeance.=:idSeance");
+		Query query = entityManager.createQuery("delete from SeanceAbsence where seance.idSeance=:idSeance");
 		query.setParameter("idSeance", idSeance);
 		query.executeUpdate();
 		

@@ -130,7 +130,7 @@ hr {
 }
 
 .form-signin .btn-login {
-    background: #6bc5a4;
+    background: #D9534F;
     color: #fff;
     text-transform: uppercase;
     font-weight: normal;
@@ -144,7 +144,7 @@ hr {
 }
 
 .form-signin .btn-login:hover {
-    background: #688ac2;
+    background: #a94442;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -624,8 +624,8 @@ h5.left-nav-title {
 .notification-menu .dropdown-toggle:active,
 .notification-menu .dropdown-toggle.active,
 .notification-menu .open .dropdown-toggle.dropdown-toggle {
-    background: #424f63;
-    color: #65cea7;
+    background: #D9534F;
+    color: #ffffff;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -692,7 +692,7 @@ h5.left-nav-title {
 }
 
 .notification-menu .dropdown-menu li a:hover {
-    background: #2a323f;
+    background: #D9534F;
     color: #fff;
 }
 
@@ -719,7 +719,7 @@ h5.left-nav-title {
 }
 
 .notification-menu .dropdown-menu-usermenu {
-    background: #65cea7;
+    background: #353F4F;
     min-width: 200px;
 }
 
@@ -737,7 +737,7 @@ h5.left-nav-title {
 
 .notification-menu .dropdown-menu-head li a:hover {
     background: none;
-    color: #65cea7 !important;
+    color: #353F4F !important;
     text-decoration: none;
 }
 
@@ -805,7 +805,7 @@ h5.left-nav-title {
 }
 
 .normal-list li a:hover {
-    color: #65CEA7 !important;
+    color: #353F4F !important;
     text-decoration: none;
 }
 

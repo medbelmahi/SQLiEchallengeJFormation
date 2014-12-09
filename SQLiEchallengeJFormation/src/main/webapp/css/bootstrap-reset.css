@@ -126,7 +126,7 @@
 }
 
 .modal-header {
-    background: #65CEA7;
+    background: #D9534F;
     color: #fff;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -198,4 +198,16 @@
     background-color: #D9534F;
     border-color: #D9534F;
     color: #fff;
+}
+
+/*delete notification */
+.btn-info {
+	color:#fff;
+	background-color:#D9534F;
+	border-color:#a94442
+}
+
+.btn-info:hover {
+	background-color:#a94442;
+	border-color:#a94442;
 }
