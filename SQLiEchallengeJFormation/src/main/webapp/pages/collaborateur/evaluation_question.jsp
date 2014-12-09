@@ -47,7 +47,8 @@
 
 <div class="container">
 
-    <form class="form-signin" action="reponses" style="max-width: 100%" method="get">
+    <form class="form-signin" action="reponses" style="max-width: 100%" method="post" onsubmit="doBeforeSbmit();">
+    <input type="hidden" name='code' value='<s:property value="code" />' />
         <div class="form-signin-heading text-center">
             <h1 class="sign-title">Evaluation</h1>
             <img src="images/login-logo.png" alt=""/>
@@ -86,14 +87,15 @@
                             <tbody>
                             	<s:iterator value="questions" status="itStatus">
 									<tr><!-- row table begin -->
-										<input type="hidden" name='idQuestions[<s:property value="%{#itStatus.count-1}" />]' value='<s:property value="idEvaluationQuestion" />' />
+										<input type="hidden" name='idQuestions' value='<s:property value="idEvaluationQuestion" />' />
+										<input type="hidden" name='scores' value="" />
 										<td><s:property value="#itStatus.count" /></td>
 										<td><s:property value="question" /></td>
 										<td>
 											<div class="icheck ">
 												<div class="square single-row">
 													<div class="radio ">
-														<input tabindex="3" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="5">
+														<input tabindex="3" checked="checked" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="5">
 													</div>
 												</div>
 											</div>
@@ -174,6 +176,21 @@
 	<!--icheck -->
 	<script src='<s:url value="/js/iCheck/jquery.icheck.js"/>'></script>
 	<script src='<s:url value="/js/icheck-init.js"/>'></script>
-
+	
+	<script type="text/javascript">
+		function doBeforeSbmit(){
+			var elementsCheched = $("input[type=radio][checked]");
+			
+			var inputPrepar = document.getElementsByName("scores");
+			
+			for(i = 0; i < inputPrepar.length; i++){
+				
+				inputPrepar[i].value = elementsCheched[i].value;
+			}
+			
+			true;
+		}
+	</script>
+	
 </body>
 </html>
