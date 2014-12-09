@@ -18,7 +18,7 @@
 				<img src='<s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />' alt="" /><s:property value="%{#session.utilisateur.fullname}" /> <span class="caret"></span>
 			</a>
 				<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-					<li><a href='<s:url value="/profil/jquery-1.10.2.min.js"/>'><i class="fa fa-user"></i> Profile</a></li>
+					<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-user"></i> Profile</a></li>
 					<li><a href="<s:url value="/logout"/>"><i class="fa fa-sign-out"></i>Se deconnecter</a></li>
 				</ul></li>
 

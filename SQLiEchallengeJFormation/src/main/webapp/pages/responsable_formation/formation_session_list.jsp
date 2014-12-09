@@ -97,7 +97,7 @@
 	    <div class="main-content" >
 	
 	        <!-- header section start-->
-	        	<s:include value="include/header_section.jsp"></s:include>
+	        	<s:include value="/pages/administrateur/include/header_section.jsp"></s:include>
 	        <!-- header section end-->
 	
 	        <!-- page heading start-->
