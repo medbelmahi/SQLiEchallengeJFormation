@@ -43,6 +43,9 @@ public class SessionEvaluationQuestionReponseAction extends SqliActionSupport {
 	private Long[] idQuestions;
 	private Integer[] scores;
 	
+	Collaborateur collaborateur = null;
+	SessionFormation sessionFormation = null;
+	
 	private void sqlivalidate() throws Exception {
 		try{
 			if(idQuestions.length != scores.length){
@@ -61,21 +64,25 @@ public class SessionEvaluationQuestionReponseAction extends SqliActionSupport {
 			
 			//1// get collaborateur from db using code
 			//2// get session from db using code
-			Collaborateur collaborateur = null;
-			SessionFormation session = null;
+			SessionInscription inscription;
 			try {
-				SessionInscription inscription = inscriptionMetier.get(code);
+				inscription = inscriptionMetier.get(code);
 				
 				collaborateur = inscription.getCollaborateur();
-				session = inscription.getSessionFormation();
+				sessionFormation = inscription.getSessionFormation();
 			} catch (Exception e) {
 				throw new SqliException(getText("collaborateur.show.inscription.fail"));
+			}
+			
+			//2.1// verify if inscription valid or not (using code inscription)
+			if(inscription == null || inscription.getConfirmedInscription() == null || inscription.getConfirmedInscription() == false){
+				throw new SqliException(getText("collaborateur.NotInscritOrCodeNotValid"));
 			}
 			
 			//3// verify if user already evaluate session
 			List<EvaluationReponse> reponses = null;
 			try {
-				reponses = reponseMetier.getAll(collaborateur.getIdCollaborateur(), session.getIdSessionFormation());
+				reponses = reponseMetier.getAll(collaborateur.getIdCollaborateur(), sessionFormation.getIdSessionFormation());
 			} catch (Exception e) {
 				//do nothing
 			}
@@ -90,7 +97,7 @@ public class SessionEvaluationQuestionReponseAction extends SqliActionSupport {
 				reponse.setScore(scores[i]);
 				reponse.setQuestion(questionMetier.get(idQuestions[i]));
 				reponse.setCollaborateur(collaborateur);
-				reponse.setSession(session);
+				reponse.setSession(sessionFormation);
 				
 				//add to db
 				reponseMetier.add(reponse);
@@ -134,5 +141,22 @@ public class SessionEvaluationQuestionReponseAction extends SqliActionSupport {
 	public void setScores(Integer[] scores) {
 		this.scores = scores;
 	}
-	
+
+
+	public Collaborateur getCollaborateur() {
+		return collaborateur;
+	}
+
+
+	public void setCollaborateur(Collaborateur collaborateur) {
+		this.collaborateur = collaborateur;
+	}
+
+	public SessionFormation getSessionFormation() {
+		return sessionFormation;
+	}
+
+	public void setSessionFormation(SessionFormation sessionFormation) {
+		this.sessionFormation = sessionFormation;
+	}
 }

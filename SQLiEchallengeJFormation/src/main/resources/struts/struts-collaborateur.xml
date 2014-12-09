@@ -9,6 +9,8 @@
 
 	<!-- default package -->
     <package name="collaborateur" namespace="/collaborateur" extends="sqli_basic_package">
+    	<default-action-ref name="forbiddenRessource" />
+    
     	<action name="session/inscription/display" class="com.sqli.echallenge.jformation.web.collaborateur.SessionInscriptionDisplayAction">
     		<result name="success">/pages/collaborateur/inscription_display.jsp</result>
     		<result name="error">/pages/collaborateur/inscription_display.jsp</result>
@@ -23,13 +25,13 @@
     	
     	<action name="session/evaluation/questions" class="com.sqli.echallenge.jformation.web.collaborateur.SessionEvaluationQuestionListAction">
     		<result name="success">/pages/collaborateur/evaluation_question.jsp</result>
-    		<result name="error">/pages/collaborateur/evaluation_question.jsp</result>
-    		<result name="input">/pages/collaborateur/evaluation_question.jsp</result>
+    		<result name="error">/pages/collaborateur/evaluation_error.jsp</result>
+    		<result name="input">/pages/collaborateur/evaluation_error.jsp</result>
     	</action>
     	<action name="session/evaluation/reponses" class="com.sqli.echallenge.jformation.web.collaborateur.SessionEvaluationQuestionReponseAction">
     		<result name="success">/pages/collaborateur/evaluation_reponse.jsp</result>
-    		<result name="error">/pages/collaborateur/evaluation_reponse.jsp</result>
-    		<result name="input">/pages/collaborateur/evaluation_reponse.jsp</result>
+    		<result name="error">/pages/collaborateur/evaluation_error.jsp</result>
+    		<result name="input">/pages/collaborateur/evaluation_error.jsp</result>
     	</action>
     </package>
     
