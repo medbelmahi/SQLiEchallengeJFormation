@@ -114,7 +114,7 @@
 	    	<interceptor-ref name="defaultStack" />
 	    	
     		<result name="success">/pages/responsable_formation/session_inscription_list.jsp</result>
-    		<result name="error" >/pages/responsable_formation/session_inscription_list.jsp</result>
+    		<result name="error" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     		<result name="input" type="redirectAction">formations/sessions/list?idFormation=${idFormation}</result>
     	</action>
     	

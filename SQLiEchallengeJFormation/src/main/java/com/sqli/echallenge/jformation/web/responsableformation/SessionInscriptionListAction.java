@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
+import com.sqli.echallenge.jformation.metier.FormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
 import com.sqli.echallenge.jformation.model.entity.Collaborateur;
+import com.sqli.echallenge.jformation.model.entity.Formation;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.model.entity.SessionInscription;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
@@ -28,6 +30,8 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 	public SessionInscriptionMetier sessionInscriptionMetier;
 	@Autowired
 	public SessionFormationMetier sessionFormationMetier;
+	@Autowired
+	public FormationMetier formationMetier;
 	
 	private Long idFormation;
 	private Long idSession;
@@ -38,18 +42,22 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try{
-			//get session (for validation)
+			//1// get formation from db (for validation)
+			@SuppressWarnings("unused")
+			Formation formation = formationMetier.get(idFormation);
+			
+			//2// get session (for validation)
 			@SuppressWarnings("unused")
 			SessionFormation session = sessionFormationMetier.get(idSession);
 			
-			//get Collborateur Inscrit
+			//3// get Collborateur Inscrit
 			try{
 				collaborateurInscrit = sessionInscriptionMetier.getAll(idSession);
 			}catch(Exception x){
 				//don't do anything if list empty
 			}
 			
-			//get Collaborateur nonInscrit
+			//4// get Collaborateur nonInscrit
 			try{
 				collaborateurNonInscrit = sessionInscriptionMetier.getUnregistredCollaborateurs(idSession);
 			}catch(Exception x){

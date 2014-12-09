@@ -29,6 +29,10 @@ import javax.persistence.Transient;
 @Entity
 @Table(name="SQLI_SESSIONS_FORMATIONS")
 public class SessionFormation {
+	private static final int STATUS_NOT_STARTED = 0;
+	private static final int STATUS_STARTED = 1;
+	private static final int STATUS_ENDED = 2;
+	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_SESSION_FORMATION")
 	private Long idSessionFormation;
@@ -151,10 +155,15 @@ public class SessionFormation {
 	}
 	
 	@Transient
-	public boolean isActive(){
-		if(dateFinSessionFormation.compareTo(new Date()) > 0){
-			return true;
+	public int status(){
+		//0 = pas commencer
+		//1 = en cours
+		//2 = terminer
+		Date today = new Date();
+		if(today.before(dateDebutSessionFormation)) return STATUS_NOT_STARTED;
+		else{
+			if(today.before(dateFinSessionFormation)) return STATUS_STARTED;
+			else return STATUS_ENDED;
 		}
-		return false;
 	}
 }

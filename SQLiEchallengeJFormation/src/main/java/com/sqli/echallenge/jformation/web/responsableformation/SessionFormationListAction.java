@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
+import com.sqli.echallenge.jformation.metier.FormationMetier;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
+import com.sqli.echallenge.jformation.model.entity.Formation;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
@@ -27,6 +29,8 @@ public class SessionFormationListAction extends SqliActionSupport {
 	public SessionFormationMetier sessionFormationMetier;
 	@Autowired
 	public UtilisateurMetier formateurMetier;
+	@Autowired
+	public FormationMetier formationMetier;
 	
 	private Long idFormation;
 	private List<SessionFormation> sessions;
@@ -35,11 +39,15 @@ public class SessionFormationListAction extends SqliActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try {
-			//get List formateurs (for select(html) of addSessionModel)
+			//1// get formation from db (for validation)
+			@SuppressWarnings("unused")
+			Formation formation = formationMetier.get(idFormation);
+			
+			//2// get List formateurs (for select(html) of addSessionModel)
 			formateurs = formateurMetier.getFormateurs();
 			
 			
-			//get All Sessions of Formation
+			//3// get All Sessions of Formation
 			sessions = sessionFormationMetier.getAll(idFormation);
 			System.out.println(">>Sessions: " + sessions);//Debug
 			
