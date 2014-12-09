@@ -25,13 +25,17 @@
     	
     	<action name="session/evaluation/questions" class="com.sqli.echallenge.jformation.web.collaborateur.SessionEvaluationQuestionListAction">
     		<result name="success">/pages/collaborateur/evaluation_question.jsp</result>
-    		<result name="error">/pages/collaborateur/evaluation_error.jsp</result>
-    		<result name="input">/pages/collaborateur/evaluation_error.jsp</result>
+    		<result name="error">/pages/error.jsp</result>
+    		<result name="input">/pages/error.jsp</result>
     	</action>
     	<action name="session/evaluation/reponses" class="com.sqli.echallenge.jformation.web.collaborateur.SessionEvaluationQuestionReponseAction">
     		<result name="success">/pages/collaborateur/evaluation_reponse.jsp</result>
     		<result name="error">/pages/error.jsp</result>
     		<result name="input">/pages/error.jsp</result>
+    	</action>
+    	
+    	<action name="*">
+			<result type="redirectAction">forbiddenRessource</result>
     	</action>
     </package>
     
