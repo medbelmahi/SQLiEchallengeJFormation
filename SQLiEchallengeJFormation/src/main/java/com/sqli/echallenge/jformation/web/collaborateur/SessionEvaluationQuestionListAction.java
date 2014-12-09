@@ -40,25 +40,29 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 	
 	List<EvaluationQuestion> questions;
 	Collaborateur collaborateur;
+	SessionFormation sessionFormation = null;
 	
 	public String execute() throws Exception {
 		try {
+			//0// verify the existance of inscriptionCode
+			
 			//1// get collaborateur from db using code
 			//2// get session from db using code
-			SessionFormation session = null;
 			try {
 				SessionInscription inscription = inscriptionMetier.get(code);
 				
 				collaborateur = inscription.getCollaborateur();
-				session = inscription.getSessionFormation();
+				sessionFormation = inscription.getSessionFormation();
 			} catch (Exception e) {
 				throw new SqliException(getText("collaborateur.show.inscription.fail"));
 			}
 			
+			//2.1// 
+			
 			//3// verify if user already evaluate session
 			List<EvaluationReponse> reponses = null;
 			try {
-				reponses = reponseMetier.getAll(collaborateur.getIdCollaborateur(), session.getIdSessionFormation());
+				reponses = reponseMetier.getAll(collaborateur.getIdCollaborateur(), sessionFormation.getIdSessionFormation());
 			} catch (Exception e) {
 				//do nothing
 			}
@@ -101,5 +105,12 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 	public void setCollaborateur(Collaborateur collaborateur) {
 		this.collaborateur = collaborateur;
 	}
-	
+
+	public SessionFormation getSessionFormation() {
+		return sessionFormation;
+	}
+
+	public void setSessionFormation(SessionFormation sessionFormation) {
+		this.sessionFormation = sessionFormation;
+	}
 }
