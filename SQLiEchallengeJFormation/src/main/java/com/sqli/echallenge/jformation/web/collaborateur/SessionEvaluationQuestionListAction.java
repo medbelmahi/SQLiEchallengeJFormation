@@ -45,11 +45,11 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 	public String execute() throws Exception {
 		try {
 			//0// verify the existance of inscriptionCode
-			
 			//1// get collaborateur from db using code
 			//2// get session from db using code
+			SessionInscription inscription = null;
 			try {
-				SessionInscription inscription = inscriptionMetier.get(code);
+				inscription = inscriptionMetier.get(code);
 				
 				collaborateur = inscription.getCollaborateur();
 				sessionFormation = inscription.getSessionFormation();
@@ -57,7 +57,10 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 				throw new SqliException(getText("collaborateur.show.inscription.fail"));
 			}
 			
-			//2.1// 
+			//2.1// verify if inscription valid or not (using code inscription)
+			if(inscription == null || inscription.getConfirmedInscription() == null || inscription.getConfirmedInscription() == false){
+				throw new SqliException(getText("collaborateur.NotInscritOrCodeNotValid"));
+			}
 			
 			//3// verify if user already evaluate session
 			List<EvaluationReponse> reponses = null;

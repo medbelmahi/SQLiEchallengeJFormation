@@ -26,6 +26,7 @@
     		<param name="actionName">index</param>
       		<param name="namespace">/</param>
     	</result>
+    	
 	</global-results>
 	</package>
 	
