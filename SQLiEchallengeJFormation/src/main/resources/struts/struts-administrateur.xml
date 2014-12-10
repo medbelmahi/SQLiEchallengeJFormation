@@ -9,7 +9,8 @@
 
 	<!-- default package -->
     <package name="administrateur" namespace="/administrateur" extends="sqli_basic_package">
-    	<default-action-ref name="utilisateurs/list" />
+	<default-action-ref name="utilisateurs/list" />
+    
     
     	<!-- Utilisateur actions -->
     	<action name="utilisateurs/list" class="com.sqli.echallenge.jformation.web.administrateur.UtilisateurListAction">
