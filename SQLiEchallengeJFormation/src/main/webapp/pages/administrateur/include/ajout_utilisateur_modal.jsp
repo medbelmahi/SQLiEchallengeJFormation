@@ -40,7 +40,9 @@
 																class="fileupload-new col-sm-12"><i
 																	class="fa fa-paper-clip"></i>Choisir une image</span> <span
 																class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span>
-																<input name="fileImage" class="default" type="file">
+																
+																<input name="fileImage" class="default" type="file" accept=".jpeg,.png,.gif" >
+																
 															</span> <a href="#" class="btn btn-danger fileupload-exists"
 																data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
 														</div>
@@ -107,7 +109,7 @@
 												<div id="sexeElement" class="col-sm-8 vcenter">
 
 													<div class="icheck row">
-														<div class="square-green col-sm-5">
+														<div class="square-green col-sm-4">
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
 																	id="optionHomme_2" value="Homme" checked="checked">
