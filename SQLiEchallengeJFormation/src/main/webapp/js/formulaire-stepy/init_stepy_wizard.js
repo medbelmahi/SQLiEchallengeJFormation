@@ -27,7 +27,7 @@
 	        });
 	        $('#'+idForm).validate({
 	            errorPlacement: function(error, element) {
-	                $('#stepy_form div.stepy-error').append(error);
+	                $('#'+idForm+' div.stepy-error').append(error);
 	            },
 	            rules: {
 	                'nom': 'required',

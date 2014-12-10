@@ -16,7 +16,7 @@
 				<div class="panel-body">
 					<div class="box-widget">
 						<div class="widget-head clearfix">
-							<div id="top_tabby" class="block-tabby pull-left"></div>
+							<div id="top_tabby_add_utilisateur" class="block-tabby pull-left"></div>
 						</div>
 						<div class="widget-container">
 							<div class="widget-block">
@@ -67,6 +67,9 @@
 														id="inputFirstName_2" placeholder="Prenom" type="text"
 														required>
 												</div>
+											</div>
+											<div class="row">
+												<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
 											</div>
 										</fieldset>
 
@@ -136,7 +139,10 @@
 													</select>
 												</div>
 											</div>
-
+											
+											<div class="row">
+												<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
+											</div>
 
 										</fieldset>
 
@@ -175,6 +181,10 @@
 												</div>
 											</div>
 											
+											<div class="row">
+												<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
+											</div>
+											
 										</fieldset>
 
 										<fieldset title="Etape 4">
@@ -187,7 +197,7 @@
 											</div>
 										</fieldset>
 
-										<button type="submit" class="btn btn-info finish"> Ajouter Utilisateur</button>
+										<button type="submit" class="btn btn-success finish"> Ajouter Utilisateur</button>
 										
 									</form>
 								</div>
