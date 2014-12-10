@@ -46,11 +46,11 @@
 							id="hidden-table-info">
 							<thead>
 								<tr role="row">
-									<th>Cocher</th>
-									<th>Prénom &amp; Nom</th>
-									<th>Email</th>
-									<th>Telephone</th>
-									<th>Sexe</th>
+									<th class="text-center" >Cocher</th>
+									<th class="text-center sorting">Prénom &amp; Nom</th>
+									<th class="text-center">Email</th>
+									<th class="text-center">Telephone</th>
+									<th class="text-center">Sexe</th>
 <!-- 									<th>Options</th> -->
 									<th style="display: none;">Adresse</th>
 									<th>Date de naissance</th>
@@ -63,45 +63,13 @@
 								<s:iterator value="inscriptions">
 									<tr class="gradeA odd">
 										<td><input name="idCollaborateurs" value='<s:property value="collaborateur.idCollaborateur" />' type="checkbox" class="js-switch"/></td>
-										<td class="  sorting_1"><s:property value="collaborateur.fullname" /></td>
+										<td class="text-center sorting_1"><s:property value="collaborateur.fullname" /></td>
 										<td class=" "><s:property value="collaborateur.emailCollaborateur" /></td>
-										<td class="hidden-phone "><s:property value="collaborateur.telephoneCollaborateur" /></td>
-										<td class="center hidden-phone "><s:property value="collaborateur.sexeCollaborateur" /></td>
-										
-										<%-- <td class="center hidden-phone ">
-											<ul style="list-style: none;" class="navbar-nav nav-options">
-												<li style="padding-left: 15px;">
-													<a title="Habilitations" href='<s:url action="collaborateurs/habilitations" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url>'>
-														<i class="fa fa-list"></i>
-													</a>
-												</li>
-												
-												<li style="padding-left: 15px;">
-													<a href='javascript:void(0);'
-													   onclick="jsonGetCollaborateur(<s:property value="idCollaborateur"/>);" 
-													   title="Mise à jour">
-														<i class="fa fa-pencil"></i>
-													</a>
-												</li>
-												
-												<li style="padding-left: 15px;">
-													<a data-href=<s:url action="collaborateurs/delete" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-														<i class="fa fa-times"></i>
-													</a>
-												</li>
-												
-												<li style="padding-left: 15px;">
-													<a href='javascript:void(0);'
-													   onclick="jsonGetCollaborateur_forSendEmail(<s:property value="idCollaborateur"/>);" 
-													   title="Envoyer un email">
-														<i class="fa fa-envelope"></i>
-													</a>
-												</li>
-											</ul>
-										</td> --%>
+										<td class=""><s:property value="collaborateur.telephoneCollaborateur" /></td>
+										<td class="text-center"><s:property value="collaborateur.sexeCollaborateur" /></td>
 										
 										<td style="display: none;"><s:property value="collaborateur.adresseCollaborateur" /></td>
-										<td><s:property value="collaborateur.dateNaissanceCollaborateur" /></td>
+										<td class="text-center"><s:property value="collaborateur.dateNaissanceCollaborateur" /></td>
 										
 										<td style="display: none;">
 											<ul>

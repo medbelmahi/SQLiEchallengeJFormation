@@ -46,18 +46,18 @@
 									<tr class="gradeA odd">
 										<td class="  sorting_1"><s:property value="fullname" /></td>
 										<td class=" "><s:property value="emailCollaborateur" /></td>
-										<td class="hidden-phone "><s:property value="telephoneCollaborateur" /></td>
-										<td class="center hidden-phone "><s:property value="sexeCollaborateur" /></td>
+										<td class=""><s:property value="telephoneCollaborateur" /></td>
+										<td class="text-center"><s:property value="sexeCollaborateur" /></td>
 										
 										<td class="center hidden-phone ">
 											<ul style="list-style: none;" class="navbar-nav nav-options">
-												<li style="padding-left: 15px;">
+												<li style="padding-right: 15px;">
 													<a title="Habilitations" href='<s:url action="collaborateurs/habilitations" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url>'>
 														<i class="fa fa-list"></i>
 													</a>
 												</li>
 												
-												<li style="padding-left: 15px;">
+												<li style="padding-right: 15px;">
 													<a href='javascript:void(0);'
 													   onclick="jsonGetCollaborateur(<s:property value="idCollaborateur"/>);" 
 													   title="Mise à jour">
@@ -65,13 +65,13 @@
 													</a>
 												</li>
 												
-												<li style="padding-left: 15px;">
+												<li style="padding-right: 15px;">
 													<a data-href=<s:url action="collaborateurs/delete" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 														<i class="fa fa-times"></i>
 													</a>
 												</li>
 												
-												<li style="padding-left: 15px;">
+												<li>
 													<a href='javascript:void(0);'
 													   onclick="jsonGetCollaborateur_forSendEmail(<s:property value="idCollaborateur"/>);" 
 													   title="Envoyer un email">

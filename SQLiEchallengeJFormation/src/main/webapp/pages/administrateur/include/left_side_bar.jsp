@@ -29,10 +29,9 @@
 				</div>
 			</div>
 
-			<h5 class="left-nav-title">Account Information</h5>
+			<h5 class="left-nav-title">Gestion du compte</h5>
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
-				<li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+				<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li>
 				<li><a href="<s:url value="/logout"/>"><i class="fa fa-sign-out"></i>Se deconnecter</a></li>
 			</ul>
 		</div>
@@ -40,7 +39,7 @@
 		<!--sidebar nav start-->
 		<ul class="nav nav-pills nav-stacked custom-nav">
 		
-			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li>
+<%-- 			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li> --%>
 			<li class="menu-list nav-active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i
 					class="fa fa-laptop"></i> <span>Gestion utilisateurs</span></a>
 				<ul class="sub-menu-list">
@@ -50,19 +49,10 @@
 			<li class="menu-list"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i class="fa fa-book"></i>
 					<span>Gestion collaborateur</span></a>
 				<ul class="sub-menu-list">
-					<li><a href='<s:url value="/administrateur/collaborateurs/list"/>' > Listes des collaborateur</a></li>
-					<li><a href='<s:url value="/administrateur/habilitations/list"/>' > Listes des collaborateur</a></li>
+					<li><a href='<s:url value="/administrateur/collaborateurs/list"/>' > Listes des collaborateurs</a></li>
+					<li><a href='<s:url value="/administrateur/habilitations/list"/>' > Listes des habilitations</a></li>
 				</ul>
 			</li>
-				
-
-			<%-- <li class="menu-list"><a href='<s:url value="/administrateur/utilitateurs/list"/>'><i class="fa fa-envelope"></i>
-					<span>Gestion utilisateur</span></a>
-				<ul class="sub-menu-list">
-					<li><a href='<s:url value="/administrateur/utilitateurs/list"/>'> Liste des utilisateurs</a></li>
-				</ul>
-			</li> --%>
-
 		</ul>
 		<!--sidebar nav end-->
 

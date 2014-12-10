@@ -175,8 +175,8 @@
                 'email': 'required',
                 'prenom': 'required',
                 'dateNaissance': 'required',
-                'telephone': 'required',
-                'adresse': 'required'
+                'adresse': 'required',
+                'telephone': 'required'
             },
             messages: {
                 'nom': {
@@ -192,7 +192,7 @@
                     required: 'Date De Naissance : ce champ est obligatoire!'
                 },
                 'telephone': {
-                    required: 'Telephone : ce champ est obligatoire!'
+                	required: 'Telephone : ce champ est obligatoire!'
                 },
                 'adresse': {
                     required: 'Adresse : ce champ est obligatoire!'
@@ -201,14 +201,15 @@
         });
     });
     
-    $( "#stepy_form" ).submit(function( event ) {
-    	  alert( "Handler for .submit() called." );
-    	  event.preventDefault();
-    	});
+//     $( "#stepy_form" ).submit(function( event ) {
+//     	  alert( "Handler for .submit() called." );
+// //     	  event.preventDefault();
+//     	  return true;
+//     	});
     
     
-    function beforSubmitTheForm(){
+//     function beforSubmitTheForm(){
     	
-    	return false;
-    }
+//     	return false;
+//     }
 </script>

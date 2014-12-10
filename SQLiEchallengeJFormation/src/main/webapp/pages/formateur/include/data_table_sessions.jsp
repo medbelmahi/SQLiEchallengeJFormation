@@ -29,10 +29,11 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th class="text-center">Titre Session</th>
+									<th class="text-center sorting">Titre Session</th>
+									<th class="text-center">Formation</th>
 									<th class="text-center">Desciption</th>
 									<th class="text-center">Lieu</th>
-									<th class="text-center">Formateur</th>
+									<th class="text-center">Status</th>
 									<th class="text-center">Date de debut</th>
 									<th class="text-center">Date de fin</th>
 									<th class="text-center">Options</th>
@@ -44,12 +45,13 @@
 								<s:iterator value="sessions">
 										<tr class="gradeA odd">
 											<td><s:property value="titreSessionFormation" /></td>
+											<td><s:property value="formation.titreFormation" /></td>
 											<td><s:property value="desciptionSessionFormation" /></td>
 											<td><s:property value="lieuSessionFormation" /></td>
-											<td><s:property value="formateur.fullname" /></td>
+											<td><s:property value="status()" /></td>
 											<td class="text-center"><s:property value="dateDebutSessionFormation" /></td>
 											<td class="text-center"><s:property value="dateFinSessionFormation" /></td>
-											<td class="text-center" hidden-phone ">
+											<td class="text-center">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													

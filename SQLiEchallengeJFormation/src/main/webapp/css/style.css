@@ -2603,7 +2603,7 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 
 .widget-container .stepy-tab ul li.current-step, .block-tabby ul li.current-step{
     border:none ;
-    background: #65CEA7!important;
+    background: #D9534F!important;
     color: #fff;
 }
 
@@ -2638,7 +2638,7 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 }
 
 .stepy-error {
-    position: absolute;
+/*     position: absolute; */
     bottom: 105px;
 }
 

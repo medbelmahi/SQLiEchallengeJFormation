@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                <h4 class="modal-title">Composez votre Email</h4>
+                <h4 class="modal-title">Composez votre Message</h4>
             </div>
             <div class="modal-body">
                   <section class="mail-box-info">
