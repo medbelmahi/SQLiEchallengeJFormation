@@ -114,7 +114,7 @@
 												<div id="sexeElement" class="col-sm-8 vcenter">
 
 													<div class="icheck row">
-														<div class="square-green col-sm-4">
+														<div class="square-red col-sm-4" style="margin-right: 0px; padding-right: 0px;">
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
 																	id="optionHomme" value="Homme" checked="checked">
@@ -122,7 +122,7 @@
 															</div>
 
 														</div>
-														<div class="square-red col-sm-5">
+														<div class="square-red col-sm-5" style="margin-left: 0px; padding-left: 0px;">
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
 																	id="optionFemme" value="Femme"> <label for="optionFemme">
