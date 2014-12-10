@@ -118,8 +118,8 @@
 		            <div class="col-md-12">
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
-		                   <li><a href='<s:url value="/administrateur/"/>'><i class="fa fa-home"></i>Accueil</a></li>
-		                    <li><a href='<s:url value="/administrateur/collaborateurs/liste"/>'>Liste des collaborateurs</a></li>
+		                   <li><a href='<s:url value="/administrateur/"/>'><i class="fa fa-home"></i> Accueil</a></li>
+		                    <li><a href='<s:url value="/administrateur/collaborateurs/list"/>'>Liste des collaborateurs</a></li>
 		                    <li class="active">Gestion des habilitations d'un collaborateur</li>
 		                </ul>
 		                <!--breadcrumbs end -->
