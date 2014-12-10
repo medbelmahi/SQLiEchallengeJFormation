@@ -4719,3 +4719,7 @@ ol.comment-list {
 	border-color: #bce8f1;
 	color: white;
 }
+
+.nav-options li a i{
+	font-size : 20px;											
+}
