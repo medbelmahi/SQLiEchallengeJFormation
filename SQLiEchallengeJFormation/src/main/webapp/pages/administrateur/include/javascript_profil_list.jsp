@@ -54,9 +54,10 @@
 				if(jsonResponse.elementaireProfil){
 					document.getElementById("profilTitle").innerHTML = "Profil de base ( "+jsonResponse.nomProfil+" )";
 					
-					var att = document.createAttribute("disabled"); 
-					att.value = "disabled"; 
-					affectationButton.setAttributeNode(att);
+// 					var att = document.createAttribute("disabled"); 
+// 					att.value = "disabled"; 
+// 					affectationButton.setAttributeNode(att);
+					affectationButton.style.display = "none";
 					
 					for(i=0; i < actionCheckBoxList.length; i++){
 						var att_ = document.createAttribute("disabled"); 
@@ -67,7 +68,9 @@
 				}else{
 					document.getElementById("profilTitle").innerHTML = "Affectation des action au profil ( "+jsonResponse.nomProfil+" )";
 					
-					affectationButton.removeAttribute("disabled");
+// 					affectationButton.removeAttribute("disabled");
+					
+					affectationButton.style.display = "inline";
 					
 					for(i=0; i < actionCheckBoxList.length; i++){
 						actionCheckBoxList[i].removeAttribute("disabled");
