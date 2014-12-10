@@ -35,9 +35,9 @@
 						id="editable-sample">
 						<thead>
 							<tr>
-								<th style="display:none;">id</th>
-								<th>Titre</th>
-								<th>Description</th>
+								<th class="text-center" style="display:none;">id</th>
+								<th class="text-center">Titre</th>
+								<th class="text-center">Description</th>
 		                        <th class="text-center">Date</th>
 		                        <th class="text-center">Heure dèbut</th>
 		                        <th class="text-center">Heure fin</th>

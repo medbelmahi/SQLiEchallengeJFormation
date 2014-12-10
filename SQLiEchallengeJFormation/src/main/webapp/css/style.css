@@ -4723,3 +4723,7 @@ ol.comment-list {
 .nav-options li a i{
 	font-size : 20px;											
 }
+
+.nav-option{
+	padding-left: 0px;
+}

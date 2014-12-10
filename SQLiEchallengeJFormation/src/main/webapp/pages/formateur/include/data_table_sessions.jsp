@@ -29,13 +29,13 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th>Titre Session</th>
-									<th>Desciption</th>
-									<th>Lieu</th>
-									<th>Formateur</th>
-									<th>Date de debut</th>
-									<th>Date de fin</th>
-									<th>Options</th>
+									<th class="text-center">Titre Session</th>
+									<th class="text-center">Desciption</th>
+									<th class="text-center">Lieu</th>
+									<th class="text-center">Formateur</th>
+									<th class="text-center">Date de debut</th>
+									<th class="text-center">Date de fin</th>
+									<th class="text-center">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -47,13 +47,13 @@
 											<td><s:property value="desciptionSessionFormation" /></td>
 											<td><s:property value="lieuSessionFormation" /></td>
 											<td><s:property value="formateur.fullname" /></td>
-											<td><s:property value="dateDebutSessionFormation" /></td>
-											<td><s:property value="dateFinSessionFormation" /></td>
-											<td class="center hidden-phone ">
+											<td class="text-center"><s:property value="dateDebutSessionFormation" /></td>
+											<td class="text-center"><s:property value="dateFinSessionFormation" /></td>
+											<td class="text-center" hidden-phone ">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a title="Liste des documents" href='<s:url action="sessions/documents/list" >
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
@@ -62,7 +62,7 @@
 														</a>
 													</li>
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a title="Liste des séances" href='<s:url action="sessions/seances/list" >
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
@@ -71,7 +71,7 @@
 														</a>
 													</li>
 													
-													<li style="padding-left: 15px;">
+													<li >
 														<a title="Gestion d'absence" href='<s:url action="sessions/collaborateurs/list" >
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
@@ -80,22 +80,6 @@
 														</a>
 													</li>
 													
-													<%-- <li style="padding-left: 15px;">
-														<a href='javascript:void(0);'
-														   onclick="jsonGetSession(<s:property value="idSessionFormation"/>);" 
-														   title="Mise à jour">
-															<i class="fa fa-pencil"></i>
-														</a>
-													</li>
-													
-													<li style="padding-left: 15px;">
-														<a data-href='<s:url action="formations/sessions/delete" ><s:param name="idSession">
-														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
-														<s:property value="idFormation"/></s:param>
-														</s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-															<i class="fa fa-times"></i>
-														</a>
-													</li> --%>
 												</ul>
 											</td>
 										</tr>
