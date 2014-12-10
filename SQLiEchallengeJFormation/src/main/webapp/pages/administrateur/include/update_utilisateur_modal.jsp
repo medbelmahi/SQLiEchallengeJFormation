@@ -202,7 +202,7 @@
 											</div>
 										</fieldset>
 
-										<button type="submit" class="btn btn-success finish"> Mise à jour</button>
+										<button type="submit" class="btn btn-primary finish"> Mise à jour</button>
 										
 									</form>
 								</div>

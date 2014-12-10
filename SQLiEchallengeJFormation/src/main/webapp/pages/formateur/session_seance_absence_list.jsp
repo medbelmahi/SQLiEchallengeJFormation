@@ -118,9 +118,9 @@
 		            <div class="col-md-12">
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
-		                    <li><a href="#"><i class="fa fa-home"></i> Formateur</a></li>
-<!-- 		                    <li><a href="#">Gestion des Collaborateur</a></li> -->
-		                    <li class="active">Gestion d'absence</li>
+		                    <li><a href='<s:url value="/formateur/"/>'><i class="fa fa-home"></i> Accueil</a></li>
+		                    <li><a href='<s:url value="/formateur/sessions/list"/>'>Liste des sessions</a></li>
+		                    <li class="active">Gestion d'absense sessions</li>
 		                </ul>
 		                <!--breadcrumbs end -->
 		            </div>

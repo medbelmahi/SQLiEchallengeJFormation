@@ -29,9 +29,9 @@
 				</div>
 			</div>
 
-			<h5 class="left-nav-title">Gestion du compte</h5>
+			<h5 class="left-nav-title">Account Information</h5>
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li>
+				<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li>
 				<li><a href="<s:url value="/logout"/>"><i class="fa fa-sign-out"></i>Se deconnecter</a></li>
 			</ul>
 		</div>

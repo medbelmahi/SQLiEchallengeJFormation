@@ -199,7 +199,7 @@
 											</div>
 										</fieldset>
 
-										<button type="submit" class="btn btn-success finish"> Ajouter Utilisateur</button>
+										<button type="submit" class="btn btn-primary finish"> Ajouter Utilisateur</button>
 										
 									</form>
 								</div>
