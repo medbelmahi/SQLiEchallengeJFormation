@@ -3,29 +3,26 @@
 
 <div style="display: none;" aria-hidden="true"
 	aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
-	id="updateUtilisateurModal" class="modal fade">
+	id="addCollaborateurModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button aria-hidden="true" data-dismiss="modal" class="close"
 					type="button">×</button>
-				<h4 class="modal-title">Mise à jour d'utilisateur</h4>
+				<h4 class="modal-title">Ajouter Nouveau Collaborateur</h4>
 			</div>
 
 			<div class="modal-body">
 				<div class="panel-body">
 					<div class="box-widget">
 						<div class="widget-head clearfix">
-							<div id="top_tabby_update_utilisateur" class="block-tabby pull-left"></div>
+							<div id="top_tabby_add_collaborateur" class="block-tabby pull-left"></div>
 						</div>
 						<div class="widget-container">
 							<div class="widget-block">
 								<div class="widget-content box-padding">
-									<form data-toggle="validator" id="update_utilisateur" action="update" method="post" role="form"
+									<form data-toggle="validator" id="add_collaborateur" action="add" method="post" role="form"
 										class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data">
-											
-										<input type="hidden" id="idUtilisateur" name="idUtilisateur">
-										
 										<fieldset title="Etape 1">
 											<legend>Personnelles</legend>
 											<div class="form-group">
@@ -33,7 +30,7 @@
 												<div class="col-sm-8">
 													<div class="fileupload fileupload-new" data-provides="fileupload">
 														<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-															<img id="utilisateurImageProfil" src='<s:url value="/images/select_image.gif"/>' alt="">
+															<img src='<s:url value="/images/select_image.gif"/>' alt="">
 														</div>
 														<div
 															class="fileupload-preview fileupload-exists thumbnail"
@@ -41,10 +38,10 @@
 														<div>
 															<span class="btn btn-default btn-file"> <span
 																class="fileupload-new col-sm-12"><i
-																	class="fa fa-paper-clip"></i>Choisir une Photo</span> <span
+																	class="fa fa-paper-clip"></i>Choisir une image</span> <span
 																class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span>
 																
-																<input name="fileImage" class="default" type="file">
+																<input name="fileImage" class="default" type="file" accept=".jpeg,.png,.gif" >
 																
 															</span> <a href="#" class="btn btn-danger fileupload-exists"
 																data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
@@ -55,43 +52,41 @@
 											</div>
 
 											<div class="form-group">
-												<label for="inputLastName" class="col-sm-3 control-label">Nom<span
+												<label for="inputLastName_2" class="col-sm-3 control-label">Nom<span
 													class="text-danger"> *</span></label>
 												<div class="col-sm-9">
 													<input autocomplete="on" name="nom" class="form-control"
-														id="inputLastName" placeholder="Nom" type="text"
+														id="inputLastName_2" placeholder="Nom" type="text"
 														required>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label for="inputFirstName" class="col-sm-3 control-label">Prenom<span
+												<label for="inputFirstName_2" class="col-sm-3 control-label">Prenom<span
 													class="text-danger"> *</span></label>
 												<div class="col-sm-9">
 													<input autocomplete="on" name="prenom" class="form-control"
-														id="inputFirstName" placeholder="Prenom" type="text"
+														id="inputFirstName_2" placeholder="Prenom" type="text"
 														required>
 												</div>
 											</div>
-											
 											<div class="row">
 												<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
 											</div>
-											
 										</fieldset>
 
 										<fieldset title="Etape 2">
 											<legend>Autres</legend>
 
 											<div class="form-group">
-												<label for="thedateDiv" class="col-sm-4 control-label">Date de naissance<span class="text-danger"> *</span>
+												<label for="thedateDiv_2" class="col-sm-4 control-label">Date de naissance<span class="text-danger"> *</span>
 												</label>
-												<div id="thedateDiv" class="">
+												<div id="thedateDiv_2" class="">
 
 													<div data-date-viewmode="years"
 														data-date-format="dd/mm/yyyy" data-date="12/02/1990"
 														class="col-sm-8 input-append date dpYears">
-														<input name="dateNaissance" id="inputDateNaissance"
+														<input name="dateNaissance"
 															pattern="^(\d{2})\/(\d{2})\/(\d{4})" type="text"
 															readonly="readonly" value="12/02/1990" size="16"
 															class="form-control"> <span
@@ -117,15 +112,15 @@
 														<div class="square-red col-sm-4" style="margin-right: 0px; padding-right: 0px;">
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
-																	id="optionHomme" value="Homme" checked="checked">
-																<label id="optionHomme_label" for="optionHomme" > Male </label>
+																	id="optionHomme_2" value="Homme" checked="checked">
+																<label for="optionHomme_2" > Male </label>
 															</div>
 
 														</div>
 														<div class="square-red col-sm-5" style="margin-left: 0px; padding-left: 0px;">
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
-																	id="optionFemme" value="Femme"> <label id="optionFemme_label" for="optionFemme">
+																	id="optionFemme_2" value="Femme"> <label for="optionFemme_2">
 																	Female </label>
 															</div>
 														</div>
@@ -134,18 +129,7 @@
 												</div>
 											</div>
 
-											<div class="form-group">
-												<label for="inputAdress_2" class="col-sm-4 control-label">Profil<span
-													class="text-danger"> *</span></label>
-												<div class="col-sm-8">
-													<select id="profilSelected" name="profil" class="form-control input-sm m-bot15">
-														<s:iterator value="profils">
-															<option value='<s:property value="idProfil" />'><s:property
-																	value="nomProfil" /></option>
-														</s:iterator>
-													</select>
-												</div>
-											</div>
+											
 											
 											<div class="row">
 												<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
@@ -156,54 +140,56 @@
 										<fieldset title="Etape 3">
 											<legend>Contacts</legend>
 											<div class="form-group">
-												<label for="inputEmail" class="col-sm-3 control-label">Email<span
+												<label for="inputEmail_2" class="col-sm-3 control-label">Email<span
 													class="text-danger"> *</span></label>
 												<div class="col-sm-9">
 													<input autocomplete="on" name="email" class="form-control"
-														id="inputEmail" placeholder="Email" type="email"
+														id="inputEmail_2" placeholder="Email" type="email"
 														pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 														required>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label for="inputTelephone" class="col-sm-3 control-label">Telephone<span
+												<label for="inputTelephone_2" class="col-sm-3 control-label">Telephone<span
 													class="text-danger"> *</span></label>
 												<div class="col-sm-9">
 													<input autocomplete="on" name="telephone"
-														class="form-control" id="inputTelephone"
+														class="form-control" id="inputTelephone_2"
 														placeholder="Ex : 0610807402" type="tel"
 														pattern="^0[5-6]{1}\d{8}" required="required">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label for="inputAdress" class="col-sm-3 control-label">Adresse<span
+												<label for="inputAdress_2" class="col-sm-3 control-label">Adresse<span
 													class="text-danger"> *</span></label>
 												<div class="col-sm-9">
 													<input autocomplete="on" name="adresse"
-														class="form-control" id="inputAdress"
+														class="form-control" id="inputAdress_2"
 														placeholder="Ex : Casablanca Rue 10 N80" type="text"
 														required="required">
 												</div>
 											</div>
+											
 											<div class="row">
 												<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>
 											</div>
+											
 										</fieldset>
 
-										<%-- <fieldset title="Etape 4">
+										<fieldset title="Etape 4">
 											<legend>Dérniere étape</legend>
 											<div class="form-group">
 												<div class="col-md-12">
 													<div class="alert alert-warning">
-														<p><strong>Un email</strong> va notifie l'utilisateur du succès de la creation de son compte</p>
+														<p><strong>Un email</strong> va notifie le collaborateur du succès de la creation</p>
 													</div>
 												</div>
 											</div>
-										</fieldset> --%>
+										</fieldset>
 
-										<button type="submit" class="btn btn-primary finish"> Mise à jour</button>
+										<button type="submit" class="btn btn-primary finish"> Ajouter Collaborateur</button>
 										
 									</form>
 								</div>

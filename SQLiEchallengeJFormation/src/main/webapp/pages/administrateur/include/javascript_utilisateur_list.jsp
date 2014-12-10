@@ -142,9 +142,9 @@
 <!-- End Initialisation de cellspacing table utilisateur -->
 
 
-<!-- init stepy wizard valisation form for upadate_tilisateur  Start  -->
+<!-- init stepy wizard valisation form for upadate and add utilisateur  Start  -->
 	<script type="text/javascript">
 		initStepyForm('add_utilisateur');
 		initStepyForm('update_utilisateur');
 	</script>
-<!-- init stepy wizard valisation form for upadate_tilisateur  Start  -->
+<!-- init stepy wizard valisation form for upadate and add utilisateur  Start  -->

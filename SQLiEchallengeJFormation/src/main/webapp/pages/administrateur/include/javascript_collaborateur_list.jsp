@@ -88,10 +88,19 @@
 		    
 		    return sOut;
 		}
+		
+		
 		$('.image-profil').off( "click", "**" );
 	    $('.image-profil').click(false);
 		
-		$('.image-profil').off( "click", "**" );
-		$('.image-profil').click(false);
+		
 	</script>
 <!-- End Initialisation du tableua Collaborateur -->
+
+
+<!-- init stepy wizard valisation form for upadate and add collaborateur  Start  -->
+	<script type="text/javascript">
+		initStepyForm('add_collaborateur');
+		initStepyForm('update_collaborateur');
+	</script>
+<!-- init stepy wizard valisation form for upadate and add collaborateur  Start  -->

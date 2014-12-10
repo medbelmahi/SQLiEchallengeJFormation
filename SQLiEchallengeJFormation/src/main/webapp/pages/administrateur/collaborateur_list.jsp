@@ -65,10 +65,11 @@
 	
 	<!-- initial style -->
 	<link href='<s:url value="/css/style.css"/>' rel="stylesheet">
+	<link href='<s:url value="/css/jquery.stepy.css"/>' rel="stylesheet">
 	<link href='<s:url value="/css/style-responsive.css"/>' rel="stylesheet">
 	
-	<!-- rating -->
-	<link href='<s:url value="/css/jquery.rating.css"/>' rel="stylesheet">
+	<%-- <!-- rating -->
+	<link href='<s:url value="/css/jquery.rating.css"/>' rel="stylesheet"> --%>
 	
 	<style type="text/css">
 		.ms-selection{
@@ -170,6 +171,8 @@
 	<script src='<s:url value="/js/jquery-1.10.2.min.js"/>'></script>
 	<script src='<s:url value="/js/jquery-ui-1.9.2.custom.min.js"/>'></script>
 	<script src='<s:url value="/js/jquery-migrate-1.2.1.min.js"/>'></script>
+	<script src='<s:url value="/js/jquery.validate.js"/>'></script>
+	<script src='<s:url value="/js/jquery.stepy.js"/>'></script>
 	<script src='<s:url value="/js/bootstrap.min.js"/>'></script>
 	<script src='<s:url value="/js/modernizr.min.js"/>'></script>
 	<script src='<s:url value="/js/jquery.nicescroll.js"/>'></script>
@@ -249,6 +252,9 @@
 	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
 	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
 	
+	<!-- validation stepy form Start -->
+	<script type="text/javascript" src='<s:url value="/js/formulaire-stepy/init_stepy_wizard.js"/>'></script>
+	<!-- validation stepy form End -->
 	
 	<!-- javascript of collaborateur_list page Begin -->
 		<s:include value="include/javascript_collaborateur_list.jsp"></s:include>
