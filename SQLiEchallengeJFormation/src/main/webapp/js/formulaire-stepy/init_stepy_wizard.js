@@ -22,7 +22,7 @@
 	            description: true,
 	            legend: false,
 	            titleClick: true,
-	            titleTarget: '#top_tabby',
+	            titleTarget: '#top_tabby_'+idForm,
 	            validate: true
 	        });
 	        $('#'+idForm).validate({
