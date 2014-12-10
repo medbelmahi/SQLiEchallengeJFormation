@@ -118,7 +118,7 @@
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
 																	id="optionHomme" value="Homme" checked="checked">
-																<label id="optionHome_label" for="optionHomme" > Male </label>
+																<label id="optionHomme_label" for="optionHomme" > Male </label>
 															</div>
 
 														</div>

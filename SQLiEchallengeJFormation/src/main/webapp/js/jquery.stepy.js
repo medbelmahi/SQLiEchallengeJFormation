@@ -208,7 +208,7 @@
 				id		= this.attr('id'),
 				opt		= this.data('options');
 
-        	$('<a/>', { id: id + '-back-' + index, href: 'javascript:void(0);', 'class': 'button-back btn btn-info', html: opt.backLabel }).click(function() {
+        	$('<a/>', { id: id + '-back-' + index, href: 'javascript:void(0);', 'class': 'button-back btn btn-primary', html: opt.backLabel }).click(function() {
         		if (!opt.back || methods.execute.call($this, opt.back, index - 1)) {
         			methods.step.call($this, (index - 1) + 1);
         		}

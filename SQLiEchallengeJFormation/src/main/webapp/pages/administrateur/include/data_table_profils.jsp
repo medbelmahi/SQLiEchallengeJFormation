@@ -41,8 +41,8 @@
 								<s:iterator value="profils">
 									<s:if test="isElementaire()">
 										<tr style="background-color:#eee;">
-											<td class="text-center"><s:property value="nomProfil" /></td>
-											<td class="text-center"><s:property value="roleBase" /></td>
+											<td><s:property value="nomProfil" /></td>
+											<td><s:property value="roleBase" /></td>
 											<td><s:property value="description" /></td>
 											<td class="text-center">
 												<!-- Le profil est elementaire (n'est pas besoin de se modifier) -->
@@ -63,8 +63,8 @@
 									</s:if>
 									<s:else>
 										<tr class="gradeA odd">
-											<td class="text-center"><s:property value="nomProfil" /></td>
-											<td class="text-center"><s:property value="roleBase" /></td>
+											<td><s:property value="nomProfil" /></td>
+											<td><s:property value="roleBase" /></td>
 											<td><s:property value="description" /></td>
 											
 												<td class="text-center">
