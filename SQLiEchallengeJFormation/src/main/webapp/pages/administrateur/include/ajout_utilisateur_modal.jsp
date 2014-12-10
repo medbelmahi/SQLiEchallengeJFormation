@@ -21,15 +21,12 @@
 						<div class="widget-container">
 							<div class="widget-block">
 								<div class="widget-content box-padding">
-									<form data-toggle="validator" id="stepy_form" action="add"
-										method="post" role="form"
-										class="form-horizontal left-align form-well adminex-form"
-										enctype="multipart/form-data">
+									<form data-toggle="validator" id="add_utilisateur" action="add" method="post" role="form"
+										class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data">
 										<fieldset title="Etape 1">
 											<legend>Personnelles</legend>
 											<div class="form-group">
-												<label class="control-label col-sm-4">Photo de
-													profil</label>
+												<label class="control-label col-sm-4">Photo de profil</label>
 												<div class="col-sm-8">
 													<div class="fileupload fileupload-new" data-provides="fileupload">
 														<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -42,9 +39,8 @@
 															<span class="btn btn-default btn-file"> <span
 																class="fileupload-new col-sm-12"><i
 																	class="fa fa-paper-clip"></i>Choisir une image</span> <span
-																class="fileupload-exists"><i class="fa fa-undo"></i>
-																	Modifier</span> <input name="fileImage" class="default"
-																type="file">
+																class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span>
+																<input name="fileImage" class="default" type="file">
 															</span> <a href="#" class="btn btn-danger fileupload-exists"
 																data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
 														</div>

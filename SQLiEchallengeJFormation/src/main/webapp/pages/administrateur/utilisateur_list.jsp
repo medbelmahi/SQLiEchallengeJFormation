@@ -242,6 +242,10 @@
 	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
 	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
 	
+	<!-- validation stepy form Start -->
+	<script type="text/javascript" src='<s:url value="/js/formulaire-stepy/init_stepy_wizard.js"/>'></script>
+	<!-- validation stepy form End -->
+	
 	<!-- javascript of utilisateur_list page Begin -->
 		<s:include value="include/javascript_utilisateur_list.jsp"></s:include>
 	<!-- javascript of utilisateur_list page End -->

@@ -142,74 +142,8 @@
 <!-- End Initialisation de cellspacing table utilisateur -->
 
 
-<script>
-    /*=====STEPY WIZARD====*/
-    $(function() {
-        $('#add_utilisateur').stepy({
-            backLabel: 'Previous',
-            block: true,
-            nextLabel: 'Next',
-            titleClick: true,
-            titleTarget: '.stepy-tab'
-        });
-    });
-    /*=====STEPY WIZARD WITH VALIDATION====*/
-    $(function() {
-        $('#stepy_form').stepy({
-            backLabel: 'Précédent',
-            nextLabel: 'Suivant',
-            errorImage: true,
-            block: true,
-            description: true,
-            legend: false,
-            titleClick: true,
-            titleTarget: '#top_tabby',
-            validate: true
-        });
-        $('#stepy_form').validate({
-            errorPlacement: function(error, element) {
-                $('#stepy_form div.stepy-error').append(error);
-            },
-            rules: {
-                'nom': 'required',
-                'email': 'required',
-                'prenom': 'required',
-                'dateNaissance': 'required',
-                'adresse': 'required',
-                'telephone': 'required'
-            },
-            messages: {
-                'nom': {
-                    required: 'Nom : ce champ est obligatoire!'
-                },
-                'email': {
-                    required: 'Email : ce champ est obligatoire!'
-                },
-                'prenom': {
-                    required: 'Prénom : ce champ est obligatoire!'
-                },
-                'dateNaissance': {
-                    required: 'Date De Naissance : ce champ est obligatoire!'
-                },
-                'telephone': {
-                	required: 'Telephone : ce champ est obligatoire!'
-                },
-                'adresse': {
-                    required: 'Adresse : ce champ est obligatoire!'
-                }
-            }
-        });
-    });
-    
-//     $( "#stepy_form" ).submit(function( event ) {
-//     	  alert( "Handler for .submit() called." );
-// //     	  event.preventDefault();
-//     	  return true;
-//     	});
-    
-    
-//     function beforSubmitTheForm(){
-    	
-//     	return false;
-//     }
-</script>
+<!-- init stepy wizard valisation form for upadate_tilisateur  Start  -->
+	<script type="text/javascript">
+		initStepyForm('add_utilisateur');
+	</script>
+<!-- init stepy wizard valisation form for upadate_tilisateur  Start  -->
