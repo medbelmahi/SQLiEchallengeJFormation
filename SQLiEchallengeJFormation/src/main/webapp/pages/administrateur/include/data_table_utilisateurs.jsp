@@ -28,12 +28,12 @@
 							id="hidden-table-info">
 							<thead>
 								<tr role="row">
-									<th>Prénom &amp; Nom</th>
-									<th>Email</th>
-									<th>Telephone</th>
-									<th>Sexe</th>
-									<th>Profil</th>
-									<th>Options</th>
+									<th class="text-center">Prénom &amp; Nom</th>
+									<th class="text-center">Email</th>
+									<th class="text-center">Telephone</th>
+									<th class="text-center">Sexe</th>
+									<th class="text-center">Profil</th>
+									<th class="text-center">Options</th>
 									<th style="display: none;">Adresse</th>
 									<th style="display: none;">Date de naissance</th>
 									<th style="display: none;">image</th>
@@ -43,20 +43,20 @@
 							<tbody aria-relevant="all" aria-live="polite" role="alert">
 								<s:iterator value="utilisateurs">
 									<tr class="gradeA odd">
-										<td class="  sorting_1"><s:property value="fullname" /></td>
-										<td class=" "><s:property value="emailUtilisateur" /></td>
-										<td class="hidden-phone "><s:property
+										<td class="sorting"><s:property value="fullname" /></td>
+										<td class="text-center"><s:property value="emailUtilisateur" /></td>
+										<td class="text-center"><s:property
 												value="telephoneUtilisateur" /></td>
-										<td class="center hidden-phone "><s:property
+										<td class="text-center"><s:property
 												value="sexeUtilisateur" /></td>
 										<td>
 											<s:property
 												value="profil.getNomProfil()" />
 										</td>
-										<td class="center hidden-phone ">
+										<td class="text-center">
 											<ul style="list-style: none;" class="navbar-nav nav-options">
 											
-												<li style="padding-left: 15px;">
+												<li style="padding-right: 15px;">
 													<a href='javascript:void(0);'
 													   onclick="jsonGetUtilisateur(<s:property value="idUtilisateur"/>);" 
 													   title="Mise à jour">
@@ -64,12 +64,12 @@
 													</a>
 												</li>
 												
-												<li style="padding-left: 15px;">
+												<li style="padding-right: 15px;">
 													<a data-href=<s:url action="utilisateurs/delete" ><s:param name="idUtilisateur"><s:property value="idUtilisateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 														<i class="fa fa-times"></i>
 													</a>
 												</li>
-												<li style="padding-left: 15px;">
+												<li>
 													<a href='javascript:void(0);'
 													   onclick="jsonGetUtilisateur_forSendEmail(<s:property value="idUtilisateur"/>);" 
 													   title="Envoyer un email">

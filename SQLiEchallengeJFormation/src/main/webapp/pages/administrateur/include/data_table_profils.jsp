@@ -29,10 +29,10 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th>Nom</th>
-									<th>Role de Base</th>
-									<th>Desciption</th>
-									<th>Options</th>
+									<th class="text-center">Nom</th>
+									<th class="text-center">Role de Base</th>
+									<th class="text-center">Desciption</th>
+									<th class="text-center">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -41,14 +41,14 @@
 								<s:iterator value="profils">
 									<s:if test="isElementaire()">
 										<tr style="background-color:#eee;">
-											<td><s:property value="nomProfil" /></td>
-											<td><s:property value="roleBase" /></td>
+											<td class="text-center"><s:property value="nomProfil" /></td>
+											<td class="text-center"><s:property value="roleBase" /></td>
 											<td><s:property value="description" /></td>
-											<td>
+											<td class="text-center">
 												<!-- Le profil est elementaire (n'est pas besoin de se modifier) -->
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
-														<li style="padding-left: 15px;">
+														<li>
 															<a href='javascript:void(0);'
 															   onclick='jsonGetProfil_pourAffectation(<s:property value="idProfil"/>);' 
 															   title="Affectation des actions">
@@ -63,19 +63,19 @@
 									</s:if>
 									<s:else>
 										<tr class="gradeA odd">
-											<td><s:property value="nomProfil" /></td>
-											<td><s:property value="roleBase" /></td>
-											<td><s:property value="description" /></td>
+											<td class="text-center"><s:property value="nomProfil" /></td>
+											<td class="text-center"><s:property value="roleBase" /></td>
+											<td class="text-center"><s:property value="description" /></td>
 											
-												<td class="center hidden-phone ">
+												<td class="text-center">
 													<ul style="list-style: none;" class="navbar-nav nav-options">
 														
-														<li style="padding-left: 15px;">
+														<li style="padding-right: 15px;">
 															<a data-href='<s:url action="profils/delete" ><s:param name="idProfil"><s:property value="idProfil"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 																<i class="fa fa-times"></i>
 															</a>
 														</li>
-														<li style="padding-left: 15px;">
+														<li>
 															<a href='javascript:void(0);'
 															   onclick='jsonGetProfil_pourAffectation(<s:property value="idProfil"/>);' 
 															   title="Affectation des actions">
