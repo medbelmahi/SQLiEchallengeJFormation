@@ -118,14 +118,14 @@
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
 																	id="optionHomme" value="Homme" checked="checked">
-																<label for="optionHomme" > Male </label>
+																<label id="optionHome_label" for="optionHomme" > Male </label>
 															</div>
 
 														</div>
 														<div class="square-red col-sm-5" style="margin-left: 0px; padding-left: 0px;">
 															<div class="radio " style="margin: auto auto; float: none;">
 																<input tabindex="3" type="radio" name="sexe"
-																	id="optionFemme" value="Femme"> <label for="optionFemme">
+																	id="optionFemme" value="Femme"> <label id="optionFemme_label" for="optionFemme">
 																	Female </label>
 															</div>
 														</div>
@@ -196,8 +196,9 @@
 											<legend>Dérniere étape</legend>
 											<div class="form-group">
 												<div class="col-md-12">
-													<p>Un email va notifie l'utilisateur du succès de la
-														creation de son compte</p>
+													<div class="alert alert-warning">
+														<p><strong>Un email</strong> va notifie l'utilisateur du succès de la creation de son compte</p>
+													</div>
 												</div>
 											</div>
 										</fieldset>

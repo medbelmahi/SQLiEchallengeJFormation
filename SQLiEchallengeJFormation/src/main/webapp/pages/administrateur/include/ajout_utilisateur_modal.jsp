@@ -193,8 +193,9 @@
 											<legend>Dérniere étape</legend>
 											<div class="form-group">
 												<div class="col-md-12">
-													<p>Un email va notifie l'utilisateur du succès de la
-														creation de son compte</p>
+													<div class="alert-info">
+														<p><strong>Un email</strong> va notifie l'utilisateur du succès de la creation de son compte</p>
+													</div>
 												</div>
 											</div>
 										</fieldset>

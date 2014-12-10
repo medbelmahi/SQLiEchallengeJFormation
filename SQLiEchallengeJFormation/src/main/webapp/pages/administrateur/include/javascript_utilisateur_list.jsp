@@ -29,15 +29,15 @@
 				if(jsonResponse.sexe == "Homme"){
 					document.getElementById("optionHomme").checked = true;
 					document.getElementById("optionFemme").checked = false;
-					var elementGreen = $(".iradio_square-red");
-					var elementRed = $(".iradio_square-red");
+					var elementGreen = $("#optionFemme_label").prev();
+					var elementRed = $("#optionFemme_label").prev();
 					elementGreen.addClass("checked");
 					elementRed.removeClass("checked");
 				}else{
 					document.getElementById("optionFemme").checked = true;
 					document.getElementById("optionHomme").checked = false;
-					var elementRed = $(".iradio_square-red");
-					var elementGreen = $(".iradio_square-red");
+					var elementGreen = $("#optionFemme_label").prev();
+					var elementRed = $("#optionFemme_label").prev();
 					elementRed.addClass("checked");
 					elementGreen.removeClass("checked");
 				}
