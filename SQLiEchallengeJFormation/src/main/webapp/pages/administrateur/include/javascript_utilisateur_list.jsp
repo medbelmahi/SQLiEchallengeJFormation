@@ -145,5 +145,6 @@
 <!-- init stepy wizard valisation form for upadate_tilisateur  Start  -->
 	<script type="text/javascript">
 		initStepyForm('add_utilisateur');
+		initStepyForm('update_utilisateur');
 	</script>
 <!-- init stepy wizard valisation form for upadate_tilisateur  Start  -->

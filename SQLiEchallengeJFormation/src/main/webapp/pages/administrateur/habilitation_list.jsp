@@ -114,9 +114,9 @@
 		            <div class="col-md-12">
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
-		                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-		                    <li><a href="#">Dashboard</a></li>
-		                    <li class="active">Current page</li>
+		                    <li><a href='<s:url value="/administrateur/"/>'><i class="fa fa-home"></i>Accueil</a></li>
+		                    <li><a href='<s:url value="/administrateur/collaborateurs/"/>'>Gestions des collaborateurs</a></li>
+		                    <li class="active">Gestion des habilitation</li>
 		                </ul>
 		                <!--breadcrumbs end -->
 		            </div>
