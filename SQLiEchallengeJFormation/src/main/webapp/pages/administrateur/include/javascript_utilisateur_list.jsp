@@ -29,7 +29,7 @@
 				if(jsonResponse.sexe == "Homme"){
 					document.getElementById("optionHomme").checked = true;
 					document.getElementById("optionFemme").checked = false;
-					var elementGreen = $(".iradio_square-green");
+					var elementGreen = $(".iradio_square-red");
 					var elementRed = $(".iradio_square-red");
 					elementGreen.addClass("checked");
 					elementRed.removeClass("checked");
@@ -37,7 +37,7 @@
 					document.getElementById("optionFemme").checked = true;
 					document.getElementById("optionHomme").checked = false;
 					var elementRed = $(".iradio_square-red");
-					var elementGreen = $(".iradio_square-green");
+					var elementGreen = $(".iradio_square-red");
 					elementRed.addClass("checked");
 					elementGreen.removeClass("checked");
 				}
