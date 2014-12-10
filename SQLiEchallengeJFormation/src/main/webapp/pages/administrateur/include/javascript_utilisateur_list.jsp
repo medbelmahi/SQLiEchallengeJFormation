@@ -200,4 +200,15 @@
             }
         });
     });
+    
+    $( "#stepy_form" ).submit(function( event ) {
+    	  alert( "Handler for .submit() called." );
+    	  event.preventDefault();
+    	});
+    
+    
+    function beforSubmitTheForm(){
+    	
+    	return false;
+    }
 </script>

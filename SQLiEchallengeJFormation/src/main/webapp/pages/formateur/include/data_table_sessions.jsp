@@ -58,7 +58,7 @@
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
 														</s:url>'>
-															<i class="fa fa-list"></i>
+															<i class="fa fa-cloud-upload"></i>
 														</a>
 													</li>
 													
@@ -67,7 +67,7 @@
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
 														</s:url>'>
-															<i class="fa fa-list"></i>
+															<i class="fa fa-table"></i>
 														</a>
 													</li>
 													
@@ -76,7 +76,7 @@
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
 														</s:url>'>
-															<i class="fa fa-list"></i>
+															<i class="fa fa-user"></i>
 														</a>
 													</li>
 													

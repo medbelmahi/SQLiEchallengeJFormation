@@ -35,6 +35,7 @@
 						id="editable-sample">
 						<thead>
 							<tr>
+								<th style="display:none;">id</th>
 								<th>Titre</th>
 								<th>Description</th>
 		                        <th class="text-center">Date</th>
@@ -46,7 +47,8 @@
 						<tbody>
 						<s:iterator value="sessionFormation.sceances" >
 							<tr class="">
-								<input type="hidden" id="idSeance" value="<s:property value="idSeance" />" />
+<%-- 								<input type="hidden" id='theIdSeance_<s:property value="idSeance" />' value='<s:property value="idSeance" />' /> --%>
+								<td style="display: none;" ><s:property value="idSeance" /></td>
 								<td class="text-center"><s:property value="titreSeance" /></td>
 								<td class="text-center"><s:property value="descriptionSeance" /></td>
 								<td class="text-center"><s:property value="dateSeance" /></td>

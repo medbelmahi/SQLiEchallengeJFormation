@@ -29,34 +29,36 @@ var EditableTable = function () {
 */            function editRow(oTable, nRow) {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
-                jqTds[0].innerHTML = '<input id="titreSeance" type="text" class="form-control small" value="' + aData[0] + '">';
-                jqTds[1].innerHTML = '<input id="descriptionSeance" type="text" class="form-control small" value="' + aData[1] + '">';
-                jqTds[2].innerHTML = '<input id="dateSeance" type="text" class="form-control" disabled="" value="' + aData[2] + '" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" size="16">';
+                jqTds[0].innerHTML = '<input id="idSeance" type="hidden" class="form-control small" value="' + aData[0] + '">';
+                jqTds[1].innerHTML = '<input id="titreSeance" type="text" class="form-control small" value="' + aData[1] + '">';
+                jqTds[2].innerHTML = '<input id="descriptionSeance" type="text" class="form-control small" value="' + aData[2] + '">';
+                jqTds[3].innerHTML = '<input id="dateSeance" type="text" class="form-control" disabled="" value="' + aData[3] + '" pattern="^(\d{2})\/(\d{2})\/(\d{4})" readonly="readonly" size="16">';
 //                jqTds[3].innerHTML = '<input type="text" class="form-control small" value="' + aData[3] + '">';
-                jqTds[3].innerHTML = '<div class="input-group bootstrap-timepicker">'
-                    					+'<input id="heureDebutSeance" type="text" value="' + aData[3] + '" class="form-control timepicker-24" readonly="readonly" >'
+                jqTds[4].innerHTML = '<div class="input-group bootstrap-timepicker">'
+                    					+'<input id="heureDebutSeance" type="text" value="' + aData[4] + '" class="form-control timepicker-24" readonly="readonly" >'
                 						+'<span class="input-group-btn">'
                 						+'<button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>'
                 						+'</span>'
                 						+'</div>';
-                jqTds[4].innerHTML = '<div class="input-group bootstrap-timepicker">'
-										+'<input id="heureFinSeance" type="text" value="' + aData[4] + '" class="form-control timepicker-24" readonly="readonly" >'
+                jqTds[5].innerHTML = '<div class="input-group bootstrap-timepicker">'
+										+'<input id="heureFinSeance" type="text" value="' + aData[5] + '" class="form-control timepicker-24" readonly="readonly" >'
 										+'<span class="input-group-btn">'
 										+'<button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>'
 										+'</span>'
 										+'</div>';
-                jqTds[5].innerHTML = '<a class="edit" href="">Modifier</a>';
-                jqTds[5].innerHTML += '<a style="margin-left :10px;" class="cancel" href="">Annuler</a>';
+                jqTds[6].innerHTML = '<a class="edit" href="">Modifier</a>';
+                jqTds[6].innerHTML += '<a style="margin-left :10px;" class="cancel" href="">Annuler</a>';
             }
 
             function saveRow(oTable, nRow) {
                 var jqInputs = $('input', nRow);
-                oTable.fnUpdate(jqInputs[1].value, nRow, 0, false);
-                oTable.fnUpdate(jqInputs[2].value, nRow, 1, false);
-                oTable.fnUpdate(jqInputs[3].value, nRow, 2, false);
-                oTable.fnUpdate(jqInputs[4].value, nRow, 3, false);
-                oTable.fnUpdate(jqInputs[5].value, nRow, 4, false);
-                oTable.fnUpdate('<a class="edit" href="">Mise à jour</a>', nRow, 5, false);
+                oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
+                oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
+                oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
+                oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
+                oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
+                oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
+                oTable.fnUpdate('<a class="edit" href="">Mise à jour</a>', nRow, 6, false);
 //                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 5, false);
                 oTable.fnDraw();
             }
@@ -153,7 +155,7 @@ var EditableTable = function () {
                 	var heureDebutSeance = document.getElementById("heureDebutSeance").value;
                 	var heureFinSeance = document.getElementById("heureFinSeance").value;
                 	
-                	
+                	console.log(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance)
                 	
 //                	var status = jsonUpdateSeance(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance);
                 	

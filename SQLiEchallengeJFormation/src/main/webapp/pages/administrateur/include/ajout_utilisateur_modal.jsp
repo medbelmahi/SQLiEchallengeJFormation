@@ -19,7 +19,7 @@
                         <div class="widget-container">
                             <div class="widget-block">
                                 <div class="widget-content box-padding">
-					<form data-toggle="validator" id="stepy_form" action="add" method="post" role="form" class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data" >
+					<form data-toggle="validator" id="stepy_form" action="add" method="post" role="form" class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data" onsubmit="beforSubmitTheForm();" >
 						<fieldset title="Etape 1">
                              <legend>Personnelles</legend>
 		                        <div class="form-group">
@@ -124,7 +124,7 @@
 						<div class="form-group">
 							<label for="inputTelephone_2" class="col-sm-3 control-label">Telephone<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="on" name="telephone" class="form-control" id="inputTelephone_2" placeholder="Ex : 0610807402" type="text" pattern="^0[5-6]{1}\d{8}" required="required">
+								<input autocomplete="on" name="telephone" class="form-control" id="inputTelephone_2" placeholder="Ex : 0610807402" type="tel" pattern="^0[5-6]{1}\d{8}" required="required">
 							</div>
 						</div>
 
@@ -152,7 +152,7 @@
                              </div>
                          </fieldset>
 						
-						<button class="btn btn-info finish">
+						<button type="submit" class="btn btn-info finish">
                                     Finish </button>
 						<!-- <div class="form-group">
 							<div class="col-sm-5">
