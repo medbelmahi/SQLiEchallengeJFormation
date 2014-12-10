@@ -21,7 +21,7 @@
 						<div class="widget-container">
 							<div class="widget-block">
 								<div class="widget-content box-padding">
-									<form data-toggle="validator" id="update_collaborateur" action="add" method="post" role="form"
+									<form data-toggle="validator" id="update_collaborateur" action="update" method="post" role="form"
 										class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data">
 										
 										<input type="hidden" id="idCollaborateur" name="idCollaborateur">
