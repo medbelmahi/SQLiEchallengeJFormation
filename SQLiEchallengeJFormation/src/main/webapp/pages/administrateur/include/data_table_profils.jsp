@@ -65,7 +65,7 @@
 										<tr class="gradeA odd">
 											<td class="text-center"><s:property value="nomProfil" /></td>
 											<td class="text-center"><s:property value="roleBase" /></td>
-											<td class="text-center"><s:property value="description" /></td>
+											<td><s:property value="description" /></td>
 											
 												<td class="text-center">
 													<ul style="list-style: none;" class="navbar-nav nav-options">

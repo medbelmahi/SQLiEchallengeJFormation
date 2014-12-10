@@ -43,7 +43,7 @@
 			<li class="menu-list nav-active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i
 					class="fa fa-laptop"></i> <span>Gestion utilisateurs</span></a>
 				<ul class="sub-menu-list">
-					<li class="active"><a href='<s:url value="/administrateur/utilitateurs/list"/>'>Liste des utilisateurs</a></li>
+					<li class="active"><a href='<s:url value="/administrateur/utilisateurs/list"/>'>Liste des utilisateurs</a></li>
 					<li><a href='<s:url value="/administrateur/profils/list"/>'> Gestion des Profils</a></li>
 				</ul></li>
 			<li class="menu-list"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i class="fa fa-book"></i>

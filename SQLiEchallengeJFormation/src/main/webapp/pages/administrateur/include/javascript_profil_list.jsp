@@ -19,7 +19,7 @@
 					if(existeAction(jsonResponse.allActionsMap[key] , jsonResponse.profilActionsMap)){
 						stringTemp = '<div class="col-lg-12 vcenter">'
 									+'<div class="col-sm-12 icheck ">'
-									+'<div class="square-green single-row col-sm-12">'
+									+'<div class="square-red single-row col-sm-12">'
 									+'<div class="checkbox col-sm-12" style="position: relative;">'
 									+'<input name="actions" value="'+key+'" type="checkbox" checked>'
 // 									+'<label class="popovers" data-trigger="hover" data-placement="right" data-content="'+jsonResponse.actionBeans[i].action.descriptionAction+'" data-original-title="'+jsonResponse.actionBeans[i].action.nomAction+'">'
@@ -31,7 +31,7 @@
 					}else{
 						stringTemp = '<div class="col-lg-12 vcenter">'
 							+'<div class="col-sm-12 icheck ">'
-							+'<div class="square-green single-row col-sm-12">'
+							+'<div class="square-red single-row col-sm-12">'
 							+'<div class="checkbox col-sm-12" style="position: relative;">'
 							+'<input name="actions" value="'+key+'" type="checkbox">'
 //								+'<label class="popovers" data-trigger="hover" data-placement="right" data-content="'+jsonResponse.actionBeans[i].action.descriptionAction+'" data-original-title="'+jsonResponse.actionBeans[i].action.nomAction+'">'

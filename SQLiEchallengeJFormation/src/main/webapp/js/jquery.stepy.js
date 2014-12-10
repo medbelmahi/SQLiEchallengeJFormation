@@ -218,7 +218,7 @@
 				id		= this.attr('id'),
 				opt		= this.data('options');
 
-        	$('<a/>', { id: id + '-next-' + index, href: 'javascript:void(0);', 'class': 'button-next  btn btn-info', html: opt.nextLabel }).click(function() {
+        	$('<a/>', { id: id + '-next-' + index, href: 'javascript:void(0);', 'class': 'button-next  btn btn-primary', html: opt.nextLabel }).click(function() {
         		if (!opt.next || methods.execute.call($this, opt.next, index + 1)) {
 					methods.step.call($this, (index + 1) + 1);
         		}
