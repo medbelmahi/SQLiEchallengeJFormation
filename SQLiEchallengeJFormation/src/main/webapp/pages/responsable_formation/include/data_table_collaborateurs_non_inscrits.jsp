@@ -9,7 +9,7 @@
 		<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
 		<input type="hidden" name="idFormation" value='<s:property value="idFormation" />' >
 		<div class="col-sm-5">Selectionner tout les élement du tableau</div>
-		<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked /></div>
+		<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch-red" checked /></div>
 		<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
 	</div>
 
@@ -24,12 +24,12 @@
 		
 				<thead>
 					<tr role="row">
-						<th>Choisir</th>
-						<th>Prènom &amp; Nom</th>
-						<th>Telphone</th>
-						<th>Email</th>
-						<th>Sexe</th>
-						<th>Options</th>
+						<th class="text-centre">Choisir</th>
+						<th class="text-centre">Prènom &amp; Nom</th>
+						<th class="text-centre">Telphone</th>
+						<th class="text-centre">Email</th>
+						<th class="text-centre">Sexe</th>
+						<th class="text-centre">Options</th>
 						<!-- <th style="display: none;">Actions</th> -->
 					</tr>
 				</thead>

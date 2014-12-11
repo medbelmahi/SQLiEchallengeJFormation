@@ -71,7 +71,7 @@
 														<s:param name="idSession"><s:property value="idSessionFormation"/></s:param>
 														
 														</s:url>'>
-															<i class="fa fa-cloud-upload"></i>
+															<i class="fa fa-folder-open"></i>
 														</a>
 													</li>
 													

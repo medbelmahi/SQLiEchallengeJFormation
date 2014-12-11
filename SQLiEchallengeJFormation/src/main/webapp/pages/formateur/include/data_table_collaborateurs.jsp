@@ -25,14 +25,14 @@
 									<div class="col-sm-7">
 										<select name="idSeance" class="form-control m-bot15">
 							                <s:iterator value="sessionFormation.sceances" >
-							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> ( De :  <s:property value="heureDebut" /> -> à : <s:property value="heureFin" /> )</option>
+							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> [De :  <s:property value="heureDebut" /> à : <s:property value="heureFin" />])</option>
 							                </s:iterator>
 							            </select>
 							        </div>
 								</div>
 								<div class="row" style="margin-left: 20px; margin-right: 20px; margin-bottom: 10px;">
 									<div class="col-sm-5">Selectionner tout les élement du tableau</div>
-									<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch" checked /></div>
+									<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch-red" checked /></div>
 									<div class="col-sm-5"><button type="submit" class="btn btn-primary">Marquer comme absence</button></div>
 								</div>
 							</div>

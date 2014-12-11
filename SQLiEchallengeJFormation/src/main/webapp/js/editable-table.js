@@ -46,8 +46,8 @@ var EditableTable = function () {
 										+'<button class="btn btn-default" type="button"><i class="fa fa-clock-o"></i></button>'
 										+'</span>'
 										+'</div>';
-                jqTds[6].innerHTML = '<a class="edit" href="">Modifier</a>';
-                jqTds[6].innerHTML += '<a style="margin-left :10px;" class="cancel" href="">Annuler</a>';
+                jqTds[6].innerHTML = '<a class="edit" href=""><button class="btn btn-primary btn-xs" type="button">Modifier</button></a>';
+                jqTds[6].innerHTML += '<a style="margin-left :10px;" class="cancel" href=""><button class="btn btn-warning btn-xs" type="button">Annuler</button></a>';
             }
 
             function saveRow(oTable, nRow) {
@@ -58,7 +58,7 @@ var EditableTable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
                 oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-                oTable.fnUpdate('<a class="edit" href="">Mise à jour</a>', nRow, 6, false);
+                oTable.fnUpdate('<a class="edit" href=""><button class="btn btn-danger btn-xs" type="button">Mise à jour</button></a>', nRow, 6, false);
 //                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 5, false);
                 oTable.fnDraw();
             }
@@ -146,7 +146,8 @@ var EditableTable = function () {
                     restoreRow(oTable, nEditing);
                     editRow(oTable, nRow);
                     nEditing = nRow;
-                } else if (nEditing == nRow && this.innerHTML == "Modifier") {
+//                } else if (nEditing == nRow && this.innerHTML == 'Modifier') {
+                } else if (nEditing == nRow && this.innerHTML == '<button class="btn btn-primary btn-xs" type="button">Modifier</button>') {
                     /* Editing this row and want to save it */
                 	
                 	var idSeance = document.getElementById("idSeance").value;
@@ -160,6 +161,19 @@ var EditableTable = function () {
 //                	var status = jsonUpdateSeance(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance);
                 	
                 	jsonUpdateSeance(idSeance, titreSeance, descriptionSeance, heureDebutSeance, heureFinSeance);
+                	
+                	/*do{
+                		console.log(globaleStatus);
+                    	if(globaleStatus == "success"){
+                    		saveRow(oTable, nEditing);
+                            nEditing = null;
+                    	}else{
+                    		console.log("mise à jour n'est po effectuée");
+//                    		alert("mise à jour n'est po effectuée")
+                    	}
+                    	
+                	}while(globaleStatus != "success" && globaleStatus == "none" );*/
+                	
                 	setTimeout(function(){
                 		
                 		console.log(globaleStatus);
@@ -171,7 +185,7 @@ var EditableTable = function () {
 //                    		alert("mise à jour n'est po effectuée")
                     	}
                 	
-                	}, 1000);
+                	}, 500);
                 	
                 	
                     

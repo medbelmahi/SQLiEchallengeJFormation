@@ -41,7 +41,7 @@
 		                        <th class="text-center">Date</th>
 		                        <th class="text-center">Heure dèbut</th>
 		                        <th class="text-center">Heure fin</th>
-		                        <th>Mise à jour</th>
+		                        <th class="text-center">Mise à jour</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -54,7 +54,7 @@
 								<td class="text-center"><s:property value="dateSeance" /></td>
 		                        <td class="text-center"><s:property value="heureDebut" /></td>
 		                        <td class="text-center"><s:property value="heureFin" /></td>
-								<td class="text-center"><a class="edit" href="javascript:;">Mise à jour</a></td>
+								<td class="text-center"><a class="edit" href="javascript:;"><button class="btn btn-danger btn-xs" type="button">Mise à jour</button></a></td>
 <!-- 								<td><a class="delete" href="javascript:;">Delete</a></td> -->
 							</tr>
 						</s:iterator>
