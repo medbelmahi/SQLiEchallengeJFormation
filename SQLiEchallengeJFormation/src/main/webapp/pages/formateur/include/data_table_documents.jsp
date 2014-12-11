@@ -41,25 +41,18 @@
 										<tr class="gradeA odd">
 											<td><s:property value="nomDocument" /></td>
 											<td><s:property value="descriptionDocument" /></td>
-											<td class="center hidden-phone ">
+											<td style="width-min : 60px">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a title="Telecharger le document" target="_blank" href='<s:property value="urlDocument" />'>
-															<i class="fa fa-list"></i>
+															<i class="fa fa-download"></i>
 														</a>
 													</li>
 													
-													<%-- <li style="padding-left: 15px;">
-														<a href='javascript:void(0);'
-														   onclick="jsonGetSession(<s:property value="idSessionFormation"/>);" 
-														   title="Mise à jour">
-															<i class="fa fa-pencil"></i>
-														</a>
-													</li>
-													--%>
-													<li style="padding-left: 15px;">
+													
+													<li>
 														<a data-href='<s:url action="sessions/documents/delete">
 														<s:param name="idDocument"><s:property value="idDocument"/></s:param>
 														<s:param name="idSession"><s:property value="idSession"/></s:param>

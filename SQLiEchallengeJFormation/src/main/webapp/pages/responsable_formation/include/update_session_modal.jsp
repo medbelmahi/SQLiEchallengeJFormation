@@ -68,7 +68,7 @@
 
 						<div class="form-group">
 							<div class="col-sm-5">
-								<button type="submit" class="btn btn-primary">Mise à Session</button>
+								<button type="submit" class="btn btn-primary">Mise à jour</button>
 							</div>
 							<div class="col-sm-7">
 								<h5 class="text-danger" style="text-align: right;" >(*) champs obligatoire</h5>

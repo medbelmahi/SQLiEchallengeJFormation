@@ -29,11 +29,11 @@
 							id="hidden-table-info">
 							<thead>
 								<tr role="row">
-									<th>Prénom &amp; Nom</th>
-									<th>Email</th>
-									<th>Telephone</th>
-									<th>Sexe</th>
-									<th>Options</th>
+									<th class="text-centre">Prénom &amp; Nom</th>
+									<th class="text-centre">Email</th>
+									<th class="text-centre">Telephone</th>
+									<th class="text-centre">Sexe</th>
+									<th class="text-centre">Options</th>
 									<th style="display: none;">Adresse</th>
 									<th style="display: none;">Date de naissance</th>
 									<th style="display: none;">habilitations</th>

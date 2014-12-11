@@ -16,19 +16,20 @@
 		
 			<table aria-describedby="hidden-table-info_info"
 				class="display table table-bordered dataTable"
-				id="dynamic-table_2">
-		<!-- 	id="hidden-table-info"> -->
+			id="hidden-table-info">
+			<!-- 				id="dynamic-table_2"> -->
 		
 				<thead>
 					<tr role="row">
-<!-- 						<th>Choisir</th> -->
-						<th>Prènom &amp; Nom</th>
-						<th>Telphone</th>
-						<th>Email</th>
-						<th>Sexe</th>
-						<th>Status</th>
-<!-- 						<th>Options</th> -->
-						<!-- <th style="display: none;">Actions</th> -->
+						<th class="text-center">Prènom &amp; Nom</th>
+						<th class="text-center">Telphone</th>
+						<th class="text-center">Email</th>
+						<th class="text-center">Sexe</th>
+						<th class="text-center">Status</th>
+						<th style="display: none;">Adresse</th>
+						<th style="display: none;">Date de naissance</th>
+						<th style="display: none;">habilitations</th>
+						<th style="display: none;">image</th>
 					</tr>
 				</thead>
 		
@@ -40,15 +41,17 @@
 								<td><s:property value="collaborateur.telephoneCollaborateur" /></td>
 								<td><s:property value="collaborateur.emailCollaborateur" /></td>
 								<td><s:property value="collaborateur.sexeCollaborateur" /></td>
-								<s:if test='%{status==1}'>  
-									<td><span class="label label-success">Confirmer</span></td>
-								</s:if>
-								<s:elseif test='%{status==0}'>
-									<td><span class="label label-danger">Annuler</span></td>
-								</s:elseif>
-								<s:else>
-									<td><span class="label label-warning">Non traiter</span></td>
-								</s:else>
+								<td class="text-centre">
+									<s:if test='%{status==1}'>  
+										<span class="label label-success">Confirmer</span>
+									</s:if>
+									<s:elseif test='%{status==0}'>
+										<span class="label label-danger">Annuler</span>
+									</s:elseif>
+									<s:else>
+										<span class="label label-warning">Non traiter</span>
+									</s:else>
+								</td>
 								<%--<td class="center hidden-phone ">
 									
 									<ul style="list-style: none;" class="navbar-nav nav-options">
@@ -74,6 +77,19 @@
 										</li> 
 									</ul>
 								</td>--%>
+								
+								<td style="display: none;"><s:property value="collaborateur.adresseCollaborateur" /></td>
+								<td style="display: none;"><s:property value="collaborateur.dateNaissanceCollaborateur" /></td>
+								
+								<td style="display: none;">
+									<ul>
+										<s:iterator value="collaborateur.habilitations">
+											<li><s:property value="nomHabilitation" /></li>
+										</s:iterator>
+									</ul>
+								</td>
+								<td style="display: none;"><s:property value="collaborateur.urlPhotoCollaborateur" /></td>
+								
 							</tr>
 					</s:iterator>
 				</tbody>
