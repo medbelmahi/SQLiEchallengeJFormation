@@ -17,7 +17,7 @@
 				
 				//set description
 // 				$("#updateSessionModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.desciptionSessionFormation);
-				$("#desciptionSessionFormation").html(jsonResponse.descriptionFormation);
+				$("#desciptionSessionFormation").html(jsonResponse.desciptionSessionFormation);
 				
 				//set formateur
 				var selecteBox = document.getElementById("inputFormateur");
