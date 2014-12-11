@@ -29,9 +29,9 @@ import javax.persistence.Transient;
 @Entity
 @Table(name="SQLI_SESSIONS_FORMATIONS")
 public class SessionFormation {
-	private static final int STATUS_NOT_STARTED = 0;
-	private static final int STATUS_STARTED = 1;
-	private static final int STATUS_ENDED = 2;
+	private static final int STATUS_NOT_STARTED = 0;//Pas en cours
+	private static final int STATUS_STARTED = 1;//En cours
+	private static final int STATUS_ENDED = 2;//Terminée
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_SESSION_FORMATION")

@@ -11,8 +11,8 @@
 				//set inputs value from jsonResponse
 				document.getElementById("idFormationInputHidden").value = jsonResponse.idFormation;
 				document.getElementById("inputTitleFormation").value = jsonResponse.titreFormation;
-				document.getElementById("inputDescriptionFormation").value = jsonResponse.descriptionFormation;
-				
+// 				document.getElementById("inputDescriptionFormation").value = jsonResponse.descriptionFormation;
+				$('#discription_formation').html(jsonResponse.descriptionFormation);
 				
 				$('#updateFormationModal').modal('show');
 			}

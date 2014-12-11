@@ -26,7 +26,10 @@
 						<div class="form-group">
 							<label for="inputDescription" class="col-sm-2 col-sm-2 control-label">Description *</label> 
 							<div class="col-sm-10">
-								<input autocomplete="off" name="descriptionFormation" class="form-control" id="inputDescriptionFormation" placeholder="Ex : l'objectif de cette formaton est ..." type="text">
+<!-- 								<input autocomplete="off" name="descriptionFormation" class="form-control" id="inputDescriptionFormation" placeholder="Ex : l'objectif de cette formaton est ..." type="text"> -->
+								<div class="compose-editor">
+                                    <textarea class="wysihtml5 form-control" rows="9" name="descriptionFormation" id="discription_formation"></textarea>
+                                </div>
 							</div>
 						</div>
 						
