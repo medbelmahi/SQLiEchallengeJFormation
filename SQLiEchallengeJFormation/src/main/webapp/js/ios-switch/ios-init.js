@@ -6,6 +6,17 @@ elems.forEach(function(html) {
 
 });
 
+
+//all red elements
+var elemsRed = document.querySelectorAll('.js-switch-red');
+
+for(i = 0; i < elemsRed.length ; i++) {
+	var switchery = new Switchery(elemsRed[i], { color: '#db5554' });
+
+};
+//fin
+
+
 // Colored switches
 var blue = document.querySelector('.js-switch-blue');
 var switchery = new Switchery(blue, { color: '#41b7f1' });
@@ -16,8 +27,8 @@ var switchery = new Switchery(pink, { color: '#ff7791' });
 var teal = document.querySelector('.js-switch-teal');
 var switchery = new Switchery(teal, { color: '#3cc8ad' });
 
-var red = document.querySelector('.js-switch-red');
-var switchery = new Switchery(red, { color: '#db5554' });
+/*var red = document.querySelector('.js-switch-red');
+var switchery = new Switchery(red, { color: '#db5554' });*/
 
 var yellow = document.querySelector('.js-switch-yellow');
 var switchery = new Switchery(yellow, { color: '#fec200' });

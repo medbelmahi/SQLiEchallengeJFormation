@@ -24,12 +24,12 @@
 		
 				<thead>
 					<tr role="row">
-						<th class="text-centre">Choisir</th>
-						<th class="text-centre">Prènom &amp; Nom</th>
-						<th class="text-centre">Telphone</th>
-						<th class="text-centre">Email</th>
-						<th class="text-centre">Sexe</th>
-						<th class="text-centre">Options</th>
+						<th class="text-center">Choisir</th>
+						<th class="text-center">Prènom &amp; Nom</th>
+						<th class="text-center">Telphone</th>
+						<th class="text-center">Email</th>
+						<th class="text-center">Sexe</th>
+						<th class="text-center">Options</th>
 						<!-- <th style="display: none;">Actions</th> -->
 					</tr>
 				</thead>
@@ -37,7 +37,8 @@
 				<tbody aria-relevant="all" aria-live="polite" role="alert">
 					<s:iterator value="collaborateurNonInscrit">
 							<tr class="gradeA odd">
-								<td><input name="idCollaborateurs" value='<s:property value="idCollaborateur" />' type="checkbox" class="js-switch"/></td>
+								<td><input name="idCollaborateurs" id='collaborateurCheckbox_<s:property value="idCollaborateur" />'
+											 value='<s:property value="idCollaborateur" />' type="checkbox" class="js-switch-red"/></td>
 								<td><s:property value="fullname" /></td>
 								<td><s:property value="telephoneCollaborateur" /></td>
 								<td><s:property value="emailCollaborateur" /></td>
