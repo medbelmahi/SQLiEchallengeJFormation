@@ -25,7 +25,7 @@
 						<div class="form-group">
 							<label for="inputLieuSessionFormation_2" class="col-sm-3 control-label">Lieu<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="on" name="lieuSessionFormation" class="form-control" id="inputLieuSessionFormation_2" placeholder="Ex : atelier de programmation JEE" type="text">
+								<input autocomplete="on" name="lieuSessionFormation" class="form-control" id="inputLieuSessionFormation_2" placeholder="Ex : Casablanca boulvare Mohamed 6" type="text">
 							</div>
 						</div>
 						
