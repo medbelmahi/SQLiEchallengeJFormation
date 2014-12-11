@@ -32,9 +32,10 @@
 									<th class="text-center">Titre Session</th>
 									<th class="text-center">Desciption</th>
 									<th class="text-center">Lieu</th>
-									<th class="text-center">Formateur</th>
+<!-- 									<th class="text-center">Formateur</th> -->
 									<th class="text-center">Date de debut</th>
 									<th class="text-center">Date de fin</th>
+									<th class="text-center">Status</th>
 									<th class="text-center">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
@@ -44,12 +45,23 @@
 								<s:iterator value="sessions">
 										<tr class="gradeA odd">
 											<td><s:property value="titreSessionFormation" /></td>
-											<td><s:property value="desciptionSessionFormation" /></td>
+											<td class="description_class"><s:property value="desciptionSessionFormation" /></td>
 											<td><s:property value="lieuSessionFormation" /></td>
-											<td><s:property value="formateur.fullname" /></td>
+<%-- 											<td><s:property value="formateur.fullname" /></td> --%>
 											<td><s:property value="dateDebutSessionFormation" /></td>
 											<td><s:property value="dateFinSessionFormation" /></td>
-											<td style="width: 100px;">
+											<td class="text-center">
+												<s:if test='%{status() == 0}'>
+													<span class="label label-sm btn-danger">Pas en cours</span>
+												</s:if>
+												<s:elseif test='%{status() == 1}'>
+													<span class="label label-sm btn-success">En cours</span>
+												</s:elseif>
+												<s:else>
+													<span class="label label-sm btn-warning">Terminée</span>
+												</s:else>
+											</td>
+											<td style="width: 100px; vertical-align:middle;">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													

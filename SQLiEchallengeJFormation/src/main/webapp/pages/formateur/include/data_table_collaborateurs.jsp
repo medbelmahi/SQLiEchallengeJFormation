@@ -62,7 +62,7 @@
 							<tbody aria-relevant="all" aria-live="polite" role="alert">
 								<s:iterator value="inscriptions">
 									<tr class="gradeA odd">
-										<td><input name="idCollaborateurs" value='<s:property value="collaborateur.idCollaborateur" />' type="checkbox" class="js-switch"/></td>
+										<td><input name="idCollaborateurs" value='<s:property value="collaborateur.idCollaborateur" />' type="checkbox" class="js-switch-red"/></td>
 										<td class="text-center sorting_1"><s:property value="collaborateur.fullname" /></td>
 										<td class=" "><s:property value="collaborateur.emailCollaborateur" /></td>
 										<td class=""><s:property value="collaborateur.telephoneCollaborateur" /></td>

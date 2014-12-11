@@ -4733,3 +4733,11 @@ ol.comment-list {
 			margin: 0 auto;
 			float: none;
 }
+
+td.description_class{
+	max-width: 200px;
+}
+
+td .td_option_class{
+	vertical-align:middle;
+}

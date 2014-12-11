@@ -51,17 +51,17 @@
 											
 											<td class="text-center"><s:property value="dateDebutSessionFormation" /></td>
 											<td class="text-center"><s:property value="dateFinSessionFormation" /></td>
-											
-											<s:if test='%{status() == 0}'>
-												<th class="text-center"><span class="label label-sm btn-danger">Pas en cours</span></th>
-											</s:if>
-											<s:elseif test='%{status() == 1}'>
-												<th class="text-center"><span class="label label-sm btn-success">En cours</span></th>
-											</s:elseif>
-											<s:else>
-												<th class="text-center"><span class="label label-sm btn-warning">Terminée</span></th>
-											</s:else>
-											
+											<td class="text-center">
+												<s:if test='%{status() == 0}'>
+													<span class="label label-sm btn-danger">Pas en cours</span>
+												</s:if>
+												<s:elseif test='%{status() == 1}'>
+													<span class="label label-sm btn-success">En cours</span>
+												</s:elseif>
+												<s:else>
+													<span class="label label-sm btn-warning">Terminée</span>
+												</s:else>
+											</td>
 											<td class="text-center">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">

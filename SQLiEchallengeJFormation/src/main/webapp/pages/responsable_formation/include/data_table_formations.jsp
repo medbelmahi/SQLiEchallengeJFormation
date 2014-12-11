@@ -40,9 +40,9 @@
 								<s:iterator value="formations">
 										<tr class="gradeA odd">
 											<td><s:property value="titreFormation" /></td>
-											<td><s:property value="descriptionFormation" /></td>
+											<td class="description_class"><s:property value="descriptionFormation" /></td>
 											<td><s:property value="dateCreationFormation" /></td>
-											<td style="width : 110px;">
+											<td class="td_option_class" style="width : 110px; vertical-align:middle;">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
