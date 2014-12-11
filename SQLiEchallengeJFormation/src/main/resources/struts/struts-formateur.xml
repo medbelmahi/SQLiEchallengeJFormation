@@ -9,7 +9,16 @@
 
 	<!-- default package -->
     <package name="formateur" namespace="/formateur" extends="sqli_basic_package">
-    	<default-action-ref name="sessions/list" />
+    	<default-action-ref name="index" />
+    
+    	<action name="index">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Formateur: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result type="redirectAction">sessions/list</result>
+    	</action>
     
     	<action name="sessions/list" class="com.sqli.echallenge.jformation.web.formateur.SessionFormationListAction">
     		<interceptor-ref name="sqliRoleValidatorInterceptor" >

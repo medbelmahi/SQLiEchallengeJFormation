@@ -9,7 +9,16 @@
 
 	<!-- default package -->
     <package name="responsableFormation" namespace="/responsableFormation" extends="sqli_basic_package">
-    	<default-action-ref name="formations/list" />
+    	<default-action-ref name="index" />
+    	
+    	<action name="index">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result type="redirectAction">formations/list</result>
+    	</action>
     
     	<!-- Utilisateur actions -->
     	<action name="formations/list" class="com.sqli.echallenge.jformation.web.responsableformation.FormationListAction">
