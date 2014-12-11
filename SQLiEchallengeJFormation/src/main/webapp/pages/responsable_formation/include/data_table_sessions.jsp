@@ -58,7 +58,7 @@
 														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
 														<s:property value="idFormation"/></s:param>
 														</s:url>'>
-															<i class="fa fa-users"></i>
+															<i class="fa fa-user"></i>
 														</a>
 													</li>
 													

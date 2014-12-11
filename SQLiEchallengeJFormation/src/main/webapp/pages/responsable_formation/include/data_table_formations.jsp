@@ -42,7 +42,7 @@
 											<td><s:property value="titreFormation" /></td>
 											<td><s:property value="descriptionFormation" /></td>
 											<td><s:property value="dateCreationFormation" /></td>
-											<td class="center hidden-phone ">
+											<td style="width: 110px;">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													

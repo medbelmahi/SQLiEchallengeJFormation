@@ -657,7 +657,7 @@ h5.left-nav-title {
 }
 
 .notification-menu .dropdown-menu:after {
-    border-bottom: 6px solid #65cea7;
+    border-bottom: 6px solid #353F4F;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     content: "";
@@ -4726,4 +4726,10 @@ ol.comment-list {
 
 .nav-option{
 	padding-left: 0px;
+}
+
+.nav-options{
+			padding-left: 0px;
+			margin: 0 auto;
+			float: none;
 }

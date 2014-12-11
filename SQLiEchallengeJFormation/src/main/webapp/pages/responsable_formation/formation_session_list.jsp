@@ -78,11 +78,7 @@
 			
 		}
 		
-		.nav-options{
-			padding-left: 0px;
-			margin: 0 auto;
-			float: none;
-		}
+		
 	</style>
 	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
