@@ -35,6 +35,29 @@
     	<action name="logout" class="com.sqli.echallenge.jformation.web.LogoutAction">
     		<result type="redirectAction">login</result>
     	</action>
+    	
+    	<action name="profil/display">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">*:*;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result>/pages/profil.jsp</result>
+    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
+    	</action>
+    	
+    	<action name="profil/update" class="com.sqli.echallenge.jformation.web.ProfilUpdateAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">*:*;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg, image/png</param>
+			</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result type="redirectAction">profil/display</result>
+    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
+    	</action>
     
     	<action name="test" class="com.sqli.echallenge.jformation.web.TestAction">
     		<result>/pages/login.jsp</result>
