@@ -3,12 +3,16 @@
  */
 package com.sqli.echallenge.jformation.web.ajax.administrateur;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.sqli.echallenge.jformation.metier.CollaborateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Collaborateur;
+import com.sqli.echallenge.jformation.model.entity.Habilitation;
 import com.sqli.echallenge.jformation.util.SqliDateHelper;
 import com.sqli.echallenge.jformation.util.UserHelper;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
@@ -36,9 +40,12 @@ public class CollaborateurGetAjaxAction extends SqliActionSupport {
 	private String sexe;
 	private String imageProfil;
 	
+	private Map<String, String> habilitations = new HashMap<String, String>();
+	
 	@Override
 	public String execute() throws Exception {
 		try {
+			//1// get collaborateur
 			Collaborateur collaborateur = collaborateurMetier.get(idCollaborateur);
 			nom = collaborateur.getNomCollaborateur();
 			prenom = collaborateur.getPrenomCollaborateur();
@@ -49,6 +56,12 @@ public class CollaborateurGetAjaxAction extends SqliActionSupport {
 			sexe = collaborateur.getSexeCollaborateur();
 			imageProfil = collaborateur.getUrlPhotoCollaborateur();
 			
+			//2// get habilitations
+			for(Habilitation habilitation : collaborateur.getHabilitations()){
+				habilitations.put(habilitation.getNomHabilitation(), habilitation.getDescriptionHabilitation());
+			}
+			
+			//3// success message
 			status = ActionSupport.SUCCESS;
 			
 		} catch (Exception e) {
@@ -137,7 +150,15 @@ public class CollaborateurGetAjaxAction extends SqliActionSupport {
 	public void setIdCollaborateur(Long idCollaborateur) {
 		this.idCollaborateur = idCollaborateur;
 	}
-	
+
+	public Map<String, String> getHabilitations() {
+		return habilitations;
+	}
+
+	public void setHabilitations(Map<String, String> habilitations) {
+		this.habilitations = habilitations;
+	}
+
 	public String getFullname(){
 		return UserHelper.getFullname(nom, prenom);
 	}
