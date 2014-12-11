@@ -63,7 +63,7 @@
 	            <label class="checkbox">
 				<!-- <input type="checkbox" value="remember-me"> Remember me -->
 	                <span class="pull-right">
-	                    <a data-toggle="modal" href="#myModal"> Mot de passe oublié ?</a>
+	                    <a data-toggle="modal" href="#myModal"  style="color: #D9534F;"> <strong>Mot de passe oublié ?</strong></a>
 	
 	                </span>
 	                
