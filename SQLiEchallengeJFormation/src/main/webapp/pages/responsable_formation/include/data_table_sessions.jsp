@@ -29,13 +29,13 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th>Titre Session</th>
-									<th>Desciption</th>
-									<th>Lieu</th>
-									<th>Formateur</th>
-									<th>Date de debut</th>
-									<th>Date de fin</th>
-									<th>Options</th>
+									<th class="text-center">Titre Session</th>
+									<th class="text-center">Desciption</th>
+									<th class="text-center">Lieu</th>
+									<th class="text-center">Formateur</th>
+									<th class="text-center">Date de debut</th>
+									<th class="text-center">Date de fin</th>
+									<th class="text-center">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -49,20 +49,20 @@
 											<td><s:property value="formateur.fullname" /></td>
 											<td><s:property value="dateDebutSessionFormation" /></td>
 											<td><s:property value="dateFinSessionFormation" /></td>
-											<td class="center hidden-phone ">
+											<td style="width: 100px;">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a title="Liste des collaborateurs" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
 														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
 														<s:property value="idFormation"/></s:param>
 														</s:url>'>
-															<i class="fa fa-list"></i>
+															<i class="fa fa-users"></i>
 														</a>
 													</li>
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a href='javascript:void(0);'
 														   onclick="jsonGetSession(<s:property value="idSessionFormation"/>);" 
 														   title="Mise à jour">
@@ -70,7 +70,7 @@
 														</a>
 													</li>
 													
-													<li style="padding-left: 15px;">
+													<li>
 														<a data-href='<s:url action="formations/sessions/delete" ><s:param name="idSession">
 														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
 														<s:property value="idFormation"/></s:param>

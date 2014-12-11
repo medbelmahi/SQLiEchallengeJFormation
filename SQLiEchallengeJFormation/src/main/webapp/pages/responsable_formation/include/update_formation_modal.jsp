@@ -17,14 +17,14 @@
 						<input type="hidden" id="idFormationInputHidden" name="idFormation">
 						
 						<div class="form-group">
-							<label for="inputTitle" class="col-sm-2 col-sm-2 control-label">Titre de formation</label> 
+							<label for="inputTitle" class="col-sm-2 col-sm-2 control-label">Titre de formation<span class="text-danger"> *</span></label> 
 							<div class="col-sm-10">
 								<input autocomplete="off" name="titreFormation" class="form-control" id="inputTitleFormation" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputDescription" class="col-sm-2 col-sm-2 control-label">Description *</label> 
+							<label for="inputDescription" class="col-sm-2 col-sm-2 control-label">Description<span class="text-danger"> *</span></label> 
 							<div class="col-sm-10">
 <!-- 								<input autocomplete="off" name="descriptionFormation" class="form-control" id="inputDescriptionFormation" placeholder="Ex : l'objectif de cette formaton est ..." type="text"> -->
 								<div class="compose-editor">

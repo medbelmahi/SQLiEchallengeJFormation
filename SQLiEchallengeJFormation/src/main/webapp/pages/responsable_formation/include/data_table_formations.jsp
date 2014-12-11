@@ -28,10 +28,10 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th>Titre formation</th>
-									<th>Desciption</th>
-									<th>Date de création</th>
-									<th>Options</th>
+									<th class="text-centre">Titre formation</th>
+									<th class="text-centre">Desciption</th>
+									<th class="text-centre">Date de création</th>
+									<th class="text-centre">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -46,13 +46,13 @@
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
 															<i class="fa fa-list"></i>
 														</a>
 													</li>
 													
-													<li style="padding-left: 15px;">
+													<li style="padding-right: 15px;">
 														<a href='javascript:void(0);'
 														   onclick="jsonGetFormation(<s:property value="idFormation"/>);" 
 														   title="Mise à jour">
@@ -60,7 +60,7 @@
 														</a>
 													</li>
 													
-													<li style="padding-left: 15px;">
+													<li>
 														<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
 															<i class="fa fa-times"></i>
 														</a>

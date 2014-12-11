@@ -12,7 +12,9 @@
 				document.getElementById("idFormationInputHidden").value = jsonResponse.idFormation;
 				document.getElementById("inputTitleFormation").value = jsonResponse.titreFormation;
 // 				document.getElementById("inputDescriptionFormation").value = jsonResponse.descriptionFormation;
-				$('#discription_formation').html(jsonResponse.descriptionFormation);
+
+				//set description
+				$("#updateFormationModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.descriptionFormation);
 				
 				$('#updateFormationModal').modal('show');
 			}
