@@ -59,7 +59,7 @@
 							<label for="desciptionSessionFormation" class="col-sm-3 control-label">Description<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
 								<div class="compose-editor">
-                                    <textarea class="wysihtml5 form-control" rows="9" name="desciptionSessionFormation" id="desciptionSessionFormation"></textarea>
+                                    <textarea class="form-control" rows="9" name="desciptionSessionFormation" id="desciptionSessionFormation"></textarea>
                                 </div>
 							</div>
 						</div>

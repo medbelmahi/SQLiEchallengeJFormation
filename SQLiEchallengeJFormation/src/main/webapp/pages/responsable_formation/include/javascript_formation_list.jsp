@@ -14,7 +14,8 @@
 // 				document.getElementById("inputDescriptionFormation").value = jsonResponse.descriptionFormation;
 
 				//set description
-				$("#updateFormationModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.descriptionFormation);
+// 				$("#updateFormationModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.descriptionFormation);
+				$("#discription_formation").html(jsonResponse.descriptionFormation);
 				
 				$('#updateFormationModal').modal('show');
 			}

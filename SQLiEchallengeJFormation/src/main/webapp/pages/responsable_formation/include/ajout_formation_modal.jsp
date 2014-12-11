@@ -25,7 +25,7 @@
 							<div class="col-sm-9">
 <!-- 								<input autocomplete="off" name="descriptionFormation" class="form-control" id="inputDescription_2" placeholder="Ex : l'objectif de cette formaton est ..." type="text"> -->
 								<div class="compose-editor">
-                                    <textarea class="wysihtml5 form-control" rows="9" name="descriptionFormation" id="discription_"></textarea>
+                                    <textarea class="form-control" rows="9" name="descriptionFormation" id="discription_"></textarea>
                                 </div>
 							</div>
 						</div>

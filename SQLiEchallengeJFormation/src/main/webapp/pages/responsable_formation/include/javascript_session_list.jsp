@@ -16,8 +16,8 @@
 				document.getElementById("inputDateFinSession").value = jsonResponse.dateFinSessionFormation;
 				
 				//set description
-				$("#updateSessionModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.desciptionSessionFormation);
-				
+// 				$("#updateSessionModal iframe").contents().find(".wysihtml5-editor").html(jsonResponse.desciptionSessionFormation);
+				$("#desciptionSessionFormation").html(jsonResponse.descriptionFormation);
 				
 				//set formateur
 				var selecteBox = document.getElementById("inputFormateur");
