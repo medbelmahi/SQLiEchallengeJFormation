@@ -29,9 +29,9 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th>Titre du document</th>
-									<th>Desciption</th>
-									<th>Options</th>
+									<th class="text-centre">Titre du document</th>
+									<th class="text-centre">Desciption</th>
+									<th class="text-centre">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -47,7 +47,7 @@
 													
 													<li style="padding-right: 15px;">
 														<a title="Telecharger le document" target="_blank" href='<s:property value="urlDocument" />'>
-															<i class="fa fa-download"></i>
+															<i class="fa fa-arrow-circle-o-right"></i>
 														</a>
 													</li>
 													
