@@ -28,7 +28,7 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
 @Controller
 public class SessionInscriptionAddAction extends SqliActionSupport {
 	private static final long serialVersionUID = 2047500064495757583L;
-	private static final String TEMPLATE_MAIL = "template/utilisateur-reset-password-email-template.vm";
+	private static final String TEMPLATE_MAIL = "template/collaborateur-session-inscription-template.vm";
 	
 	@Autowired
 	public SessionInscriptionMetier sessionInscriptionMetier;
@@ -80,6 +80,7 @@ public class SessionInscriptionAddAction extends SqliActionSupport {
 					model.addModel(inscription.getCodeInscription());
 					model.addModel(session.getTitreSessionFormation());
 					//...
+					models.add(model);
 					emails.add(collaborateur.getEmailCollaborateur());
 				}
 			}
@@ -87,7 +88,7 @@ public class SessionInscriptionAddAction extends SqliActionSupport {
 			emailSender.setModel(models);
 			emailSender.setEmail(emails);
 			emailSender.setTemplate(TEMPLATE_MAIL);
-			//emailSender.start();
+			emailSender.start();
 			
 			//show success message
 			setSessionActionMessageText(getText("session.inscription.add.new.success"));

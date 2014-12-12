@@ -83,7 +83,7 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 			
 			//generate password
 			String password = sqliRandomGenerator.generateRandomString();
-			String sha1Password = Hashing.sha1().hashString( "password", Charsets.UTF_8 ).toString();
+			String sha1Password = Hashing.sha1().hashString(password, Charsets.UTF_8 ).toString();
 			utilisateur.setPasswordUtilisateur(sha1Password);
 			
 			System.out.println("DEBUG: password: " + password);
