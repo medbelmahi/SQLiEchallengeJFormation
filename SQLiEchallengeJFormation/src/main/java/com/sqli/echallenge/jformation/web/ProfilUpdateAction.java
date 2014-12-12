@@ -117,7 +117,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 		//save image
 		FileUtils.copyFile(fileImage, fileToSaveReal);
 		
-		return fileToSaveContext.toString();
+		return fileToSaveContext.toString().replace('\\', '/');
 	}
 
 	public void setServletRequest(HttpServletRequest servletRequest) {

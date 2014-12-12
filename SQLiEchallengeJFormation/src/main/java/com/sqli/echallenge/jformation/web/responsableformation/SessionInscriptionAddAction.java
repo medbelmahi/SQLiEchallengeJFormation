@@ -6,6 +6,9 @@ package com.sqli.echallenge.jformation.web.responsableformation;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -26,7 +29,7 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Controller
-public class SessionInscriptionAddAction extends SqliActionSupport {
+public class SessionInscriptionAddAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = 2047500064495757583L;
 	private static final String TEMPLATE_MAIL = "template/collaborateur-session-inscription-template.vm";
 	
@@ -40,6 +43,8 @@ public class SessionInscriptionAddAction extends SqliActionSupport {
 	public SqliRandomGenerator random;
 	@Autowired
 	public SqliMailThread emailSender;
+	
+	private HttpServletRequest servletRequest;
 	
 	private Long idFormation;
 	private Long idSession;
@@ -77,11 +82,17 @@ public class SessionInscriptionAddAction extends SqliActionSupport {
 					//perpare email to be sent
 					SqliEmailModel model = new SqliEmailModel();
 					model.addModel(collaborateur.getFullname());
-					model.addModel(inscription.getCodeInscription());
 					model.addModel(session.getTitreSessionFormation());
+					
+					model.addModel(servletRequest.getServerName());
+					model.addModel(String.valueOf(servletRequest.getServerPort()));
+					model.addModel(servletRequest.getContextPath());
+					model.addModel(inscription.getCodeInscription());
 					//...
 					models.add(model);
 					emails.add(collaborateur.getEmailCollaborateur());
+					
+					System.out.println("DEBUG: url: " + servletRequest.getRequestURL());
 				}
 			}
 			//send email to collaborateurs
@@ -125,6 +136,10 @@ public class SessionInscriptionAddAction extends SqliActionSupport {
 
 	public void setIdCollaborateurs(Long[] idCollaborateurs) {
 		this.idCollaborateurs = idCollaborateurs;
+	}
+
+	public void setServletRequest(HttpServletRequest servletRequest) {
+		this.servletRequest = servletRequest;
 	}
 	
 }
