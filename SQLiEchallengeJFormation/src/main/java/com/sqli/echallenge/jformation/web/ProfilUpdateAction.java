@@ -43,6 +43,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 	private String nom;
 	private String prenom;
 	private String email;
+	private String sexe;
 	private String oldPassword;
 	private String newPassword;
 	private String adresse;
@@ -80,6 +81,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			utilisateur.setAdresseUtilisateur(adresse);
 			utilisateur.setTelephoneUtilisateur(telephone);
 			utilisateur.setDateNaissanceUtilisateur(dateNaissance);
+			utilisateur.setSexeUtilisateur(sexe);
 			
 			//2.2//update photo de profil
 			//set Image Avatar
@@ -227,5 +229,15 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 
 	public void setFileImageFileName(String fileImageFileName) {
 		this.fileImageFileName = fileImageFileName;
+	}
+
+	public String getSexe() {
+		return sexe;
+	}
+
+	@RequiredFieldValidator(shortCircuit=true)
+	@RequiredStringValidator(shortCircuit=true)
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
 	}
 }
