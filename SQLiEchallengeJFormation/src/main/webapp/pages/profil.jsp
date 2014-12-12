@@ -243,7 +243,14 @@
 	
 	<script type="text/javascript">
 		$('.password-change').change(function() {
-			  var 
+			  var password_1 = $('#newPassword_1');
+			  var password_2 = $('#newPassword_2');
+			  
+			  if(password_1.val != password_2.val){
+				  alert("password not correct");
+			  }else{
+				  alert("password correct");
+			  }
 		});
 	</script>
 	

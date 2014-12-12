@@ -53,7 +53,7 @@
 				
 				<div style="margin-top: 15px; padding-right: 15px;" class="row">
 					<span class="pull-right">
-	                    <a data-toggle="modal" href="#myModal"  style="color: #D9534F;"> <strong>Mot de passe oublié ?</strong></a>
+	                    <a data-toggle="modal" href="#myModal"  style="color: #D9534F;"> Mot de passe oublié ?</a>
 	
 	                </span>
 				</div>
