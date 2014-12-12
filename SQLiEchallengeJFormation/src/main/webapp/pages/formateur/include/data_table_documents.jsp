@@ -47,7 +47,7 @@
 													
 													<li style="padding-right: 15px;">
 														<a title="Telecharger le document" target="_blank" href='<s:property value="urlDocument" />'>
-															<i class="fa fa-arrow-circle-o-right"></i>
+															<i class="fa fa-download"></i>
 														</a>
 													</li>
 													

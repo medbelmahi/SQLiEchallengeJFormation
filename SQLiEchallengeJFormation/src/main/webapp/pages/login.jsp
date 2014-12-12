@@ -26,7 +26,7 @@
 		
 	    <s:form cssClass="form-signin" action="login" method="post">
 	        <div class="form-signin-heading text-center">
-	            <h1 class="sign-title">Se connecter</h1>
+<!-- 	            <h1 class="sign-title">Se connecter</h1> -->
 	            <img src="images/login-logo.png" alt=""/>
 	        </div>
 	        <div class="login-wrap">
@@ -51,6 +51,13 @@
 	                <i class="fa fa-check"></i>
 	            </button>
 				
+				<div style="margin-top: 15px; padding-right: 15px;" class="row">
+					<span class="pull-right">
+	                    <a data-toggle="modal" href="#myModal"  style="color: #D9534F;"> <strong>Mot de passe oublié ?</strong></a>
+	
+	                </span>
+				</div>
+				
 				<!-- singup div
 	            <div class="registration">
 	                Not a member yet?
@@ -62,10 +69,10 @@
 	            <!-- Begin Remember me -->
 	            <label class="checkbox">
 				<!-- <input type="checkbox" value="remember-me"> Remember me -->
-	                <span class="pull-right">
+	                <%-- <span class="pull-right">
 	                    <a data-toggle="modal" href="#myModal"  style="color: #D9534F;"> <strong>Mot de passe oublié ?</strong></a>
 	
-	                </span>
+	                </span> --%>
 	                
 	            </label><!-- End Remember me -->
 	

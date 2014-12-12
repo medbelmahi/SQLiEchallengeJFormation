@@ -40,7 +40,7 @@
 		<!--sidebar nav start-->
 		<ul class="nav nav-pills nav-stacked custom-nav">
 		
-<%-- 			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li> --%>
+			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Compte</span></a></li>
 			<li class="menu-list nav-active"><a href='<s:url value="/responsableFormation/formations/list"/>'><i
 					class="fa fa-laptop"></i> <span>Gestion Formation</span></a>
 				<ul class="sub-menu-list">
