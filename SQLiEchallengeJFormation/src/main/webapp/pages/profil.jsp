@@ -290,6 +290,10 @@
 				  password_2.addClass('input-password-not-valid');
 			  }
 		});
+		
+		$('#changePassword').change(function(){
+			
+		});
 	</script>
 	
 </body>
