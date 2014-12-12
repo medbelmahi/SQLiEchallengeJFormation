@@ -39,6 +39,8 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 	private List<SessionInscription> collaborateurInscrit;
 	private List<Collaborateur> collaborateurNonInscrit;
 	
+	private SessionFormation sessionFormation;
+	
 	@Override
 	public String execute() throws Exception {
 		try{
@@ -47,8 +49,7 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 			Formation formation = formationMetier.get(idFormation);
 			
 			//2// get session (for validation)
-			@SuppressWarnings("unused")
-			SessionFormation session = sessionFormationMetier.get(idSession);
+			sessionFormation = sessionFormationMetier.get(idSession);
 			
 			//3// get Collborateur Inscrit
 			try{
@@ -109,6 +110,14 @@ public class SessionInscriptionListAction extends SqliActionSupport {
 	public void setCollaborateurNonInscrit(
 			List<Collaborateur> collaborateurNonInscrit) {
 		this.collaborateurNonInscrit = collaborateurNonInscrit;
+	}
+
+	public SessionFormation getSessionFormation() {
+		return sessionFormation;
+	}
+
+	public void setSessionFormation(SessionFormation sessionFormation) {
+		this.sessionFormation = sessionFormation;
 	}
 	
 }
