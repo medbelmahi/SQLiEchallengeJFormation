@@ -116,8 +116,12 @@
 		            <div class="col-md-12">
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
-		                    <li><a href='<s:url value="/responsableFormation/"/>'><i class="fa fa-home"></i> Accueil</a></li>
-		                    <li><a href='<s:url value="/responsableFormation/sessions/list"/>'>Liste des sessions</a></li>
+		                	<li><a href='<s:url value="/responsableFormation/" />'><i class="fa fa-home"></i> Accueil</a></li>
+		                    <li><a href='<s:url value="/responsableFormation/formations/list" />'>liste des formation</a></li>
+		                    <li><a href='<s:url action="formations/sessions/list" ><s:param name="idSession">
+														<s:property value="idSession"/></s:param><s:param name="idFormation">
+														<s:property value="idFormation"/></s:param>
+														</s:url>'>Liste des sessions</a></li>
 		                    <li class="active">Gestion d'inscription</li>
 		                </ul>
 		                <!--breadcrumbs end -->
@@ -134,10 +138,10 @@
 						<section class="panel">
 							<header class="panel-heading custom-tab dark-tab">
 								<ul class="nav nav-tabs">
-									<li class="active">
+									<li class="">
 										<a href="#collaborateruInscrits" data-toggle="tab">Collaborateur inscrits</a>
 									</li>
-									<li class="">
+									<li class="active">
 										<a href="#collaborateruNonInscrits" data-toggle="tab">Collaborateur non inscrits</a>
 									</li>
 								   
@@ -145,14 +149,14 @@
 							</header>
 							<div class="panel-body">
 								<div class="tab-content">
-									<div class="tab-pane active" id="collaborateruInscrits">
+									<div class="tab-pane" id="collaborateruInscrits">
 										
 										<!-- Data table des collaborateurs inscrits Start -->
 											<s:include value="include/data_table_collaborateurs_inscrits.jsp"></s:include>
 										<!-- Data table des collaborateurs inscrits End -->
 
 									</div>
-									<div class="tab-pane" id="collaborateruNonInscrits">
+									<div class="tab-pane active" id="collaborateruNonInscrits">
 										<s:fielderror></s:fielderror>
 										<!-- Data table des collaborateurs non inscrits Start -->
 											<s:include value="include/data_table_collaborateurs_non_inscrits.jsp"></s:include>
@@ -171,11 +175,11 @@
 				
 		      	
 				
-				<%-- <!-- Ajout Formation Modal Form -->
-					<s:include value="include/ajout_formation_modal.jsp"></s:include>
-				<!-- End Ajout Formation Modal Form -->
+				<!-- Start Show informations d'un collaborateur Modal Form -->
+					<s:include value="include/show_collaborateur_info_modal.jsp"></s:include>
+				<!-- End Show informations d'un collaborateur Modal Form -->
 				
-				<!-- Update Formation Modal Form -->
+				<%-- <!-- Update Formation Modal Form -->
 					<s:include value="include/update_formation_modal.jsp"></s:include>
 				<!-- End Update Formation Modal Form --> --%>
 			

@@ -4,13 +4,14 @@
 
 <div class="col-sm-12">
 	<form action="add"  method="post">
-	<div class="row" style="margin-top: 10px;">
+	<div class="row" style="margin-top: 15px;">
 	
 		<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
 		<input type="hidden" name="idFormation" value='<s:property value="idFormation" />' >
-		<div class="col-sm-5">Selectionner tout les élement du tableau</div>
-		<div class="col-sm-2"><input id="selectAll" type="checkbox" class="js-switch-red" checked /></div>
-		<div class="col-sm-5"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
+		<div class="col-sm-1"><input id="selectAll" type="checkbox" class="js-switch-red" checked /></div>
+		<div class="col-sm-3"><h4 style="margin-bottom: 0; margin-top: 6px;">Selectionner tout</h4></div>
+		<div class="col-sm-5"></div>
+		<div class="col-sm-3"><button type="submit" class="btn btn-block btn-primary"><i style="font-size: 20px;" class="fa fa-check-circle-o"></i>  Inscrir les collaborateurs</button></div>
 	</div>
 
 	<div class="row">
@@ -42,10 +43,18 @@
 								<td><s:property value="fullname" /></td>
 								<td><s:property value="telephoneCollaborateur" /></td>
 								<td><s:property value="emailCollaborateur" /></td>
-								<td><s:property value="sexeCollaborateur" /></td>
-								<td class="center hidden-phone ">
+								<td class="text-center"><s:property value="sexeCollaborateur" /></td>
+								<td >
 									
-									<ul style="list-style: none;" class="navbar-nav nav-options">
+									<ul style="list-style: none; font-size: 20px;" class="navbar-nav nav-options-">
+										
+										<li>
+											<a href='javascript:void(0);'
+											   onclick="jsonGetCollaborateur(<s:property value="idCollaborateur"/>);" 
+											   title="plus d'information">
+												<i class="fa fa-file-text"></i>
+											</a>
+										</li>
 										
 										<%-- <li style="padding-left: 15px;">
 											<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
@@ -53,13 +62,7 @@
 											</a>
 										</li>
 										
-										<li style="padding-left: 15px;">
-											<a href='javascript:void(0);'
-											   onclick="jsonGetFormation(<s:property value="idFormation"/>);" 
-											   title="Mise à jour">
-												<i class="fa fa-pencil"></i>
-											</a>
-										</li>
+										
 										
 										<li style="padding-left: 15px;">
 											<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >

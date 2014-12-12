@@ -116,9 +116,9 @@
 		            <div class="col-md-12">
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
-		                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-		                    <li><a href="#">Dashboard</a></li>
-		                    <li class="active">Current page</li>
+		                    <li><a href='<s:url value="/responsableFormation/" />'><i class="fa fa-home"></i> Accueil</a></li>
+		                    <li><a href='<s:url value="/responsableFormation/formations/list" />'>liste des formation</a></li>
+		                    <li class="active">Liste des sessions</li>
 		                </ul>
 		                <!--breadcrumbs end -->
 		            </div>

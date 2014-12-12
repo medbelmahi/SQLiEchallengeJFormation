@@ -55,3 +55,51 @@
 		
 	</script>
 <!-- End Initialisation du tableau Collaborateur -->
+
+
+<!-- Remplir info Collaborateur Modal -->
+<script type="text/javascript">
+	function jsonGetCollaborateur(idCollaborateur){
+		//make ajax request to /ajax/getCollaborateur?idCollaborateur=x
+		$.getJSON('<s:url action="get/collaborateur" namespace="/ajax" />', {idCollaborateur : idCollaborateur}, function(jsonResponse) {
+			//if satuts == "success" , do
+			if(jsonResponse.status === "success"){
+				
+				//set inputs value from jsonResponse
+// 				document.getElementById("idCollaborateur").value = jsonResponse.idCollaborateur;
+				$("#collaborateurFullname").html(jsonResponse.fullname);
+				$("#collaborateurEmail").html(jsonResponse.email);
+				$("#collaborateurTelephone").html(jsonResponse.telephone);
+				$("#collaborateurDateNaissance").html(jsonResponse.dateNaissance);
+				$("#collaborateurSexe").html(jsonResponse.sexe);
+				$("#collaborateurAdresse").html(jsonResponse.adresse);
+				
+				//set image profil
+				var imageCollaborateur = document.getElementById("imageCollaborateur");
+				imageCollaborateur.setAttribute("src",jsonResponse.imageProfil);
+				
+				
+				//set habilitations
+				var stringTemp = '<ul>';
+				for(key in  jsonResponse.habilitations){
+					stringTemp += '<li>'
+					+'<label class="popovers" data-trigger="hover" data-placement="right" data-content="'
+					+jsonResponse.habilitations[key]+'" data-original-title="'
+					+key+'">'+key+'</label>'
+					+'</li>';
+				}
+				stringTemp += '</ul>';
+				
+				$("#collaborateurHablitations").html(stringTemp);
+				
+				//popovers
+				$('.popovers').popover();
+				
+				
+				$('#collaborateurInfoModal').modal('show');
+				
+			}
+	  	});
+	};
+</script>
+<!-- End Remplir Info Collaborateur Modal -->

@@ -84,7 +84,7 @@
 				});
 				 
 				// popovers
-			    $('.popovers').popover();
+				//$('.popovers').popover();
 				 
 				$('#myModal_action').modal('show');
 			}

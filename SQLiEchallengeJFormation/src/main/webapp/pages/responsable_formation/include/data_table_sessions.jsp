@@ -61,18 +61,20 @@
 													<span class="label label-sm btn-warning">Terminée</span>
 												</s:else>
 											</td>
-											<td style="width: 100px; vertical-align:middle;">
+											<td style="width: 120px; vertical-align:middle;" class="text-center td_option_class">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<li style="padding-right: 15px;">
-														<a title="Liste des collaborateurs" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
-														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
-														<s:property value="idFormation"/></s:param>
-														</s:url>'>
-															<i class="fa fa-user"></i>
-														</a>
-													</li>
+													<s:if test='%{status() != 2}'>
+														<li style="padding-right: 15px;">
+															<a title="Liste des collaborateurs" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
+															<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
+															<s:property value="idFormation"/></s:param>
+															</s:url>'>
+																<i class="fa fa-user"></i>
+															</a>
+														</li>
+													</s:if>
 													
 													<li style="padding-right: 15px;">
 														<a href='javascript:void(0);'

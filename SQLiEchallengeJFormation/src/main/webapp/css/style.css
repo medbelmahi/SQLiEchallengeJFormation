@@ -4725,11 +4725,11 @@ ol.comment-list {
 }
 
 .nav-option{
-	padding-left: 0px;
+/* 	padding-left: 0px; */
 }
 
 .nav-options{
-			padding-left: 0px;
+			padding-left: 0;
 			margin: 0 auto;
 			float: none;
 }
@@ -4738,6 +4738,7 @@ td.description_class{
 	max-width: 200px;
 }
 
-td .td_option_class{
+.td_option_class{
 	vertical-align:middle;
+	padding-left: 0;
 }

@@ -29,7 +29,7 @@
 							<thead>
 								<tr role="row">
 									<th>Question</th>
-									<th>Options</th>
+									<th class="text-center">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -38,7 +38,7 @@
 								<s:iterator value="questions">
 										<tr class="gradeA odd">
 											<td><s:property value="question" /></td>
-											<td class="center hidden-phone ">
+											<td class="center text-center">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
