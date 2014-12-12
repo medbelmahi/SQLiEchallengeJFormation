@@ -68,10 +68,10 @@ public class SqliRoleValidatorInterceptor extends AbstractInterceptor {
 		String role = (roleActions.keySet().iterator().hasNext()) ? roleActions.keySet().iterator().next() : null;
 		
 		// All utilisateurs are allowed
-		/*if (role == null || role.equals("*")) {
-			return true;
+		if (role == null || role.equals("*")) {
+			if(utilisateur!= null) return true;
 		}
-		*/
+		
 		//Check if the utilisateur is In role to invoke the Action
 		if(utilisateur!= null){
 			if(utilisateur.getProfil() != null && utilisateur.getProfil().getRoleBase().toLowerCase().equals(role)){
