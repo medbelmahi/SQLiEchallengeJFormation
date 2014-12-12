@@ -43,7 +43,7 @@
 	    	<interceptor-ref name="defaultStack" />
 	    	
     		<result>/pages/profil.jsp</result>
-    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
     	
     	<action name="profil/update" class="com.sqli.echallenge.jformation.web.ProfilUpdateAction">
@@ -56,7 +56,7 @@
 	    	<interceptor-ref name="defaultStack" />
 	    	
     		<result type="redirectAction">profil/display</result>
-    		<result name="forbiddenAction" type="redirectAction">utilisateurs/list</result>
+    		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
     
     	<action name="test" class="com.sqli.echallenge.jformation.web.TestAction">
