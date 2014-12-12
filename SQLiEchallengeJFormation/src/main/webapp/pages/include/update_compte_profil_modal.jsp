@@ -10,8 +10,9 @@
                    <h4 class="modal-title">Edit Media Gallery</h4>
                </div>
 
-               <div class="modal-body row">
-
+               <div class="modal-body row" style="padding-left: 35px; padding-right: 35px;">
+				<form data-toggle="validator" id="update_utilisateur" action="update" method="post" role="form" 
+										class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data">
                    <div class="col-md-5 img-modal">
                        <!-- <img src="images/gallery/image1.jpg" alt="">
                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit Image</a>
@@ -53,11 +54,11 @@
                        </div>
                        <div class="form-group">
                        		<div class="row">
-                       			<div class="col-md-8">
-                       				<label>change le mot de passe</label>
+                       			<div class="col-md-6">
+                       				<label>Changer</label>
                        			</div>
-                       			<div class="col-md-4">
-                       				<input type="checkbox" name="changePassword" value="1" id="changePassword">
+                       			<div class="col-md-6">
+                       				<input type="checkbox" name="changePassword" class="js-switch-red" value="1" id="changePassword_">
                        			</div>
                        		</div>
                        </div>
@@ -65,7 +66,7 @@
                            <label> Nouveau mot de passe<span class="text-danger"> *</span></label>
                            <div class="row">
 	                           <div class="col-md-10">
-	                           		<input id="newPassword_1" type="password" name="newPassword_1" value="" class="password-change form-control">
+	                           		<input id="newPassword_1" readonly type="password" name="newPassword_1" value="" class="password-change form-control">
 	                           </div>
 	                           <div class="col-md-2" id="newPassword_2_valide"></div>
                            </div>
@@ -74,7 +75,7 @@
                            <label> Nouveau mot de passe<span class="text-danger"> *</span></label>
                            <div class="row">
                            		<div class="col-md-10">
-                           			<input id="newPassword_2" type="password" name="newPassword_2" value="" class="password-change form-control">
+                           			<input id="newPassword_2" readonly type="password" name="newPassword_2" value="" class="password-change form-control">
                            		</div>
                            		<div class="col-md-2" id="newPassword_1_valide"></div>
                            </div>
@@ -112,25 +113,71 @@
                        
                        <div class="form-group">
                            <label> Adresse<span class="text-danger"> *</span></label>
-                           <textarea required="required" rows="2" class="form-control"><s:property value="%{#session.utilisateur.adresseUtilisateur}" /></textarea>
+                           <textarea required="required" rows="2" name="adresse" class="form-control"><s:property value="%{#session.utilisateur.adresseUtilisateur}" /></textarea>
                        </div>
                        <div class="form-group">
                            <label> Telephone<span class="text-danger"> *</span></label>
-                           <input required="required" id="title" value='<s:property value="%{#session.utilisateur.telephoneUtilisateur}" />' class="form-control">
+                           <input required="required" id="title" pattern="^0[5-6]{1}\d{8}" name="telephone"
+                           		value='<s:property value="%{#session.utilisateur.telephoneUtilisateur}" />' class="form-control">
                        </div>
                        
                        <div class="form-group">
                            <label> Email<span class="text-danger"> *</span></label>
-                           <input required="required" id="title" value='<s:property value="%{#session.utilisateur.emailUtilisateur}" />' class="form-control">
+                           <input required="required" id="title" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email"
+                           		value='<s:property value="%{#session.utilisateur.emailUtilisateur}" />' class="form-control">
                        </div>
                        
+                       <div class="form-group">
+
+
+							<label for="sexeElement" style="margin-left: 0px; padding-left: 0px; text-align: left;"
+								class="col-sm-3 control-label vcenter">Sexe<span
+								class="text-danger"> *</span></label>
+
+							<div id="sexeElement" class="col-sm-8 vcenter">
+									<s:set name="myVarSexe" value="%{#session.utilisateur.sexeUtilisateur}"/>
+									
+								<div class="icheck row">
+									<div class="square-red col-sm-4" style="margin-right: 0px; padding-right: 0px;">
+										<div class="radio " style="margin: auto auto; float: none;">
+											<s:if test="%{#myVarSexe=='Homme'}">
+												<input tabindex="3" type="radio" name="sexe"
+													id="optionHomme" value="Homme" checked="checked">
+											</s:if>
+											<s:else>
+												<input tabindex="3" type="radio" name="sexe" 
+													id="optionHomme" value="Homme">
+											</s:else>
+											<label id="optionHomme_label" for="optionHomme" > Male </label>
+										</div>
+										
+
+									</div>
+									<div class="square-red col-sm-5" style="margin-left: 0px; padding-left: 0px;">
+										<div class="radio " style="margin: auto auto; float: none;">
+										<s:if test="%{#myVarSexe=='Femme'}">
+											<input tabindex="3" type="radio" name="sexe" id="optionFemme" value="Femme" checked="checked">
+										</s:if>
+										<s:else>
+											<input tabindex="3" type="radio" name="sexe" id="optionFemme" value="Femme">
+										</s:else> 
+											<label id="optionFemme_label" for="optionFemme">
+												Female </label>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+                  			
                        <div class="pull-right">
-                           <button class="btn btn-danger btn-sm" type="button">Annuler</button>
-                           <button class="btn btn-success btn-sm" type="button">Sauvgarder les changements</button>
+                           <button data-dismiss="modal" class="btn btn-default btn-sm" type="button">Annuler</button>
+                           <button type="submit" class="btn btn-success btn-sm" type="button">Sauvgarder les changements</button>
                        </div>
                    </div>
-
+				</form>
                </div>
+               
 
            </div>
        </div>
