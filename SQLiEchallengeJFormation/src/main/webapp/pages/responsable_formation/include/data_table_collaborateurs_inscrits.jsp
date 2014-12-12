@@ -41,7 +41,7 @@
 								<td><s:property value="collaborateur.telephoneCollaborateur" /></td>
 								<td><s:property value="collaborateur.emailCollaborateur" /></td>
 								<td><s:property value="collaborateur.sexeCollaborateur" /></td>
-								<td class="text-centre">
+								<td class="text-center">
 									<s:if test='%{status==1}'>  
 										<span class="label label-success">Confirmer</span>
 									</s:if>
