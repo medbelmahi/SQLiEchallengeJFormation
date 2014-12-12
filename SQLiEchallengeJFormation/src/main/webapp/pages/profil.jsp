@@ -305,7 +305,8 @@
 		$(function() {
 		    $('#update_utilisateur').submit(function() {
 		        // DO STUFF
-				if($(this)[0].checked){
+		        
+				if($('#changePassword_')[0].checked){
 					var password_1 = $('#newPassword_1');
 					var password_2 = $('#newPassword_2');
 					if(password_1.val() == password_2.val()){

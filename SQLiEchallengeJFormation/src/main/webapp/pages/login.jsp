@@ -47,7 +47,7 @@
 				<s:textfield tautocomplete="on" ype="text" cssClass="form-control" placeholder="Email" autofocus="true" name="email" required="true" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
 	            <s:textfield autocomplete="on" type="password" cssClass="form-control" placeholder="Mot de passe" required="true" name="password" />
 	
-	            <button class="btn btn-lg btn-login btn-block" type="submit">Se connecter
+	            <button class="btn btn-lg btn-login btn-block" type="submit" style="font-size: 19px;" >Se connecter
 <!-- 	                <i class="fa fa-check"></i> -->
 	            </button>
 				
