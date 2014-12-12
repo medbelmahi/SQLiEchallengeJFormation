@@ -58,7 +58,7 @@
                        				<label>Changer</label>
                        			</div>
                        			<div class="col-md-6">
-                       				<input type="checkbox" name="changePassword" class="js-switch-red" value="1" id="changePassword_">
+                       				<input type="checkbox" name="changePassword" class="js-switch-red" value="true" id="changePassword_">
                        			</div>
                        		</div>
                        </div>
