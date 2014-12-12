@@ -65,7 +65,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			//1.1// check oldPassword = user.password
 			if(changePassword){
 				//1.2// 
-				if(oldPassword==null || newPassword==null) throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
+				if((oldPassword==null || oldPassword.isEmpty())||(newPassword==null || newPassword.isEmpty())) throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
 				
 				//1.2// hash two passwords
 				String shaOldPassword = Hashing.sha1().hashString(oldPassword, Charsets.UTF_8 ).toString();
@@ -101,7 +101,6 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 
-			e.printStackTrace();
 			//show error message
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;

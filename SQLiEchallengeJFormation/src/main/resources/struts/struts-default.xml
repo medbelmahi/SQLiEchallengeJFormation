@@ -36,7 +36,7 @@
     		<result type="redirectAction">login</result>
     	</action>
     	
-    	<action name="profil/display">
+    	<action name="profil/display" class="com.sqli.echallenge.jformation.web.ProfilDisplayAction">
     		<interceptor-ref name="sqliRoleValidatorInterceptor" >
 	    		<param name="allowedRoles">*:*;</param>
 	    	</interceptor-ref>
