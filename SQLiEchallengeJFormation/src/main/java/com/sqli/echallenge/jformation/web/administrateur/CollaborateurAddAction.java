@@ -223,6 +223,6 @@ public class CollaborateurAddAction extends SqliActionSupport implements Servlet
 		//save image
 		FileUtils.copyFile(fileImage, fileToSaveReal);
 		
-		return fileToSaveContext.toString();
+		return fileToSaveContext.toString().replace('\\', '/');
 	}
 }

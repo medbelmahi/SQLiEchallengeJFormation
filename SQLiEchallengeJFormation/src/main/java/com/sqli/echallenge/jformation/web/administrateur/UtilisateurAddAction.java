@@ -246,6 +246,6 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 		//save image
 		FileUtils.copyFile(fileImage, fileToSaveReal);
 		
-		return fileToSaveContext.toString();
+		return fileToSaveContext.toString().replace('\\', '/');
 	}
 }

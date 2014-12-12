@@ -78,16 +78,20 @@ public class SessionFormationUpdateAction extends SqliActionSupport {
 			//3// get formateur (utilisateur) from db
 			Utilisateur formateur = formateurMetier.getUtilisateur(idFormateur);
 			
-			//4// formateur should not be affected to a session with the same date
-			boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
-			if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
-			
-			//5// get session from db + update it
+			//4// get sessionFormation from db
 			SessionFormation session = sessionFormationMetier.get(idSession);
+			
+			//5// formateur should not be affected to a session with the same date
+			//5.1// if formateur has not change dont do this check
+			if(!session.getFormateur().getIdUtilisateur().equals(idFormateur)){
+				boolean cantHaveSession = sessionFormationMetier.hasSessionBetweenInterval(idFormateur, dateDebutSessionFormation, dateFinSessionFormation);
+				if(cantHaveSession) throw new SqliException(getText("session.formateur.cant.have"));
+				
+			}
+			
+			//6// update it
 			session.setTitreSessionFormation(titreSessionFormation);
 			session.setDesciptionSessionFormation(desciptionSessionFormation);
-			//session.setDateDebutSessionFormation(dateDebutSessionFormation);
-			//session.setDateFinSessionFormation(dateFinSessionFormation);
 			session.setLieuSessionFormation(lieuSessionFormation);
 			
 			session.setFormateur(formateur);

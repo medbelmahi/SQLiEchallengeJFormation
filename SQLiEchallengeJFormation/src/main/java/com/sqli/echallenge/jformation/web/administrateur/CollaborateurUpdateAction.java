@@ -204,7 +204,7 @@ public class CollaborateurUpdateAction extends SqliActionSupport implements Serv
 		//save image
 		FileUtils.copyFile(fileImage, fileToSaveReal);
 		
-		return fileToSaveContext.toString();
+		return fileToSaveContext.toString().replace('\\', '/');
 	}
 	
 	@RequiredFieldValidator(shortCircuit=true)

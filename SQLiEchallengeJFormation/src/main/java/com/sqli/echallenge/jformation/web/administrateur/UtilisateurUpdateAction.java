@@ -223,7 +223,7 @@ public class UtilisateurUpdateAction extends SqliActionSupport implements Servle
 		//save image
 		FileUtils.copyFile(fileImage, fileToSaveReal);
 		
-		return fileToSaveContext.toString();
+		return fileToSaveContext.toString().replace('\\', '/');
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)
