@@ -301,6 +301,22 @@
 				$('#newPassword_2').attr("readonly","readonly");
 			}
 		});
+		
+		$(function() {
+		    $('#update_utilisateur').submit(function() {
+		        // DO STUFF
+				if($(this)[0].checked){
+					var password_1 = $('#newPassword_1');
+					var password_2 = $('#newPassword_2');
+					if(password_1.val() == password_2.val()){
+						return true;
+					}
+					return false;
+				}
+
+		        return true; // return false to cancel form action
+		    });
+		});
 	</script>
 	
 </body>
