@@ -292,7 +292,11 @@
 		});
 		
 		$('#changePassword').change(function(){
-			
+			if($(this)[0].checked){
+				
+			}else{
+				
+			}
 		});
 	</script>
 	
