@@ -43,8 +43,8 @@
 					</li>
 				</ul>
 				<div class="row">
-					<a href="#updateCompteProfil" data-toggle="modal">
-						<button style="margin-top: 20px;" class="btn btn-block btn-success">Mise à jour de profil</button>
+					<a href="#updateCompteProfil" data-toggle="modal" style="margin-top: 20px;" class="btn btn-block btn-success">
+						Mise à jour de profil
 					</a>
 				</div>
             </div>
