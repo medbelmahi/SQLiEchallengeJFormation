@@ -138,31 +138,53 @@
 						<section class="panel">
 							<header class="panel-heading custom-tab dark-tab">
 								<ul class="nav nav-tabs">
-									<li class="">
-										<a href="#collaborateruInscrits" data-toggle="tab">Collaborateur inscrits</a>
-									</li>
-									<li class="active">
-										<a href="#collaborateruNonInscrits" data-toggle="tab">Collaborateur non inscrits</a>
-									</li>
+									<s:if test='%{sessionFormation.status() != 2}'>
+										<li class="">
+											<a href="#collaborateruInscrits" data-toggle="tab">Collaborateur inscrits</a>
+										</li>
+									
+										<li class="active">
+											<a href="#collaborateruNonInscrits" data-toggle="tab">Collaborateur non inscrits</a>
+										</li>
+									</s:if>
+									<s:else>
+										<li class="active">
+											<a href="#collaborateruInscrits" data-toggle="tab">Collaborateur inscrits</a>
+										</li>
+									</s:else>
+									
 								   
 								</ul>
 							</header>
 							<div class="panel-body">
 								<div class="tab-content">
-									<div class="tab-pane" id="collaborateruInscrits">
-										
-										<!-- Data table des collaborateurs inscrits Start -->
-											<s:include value="include/data_table_collaborateurs_inscrits.jsp"></s:include>
-										<!-- Data table des collaborateurs inscrits End -->
-
-									</div>
-									<div class="tab-pane active" id="collaborateruNonInscrits">
-										<s:fielderror></s:fielderror>
-										<!-- Data table des collaborateurs non inscrits Start -->
-											<s:include value="include/data_table_collaborateurs_non_inscrits.jsp"></s:include>
-										<!-- Data table des collaborateurs non inscrits End -->
-
-									</div>
+								
+									<s:if test='%{sessionFormation.status() != 2}'>
+										<div class="tab-pane" id="collaborateruInscrits">
+											
+											<!-- Data table des collaborateurs inscrits Start -->
+												<s:include value="include/data_table_collaborateurs_inscrits.jsp"></s:include>
+											<!-- Data table des collaborateurs inscrits End -->
+	
+										</div>
+									
+										<div class="tab-pane active" id="collaborateruNonInscrits">
+											<s:fielderror></s:fielderror>
+											<!-- Data table des collaborateurs non inscrits Start -->
+												<s:include value="include/data_table_collaborateurs_non_inscrits.jsp"></s:include>
+											<!-- Data table des collaborateurs non inscrits End -->
+	
+										</div>
+									</s:if>
+									<s:else>
+										<div class="tab-pane active" id="collaborateruInscrits">
+											
+											<!-- Data table des collaborateurs inscrits Start -->
+												<s:include value="include/data_table_collaborateurs_inscrits.jsp"></s:include>
+											<!-- Data table des collaborateurs inscrits End -->
+	
+										</div>
+									</s:else>
 									
 								</div>
 							</div>

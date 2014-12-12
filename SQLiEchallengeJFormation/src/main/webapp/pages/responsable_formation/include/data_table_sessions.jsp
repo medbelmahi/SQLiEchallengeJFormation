@@ -65,16 +65,14 @@
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
-													<s:if test='%{status() != 2}'>
-														<li style="padding-right: 15px;">
-															<a title="Liste des collaborateurs" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
-															<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
-															<s:property value="idFormation"/></s:param>
-															</s:url>'>
-																<i class="fa fa-user"></i>
-															</a>
-														</li>
-													</s:if>
+													<li style="padding-right: 15px;">
+														<a title="Liste des collaborateurs" href='<s:url action="formations/sessions/inscriptions/list" ><s:param name="idSession">
+														<s:property value="idSessionFormation"/></s:param><s:param name="idFormation">
+														<s:property value="idFormation"/></s:param>
+														</s:url>'>
+															<i class="fa fa-user"></i>
+														</a>
+													</li>
 													
 													<li style="padding-right: 15px;">
 														<a href='javascript:void(0);'
