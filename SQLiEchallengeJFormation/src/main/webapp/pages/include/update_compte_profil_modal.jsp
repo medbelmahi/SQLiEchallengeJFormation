@@ -66,7 +66,7 @@
                            <label> Nouveau mot de passe<span class="text-danger"> *</span></label>
                            <div class="row">
 	                           <div class="col-md-10">
-	                           		<input id="newPassword_1" readonly type="password" name="newPassword_1" value="" class="password-change form-control">
+	                           		<input id="newPassword_1" readonly type="password" name="newPassword" value="" class="password-change form-control">
 	                           </div>
 	                           <div class="col-md-2" id="newPassword_2_valide"></div>
                            </div>

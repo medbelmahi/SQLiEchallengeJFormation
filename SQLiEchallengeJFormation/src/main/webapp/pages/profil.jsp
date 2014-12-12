@@ -147,6 +147,11 @@
 		                <!--breadcrumbs end -->
 		            </div>
 		       	</div><!-- present working link End-->
+	       		
+	       		
+	       		<!-- Message action start-->
+		        	<s:include value="/pages/administrateur/include/message_action.jsp"></s:include>
+		        <!-- Message action end-->
 	       	
 	       		<!-- Profil start-->
 		        	<s:include value="include/compte_profil_info.jsp"></s:include>
