@@ -49,6 +49,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 	private String adresse;
 	private String telephone;
 	private Date dateNaissance;
+	private boolean changePassword;
 	
 	//Image (avatar) file
 	private File fileImage;
@@ -62,15 +63,20 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			Utilisateur utilisateur = getSessionUser();
 			
 			//1.1// check oldPassword = user.password
-			if(newPassword != null && oldPassword != null){
-				String shaOldPassword = Hashing.sha1().hashString( oldPassword, Charsets.UTF_8 ).toString();
-				if(!shaOldPassword.equals(utilisateur.getPasswordUtilisateur())){
+			if(changePassword){
+				//1.2// 
+				if(oldPassword==null || newPassword==null) throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
+				
+				//1.2// hash two passwords
+				String shaOldPassword = Hashing.sha1().hashString(oldPassword, Charsets.UTF_8 ).toString();
+				String shaNewPassword = Hashing.sha1().hashString(newPassword, Charsets.UTF_8 ).toString();
+				
+				//1.3// 
+				if(!utilisateur.getPasswordUtilisateur().equals(shaOldPassword)){
 					throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
 				}
 				
-				//1.2// hash new password
-				String shaNewPassword = Hashing.sha1().hashString( newPassword, Charsets.UTF_8 ).toString();
-				
+				//1.3// update
 				utilisateur.setPasswordUtilisateur(shaNewPassword);
 			}
 			
@@ -95,6 +101,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 
+			e.printStackTrace();
 			//show error message
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;
@@ -240,4 +247,13 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 	public void setSexe(String sexe) {
 		this.sexe = sexe;
 	}
+
+	public boolean isChangePassword() {
+		return changePassword;
+	}
+
+	public void setChangePassword(boolean changePassword) {
+		this.changePassword = changePassword;
+	}
+	
 }

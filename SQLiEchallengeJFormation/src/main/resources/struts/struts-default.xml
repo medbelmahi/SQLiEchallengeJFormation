@@ -42,7 +42,9 @@
 	    	</interceptor-ref>
 	    	<interceptor-ref name="defaultStack" />
 	    	
-    		<result>/pages/profil.jsp</result>
+    		<result name="success">/pages/profil.jsp</result>
+    		<result name="error">/pages/profil.jsp</result>
+    		<result name="input">/pages/profil.jsp</result>
     		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
     	
@@ -55,7 +57,9 @@
 			</interceptor-ref>
 	    	<interceptor-ref name="defaultStack" />
 	    	
-    		<result type="redirectAction">profil/display</result>
+    		<result name="success" type="redirectAction">profil/display</result>
+    		<result name="error" type="redirectAction">profil/display</result>
+    		<result name="input" type="redirectAction">profil/display</result>
     		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
     
