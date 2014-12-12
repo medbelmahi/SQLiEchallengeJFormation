@@ -38,7 +38,7 @@ public class SessionInscriptionDisplayAction extends SqliActionSupport {
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 			
-			setSessionActionErrorText(e.getMessage());
+			setSessionActionErrorText(getText("collaborateur.show.inscription.traited"));
 			return SqliActionSupport.ERROR;
 		}
 	}

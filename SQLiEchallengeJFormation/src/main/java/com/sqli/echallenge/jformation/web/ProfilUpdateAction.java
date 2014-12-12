@@ -13,6 +13,8 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.opensymphony.xwork2.validator.annotations.DateRangeFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;
@@ -22,6 +24,7 @@ import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
 import com.sqli.echallenge.jformation.util.FileHelper;
+import com.sqli.echallenge.jformation.util.SqliException;
 
 /**
  * @author Mouad
@@ -40,7 +43,8 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 	private String nom;
 	private String prenom;
 	private String email;
-	private String password;
+	private String oldPassword;
+	private String newPassword;
 	private String adresse;
 	private String telephone;
 	private Date dateNaissance;
@@ -56,11 +60,20 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			//1// get user from session
 			Utilisateur utilisateur = getSessionUser();
 			
+			//1.1// check oldPassword = user.password
+			String shaOldPassword = Hashing.sha1().hashString( oldPassword, Charsets.UTF_8 ).toString();
+			if(!shaOldPassword.equals(utilisateur.getPasswordUtilisateur())){
+				throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
+			}
+			
+			//1.2// hash new password
+			String shaNewPassword = Hashing.sha1().hashString( newPassword, Charsets.UTF_8 ).toString();
+			
 			//2.1// update Utilisateur
 			utilisateur.setNomUtilsateur(nom);
 			utilisateur.setPrenomUtilisateur(prenom);
 			utilisateur.setEmailUtilisateur(email);
-			utilisateur.setPasswordUtilisateur(password);
+			utilisateur.setPasswordUtilisateur(shaNewPassword);
 			utilisateur.setAdresseUtilisateur(adresse);
 			utilisateur.setTelephoneUtilisateur(telephone);
 			utilisateur.setDateNaissanceUtilisateur(dateNaissance);
@@ -73,7 +86,7 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			utilisateurMetier.update(utilisateur);
 			
 			//4// show success message
-			setSessionActionMessageText(getText(""));
+			setSessionActionMessageText(getText("utilisateur.updateProfil.success"));
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 
@@ -144,12 +157,22 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 
 	@RequiredFieldValidator(shortCircuit=true)
 	@RequiredStringValidator(shortCircuit=true)
-	public String getPassword() {
-		return password;
+	public String getOldPassword() {
+		return oldPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
+	}
+
+	@RequiredFieldValidator(shortCircuit=true)
+	@RequiredStringValidator(shortCircuit=true)
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)

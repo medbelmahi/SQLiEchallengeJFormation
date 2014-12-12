@@ -14,6 +14,8 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.opensymphony.xwork2.validator.annotations.DateRangeFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;
@@ -80,7 +82,11 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 			utilisateur.setSexeUtilisateur(sexe);
 			
 			//generate password
-			utilisateur.setPasswordUtilisateur(sqliRandomGenerator.generateRandomString());
+			String password = sqliRandomGenerator.generateRandomString();
+			String sha1Password = Hashing.sha1().hashString( "password", Charsets.UTF_8 ).toString();
+			utilisateur.setPasswordUtilisateur(sha1Password);
+			
+			System.out.println("DEBUG: password: " + password);
 			
 			//get profil from db and set it
 			utilisateur.setProfil(profilMetier.get(profil));
@@ -94,7 +100,7 @@ public class UtilisateurAddAction extends SqliActionSupport implements ServletRe
 			//Send Mail to New utilisateur (Thread)!!!!!
 			SqliEmailModel model = new SqliEmailModel();
 			model.addModel(utilisateur.getNomUtilsateur());
-			model.addModel(utilisateur.getPasswordUtilisateur());
+			model.addModel(password);//password not hashed
 			//Prepare Mail Thread
 			sqliMailThread.setEmail(utilisateur.getEmailUtilisateur());
 			sqliMailThread.setModel(model);

@@ -5,7 +5,7 @@
 
 	<body >
 		<h1>Bonjour ${model.models.get(0)}</h1>
-		<p>Votre Compte Cree, maintenant vous pouvez suivre et participer a des formation </p>
+		<p>Votre Compte est Cree, maintenant vous pouvez suivre et participer a des formation </p>
 		<p>JFormation | SQLi | Echallenge</p>
 	</body>
 </html>

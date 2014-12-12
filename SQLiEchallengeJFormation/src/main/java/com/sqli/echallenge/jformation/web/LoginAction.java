@@ -6,6 +6,8 @@ package com.sqli.echallenge.jformation.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
@@ -24,13 +26,14 @@ public class LoginAction extends SqliActionSupport {
 	public UtilisateurMetier utilisateurMetier;
 
 	private String email;
-	private String password;
+	private String password;//not hashed
 	
 	@Override
 	public String execute() {
 		try {
 			//Get user from DB
-			Utilisateur u = utilisateurMetier.getUtilisateur(email, password);
+			String sha1Password = Hashing.sha1().hashString( password, Charsets.UTF_8 ).toString();
+			Utilisateur u = utilisateurMetier.getUtilisateur(email, sha1Password);
 			//Set user session
 			setSessionUser(u);
 			//Return Success
