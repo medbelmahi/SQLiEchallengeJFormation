@@ -24,7 +24,8 @@ input, select, textarea {
 }
 
 a {
-    color: #D9534F;
+/*    	color: #D9534F; */
+	color : transparent;
 }
 
 a:focus, a:active, a:hover {

@@ -45,15 +45,29 @@
                        
                        <div class="form-group">
                            <label> Ancien mot de passe<span class="text-danger"> *</span></label>
-                           <input type="password" name="oldPassword" value="" class="form-control">
+                           <div class="row">
+	                           <div class="col-md-10">
+	                           		<input type="password" name="oldPassword" value="" class="form-control">
+	                           </div>
+                           </div>
                        </div>
                        <div class="form-group">
                            <label> Nouveau mot de passe<span class="text-danger"> *</span></label>
-                           <input id="newPassword_1" type="password" name="newPassword_1" value="" class="password-change form-control">
+                           <div class="row">
+	                           <div class="col-md-10">
+	                           		<input id="newPassword_1" type="password" name="newPassword_1" value="" class="password-change form-control">
+	                           </div>
+	                           <div class="col-md-2" id="newPassword_2_valide"></div>
+                           </div>
                        </div>
                        <div class="form-group">
                            <label> Nouveau mot de passe<span class="text-danger"> *</span></label>
-                           <input id="newPassword_2" type="password" name="newPassword_2" value="" class="password-change form-control">
+                           <div class="row">
+                           		<div class="col-md-10">
+                           			<input id="newPassword_2" type="password" name="newPassword_2" value="" class="password-change form-control">
+                           		</div>
+                           		<div class="col-md-2" id="newPassword_1_valide"></div>
+                           </div>
                        </div>
                        
                        
@@ -61,7 +75,7 @@
                    <div class="col-md-7">
                        <div class="form-group">
                            <label> Nom<span class="text-danger"> *</span></label>
-                           <input id="nom" name="nom" value="img01.jpg" class="form-control">
+                           <input type="text" id="nom" name="nom" value="img01.jpg" class="form-control" required="required">
                        </div>
                        <div class="form-group">
                            <label> Prènom<span class="text-danger"> *</span></label>

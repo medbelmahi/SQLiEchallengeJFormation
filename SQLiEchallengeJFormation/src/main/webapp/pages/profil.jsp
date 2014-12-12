@@ -77,6 +77,32 @@
 			background-color: #65CEA7;
 			
 		}
+		
+		.input-password-valid {
+		    color: green;
+		}
+		.input-password-not-valid {
+		    color: red;
+		}
+		
+		/* input[type="text"]:valid ~ .input-validation::before {
+		    content: "\2713";
+		    color: green;
+		} */
+		
+		.input-validation::before {
+		    content: "\2713";
+		    color: green;
+		    position: relative;
+			top: 6px;
+		}
+		
+		input[type="text"]:invalid {
+		    color: red;
+		}
+	/* 	input[type="text"]:valid {
+		    background: url(thumb-up.png) no-repeat top right;
+		} */
 	</style>
 	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -242,14 +268,26 @@
 	<!-- javascript of utilisateur_list page End --> --%>
 	
 	<script type="text/javascript">
-		$('.password-change').change(function() {
+		$('.password-change').on("input", function() {
 			  var password_1 = $('#newPassword_1');
 			  var password_2 = $('#newPassword_2');
 			  
-			  if(password_1.val != password_2.val){
-				  alert("password not correct");
+			  if(password_1.val() == password_2.val()){
+				  password_1.removeClass('input-password-not-valid');
+				  password_2.removeClass('input-password-not-valid');
+				  
+				  password_1.addClass('input-password-valid');
+				  password_2.addClass('input-password-valid');
+				  $('#newPassword_1_valide').addClass('input-validation');
+				  $('#newPassword_2_valide').addClass('input-validation');
 			  }else{
-				  alert("password correct");
+				  password_1.removeClass('input-password-valid');
+				  password_2.removeClass('input-password-valid');
+				  $('#newPassword_1_valide').removeClass('input-validation');
+				  $('#newPassword_2_valide').removeClass('input-validation');
+				  
+				  password_1.addClass('input-password-not-valid');
+				  password_2.addClass('input-password-not-valid');
 			  }
 		});
 	</script>
