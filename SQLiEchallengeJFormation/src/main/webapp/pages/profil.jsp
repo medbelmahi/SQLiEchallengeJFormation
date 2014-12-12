@@ -291,11 +291,14 @@
 			  }
 		});
 		
-		$('#changePassword').change(function(){
+		$('#changePassword_').change(function(){
+			console.log($(this)[0].checked);
 			if($(this)[0].checked){
-				
+				$('#newPassword_1').removeAttr("readonly");
+				$('#newPassword_2').removeAttr("readonly");
 			}else{
-				
+				$('#newPassword_1').attr("readonly","readonly");
+				$('#newPassword_2').attr("readonly","readonly");
 			}
 		});
 	</script>
