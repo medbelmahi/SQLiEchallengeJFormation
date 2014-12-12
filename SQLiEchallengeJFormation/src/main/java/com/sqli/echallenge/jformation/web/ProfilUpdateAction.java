@@ -61,19 +61,22 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			Utilisateur utilisateur = getSessionUser();
 			
 			//1.1// check oldPassword = user.password
-			String shaOldPassword = Hashing.sha1().hashString( oldPassword, Charsets.UTF_8 ).toString();
-			if(!shaOldPassword.equals(utilisateur.getPasswordUtilisateur())){
-				throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
+			if(newPassword != null && oldPassword != null){
+				String shaOldPassword = Hashing.sha1().hashString( oldPassword, Charsets.UTF_8 ).toString();
+				if(!shaOldPassword.equals(utilisateur.getPasswordUtilisateur())){
+					throw new SqliException(getText("utilisateur.updateProfil.passwordNotMatch"));
+				}
+				
+				//1.2// hash new password
+				String shaNewPassword = Hashing.sha1().hashString( newPassword, Charsets.UTF_8 ).toString();
+				
+				utilisateur.setPasswordUtilisateur(shaNewPassword);
 			}
-			
-			//1.2// hash new password
-			String shaNewPassword = Hashing.sha1().hashString( newPassword, Charsets.UTF_8 ).toString();
 			
 			//2.1// update Utilisateur
 			utilisateur.setNomUtilsateur(nom);
 			utilisateur.setPrenomUtilisateur(prenom);
 			utilisateur.setEmailUtilisateur(email);
-			utilisateur.setPasswordUtilisateur(shaNewPassword);
 			utilisateur.setAdresseUtilisateur(adresse);
 			utilisateur.setTelephoneUtilisateur(telephone);
 			utilisateur.setDateNaissanceUtilisateur(dateNaissance);
@@ -155,8 +158,6 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 		this.email = email;
 	}
 
-	@RequiredFieldValidator(shortCircuit=true)
-	@RequiredStringValidator(shortCircuit=true)
 	public String getOldPassword() {
 		return oldPassword;
 	}
@@ -165,8 +166,6 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 		this.oldPassword = oldPassword;
 	}
 
-	@RequiredFieldValidator(shortCircuit=true)
-	@RequiredStringValidator(shortCircuit=true)
 	public String getNewPassword() {
 		return newPassword;
 	}
