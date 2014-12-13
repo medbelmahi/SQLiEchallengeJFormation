@@ -3,12 +3,17 @@
  */
 package com.sqli.echallenge.jformation.web.collaborateur;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.sqli.echallenge.jformation.metier.SessionInscriptionMetier;
 import com.sqli.echallenge.jformation.model.entity.SessionInscription;
+import com.sqli.echallenge.jformation.util.SqliEmailModel;
 import com.sqli.echallenge.jformation.util.SqliException;
+import com.sqli.echallenge.jformation.util.SqliMailThread;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -16,11 +21,16 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
  *
  */
 @Controller
-public class SessionInscriptionConfirmAction extends SqliActionSupport {
+public class SessionInscriptionConfirmAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = -867281139644932294L;
+	private static final String TEMPLATE_MAIL = "collaborateur-session-evaluation-template.vm";
 
 	@Autowired
 	public SessionInscriptionMetier inscriptionMetier;
+	@Autowired
+	public SqliMailThread emailSender;
+	
+	private HttpServletRequest servletRequest;
 	
 	private String code;
 	private Boolean confirmation;
@@ -49,9 +59,29 @@ public class SessionInscriptionConfirmAction extends SqliActionSupport {
 			inscriptionMetier.update(inscription);
 			
 			//show success message
-			if(confirmation.equals(true)) setSessionActionMessageText(getText("collaborateur.confirme.inscription.success"));
-			else setSessionActionMessageText(getText("collaborateur.decline.inscription.success"));
-			
+			if(confirmation.equals(true)) {
+				//send evaluation email to collaborateur
+				//perpare email to be sent
+				SqliEmailModel model = new SqliEmailModel();
+				model.addModel(inscription.getCollaborateur().getFullname());
+				model.addModel(inscription.getSessionFormation().getTitreSessionFormation());
+				
+				model.addModel(servletRequest.getServerName());
+				model.addModel(String.valueOf(servletRequest.getServerPort()));
+				model.addModel(servletRequest.getContextPath());
+				model.addModel(inscription.getCodeInscription());
+				
+				emailSender.setModel(model);
+				emailSender.setEmail(inscription.getCollaborateur().getEmailCollaborateur());
+				emailSender.setTemplate(TEMPLATE_MAIL);
+				emailSender.start();
+				
+				//show success
+				setSessionActionMessageText(getText("collaborateur.confirme.inscription.success"));
+			}
+			else {
+				setSessionActionMessageText(getText("collaborateur.decline.inscription.success"));
+			}
 			return SqliActionSupport.SUCCESS;
 		} catch (Exception e) {
 			
@@ -84,4 +114,9 @@ public class SessionInscriptionConfirmAction extends SqliActionSupport {
 	public void setInscription(SessionInscription inscription) {
 		this.inscription = inscription;
 	}
+	
+	public void setServletRequest(HttpServletRequest servletRequest) {
+		this.servletRequest = servletRequest;
+	}
+	
 }

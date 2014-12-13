@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<title>Example</title>
+	</head>
+
+	<body >
+		<h1>Bonjour ${model.models.get(0)}</h1>
+		<p>Session ${model.models.get(1)}</p>
+		<p>Veuillez de revenir sur ce lien à la fin de la session, pour repondre à se formulaire</p>
+		<a href="http://${model.models.get(2)}:${model.models.get(3)}/${model.models.get(4)}/collaborateur/session/evaluation/questions?code=${model.models.get(5)}">Evaluation</a>
+		<p>JFormation | SQLi | Echallenge</p>
+	</body>
+</html>
