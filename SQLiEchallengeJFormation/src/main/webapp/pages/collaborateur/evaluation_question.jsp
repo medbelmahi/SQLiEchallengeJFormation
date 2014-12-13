@@ -77,11 +77,11 @@
                             <tr>
                                 <th>#</th>
                                 <th>Question</th>
-                                <th>Non concerné</th>
-                                <th>Pas du tout satisfait</th>
-                                <th>Peu  satisfait</th>
-                                <th>Satisfait</th>
-                                <th>Très satisfait</th>
+                                <th class="text-center">Non concerné</th>
+                                <th class="text-center">Pas du tout satisfait</th>
+                                <th class="text-center">Peu  satisfait</th>
+                                <th class="text-center">Satisfait</th>
+                                <th class="text-center">Très satisfait</th>
                             </tr>
                             </thead>
                             <tbody>

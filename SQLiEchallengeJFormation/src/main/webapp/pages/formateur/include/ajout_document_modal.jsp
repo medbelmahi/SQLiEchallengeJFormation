@@ -11,6 +11,9 @@
 
 			<div class="modal-body">
 				<div class="panel-body">
+					
+					<h5 class="text-danger" style="text-align: right;" >Vous avez le droit d'ajouter des fichiers de type (pdf, doc, docx)</h5>
+					
 					<form data-toggle="validator" id="add_document" action="add" method="post" role="form" class="form-horizontal adminex-form" enctype="multipart/form-data" >
 						<input name="idSession" value='<s:property value="idSession"/>' type="hidden">
 						<div class="form-group">

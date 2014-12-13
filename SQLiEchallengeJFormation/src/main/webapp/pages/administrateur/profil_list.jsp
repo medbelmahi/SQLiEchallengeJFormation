@@ -149,9 +149,7 @@
 	        <!--body wrapper end-->
 	
 	        <!--footer section start-->
-	        <footer class="sticky-footer">
-	            2014 &copy; Mouad &amp; Mohamed
-	        </footer>
+	        	<s:include value="/pages/include/footer.jsp"></s:include>
 	        <!--footer section end-->
 	
 	
