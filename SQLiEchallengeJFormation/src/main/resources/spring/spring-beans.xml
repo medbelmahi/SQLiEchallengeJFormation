@@ -15,7 +15,11 @@
 	<bean id="action_helper_util" class="com.sqli.echallenge.jformation.util.ActionHelper"></bean>
 	<!-- Util.SqliMailThread -->
 	<bean id="mail_thread" class="com.sqli.echallenge.jformation.util.SqliMailThread" scope="prototype"></bean>
-		
+	<!-- SqliFileHelper -->	
+	<bean id="sqli_file_helper" class="com.sqli.echallenge.jformation.util.SqliFileHelper">
+		<property name="OPENSHIFT_DATA_DIR" value="D:/jformation"></property>
+	</bean>
+	
 	<!-- Utilisateur -->	
 	<bean id="utilisateur_dao" class="com.sqli.echallenge.jformation.dao.UtilisateurDaoImpl"></bean>	
 	<bean id="utilisateur_metier" class="com.sqli.echallenge.jformation.metier.UtilisateurMetierImpl">

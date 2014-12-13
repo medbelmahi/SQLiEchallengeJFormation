@@ -4,12 +4,10 @@
 package com.sqli.echallenge.jformation.web.administrateur;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,8 +20,8 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 import com.sqli.echallenge.jformation.metier.CollaborateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Collaborateur;
-import com.sqli.echallenge.jformation.util.FileHelper;
 import com.sqli.echallenge.jformation.util.SqliEmailModel;
+import com.sqli.echallenge.jformation.util.SqliFileHelper;
 import com.sqli.echallenge.jformation.util.SqliMailThread;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
@@ -34,14 +32,14 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
 @Controller
 public class CollaborateurAddAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = -7968028204363016406L;
-	private static final String SAVE_DIR = "src/main/resources/avatars";
-	private static final String DEFAULT_AVATAR = "/images/avatar.png";
 	private static final String TEMPLATE_MAIL = "template/collaborateur-new-created-template.vm";
 	
 	@Autowired
 	public CollaborateurMetier collaborateurMetier;
 	@Autowired
 	public SqliMailThread sqliMailThread;
+	@Autowired
+	public SqliFileHelper sqliFileHelper;
 	
 	private HttpServletRequest servletRequest;
 	
@@ -73,7 +71,11 @@ public class CollaborateurAddAction extends SqliActionSupport implements Servlet
 			collaborateur.setSexeCollaborateur(sexe);
 			
 			//set Image Avatar
-			collaborateur.setUrlPhotoCollaborateur(saveImage());
+			if(fileImage != null){
+				collaborateur.setUrlPhotoCollaborateur(sqliFileHelper.saveDocument(fileImage, fileImageFileName));
+			}else{
+				collaborateur.setUrlPhotoCollaborateur("avatar.png");
+			}
 			
 			//add collaboretuer
 			collaborateurMetier.add(collaborateur);
@@ -195,34 +197,9 @@ public class CollaborateurAddAction extends SqliActionSupport implements Servlet
 	public void setServletRequest(HttpServletRequest servletRequest) {
 		this.servletRequest = servletRequest;
 	}
-	
-	@SuppressWarnings("deprecation")
-	private String saveImage() throws IOException{
-		if(fileImage == null){
-			String contextPath = servletRequest.getContextPath();
-			
-			return contextPath + DEFAULT_AVATAR;
-		}
-		
-		//Get paths reat + context
-		String serverRealPath = servletRequest.getRealPath("/");
-		String contextPath = servletRequest.getContextPath();
 
-		//create Files
-		File saveDirContext = new File(contextPath, SAVE_DIR);
-		File saveDirReal = new File(serverRealPath, SAVE_DIR);
-		
-		//generate names and prepare URI
-		String generatedName = new FileHelper().setRandomName(fileImageFileName);
-		File fileToSaveReal = new File(saveDirReal, generatedName);
-		File fileToSaveContext = new File(saveDirContext, generatedName);
-
-		System.out.println(">URIreal: " + fileToSaveReal);
-		System.out.println(">URIcontext: " + fileToSaveContext);
-		
-		//save image
-		FileUtils.copyFile(fileImage, fileToSaveReal);
-		
-		return fileToSaveContext.toString().replace('\\', '/');
+	public HttpServletRequest getServletRequest() {
+		return servletRequest;
 	}
+	
 }

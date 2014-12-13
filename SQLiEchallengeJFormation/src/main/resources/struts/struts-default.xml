@@ -62,6 +62,17 @@
     		<result name="input" type="redirectAction">profil/display</result>
     		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
+    	
+    	<action name="download" class="com.sqli.echallenge.jformation.web.DownloadAction">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename=${file}</param>
+			</result>
+			<result name="input" type="redirectAction">index</result>
+			<result name="error" type="redirectAction">index</result>
+			<result name="forbiddenAction" type="redirectAction">index</result>
+    	</action>
     
     	<action name="test" class="com.sqli.echallenge.jformation.web.TestAction">
     		<result>/pages/login.jsp</result>

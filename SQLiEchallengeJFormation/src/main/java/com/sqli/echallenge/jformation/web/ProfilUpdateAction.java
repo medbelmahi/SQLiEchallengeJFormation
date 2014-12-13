@@ -8,7 +8,6 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,8 +22,8 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
 import com.sqli.echallenge.jformation.model.entity.Utilisateur;
-import com.sqli.echallenge.jformation.util.FileHelper;
 import com.sqli.echallenge.jformation.util.SqliException;
+import com.sqli.echallenge.jformation.util.SqliFileHelper;
 
 /**
  * @author Mouad
@@ -33,10 +32,11 @@ import com.sqli.echallenge.jformation.util.SqliException;
 @Controller
 public class ProfilUpdateAction extends SqliActionSupport implements ServletRequestAware  {
 	private static final long serialVersionUID = -4525937072103982290L;
-	private static final String SAVE_DIR = "src/main/resources/avatars";
 
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
+	@Autowired
+	public SqliFileHelper sqliFileHelper;
 	
 	private HttpServletRequest servletRequest;
 	
@@ -91,7 +91,9 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			
 			//2.2//update photo de profil
 			//set Image Avatar
-			if(fileImage != null) utilisateur.setUrlPhotoUtilisateur(saveImage());
+			if(fileImage != null){
+				utilisateur.setUrlPhotoUtilisateur(sqliFileHelper.saveDocument(fileImage, fileImageFileName));
+			}
 			
 			//3// merge utilisateur
 			utilisateurMetier.update(utilisateur);
@@ -105,34 +107,6 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 			setSessionActionErrorText(e.getMessage());
 			return SqliActionSupport.ERROR;
 		}
-	}
-
-	private String saveImage() throws Exception {
-		//Get paths reat + context
-		@SuppressWarnings("deprecation")
-		String serverRealPath = servletRequest.getRealPath("/");
-		String contextPath = servletRequest.getContextPath();
-
-		//create Files
-		File saveDirContext = new File(contextPath, SAVE_DIR);
-		File saveDirReal = new File(serverRealPath, SAVE_DIR);
-		
-		//generate names and prepare URI
-		String generatedName = new FileHelper().setRandomName(fileImageFileName);
-		File fileToSaveReal = new File(saveDirReal, generatedName);
-		File fileToSaveContext = new File(saveDirContext, generatedName);
-
-		System.out.println(">URIreal: " + fileToSaveReal);
-		System.out.println(">URIcontext: " + fileToSaveContext);
-		
-		//save image
-		FileUtils.copyFile(fileImage, fileToSaveReal);
-		
-		return fileToSaveContext.toString().replace('\\', '/');
-	}
-
-	public void setServletRequest(HttpServletRequest servletRequest) {
-		this.servletRequest = servletRequest;
 	}
 
 	@RequiredFieldValidator(shortCircuit=true)
@@ -254,5 +228,12 @@ public class ProfilUpdateAction extends SqliActionSupport implements ServletRequ
 	public void setChangePassword(boolean changePassword) {
 		this.changePassword = changePassword;
 	}
-	
+
+	public void setServletRequest(HttpServletRequest servletRequest) {
+		this.servletRequest = servletRequest;
+	}
+
+	public HttpServletRequest getServletRequest() {
+		return servletRequest;
+	}
 }
