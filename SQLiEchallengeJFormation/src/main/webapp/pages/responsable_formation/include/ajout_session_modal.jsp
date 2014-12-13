@@ -18,7 +18,7 @@
 						<div class="form-group">
 							<label for="inputTitreSessionFormation_2" class="col-sm-3 control-label">Titre session<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="on" name="titreSessionFormation" class="form-control" id="inputTitreSessionFormation_2" placeholder="Nom" type="text" required>
+								<input autocomplete="on" autofocus="autofocus" name="titreSessionFormation" class="form-control" id="inputTitreSessionFormation_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 						

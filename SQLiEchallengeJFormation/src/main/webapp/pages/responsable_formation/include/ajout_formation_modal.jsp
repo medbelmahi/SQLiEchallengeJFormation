@@ -16,7 +16,7 @@
 						<div class="form-group">
 							<label for="inputTitleFormation_2" class="col-sm-3 control-label">Titre de formation<span class="text-danger" > *</span></label> 
 							<div class="col-sm-9">
-								<input autocomplete="off" name="titreFormation" class="form-control" id="inputTitleFormation_2" placeholder="Nom" type="text" required>
+								<input autocomplete="off" autofocus="autofocus" name="titreFormation" class="form-control" id="inputTitleFormation_2" placeholder="Nom" type="text" required>
 							</div>
 						</div>
 
