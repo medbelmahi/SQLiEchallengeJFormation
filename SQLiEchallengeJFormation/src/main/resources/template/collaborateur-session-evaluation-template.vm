@@ -1,13 +1,298 @@
-<html>
-	<head>
-		<title>Example</title>
-	</head>
+<!-- /* Title & Subtitle Color #5c5146; */ -->
+<!-- /* Text Color #8e8071; */ -->
 
-	<body >
-		<h1>Bonjour ${model.models.get(0)}</h1>
-		<p>Session ${model.models.get(1)}</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!-- Define Charset -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Responsive Meta Tag -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+
+<!-- Facebook sharing information tags -->
+<meta property="og:title" content="*|MC:SUBJECT|*" />
+
+<title>NoReply</title>
+
+<!-- Hotmail ignores some valid styling, so we have to add this -->
+<style type="text/css">
+
+/* iPad Text Smoother */
+div, p, a, li, td { -webkit-text-size-adjust:none; }
+
+.ReadMsgBody
+{width: 100%; background-color: #ffffff;}
+.ExternalClass
+{width: 100%; background-color: #ffffff;}
+body
+{width: 100%; background-color: #ffffff; margin:0; padding:0; -webkit-font-smoothing: antialiased;}
+html
+{width: 100%; }
+				
+							
+@media only screen and (max-width: 640px)
+{  
+	body{ width:auto!important; }
+       
+  /* Box Wrap */
+  .BoxWrap { width:440px !important;  }
+  .RespoShadow { width:440px !important; height:60px !important; }
+  .RespoImage1 { width:440px !important; height:440px !important; }
+  .RespoImage2 { width:440px !important; height:220px !important; } 
+	.RespoListMedium { width:340px !important;} 
+  
+  /* Show/Hide  */
+  .RespoHideMedium { display:none !important; } 
+  .RespoShowMedium { display:block !important; } 
+  .RespoCenterMedium { text-align:center !important; }
+}
+ 		
+@media only screen and (max-width: 479px)
+{
+  body{width:auto!important;}
+  
+  /* Box Wrap */
+  .BoxWrap { width:280px !important;  }
+  .RespoShadow { width:280px !important; height:60px !important; }
+  .RespoImage1 { width:280px !important; height:280px !important; }
+  .RespoImage2 { width:280px !important; height:140px !important; } 
+	.RespoLogo {width: 100%!important; padding-left:0!important; padding-right:0!important}
+	.RespoListSmall { width:180px !important;} 
+	.RespoTimerSmall { font-size:33px!important; padding-left:5px!important; padding-right:5px!important}
+  
+  /* Hide  */
+  .RespoHideSmall { display:none !important; }
+  .RespoCenterSmall { text-align:center !important; }
+}
+        				
+body {
+	background-color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	width: 100%;
+}
+
+/**
+* @tab Colors
+* @section background color
+* @tip Set the background color for your email.
+*/
+.BackgroundColor
+{
+	 /*@editable*/ background-color: #DA2B2B;
+}
+
+/**
+* @tab Colors
+* @section content block color
+* @tip Set the background color for your email's body content blocks.
+*/
+.ContentBlockColor
+{
+	 /*@editable*/ background-color: #ffffff;
+}
+
+/**
+* @tab Colors
+* @section secondary color
+* @tip Set the secondary background color for your email's body content blocks.
+*/
+.SecondaryContentBlock
+{
+	 /*@editable*/ background-color: #f6f1ed;
+}
+
+.subtitle { font-family: Myriad Pro, Georgia, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: bold; font-style: normal; color: #5c5146; line-height: 22px; text-align: left;}
+
+img {
+	border:0px;
+	outline:none;
+	text-decoration:none;
+	display:block;
+}
+
+a img {
+	border: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<table width="100%" align="center" cellpadding="0" cellspacing="0" class="BackgroundColor">
+  <tr>
+    <td valign="top">
+			<table width="100%" cellspacing="0" cellpadding="0">
+						 
+				<!-- // ********************************************************************************************************* \\ -->
+				<tr><td width="100%" class="BackgroundColor" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+    				<!-- // Begin Module: preheader\\ -->
+						<table class="BoxWrap ContentBlockColor" width="600" align="center" cellpadding="0" cellspacing="0">
+      				<tbody>
+							  <tr><td width="100%" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+      					<tr>
+      						<td>	
+          					<table width="100%" cellpadding="0" cellspacing="0" align="right" border="0">
+          						<tbody>
+          								<tr>
+                						<td width="130" align="center" style="padding-left:30px" class="RespoLogo">	
+                    					<a href="#" target="_blank"><img src="http://amiral-apptoface.rhcloud.com/static/login-logo.png" alt="" width="155" height="77" border="0" mc:label="image" mc:edit="img_logo"/></a>
+                  					</td>
+														<td align="left" class="RespoHideSmall">&nbsp; </td> <!-- // vertical Spacer \\ -->
+        										<td width="150" align="right" class="RespoHideSmall" style="padding-right:30px">
+            									<a href="mailto:formation.sqli.echallenge@gmail.com" target="_blank">Contactez-nous</a>
+            								</td>
+          								</tr>
+          						</tbody>
+          					</table>
+        					</td>
+        				</tr>
+								<tr><td width="100%" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+								<tr><td height="15" class="BackgroundColor"></td></tr> <!-- // Horizontal Spacer \\ -->
+        			</tbody>
+						</table>
+    				<!-- // End Module: preheader\\ -->
+				  </td>
+    	  </tr>
+				
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+					
+    				<!-- // Begin Module: 1st ZigZag\\ --><!-- // End Module: 1st ZigZag\\ -->
+				  </td>
+    	  </tr>
+				
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" ><!-- // Begin Module: 2nd ZigZag\\ --><!-- // End Module: 2nd ZigZag\\ -->
+				  </td>
+    	  </tr>
+				
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+    				<!-- // Begin Module: Metro \\ -->
+						<table class="BoxWrap" width="600" align="center" cellpadding="0" cellspacing="0" mc:repeatable>
+							<tr>
+							  <td>
+							    <!-- // First Column \\ --><!-- // Second Column \\ --></td>
+							</tr>
+							<tr><td width="100%" height="15" class="BackgroundColor"></td></tr> <!-- // Horizontal Spacer \\ -->
+						</table>
+    				<!-- // End Module: Metro \\ -->
+				  </td>
+    	  </tr>
+				
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+					
+    				<!-- // Begin Module: 1st BigImageZigZag \\ --><!-- // End Module: 1st BigImageZigZag \\ -->
+				  </td>
+    	  </tr>
+								
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+					
+    				<!-- // Begin Module: 2nd BigImageZigZag \\ --><!-- // End Module: 2nd BigImageZigZag \\ -->
+				  </td>
+    	  </tr>
+				
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+    				<!-- // Begin Module: Free Shipping \\ -->
+            <table class="BoxWrap ContentBlockColor" width="600" align="center" cellpadding="0" cellspacing="0">
+    		  		<tr><td height="20"></td></tr> <!-- // Horizontal Spacer \\ -->
+							<tr>
+    		    		<td>
+      						<table width="100%" cellspacing="20" cellpadding="0">
+      		  				<tr>
+          						<td mc:edit="freeShipping_title" valign="top" style="text-align:center; font-family: Myriad Pro, Georgia, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; font-style: italic; color: #5c5146; line-height: 30px;">
+											<h2>Bonjour ${model.models.get(0)}</h2>
+											</td>
+      		  				</tr>
+        						<tr>
+          						<td mc:edit="freeShipping_text" valign="top" style="text-align:center; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; color: #8e8071; line-height: 18px;">
+											 <br />
+                                            
+                                  <h4>Vous ici trouvez les documents de la session</h4>
+		<a href="http://${model.models.get(2)}:${model.models.get(3)}/${model.models.get(4)}/collaborateur/session/documents/display?code=${model.models.get(5)}"><h4>Documents</h4></a>
 		<p>Veuillez de revenir sur ce lien à la fin de la session, pour repondre à se formulaire</p>
-		<a href="http://${model.models.get(2)}:${model.models.get(3)}/${model.models.get(4)}/collaborateur/session/evaluation/questions?code=${model.models.get(5)}">Evaluation</a>
-		<p>JFormation | SQLi | Echallenge</p>
-	</body>
+		<a href="http://${model.models.get(2)}:${model.models.get(3)}/${model.models.get(4)}/collaborateur/session/evaluation/questions?code=${model.models.get(5)}"><h4>Evaluation</h4></a>
+        </td>
+										</tr>
+										<tr>
+											<td align="center">
+											
+											</td>	
+										</tr>
+      						</table>
+    						</td>
+    		  		</tr>
+							<tr><td height="20">JFormation | SQLi | Echallenge</td></tr> <!-- // Horizontal Spacer \\ -->
+							<tr><td height="15" class="BackgroundColor"></td></tr> <!-- // Horizontal Spacer \\ -->
+    				</table>
+    				<!-- // End Module: Free Shipping \\ -->
+				  </td>
+    	  </tr>
+				
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+    				<!-- // Begin Module: 2nd Metro \\ -->
+						<table class="BoxWrap BackgroundColor" width="600" align="center" cellpadding="0" cellspacing="0" mc:repeatable>
+							<tr><td width="100%" class="BackgroundColor" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+						</table>
+    				<!-- // End Module: 2nd Metro \\ -->
+				  </td>
+    	  </tr>				
+					
+				<!-- // ********************************************************************************************************* \\ -->
+    	  <tr>
+    	    <td align="center" valign="top" >
+    				<!-- // Begin Module: footer\\ -->
+						<table class="BoxWrap ContentBlockColor" width="600" align="center" cellpadding="0" cellspacing="0">
+      				<tbody>
+							  <tr><td width="100%" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+      					<tr>
+      						<td>	
+          					<table width="100%" cellpadding="0" cellspacing="0" align="right" border="0">
+          						<tbody>
+          								<tr>
+													  <td height="60" class="RespoHideSmall" align="left" mc:edit="footer_text" style="padding-left:30px; font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; color: #8e8071; line-height: 18px; text-align: left;">
+															<h5 style="text-decoration: none; color: #5c5146;">2014 &copy; <a href="http://ma.linkedin.com/pub/mouad-el-fakir/48/9a8/47b/" target="_blank">Mouad</a> &amp; <a href="http://ma.linkedin.com/pub/mohamed-belmahi/4b/975/84a/" target="_blank">Mohamed</a></h5>
+            								</td>
+                						<td align="right" style="padding-right:30px" class="RespoHideSmall">&nbsp;</td>
+          								</tr>
+          						</tbody>
+          					</table>
+        					</td>
+        				</tr>
+								<tr><td width="100%" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+        			</tbody>
+						</table>
+    				<!-- // End Module: footer\\ -->
+				  </td>
+    	  </tr>
+				<tr><td width="100%" class="BackgroundColor" height="15"></td></tr> <!-- // Horizontal Spacer \\ -->
+				
+				<!-- // ********************************************************************************************************* \\ -->
+				<tr><td></td></tr>
+    	</table>
+
+		</td>
+  </tr>
+</table>
+<!--Table End-->
+
+</body>
 </html>
