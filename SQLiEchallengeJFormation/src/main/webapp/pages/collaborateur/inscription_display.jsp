@@ -48,7 +48,7 @@
                             <h2 class="invoice-title">Inscription</h2>
                         </div>
                         <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                            <img class="inv-logo" src="<s:url value="/images/logo_libre_savoirs.jpg"/>" alt=""/>
+                            <img class="inv-logo" src="<s:url value="/images/login-logo.png"/>" alt=""/>
                             <!-- <p>121 King Street, Melbourne <br/>
                                 Victoria 3000 Australia <br/>
                                 Phone: +61 3 8376 6284</p> -->
