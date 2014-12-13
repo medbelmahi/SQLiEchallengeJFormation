@@ -199,6 +199,30 @@
     		<result name="input">/pages/responsable_formation/dashboard.jsp</result>
     		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
+    
+    	<action name="dashbord_chart_evaluation">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result name="success">/pages/responsable_formation/dashbord_chart_evaluation.jsp</result>
+    		<result name="error">/pages/responsable_formation/dashbord_chart_evaluation.jsp</result>
+    		<result name="input">/pages/responsable_formation/dashbord_chart_evaluation.jsp</result>
+    		<result name="forbiddenAction" type="redirectAction">index</result>
+    	</action>
+    	
+    	<action name="dashbord_chart_absence">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result name="success">/pages/responsable_formation/dashbord_chart_absence.jsp</result>
+    		<result name="error">/pages/responsable_formation/dashbord_chart_absence.jsp</result>
+    		<result name="input">/pages/responsable_formation/dashbord_chart_absence.jsp</result>
+    		<result name="forbiddenAction" type="redirectAction">index</result>
+    	</action>
     </package>
     
 </struts>
