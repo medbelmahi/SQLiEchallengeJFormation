@@ -187,6 +187,18 @@
     		<result name="input" type="redirectAction">formations/evaluation/questions/list</result>
     		<result name="forbiddenAction" type="redirectAction">formations/evaluation/questions/list</result>
     	</action>
+    	
+    	<action name="dashboard" class="com.sqli.echallenge.jformation.web.responsableformation.DashboardAction">
+    		<interceptor-ref name="sqliRoleValidatorInterceptor" >
+	    		<param name="allowedRoles">Responsable de formation: *;</param>
+	    	</interceptor-ref>
+	    	<interceptor-ref name="defaultStack" />
+	    	
+    		<result name="success">/pages/responsable_formation/dashboard.jsp</result>
+    		<result name="error">/pages/responsable_formation/dashboard.jsp</result>
+    		<result name="input">/pages/responsable_formation/dashboard.jsp</result>
+    		<result name="forbiddenAction" type="redirectAction">index</result>
+    	</action>
     </package>
     
 </struts>

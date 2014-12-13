@@ -5,6 +5,7 @@ package com.sqli.echallenge.jformation.dao;
 
 import java.util.List;
 
+import com.sqli.echallenge.jformation.model.bean.EvaluationSessionBean;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 
 
@@ -21,4 +22,5 @@ public interface SessionFormationDao {
 	public void update(SessionFormation session) throws Exception;
 	public List<SessionFormation> getAllOfFormateur(Long idFormateur) throws Exception;
 
+	public List<EvaluationSessionBean> getEvaluationResult(Long idSession) throws Exception;
 }

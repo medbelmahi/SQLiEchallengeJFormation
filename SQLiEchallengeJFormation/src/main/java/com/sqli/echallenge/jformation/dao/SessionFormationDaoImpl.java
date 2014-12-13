@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sqli.echallenge.jformation.model.bean.EvaluationSessionBean;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 
 /**
@@ -52,6 +53,13 @@ public class SessionFormationDaoImpl implements SessionFormationDao {
 		return query.getResultList();
 	}
 
+	//NativeQuery
+	public List<EvaluationSessionBean> getEvaluationResult(Long idSession) throws Exception {
+		Query query = entityManager.createNativeQuery("SELECT AVG(SCORE) AS SCORE, ID_QUESTION, QUESTION FROM SQLI_EVALUATIONS_REPONSES as r, SQLI_EVALUATIONS_QUESTIONS as q WHERE ID_SESSION=8 AND r.ID_QUESTION=q.ID_EVALUATION_QUESTION GROUP BY ID_QUESTION");
+		return null;
+	}
+	
+	
 	public void update(SessionFormation session) throws Exception {
 		entityManager.merge(session);
 	}
@@ -67,5 +75,4 @@ public class SessionFormationDaoImpl implements SessionFormationDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-	
 }
