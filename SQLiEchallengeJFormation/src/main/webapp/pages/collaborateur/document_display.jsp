@@ -10,7 +10,14 @@
   <link rel="shortcut icon" href="#" type="image/png">
 
   <title>JFormation : Télechargement des fichiers</title>
-
+	
+	
+	<!--dynamic table-->
+  	<link href='<s:url value="/js/advanced-datatable/css/demo_page.css"/>' rel="stylesheet" />
+  	<link href='<s:url value="/js/advanced-datatable/css/demo_table.css"/>' rel="stylesheet" />
+  	<link rel="stylesheet" href='<s:url value="/js/data-tables/DT_bootstrap.css"/>' />
+  	
+  	
  <!-- initial style -->
 	<link href='<s:url value="/css/style.css"/>' rel="stylesheet">
 	<link href='<s:url value="/css/style-responsive.css"/>' rel="stylesheet">
@@ -44,11 +51,11 @@
             <div class="panel">
                 <div class="panel-body invoice">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4">
-                            <h2 class="invoice-title">Inscription</h2>
+                        <div class="col-md-9 col-sm-9">
+                            <h3>Téléchargement des documents</h3>
                         </div>
-                        <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                            <img class="inv-logo" src="<s:url value="/images/logo_libre_savoirs.jpg"/>" alt=""/>
+                        <div style="margin-left: 0;" class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3">
+                            <img style="margin:0 auto; float: none;" class="inv-logo" src="<s:url value="/images/login-logo.png"/>" alt=""/>
                             <!-- <p>121 King Street, Melbourne <br/>
                                 Victoria 3000 Australia <br/>
                                 Phone: +61 3 8376 6284</p> -->
@@ -56,7 +63,7 @@
                     </div>
                     <div class="invoice-address">
                         <div class="row">
-                            <div class="col-md-5 col-sm-5">
+                            <div class="col-md-6 col-sm-6">
                                 <h2 class="corporate-id">Formation : <s:property value="inscription.sessionFormation.formation.titreFormation" /></h2>
                                 <h2 class="corporate-id">Description</h2>
                                 <p>
@@ -79,7 +86,7 @@
                                 </p>
 
                             </div>
-                            <div class="col-md-4 col-md-offset-3 col-sm-4 col-sm-offset-3">
+                            <div style="margin-left: 0;" class="col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6">
                                 <div class="col-md-12">
 						<!-- info collaborateur div Begin -->
 						<div class="row">
@@ -127,6 +134,12 @@
                     </div>
                 </div>
                 
+                <div class="row" style="padding:15px;" >
+                	<div class="panel-body">
+				<div class="adv-table">
+					<div class="clearfix">
+						<h3>Liste des fichiers</h3>
+					</div>
                 
                 <div id="hidden-table-info_wrapper"
 						class="dataTables_wrapper form-inline" role="grid">
@@ -154,7 +167,8 @@
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
 													<li>
-														<a title="Telecharger le document" target="_blank" href='<s:property value="urlDocument" />'>
+														<a title="Telecharger le document" target="_blank" href='<s:url namespace="/" action="download" >
+														<s:param name="file"><s:property value="urlDocument" /></s:param></s:url>'>
 															<i class="fa fa-download"></i>
 														</a>
 													</li>
@@ -166,7 +180,9 @@
 							</tbody>
 						</table>
 					</div>
-                
+                		</div>
+                			</div>
+                			</div>
                 
             </div>
             <%-- <div class="text-center ">
@@ -200,7 +216,12 @@
 	<script src='<s:url value="/js/bootstrap.min.js"/>'></script>
 	<script src='<s:url value="/js/modernizr.min.js"/>'></script>
 	<script src='<s:url value="/js/jquery.nicescroll.js"/>'></script>
-
+	
+	<!--dynamic table-->
+	<script type="text/javascript" src='<s:url value="/js/advanced-datatable/js/jquery.dataTables.js"/>'></script>
+	<script type="text/javascript" src='<s:url value="/js/data-tables/DT_bootstrap.js"/>'></script>
+	<!--dynamic table initialization -->
+	<script src='<s:url value="/js/dynamic_table_init.js"/>'></script>
 
 <!--common scripts for all pages-->
 	<script src='<s:url value="/js/scripts.js"/>'></script>
