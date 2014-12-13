@@ -41,12 +41,12 @@
 		
 <%-- 			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Profil</span></a></li> --%>
 			<li class="menu-list nav-active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i
-					class="fa fa-laptop"></i> <span>Gestion utilisateurs</span></a>
+					class="fa fa-user"></i> <span>Gestion utilisateurs</span></a>
 				<ul class="sub-menu-list">
 					<li class="active"><a href='<s:url value="/administrateur/utilisateurs/list"/>'>Liste des utilisateurs</a></li>
 					<li><a href='<s:url value="/administrateur/profils/list"/>'> Gestion des Profils</a></li>
 				</ul></li>
-			<li class="menu-list"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i class="fa fa-book"></i>
+			<li class="menu-list"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i class="fa fa-ban"></i>
 					<span>Gestion collaborateur</span></a>
 				<ul class="sub-menu-list">
 					<li><a href='<s:url value="/administrateur/collaborateurs/list"/>' > Listes des collaborateurs</a></li>
