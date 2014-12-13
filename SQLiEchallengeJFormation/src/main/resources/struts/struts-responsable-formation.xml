@@ -200,7 +200,7 @@
     		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
     
-    	<action name="dashbord_chart_evaluation">
+    	<action name="dashboard/dashbord_chart_evaluation">
     		<interceptor-ref name="sqliRoleValidatorInterceptor" >
 	    		<param name="allowedRoles">Responsable de formation: *;</param>
 	    	</interceptor-ref>
@@ -212,7 +212,7 @@
     		<result name="forbiddenAction" type="redirectAction">index</result>
     	</action>
     	
-    	<action name="dashbord_chart_absence">
+    	<action name="dashboard/dashbord_chart_absence">
     		<interceptor-ref name="sqliRoleValidatorInterceptor" >
 	    		<param name="allowedRoles">Responsable de formation: *;</param>
 	    	</interceptor-ref>
