@@ -7,7 +7,7 @@
 		<section class="panel">
 			<header class="panel-heading">
 				liste des utilisateurs <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
+<!-- 					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a>  -->
 <!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
@@ -16,7 +16,7 @@
 					<div class="clearfix">
 						<div class="btn-group">
 							<a href="#addUtilisateurModal" data-toggle="modal"><button class="btn btn-primary">
-								Ajouter utilisateur <i class="fa fa-plus"></i>
+								Ajouter utilisateur <i class="fa fa-plus" ></i>
 							</button></a>
 						</div>
 					</div>
@@ -80,7 +80,11 @@
 										</td>
 										<td style="display: none;"><s:property value="adresseUtilisateur" /></td>
 										<td style="display: none;"><s:property value="dateNaissanceUtilisateur" /></td>
-										<td style="display: none;"><s:property value="urlPhotoUtilisateur" /></td>
+										<td style="display: none;"><s:url namespace="/" action='download'>
+																	<s:param name="file"><s:property value="urlPhotoUtilisateur" />
+																	</s:param></s:url>
+										
+										</td>
 									</tr>
 								</s:iterator>
 							</tbody>

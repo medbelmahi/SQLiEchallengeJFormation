@@ -304,6 +304,8 @@
 			}
 		});
 		
+		
+		
 		$(function() {
 		    $('#update_utilisateur').submit(function() {
 		        
