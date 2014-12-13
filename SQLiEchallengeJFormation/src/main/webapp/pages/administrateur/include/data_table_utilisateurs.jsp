@@ -66,14 +66,14 @@
 												
 												<li style="padding-right: 15px;">
 													<a data-href=<s:url action="utilisateurs/delete" ><s:param name="idUtilisateur"><s:property value="idUtilisateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-														<i class="fa fa-times"></i>
+														<i class="fa fa-trash-o"></i>
 													</a>
 												</li>
 												<li>
 													<a href='javascript:void(0);'
 													   onclick="jsonGetUtilisateur_forSendEmail(<s:property value="idUtilisateur"/>);" 
 													   title="Envoyer un email">
-														<i class="fa fa-envelope"></i>
+														<i class="fa fa-envelope-o"></i>
 													</a>
 												</li>
 											</ul>
