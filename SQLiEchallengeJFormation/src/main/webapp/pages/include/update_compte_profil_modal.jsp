@@ -4,10 +4,10 @@
 <!-- Modal -->
    <div class="modal fade" id="updateCompteProfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
        <div class="modal-dialog">
-           <div class="modal-content">
+           <div class="modal-content" style="width: 110%;">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">Edit Media Gallery</h4>
+                   <h4 class="modal-title">Mise à jour de votre compte</h4>
                </div>
 
                <div class="modal-body row" style="padding-left: 35px; padding-right: 35px;">
@@ -54,10 +54,10 @@
                        </div>
                        <div class="form-group">
                        		<div class="row">
-                       			<div class="col-md-6">
-                       				<label>Modifier passe</label>
+                       			<div class="col-md-8" style="vertical-align: center; padding-right: 0;">
+                       				<label>Modifier Mot de passe</label>
                        			</div>
-                       			<div class="col-md-6">
+                       			<div class="col-md-3" style="padding-left: 0;">
                        				<input type="checkbox" name="changePassword" class="js-switch-red" value="true" id="changePassword_">
                        			</div>
                        		</div>

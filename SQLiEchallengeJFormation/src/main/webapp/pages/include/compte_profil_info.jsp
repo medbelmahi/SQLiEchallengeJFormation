@@ -2,6 +2,11 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <div class="row"><!-- info profil -->
+	
+	<div class="col-md-3">
+	
+	</div>
+	
 	<div class="col-md-6">
 		<div class="col-md-12">
         <div class="panel">
@@ -52,8 +57,8 @@
     </div>
 	</div>
     
-    <div class="col-md-6">
-	    <div class="col-md-12">
+    <div class="col-md-3">
+	    <%-- <div class="col-md-12">
 	        <div class="panel">
 	            <div class="panel-body p-states">
 	                <div class="summary pull-left">
@@ -88,6 +93,6 @@
 	                <div id="expense2" class="chart-bar"></div>
 	            </div>
 	        </div>
-	    </div>
+	    </div> --%>
 	 </div>
 </div>

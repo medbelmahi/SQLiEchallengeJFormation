@@ -125,7 +125,7 @@
 			<s:include value="/pages/responsable_formation/include/left_side_bar.jsp"></s:include>
 		</s:elseif>
 		<s:else>
-			<s:include value="/pages/fromateur/include/left_side_bar.jsp"></s:include>
+			<s:include value="/pages/formateur/include/left_side_bar.jsp"></s:include>
 		</s:else>
 	    <!-- left side end-->
 	    
