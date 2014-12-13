@@ -21,19 +21,20 @@
 							
 								<input type="hidden" name="idSession" value='<s:property value="idSession" />'>
 								<div class="row">
-								<div class="col-sm-5"></div>
-								<div class="col-sm-3" ><h4 style="margin-bottom: 0; margin-top: 8px; text-align: right;">Choisir une seance : </h4></div>
-									<div class="col-sm-4">
-										<select name="idSeance" class="form-control m-bot15">
-							                <s:iterator value="sessionFormation.sceances" >
-							                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> [De <s:property value="heureDebut" /> à <s:property value="heureFin" />]</option>
-							                </s:iterator>
-							            </select>
-							        </div>
+								<div class="col-sm-4">
+									<select name="idSeance" class="form-control m-bot15">
+						                <s:iterator value="sessionFormation.sceances" >
+						                	<option value='<s:property value="idSeance" />'><s:property value="titreSeance" /> [De <s:property value="heureDebut" /> à <s:property value="heureFin" />]</option>
+						                </s:iterator>
+						            </select>
+						        </div>
+								<div class="col-sm-3" ><h4 style="margin-bottom: 0; margin-top: 8px; text-align: left;">Choisir une seance </h4></div>
+									
+							    <div class="col-sm-5"></div>
 								</div>
-								<div class="row" style="margin-left: 17px; margin-bottom: 10px; margin-top: 10px;">
+								<div class="row" style="margin-bottom: 10px; margin-top: 10px;">
 									<div class="col-sm-1"><input id="selectAll" type="checkbox" class="js-switch-red" checked /></div>
-									<div class="col-sm-3"><h4 style="margin-bottom: 0; margin-top: 6px;">Selectionner tout</h4></div>
+									<div class="col-sm-3"><h4 style="margin-bottom: 0; margin-top: 6px; text-align: left;">Selectionner tout</h4></div>
 									<div class="col-sm-5"></div>
 									<div class="col-sm-3"><button type="submit" class="btn btn-block btn-primary">Marquer l'absence</button></div>
 								</div>

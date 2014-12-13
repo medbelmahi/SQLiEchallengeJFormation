@@ -41,9 +41,9 @@
 		<ul class="nav nav-pills nav-stacked custom-nav">
 		
 			<li class="menu-list nav-active"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i
-					class="fa fa-laptop"></i> <span>Gestion sessions</span></a>
+					class="fa fa-table"></i> <span>Gestion sessions</span></a>
 				<ul class="sub-menu-list">
-					<li class="active"><a href='<s:url value="/formateur/sessions/list"/>'>Liste des session</a></li>
+					<li class="active"><a href='<s:url value="/formateur/sessions/list"/>'>Liste des sessions</a></li>
 <%-- 					<li><a href='<s:url value="/administrateur/profils/list"/>'> Gestion des Profils</a></li> --%>
 				</ul></li>
 			<%-- <li class="menu-list"><a href='<s:url value="/administrateur/collaborateurs/list"/>'><i class="fa fa-book"></i>
@@ -54,7 +54,7 @@
 				</ul>
 			</li> --%>
 			
-			<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-home"></i> <span>Compte</span></a></li>
+			<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-wrench"></i> <span>Compte</span></a></li>
 			<li><a href='<s:url value="/logout"/>'><i class="fa fa-sign-out"></i> <span>Se déconnecter</span></a></li>
 			
 		</ul>
