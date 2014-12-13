@@ -33,10 +33,6 @@
 				<canvas id="canvas" height="350" width="700"></canvas>
 			</div>
 		</div>
-		
-		<div style="margin-top: 20px;" id="quesionTable" class="row">
-			
-		</div>
 
     </div>
 </section>
@@ -59,14 +55,14 @@
 		var arrayAbsenceCount = new Array();
 		var arraySeance = new Array();
 		function remplirChartEvaluation(idSession){
-			$.getJSON('<s:url action="get/evaluation/result" namespace="/ajax" />', {idSession : idSession}, function(jsonResponse) {
+			$.getJSON('<s:url action="get/absence/list" namespace="/ajax" />', {idSession : idSession}, function(jsonResponse) {
 				
 				//if satuts == "success" , do
 				if(jsonResponse.status === "success"){
 					
 					for(i=0; i<jsonResponse.results.length ; i++){
-						arrayAbsenceCount[i]=jsonResponse.results[i].avgScore;
-						arraySeance[i]= 'Question : '+jsonResponse.results[i].idQuestion;
+						arrayAbsenceCount[i]=jsonResponse.results[i].absenceCount;
+						arraySeance[i]= 'Séance : '+jsonResponse.results[i].idSeance;
 					}
 					
 					
@@ -79,13 +75,6 @@
 				                    			+'<strong>Erreur : aucune donnée disponible</strong>'
 				                    			+'</div>'
 				                    			+'</div>');
-					}else{
-						var tableContent = '<table class="table table-striped"><thead><tr><th>id</th><th>Question</th></tr></thead><tbody>';
-						for(i=0; i<jsonResponse.results.length ; i++){
-							tableContent += '<tr><td>'+jsonResponse.results[i].idQuestion+'</td><td>'+jsonResponse.results[i].question+'</td></tr>';
-						}
-						tableContent += '</table>';
-						$('#quesionTable').html(tableContent);
 					}
 					
 				}

@@ -25,31 +25,12 @@
 	                                
 	                        </select>
                     </div>
-                    <div class="row state-overview">
-                    	<div onclick="popUpEvaluation();" class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel red">
-                                <div class="symbol">
-                                    <i class="fa fa-tags"></i>
-                                </div>
-                                <div class="state-value">
-<!--                                     <div class="value">3490</div> -->
-                                    <div class="title">Evalutation</div>
-                                </div>
-                            </div>
-                        </div>
-	                        <div onclick="popUpAbsence();" class="col-md-6 col-xs-12 col-sm-6">
-	                            <div class="panel red">
-	                                <div class="symbol">
-	                                    <i class="fa fa-tags"></i>
-	                                </div>
-	                                <div class="state-value">
-	<!--                                     <div class="value">3490</div> -->
-	                                    <div class="title">Absence</div>
-	                                </div>
-	                            </div>
-	                        </div>
-                    </div>
-<!--                     <button type="submit" class="btn btn-primary">Submit</button> -->
+                    <div class="text-center ">
+		                <a class="btn btn-success btn-lg" href='#' onclick="popUpEvaluation();"><i class="fa fa-pie-char"></i> Resultat des evalutations </a>
+		                
+		                <a class="btn btn-primary btn-lg" href='#' onclick="popUpAbsence();" ><i class="fa fa-area-chart"></i> Analyse d'absence </a>
+		            </div>
+		            
                 </form>
 
             </div>

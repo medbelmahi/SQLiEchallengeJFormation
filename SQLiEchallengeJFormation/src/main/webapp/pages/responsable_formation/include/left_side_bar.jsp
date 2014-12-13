@@ -52,7 +52,7 @@
 					<li><a href='<s:url value="/responsableFormation/formations/evaluation/questions/list"/>' > Liste des questions</a></li>
 				</ul>
 			</li>
-			<li><a href='<s:url value="/responsableFormation/dashboard"/>'><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+			<li><a href='<s:url value="/responsableFormation/dashboard"/>'><i class="fa fa-home"></i> <span>Tableau de Bord</span></a></li>
 			<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-home"></i> <span>Compte</span></a></li>
 			<li><a href='<s:url value="/logout"/>'><i class="fa fa-sign-out"></i> <span>Se déconnecter</span></a></li>
 

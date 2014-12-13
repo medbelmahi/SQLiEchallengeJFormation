@@ -47,5 +47,10 @@
 			var idSession  = $('#selectIdSession')[0].value;
 			ouvre_popup('<s:url action="dashboard/dashbord_chart_evaluation" namespace="/responsableFormation" />?idSession='+idSession);
 		}
+		
+		function popUpAbsence(){
+			var idSession  = $('#selectIdSession')[0].value;
+			ouvre_popup('<s:url action="dashboard/dashbord_chart_absence" namespace="/responsableFormation" />?idSession='+idSession);
+		}
 	</script>
 <!-- Dashboard popUp Chart End -->

@@ -80,6 +80,8 @@
 		.td_option_class{
 			vertical-align:middle;
 		}
+		
+		
 	</style>
 	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -118,8 +120,8 @@
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
 		                    <li><a href='<s:url value="/responsableFormation/" />'><i class="fa fa-home"></i> Accueil</a></li>
-		                    <li><a href='<s:url value="/responsableFormation/formations/" />'>Gestion formation</a></li>
-		                    <li class="active">Liste des formations</li>
+<%-- 		                    <li><a href='<s:url value="/responsableFormation/formations/" />'>Gestion formation</a></li> --%>
+		                    <li class="active">Tableau de Bord</li>
 		                </ul>
 		                <!--breadcrumbs end -->
 		            </div>
@@ -134,18 +136,6 @@
 		        	<s:include value="include/dashboard_content.jsp"></s:include>
 		        <!-- Dashboard content End -->
 		        
-		        
-		      	<%-- <!-- Data table des habilitations Start -->
-					<s:include value="include/data_table_formations.jsp"></s:include>
-				<!-- Data table des habilitations End -->
-				
-				<!-- Ajout Formation Modal Form -->
-					<s:include value="include/ajout_formation_modal.jsp"></s:include>
-				<!-- End Ajout Formation Modal Form -->
-				
-				<!-- Update Formation Modal Form -->
-					<s:include value="include/update_formation_modal.jsp"></s:include>
-				<!-- End Update Formation Modal Form --> --%>
 			
 	        </div>
 	        <!--body wrapper end-->
