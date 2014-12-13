@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.sqli.echallenge.jformation.bean.AbsenceSessionBean;
 import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
-import com.sqli.echallenge.jformation.model.bean.EvaluationSessionBean;
 import com.sqli.echallenge.jformation.web.SqliActionSupport;
 
 /**
@@ -27,13 +27,13 @@ public class SessionAbsenceListGetAjaxAction extends SqliActionSupport {
 	private Long idSession;
 	private String status;
 	
-	private List<EvaluationSessionBean> results;
+	private List<AbsenceSessionBean> results;
 	
 	@Override
 	public String execute() throws Exception {
 		try {
 			//get get evaluation result
-			results = sessionMetier.getEvaluationResult(idSession);
+			results = sessionMetier.getAbsenceList(idSession);
 			
 			//set success message
 			status = ActionSupport.SUCCESS;
@@ -62,11 +62,11 @@ public class SessionAbsenceListGetAjaxAction extends SqliActionSupport {
 		this.idSession = idSession;
 	}
 
-	public List<EvaluationSessionBean> getResults() {
+	public List<AbsenceSessionBean> getResults() {
 		return results;
 	}
 
-	public void setResults(List<EvaluationSessionBean> results) {
+	public void setResults(List<AbsenceSessionBean> results) {
 		this.results = results;
 	}
 
