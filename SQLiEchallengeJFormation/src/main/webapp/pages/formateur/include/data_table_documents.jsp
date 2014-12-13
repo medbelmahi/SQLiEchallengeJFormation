@@ -46,7 +46,8 @@
 												<ul style="list-style: none;" class="navbar-nav nav-options">
 													
 													<li style="padding-right: 15px;">
-														<a title="Telecharger le document" target="_blank" href='<s:property value="urlDocument" />'>
+														<a title="Telecharger le document" target="_blank" href='<s:url namespace="/" action="download" >
+														<s:param name="file"><s:property value="urlDocument" /></s:param></s:url>'>
 															<i class="fa fa-download"></i>
 														</a>
 													</li>
