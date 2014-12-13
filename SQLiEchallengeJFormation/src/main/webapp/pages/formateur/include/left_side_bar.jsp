@@ -29,7 +29,7 @@
 				</div>
 			</div>
 
-			<h5 class="left-nav-title">Account Information</h5>
+			<h5 class="left-nav-title">Mon Compte</h5>
 			<ul class="nav nav-pills nav-stacked custom-nav">
 				<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-user"></i> <span>Profile</span></a></li>
 <%-- 				<li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li> --%>
@@ -53,6 +53,10 @@
 					<li><a href='<s:url value="/administrateur/habilitations/list"/>' > Listes des habilitations</a></li>
 				</ul>
 			</li> --%>
+			
+			<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-home"></i> <span>Compte</span></a></li>
+			<li><a href='<s:url value="/logout"/>'><i class="fa fa-sign-out"></i> <span>Se déconnecter</span></a></li>
+			
 		</ul>
 		<!--sidebar nav end-->
 

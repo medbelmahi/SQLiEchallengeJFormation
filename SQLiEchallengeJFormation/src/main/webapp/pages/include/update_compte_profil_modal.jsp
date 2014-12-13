@@ -55,7 +55,7 @@
                        <div class="form-group">
                        		<div class="row">
                        			<div class="col-md-6">
-                       				<label>Changer</label>
+                       				<label>Modifier passe</label>
                        			</div>
                        			<div class="col-md-6">
                        				<input type="checkbox" name="changePassword" class="js-switch-red" value="true" id="changePassword_">

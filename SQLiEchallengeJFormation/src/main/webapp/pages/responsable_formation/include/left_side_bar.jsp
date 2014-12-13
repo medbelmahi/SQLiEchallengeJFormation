@@ -29,18 +29,17 @@
 				</div>
 			</div>
 
-			<h5 class="left-nav-title">Account Information</h5>
+			<h5 class="left-nav-title">Mon Compte</h5>
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
-				<li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
-				<li><a href="<s:url value="/logout"/>"><i class="fa fa-sign-out"></i>Se deconnecter</a></li>
+				<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-user"></i> <span>Profile</span></a></li>
+				<li><a href='<s:url value="/logout"/>'><i class="fa fa-sign-out"></i>Se deconnecter</a></li>
 			</ul>
 		</div>
 
 		<!--sidebar nav start-->
 		<ul class="nav nav-pills nav-stacked custom-nav">
 		
-			<li><a href='<s:url value="/profil/show"/>'><i class="fa fa-home"></i> <span>Compte</span></a></li>
+			
 			<li class="menu-list nav-active"><a href='<s:url value="/responsableFormation/formations/list"/>'><i
 					class="fa fa-laptop"></i> <span>Gestion Formation</span></a>
 				<ul class="sub-menu-list">
@@ -54,7 +53,7 @@
 				</ul>
 			</li>
 
-
+			<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-home"></i> <span>Compte</span></a></li>
 			<li><a href='<s:url value="/logout"/>'><i class="fa fa-sign-out"></i> <span>Se déconnecter</span></a></li>
 
 		</ul>

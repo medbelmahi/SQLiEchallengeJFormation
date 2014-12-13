@@ -115,8 +115,18 @@
 <body class="sticky-header">
 
 	<section>
-	    <!-- left side start-->
+		
+		<s:set name="myVarUserProfil" value="%{#session.utilisateur.profil.roleBase}"/>
+		 <!-- left side start-->
+		<s:if test="%{#myVarUserProfil=='Administrateur'}">
 			<s:include value="/pages/administrateur/include/left_side_bar.jsp"></s:include>
+		</s:if>
+		<s:elseif test="%{#myVarUserProfil=='Responsable de formation'}">
+			<s:include value="/pages/responsable_formation/include/left_side_bar.jsp"></s:include>
+		</s:elseif>
+		<s:else>
+			<s:include value="/pages/fromateur/include/left_side_bar.jsp"></s:include>
+		</s:else>
 	    <!-- left side end-->
 	    
 	    <!-- main content start-->
@@ -140,9 +150,17 @@
 		            <div class="col-md-12">
 		                <!--breadcrumbs start -->
 		                <ul class="breadcrumb panel">
-		                    <li><a href='<s:url value="/administrateur/"/>'><i class="fa fa-home"></i> Accueil</a></li>
-		                    <li><a href='<s:url value="/administrateur/utilisateurs/"/>'>Gestions des utilisateurs</a></li>
-		                    <li class="active">Gestion des profils</li>
+		                	<s:if test="%{#myVarUserProfil=='Administrateur'}">
+								<li><a href='<s:url value="/administrateur/"/>'><i class="fa fa-home"></i> Accueil</a></li>
+							</s:if>
+							<s:elseif test="%{#myVarUserProfil=='Responsable de formation'}">
+								<li><a href='<s:url value="/responsableFormation/"/>'><i class="fa fa-home"></i> Accueil</a></li>
+							</s:elseif>
+							<s:else>
+								<li><a href='<s:url value="/formateur/"/>'><i class="fa fa-home"></i> Accueil</a></li>
+							</s:else>
+		                    
+		                    <li class="active">Mon profil</li>
 		                </ul>
 		                <!--breadcrumbs end -->
 		            </div>
@@ -152,7 +170,9 @@
 	       		<!-- Message action start-->
 		        	<s:include value="/pages/administrateur/include/message_action.jsp"></s:include>
 		        <!-- Message action end-->
-	       	
+	       		
+			
+			
 	       		<!-- Profil start-->
 		        	<s:include value="include/compte_profil_info.jsp"></s:include>
 		        <!-- Profil end-->
@@ -162,28 +182,7 @@
 					<s:include value="include/update_compte_profil_modal.jsp"></s:include>
 				<!-- End Update profil Modal Form -->
 		        
-		       	<%-- <!-- Message action start-->
-		        	<s:include value="include/message_action.jsp"></s:include>
-		        <!-- Message action end-->
-		        
-		        
-		      	<!-- Data table des profils Start -->
-					<s:include value="include/data_table_profils.jsp"></s:include>
-				<!-- Data table des profils End -->
-				
-				
-				<!-- Update profil Modal Form -->
-					<s:include value="include/update_profil_modal.jsp"></s:include>
-				<!-- End Update profil Modal Form -->
-				
-				
-				<!-- Ajout profil Modal Form -->
-					<s:include value="include/ajout_profil_modal.jsp"></s:include>
-				<!-- End Ajout profil Modal Form -->
-			
-				<!-- Begin Gestion des Actions -->
-					<s:include value="include/gestion_actions.jsp"></s:include>	
-				<!-- End Gestion des Actions --> --%>
+		       	
 				
 	        </div>
 	        <!--body wrapper end-->
@@ -309,7 +308,6 @@
 		
 		$(function() {
 		    $('#update_utilisateur').submit(function() {
-		        // DO STUFF
 		        
 				if($('#changePassword_')[0].checked){
 					var password_1 = $('#newPassword_1');
@@ -320,7 +318,7 @@
 					return false;
 				}
 
-		        return true; // return false to cancel form action
+		        return true;
 		    });
 		});
 	</script>
