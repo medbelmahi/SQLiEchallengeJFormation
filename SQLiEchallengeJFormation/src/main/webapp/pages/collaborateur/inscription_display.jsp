@@ -166,7 +166,7 @@
                 <s:param name="confirmation">true</s:param>
                 </s:url>'><i class="fa fa-check"></i> Confirmation d'inscription </a>
                 
-                <a class="btn btn-primary btn-lg" target="_blank" href='<s:url action="session/inscription/confirme" >
+                <a class="btn btn-primary btn-lg" href='<s:url action="session/inscription/confirme" >
                 <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
                 <s:param name="confirmation">false</s:param>
                 </s:url>'><i class="fa fa-print"></i> Annuler </a>

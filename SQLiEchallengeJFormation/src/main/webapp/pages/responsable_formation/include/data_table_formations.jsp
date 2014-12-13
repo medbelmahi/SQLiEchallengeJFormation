@@ -6,8 +6,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des formations <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
-<!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
 			<div class="panel-body">
@@ -25,7 +23,6 @@
 						<table aria-describedby="hidden-table-info_info"
 							class="display table table-bordered dataTable"
 							id="dynamic-table">
-<!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
 									<th class="text-centre">Titre formation</th>
