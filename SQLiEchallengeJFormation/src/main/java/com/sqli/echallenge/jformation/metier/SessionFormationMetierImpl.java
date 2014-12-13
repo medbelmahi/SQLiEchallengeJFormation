@@ -3,13 +3,16 @@
  */
 package com.sqli.echallenge.jformation.metier;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sqli.echallenge.jformation.bean.AbsenceSessionBean;
 import com.sqli.echallenge.jformation.dao.SessionFormationDao;
+import com.sqli.echallenge.jformation.model.bean.EvaluationSessionBean;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 import com.sqli.echallenge.jformation.util.PropretiesHelper;
 import com.sqli.echallenge.jformation.util.SqliException;
@@ -124,6 +127,52 @@ public class SessionFormationMetierImpl implements SessionFormationMetier {
 			return false;
 		} catch (Exception e) {
 			throw new SqliException(propretiesHelper.getText("session.interval.test.fail"));
+		}
+	}
+	
+	public List<EvaluationSessionBean> getEvaluationResult(Long idSession) throws Exception {
+		try {
+			List<Object[]> list = dao.getEvaluationResult(idSession);
+			
+			List<EvaluationSessionBean> evs = new ArrayList<EvaluationSessionBean>();
+			
+			for(Object[] o : list){
+				
+				EvaluationSessionBean ev = new EvaluationSessionBean();
+				ev.setIdQuestion(Long.valueOf(String.valueOf(o[0])));
+				ev.setAvgScore(Double.valueOf(String.valueOf(o[1])));
+				ev.setQuestion((String) o[2]);
+				
+				evs.add(ev);
+			}
+			
+			return evs;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SqliException(propretiesHelper.getText(""));
+		}
+	}
+	
+	public List<AbsenceSessionBean> getAbsenceList(Long idSession) throws Exception {
+		try {
+			List<Object[]> list = dao.getAbsenceList(idSession);
+			
+			List<AbsenceSessionBean> asb = new ArrayList<AbsenceSessionBean>();
+			
+			for(Object[] o : list){
+				AbsenceSessionBean ab = new AbsenceSessionBean();
+				ab.setIdSeance(Long.valueOf(String.valueOf(o[0])));
+				ab.setAbsenceCount(Double.valueOf(String.valueOf(o[1])));
+				
+				asb.add(ab);
+			}
+			
+			return asb;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SqliException(propretiesHelper.getText(""));
 		}
 	}
 	

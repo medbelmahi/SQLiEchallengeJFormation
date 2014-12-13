@@ -10,11 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.sqli.echallenge.jformation.metier.SessionFormationMetier;
 import com.sqli.echallenge.jformation.metier.UtilisateurMetier;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 
 @Controller
 public class TestAction extends ActionSupport implements ServletRequestAware  {
@@ -22,40 +19,23 @@ public class TestAction extends ActionSupport implements ServletRequestAware  {
 	
 	@Autowired
 	public UtilisateurMetier utilisateurMetier;
+	@Autowired
+	public SessionFormationMetier sessionMetier;
 	
 	private HttpServletRequest servletRequest;
 	
-	private InputStream fileInputStream;
-	private String file;
 	
 	
 	@Override
 	public synchronized String execute() throws Exception {
 		
-		File f = new File(System.getenv("OPENSHIFT_DATA_DIR") + "/" + file);
-		fileInputStream = new FileInputStream(f);
+		//System.out.println(sessionMetier.getAbsenceList(8L));
 
 		return SUCCESS;
 	}
 
 	public void setServletRequest(HttpServletRequest servletRequest) {
 		this.servletRequest = servletRequest;
-	}
-	
-	public InputStream getFileInputStream() {
-		return fileInputStream;
-	}
-
-	public void setFileInputStream(InputStream fileInputStream) {
-		this.fileInputStream = fileInputStream;
-	}
-
-	public String getFile() {
-		return file;
-	}
-
-	public void setFile(String file) {
-		this.file = file;
 	}
 
 	public HttpServletRequest getServletRequest() {

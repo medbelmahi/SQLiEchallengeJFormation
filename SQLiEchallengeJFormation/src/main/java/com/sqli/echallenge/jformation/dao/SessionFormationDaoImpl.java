@@ -12,7 +12,6 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sqli.echallenge.jformation.model.bean.EvaluationSessionBean;
 import com.sqli.echallenge.jformation.model.entity.SessionFormation;
 
 /**
@@ -54,11 +53,20 @@ public class SessionFormationDaoImpl implements SessionFormationDao {
 	}
 
 	//NativeQuery
-	public List<EvaluationSessionBean> getEvaluationResult(Long idSession) throws Exception {
-		Query query = entityManager.createNativeQuery("SELECT AVG(SCORE) AS SCORE, ID_QUESTION, QUESTION FROM SQLI_EVALUATIONS_REPONSES as r, SQLI_EVALUATIONS_QUESTIONS as q WHERE ID_SESSION=8 AND r.ID_QUESTION=q.ID_EVALUATION_QUESTION GROUP BY ID_QUESTION");
-		return null;
+	@SuppressWarnings("unchecked")
+	public List<Object[]> getEvaluationResult(Long idSession) throws Exception {
+		Query query = entityManager.createNativeQuery("SELECT ID_QUESTION, AVG(SCORE) AS SCORE, QUESTION FROM SQLI_EVALUATIONS_REPONSES AS r, SQLI_EVALUATIONS_QUESTIONS AS q WHERE ID_SESSION=:idSession AND r.ID_QUESTION=q.ID_EVALUATION_QUESTION GROUP BY ID_QUESTION");
+		query.setParameter("idSession", idSession);
+		return query.getResultList();
 	}
 	
+	//nativeQuery
+	@SuppressWarnings("unchecked")
+	public List<Object[]> getAbsenceList(Long idSession) throws Exception {
+		Query query = entityManager.createNativeQuery("SELECT ID_SEANCE, COUNT(ID_SEANCE) FROM SQLI_SEANCES_ABSENCES WHERE ID_SEANCE IN (SELECT ID_SEANCE FROM SQLI_SEANCES WHERE ID_SESSION_FORMATION=:idSession) GROUP BY ID_SEANCE;");
+		query.setParameter("idSession", idSession);
+		return query.getResultList();
+	}
 	
 	public void update(SessionFormation session) throws Exception {
 		entityManager.merge(session);
