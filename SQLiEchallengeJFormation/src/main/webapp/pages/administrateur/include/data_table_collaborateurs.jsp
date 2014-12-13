@@ -67,7 +67,7 @@
 												
 												<li style="padding-right: 15px;">
 													<a data-href=<s:url action="collaborateurs/delete" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url> data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-														<i class="fa fa-times"></i>
+														<i class="fa fa-trash-o"></i>
 													</a>
 												</li>
 												
@@ -75,7 +75,7 @@
 													<a href='javascript:void(0);'
 													   onclick="jsonGetCollaborateur_forSendEmail(<s:property value="idCollaborateur"/>);" 
 													   title="Envoyer un email">
-														<i class="fa fa-envelope"></i>
+														<i class="fa fa-envelope-o"></i>
 													</a>
 												</li>
 											</ul>

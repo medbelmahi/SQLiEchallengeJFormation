@@ -59,7 +59,7 @@
 													
 													<li>
 														<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-															<i class="fa fa-times"></i>
+															<i class="fa fa-trash-o"></i>
 														</a>
 													</li>
 												</ul>

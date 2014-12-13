@@ -72,7 +72,7 @@
 														
 														<li style="padding-right: 15px;">
 															<a data-href='<s:url action="profils/delete" ><s:param name="idProfil"><s:property value="idProfil"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-																<i class="fa fa-times"></i>
+																<i class="fa fa-trash-o"></i>
 															</a>
 														</li>
 														<li>

@@ -45,7 +45,7 @@
 													
 													<li style="padding-left: 15px;">
 														<a data-href='<s:url action="habilitations/delete" ><s:param name="idHabilitation"><s:property value="idHabilitation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-															<i class="fa fa-times"></i>
+															<i class="fa fa-trash-o"></i>
 														</a>
 													</li>
 												</ul>

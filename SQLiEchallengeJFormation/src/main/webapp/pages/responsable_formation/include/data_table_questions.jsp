@@ -58,7 +58,7 @@
 													
 													<li style="padding-left: 15px;">
 														<a data-href='<s:url action="formations/evaluation/questions/delete" ><s:param name="idQuestion"><s:property value="idEvaluationQuestion"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-															<i class="fa fa-times"></i>
+															<i class="fa fa-trash-o"></i>
 														</a>
 													</li>
 												</ul>
