@@ -34,7 +34,7 @@
     <action name="get/evaluation/result" class="com.sqli.echallenge.jformation.web.ajax.responsableformation.SessionEvaluationResultGetAjaxAction">
      	 	<result name="none" type="json" />
     </action>
-    <action name="get/absence/list" class="com.sqli.echallenge.jformation.web.ajax.responsableformation.SessionEvaluationResultGetAjaxAction">
+    <action name="get/absence/list" class="com.sqli.echallenge.jformation.web.ajax.responsableformation.SessionAbsenceListGetAjaxAction">
      	 	<result name="none" type="json" />
     </action>
     
