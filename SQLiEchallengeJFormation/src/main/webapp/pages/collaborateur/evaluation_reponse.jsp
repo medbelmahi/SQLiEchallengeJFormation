@@ -39,7 +39,7 @@
 				</s:if>
 			</h3>
             <!-- <p class="nrml-txt">Why not try refreshing you page? Or you can <a href="#">contact our support</a> if the problem persists.</p>-->
-            <a class="back-btn" href="index.html"> Back To Home</a> 
+<!--             <a class="back-btn" href="index.html"> Back To Home</a>  -->
         </section>
 
     </div>

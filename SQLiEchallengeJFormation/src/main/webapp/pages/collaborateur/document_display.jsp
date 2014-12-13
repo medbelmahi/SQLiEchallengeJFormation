@@ -94,7 +94,9 @@
 								<div class="panel">
 									<div class="panel-body" style="padding: 0px;">
 										<div class="profile-pic text-center">
-											<img alt="" src='<s:property value="inscription.sessionFormation.formateur.urlPhotoFormateur" />'>
+											<img alt="" src='<s:url namespace="/" action='download'>
+																	<s:param name="file"><s:property value="inscription.sessionFormation.formateur.urlPhotoFormateur" />
+																	</s:param></s:url>'>
 											<h3 class="corporate-id">
 												<s:property value="inscription.sessionFormation.formateur.fullname" />
 											</h3>

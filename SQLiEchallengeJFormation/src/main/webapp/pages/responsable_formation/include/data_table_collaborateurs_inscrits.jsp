@@ -88,7 +88,9 @@
 										</s:iterator>
 									</ul>
 								</td>
-								<td style="display: none;"><s:property value="collaborateur.urlPhotoCollaborateur" /></td>
+								<td style="display: none;"><s:url namespace="/" action='download'>
+																	<s:param name="file"><s:property value="collaborateur.urlPhotoCollaborateur" />
+																	</s:param></s:url></td>
 								
 							</tr>
 					</s:iterator>

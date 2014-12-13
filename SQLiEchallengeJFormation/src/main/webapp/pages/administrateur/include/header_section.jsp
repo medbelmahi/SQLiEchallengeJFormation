@@ -15,7 +15,9 @@
 			
 			<li><a href="#" class="btn btn-default dropdown-toggle"
 				data-toggle="dropdown"> 
-				<img src='<s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />' alt="" /><s:property value="%{#session.utilisateur.fullname}" /> <span class="caret"></span>
+				<img src='<s:url namespace="/" action='download'>
+						<s:param name="file"><s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />
+						</s:param></s:url>' alt="" /><s:property value="%{#session.utilisateur.fullname}" /> <span class="caret"></span>
 			</a>
 				<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
 					<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-user"></i> Profile</a></li>

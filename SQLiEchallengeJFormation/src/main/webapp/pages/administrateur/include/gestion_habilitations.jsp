@@ -19,7 +19,9 @@
 								<div class="panel">
 									<div class="panel-body" style="padding: 0px;">
 										<div class="profile-pic text-center">
-											<img alt="" src='<s:property value="collaborateur.urlPhotoCollaborateur" />'>
+											<img alt="" src='<s:url namespace="/" action='download'>
+																	<s:param name="file"><s:property value="collaborateur.urlPhotoCollaborateur" />
+																	</s:param></s:url>'>
 											<h2>
 												<s:property value="collaborateur.fullname" />
 											</h2>

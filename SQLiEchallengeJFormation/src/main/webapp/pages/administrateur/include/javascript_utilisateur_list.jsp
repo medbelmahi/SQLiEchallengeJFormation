@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 
+
 <!-- Remplir Update Utilisateur Modal -->
 	<script type="text/javascript">
 	
@@ -20,9 +21,11 @@
 				document.getElementById("inputDateNaissance").value = jsonResponse.dateNaissance;
 				document.getElementById("inputAdress").value = jsonResponse.adresse; 
 				
+				var urlRacine = "${pageContext.request.contextPath}";
+				
 				//set image profil
 				var imageProfil = document.getElementById("utilisateurImageProfil");
-				imageProfil.setAttribute("src",jsonResponse.imageProfil);
+				imageProfil.setAttribute("src",urlRacine+'/download?file='+jsonResponse.imageProfil);
 				
 				
 				//check sexe option

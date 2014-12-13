@@ -20,7 +20,9 @@
 						
 						<div class="fileupload fileupload-new" data-provides="fileupload">
 							<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-								<img id="utilisateurImageProfil" src='<s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />' alt="">
+								<img id="utilisateurImageProfil" src='<s:url namespace="/" action='download'>
+																	<s:param name="file"><s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />
+																	</s:param></s:url>' alt="">
 							</div>
 							<div
 								class="fileupload-preview fileupload-exists thumbnail"

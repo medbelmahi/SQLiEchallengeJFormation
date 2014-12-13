@@ -74,9 +74,11 @@
 				$("#collaborateurSexe").html(jsonResponse.sexe);
 				$("#collaborateurAdresse").html(jsonResponse.adresse);
 				
+				var urlRacine = "${pageContext.request.contextPath}";
+				
 				//set image profil
 				var imageCollaborateur = document.getElementById("imageCollaborateur");
-				imageCollaborateur.setAttribute("src",jsonResponse.imageProfil);
+				imageCollaborateur.setAttribute("src",urlRacine+'/download?file='+jsonResponse.imageProfil);
 				
 				
 				//set habilitations

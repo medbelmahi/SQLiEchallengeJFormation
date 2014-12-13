@@ -53,7 +53,7 @@
 											<ul style="list-style: none;" class="navbar-nav nav-options">
 												<li style="padding-right: 15px;">
 													<a title="Habilitations" href='<s:url action="collaborateurs/habilitations" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url>'>
-														<i class="fa fa-list"></i>
+														<i class="fa fa-ban"></i>
 													</a>
 												</li>
 												
@@ -91,7 +91,9 @@
 												</s:iterator>
 											</ul>
 										</td>
-										<td style="display: none;"><s:property value="urlPhotoCollaborateur" /></td>
+										<td style="display: none;"><s:url namespace="/" action='download'>
+																	<s:param name="file"><s:property value="urlPhotoCollaborateur" />
+																	</s:param></s:url></td>
 									</tr>
 								</s:iterator>
 							</tbody>

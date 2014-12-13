@@ -12,7 +12,9 @@
         <div class="panel">
             <div class="panel-body">
                 <div class="profile-pic text-center">
-                    <img alt="" src='<s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />'>
+                    <img alt="" src='<s:url namespace="/" action='download'>
+										<s:param name="file"><s:property value="%{#session.utilisateur.urlPhotoUtilisateur}" />
+									</s:param></s:url>'>
                     <h2 id="collaborateurFullname"><s:property value="%{#session.utilisateur.fullname}" /></h2>
                 </div>
             </div>

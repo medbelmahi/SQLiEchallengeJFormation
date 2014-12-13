@@ -19,9 +19,11 @@
 				document.getElementById("inputDateNaissance").value = jsonResponse.dateNaissance;
 				document.getElementById("inputAdress").value = jsonResponse.adresse; 
 				
+				var urlRacine = "${pageContext.request.contextPath}";
+				
 				//set image profil
 				var imageCollaborateur = document.getElementById("imageCollaborateur");
-				imageCollaborateur.setAttribute("src",jsonResponse.imageProfil);
+				imageCollaborateur.setAttribute("src",urlRacine+'/download?file='+jsonResponse.imageProfil);
 				
 				
 				//check sexe option
