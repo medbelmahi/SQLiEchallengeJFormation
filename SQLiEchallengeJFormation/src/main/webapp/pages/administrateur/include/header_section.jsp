@@ -6,7 +6,7 @@
 <div class="header-section">
 
 	<!--toggle button start-->
-	<a class="toggle-btn"><i class="fa fa-bars"></i></a>
+	<a class="toggle-btn menu-collapsed"><i class="fa fa-bars"></i></a>
 	<!--toggle button end-->
 
 	<!--notification menu start -->

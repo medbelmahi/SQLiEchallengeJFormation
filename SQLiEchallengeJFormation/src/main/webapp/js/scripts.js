@@ -204,8 +204,8 @@
 
     $('.popovers').popover();
 
-
-
+    //collabse menu
+    $( ".toggle-btn" ).trigger( "click" );
 
 
 

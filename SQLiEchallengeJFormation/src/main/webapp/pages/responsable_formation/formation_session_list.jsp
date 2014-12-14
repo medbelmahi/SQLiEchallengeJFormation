@@ -16,6 +16,13 @@
   	<link href='<s:url value="/js/advanced-datatable/css/demo_table.css"/>' rel="stylesheet" />
   	<link rel="stylesheet" href='<s:url value="/js/data-tables/DT_bootstrap.css"/>' />
 	
+	<!--pickers css-->
+	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-datepicker/css/datepicker-custom.css"/>' />
+	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-timepicker/css/timepicker.css"/>' />
+	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-colorpicker/css/colorpicker.css"/>' />
+	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>' />
+	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-datetimepicker/css/datetimepicker-custom.css"/>' />
+	
 	
 	<!-- initial style -->
 	<link href='<s:url value="/css/style.css"/>' rel="stylesheet">
@@ -108,6 +115,17 @@
 	<!--dynamic table initialization -->
 	<script src='<s:url value="/js/dynamic_table_init.js"/>'></script>
 	
+	
+	<!--pickers plugins-->
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-datepicker/js/bootstrap-datepicker.js"/>'></script>
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"/>'></script>
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-daterangepicker/moment.min.js"/>'></script>
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-daterangepicker/daterangepicker.js"/>'></script>
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"/>'></script>
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-timepicker/js/bootstrap-timepicker.js"/>'></script>
+	
+	<!--pickers initialization-->
+	<script src='<s:url value="/js/pickers-init.js"/>'></script>
 	
 	<!--common scripts for all pages-->
 	<script src='<s:url value="/js/scripts.js"/>'></script>
