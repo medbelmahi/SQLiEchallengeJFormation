@@ -4744,3 +4744,12 @@ td.description_class{
 	padding-left: 0;
 	min-width: 60px;
 }
+
+.ms-selection{
+	display: none;
+}
+
+.selectedItem{
+	background-color: #65CEA7;
+	
+}

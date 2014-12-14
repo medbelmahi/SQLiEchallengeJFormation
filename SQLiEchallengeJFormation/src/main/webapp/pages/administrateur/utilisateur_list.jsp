@@ -16,39 +16,23 @@
   	<link href='<s:url value="/js/advanced-datatable/css/demo_table.css"/>' rel="stylesheet" />
   	<link rel="stylesheet" href='<s:url value="/js/data-tables/DT_bootstrap.css"/>' />
 	
-	<!--ios7-->
-    <link rel="stylesheet" type="text/css" href='<s:url value="/js/ios-switch/switchery.css"/>' />
-
-    <!--icheck-->
-<%--     <link href='<s:url value="/js/iCheck/skins/minimal/minimal.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/red.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/green.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/blue.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/yellow.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/purple.css"/>' rel="stylesheet"> --%>
-
-    <link href='<s:url value="/js/iCheck/skins/square/square.css"/>' rel="stylesheet">
+	
+<%--     <link href='<s:url value="/js/iCheck/skins/square/square.css"/>' rel="stylesheet"> --%>
     <link href='<s:url value="/js/iCheck/skins/square/red.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/square/green.css"/>' rel="stylesheet">
+    <%-- <link href='<s:url value="/js/iCheck/skins/square/green.css"/>' rel="stylesheet">
     <link href='<s:url value="/js/iCheck/skins/square/blue.css"/>' rel="stylesheet">
     <link href='<s:url value="/js/iCheck/skins/square/yellow.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/square/purple.css"/>' rel="stylesheet">
+    <link href='<s:url value="/js/iCheck/skins/square/purple.css"/>' rel="stylesheet"> --%>
 
-<%--     <link href='<s:url value="/js/iCheck/skins/flat/grey.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/red.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/green.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/blue.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/yellow.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/purple.css"/>' rel="stylesheet"> --%>
 
-    <!--multi-select-->
+    <%-- <!--multi-select-->
     <link rel="stylesheet" type="text/css" href='<s:url value="/js/jquery-multi-select/css/multi-select.css"/>' />
-
+ --%>
     <!--file upload-->
     <link rel="stylesheet" type="text/css" href='<s:url value="/css/bootstrap-fileupload.min.css"/>' />
 
-    <!--tags input-->
-    <link rel="stylesheet" type="text/css" href='<s:url value="/js/jquery-tags-input/jquery.tagsinput.css"/>' />
+    <%-- <!--tags input-->
+    <link rel="stylesheet" type="text/css" href='<s:url value="/js/jquery-tags-input/jquery.tagsinput.css"/>' /> --%>
     
 	<!--pickers css-->
 	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-datepicker/css/datepicker-custom.css"/>' />
@@ -60,25 +44,14 @@
 	<!-- wysihtml5 -->
 	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>' />
 	
-	<!--gritter css-->
-	<link rel="stylesheet" type="text/css" href='<s:url value="/js/gritter/css/jquery.gritter.css"/>' />
+	<%-- <!--gritter css-->
+	<link rel="stylesheet" type="text/css" href='<s:url value="/js/gritter/css/jquery.gritter.css"/>' /> --%>
 	
 	<!-- initial style -->
 	<link href='<s:url value="/css/style.css"/>' rel="stylesheet">
 	<link href='<s:url value="/css/jquery.stepy.css"/>' rel="stylesheet">
 	<link href='<s:url value="/css/style-responsive.css"/>' rel="stylesheet">
 	
-	
-	<style type="text/css">
-		.ms-selection{
-			display: none;
-		}
-		
-		.selectedItem{
-			background-color: #65CEA7;
-			
-		}
-	</style>
 	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -175,13 +148,15 @@
 	<!--dynamic table initialization -->
 	<script src='<s:url value="/js/dynamic_table_init.js"/>'></script>
 	
-	<!--ios7-->
+<%-- 	<!--ios7-->
 	<script src='<s:url value="/js/ios-switch/switchery.js"/>' ></script>
-	<script src='<s:url value="/js/ios-switch/ios-init.js"/>' ></script>
+	<script src='<s:url value="/js/ios-switch/ios-init.js"/>' ></script> --%>
 	
 	<!--icheck -->
 	<script src='<s:url value="/js/iCheck/jquery.icheck.js"/>'></script>
 	<script src='<s:url value="/js/icheck-init.js"/>'></script>
+	
+	
 <%-- 	<!--multi-select-->
 	<script type="text/javascript" src='<s:url value="/js/jquery-multi-select/js/jquery.multi-select.js"/>'></script>
 	<script type="text/javascript" src='<s:url value="/js/jquery-multi-select/js/jquery.quicksearch.js"/>'></script>
@@ -190,13 +165,17 @@
  	<%-- <!--spinner-->
 	<script type="text/javascript" src='<s:url value="/js/fuelux/js/spinner.min.js"/>'></script>
 	<script src='<s:url value="/js/spinner-init.js"/>'></script> --%>
+	
 	<!--file upload-->
 	<script type="text/javascript" src='<s:url value="/js/bootstrap-fileupload.min.js"/>'></script>
+	
 	<%-- <!--tags input-->
 	<script src='<s:url value="/js/jquery-tags-input/jquery.tagsinput.js"/>'></script>
 	<script src='<s:url value="/js/tagsinput-init.js"/>'></script> --%>
-	<!--bootstrap input mask-->
-	<script type="text/javascript" src='<s:url value="/js/bootstrap-inputmask/bootstrap-inputmask.min.js"/>'></script>
+	
+	
+	<%-- <!--bootstrap input mask-->
+	<script type="text/javascript" src='<s:url value="/js/bootstrap-inputmask/bootstrap-inputmask.min.js"/>'></script> --%>
 
 	
 	<!--pickers plugins-->
@@ -236,9 +215,9 @@
 	<!-- end bootstrap confirmation tool -->
 	
 	
-	<!--gritter script-->
+<%-- 	<!--gritter script-->
 	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
-	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
+	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script> --%>
 	
 	<!-- validation stepy form Start -->
 	<script type="text/javascript" src='<s:url value="/js/formulaire-stepy/init_stepy_wizard.js"/>'></script>
