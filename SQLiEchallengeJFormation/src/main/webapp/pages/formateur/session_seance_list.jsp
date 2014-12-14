@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-datetimepicker/css/datetimepicker-custom.css"/>' />
 	
 	<!--gritter css-->
-  	<link rel="stylesheet" type="text/css" href="js/gritter/css/jquery.gritter.css" />
+  	<link rel="stylesheet" type="text/css" href='<s:url value="/js/gritter/css/jquery.gritter.css"/>' />
   	
 	<!-- initial style -->
 	<link href='<s:url value="/css/style.css"/>' rel="stylesheet">
@@ -148,8 +148,8 @@
 	</script>
 	
 	<!--gritter script-->
-	<script type="text/javascript" src="js/gritter/js/jquery.gritter.js"></script>
-	<script src="js/gritter/js/gritter-init.js" type="text/javascript"></script>
+	<script type="text/javascript" src='<s:url value="/js/gritter/js/jquery.gritter.js"/>'></script>
+	<script src='<s:url value="/js/gritter/js/gritter-init.js"/>' type="text/javascript"></script>
 	
 	<!-- javascript of session_seance_list page Begin -->
 		<s:include value="include/javascript_session_seance_list.jsp"></s:include>
