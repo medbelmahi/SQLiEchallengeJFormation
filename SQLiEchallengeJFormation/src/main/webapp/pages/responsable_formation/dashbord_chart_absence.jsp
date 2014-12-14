@@ -84,22 +84,6 @@
 		remplirChartEvaluation(idSession)
 		
 		
-		/* var barChartData = {
-			labels : arraySeance,
-			datasets : [
-				{
-					label: "My First dataset",
-					fillColor : "rgba(220,220,220,0.2)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(220,220,220,1)",
-					data : arrayAbsenceCount
-				}
-			]
-
-		} */
 
 	window.onload = function(){
 		var barChartData = {

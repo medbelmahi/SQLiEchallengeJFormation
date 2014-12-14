@@ -21,7 +21,6 @@
 			<table aria-describedby="hidden-table-info_info"
 				class="display table table-bordered dataTable"
 				id="dynamic-table">
-		<!-- 	id="hidden-table-info"> -->
 		
 				<thead>
 					<tr role="row">
@@ -56,19 +55,6 @@
 											</a>
 										</li>
 										
-										<%-- <li style="padding-left: 15px;">
-											<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
-												<i class="fa fa-list"></i>
-											</a>
-										</li>
-										
-										
-										
-										<li style="padding-left: 15px;">
-											<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-												<i class="fa fa-times"></i>
-											</a>
-										</li> --%>
 									</ul>
 								</td>
 							</tr>

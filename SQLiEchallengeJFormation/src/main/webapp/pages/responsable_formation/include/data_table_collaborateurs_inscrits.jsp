@@ -3,12 +3,6 @@
 
 
 <div class="col-sm-12">
-	<!-- <form action="">
-	<div class="row">
-		<div class="col-sm-5">Selectionner tout les élement du tableau</div>
-		<div class="col-sm-3"><input type="checkbox" class="js-switch" checked/></div>
-		<div class="col-sm-4"><button type="submit" class="btn btn-primary">Inscrir les collaborateur</button></div>
-	</div> -->
 
 	<div class="row">
 		<div id="hidden-table-info_wrapper"
@@ -17,7 +11,6 @@
 			<table aria-describedby="hidden-table-info_info"
 				class="display table table-bordered dataTable"
 			id="hidden-table-info">
-			<!-- 				id="dynamic-table_2"> -->
 		
 				<thead>
 					<tr role="row">
@@ -36,7 +29,6 @@
 				<tbody aria-relevant="all" aria-live="polite" role="alert">
 					<s:iterator value="collaborateurInscrit">
 							<tr class="gradeA odd">
-<!-- 								<td><input type="checkbox" class="js-switch"/></td> -->
 								<td><s:property value="collaborateur.fullname" /></td>
 								<td><s:property value="collaborateur.telephoneCollaborateur" /></td>
 								<td><s:property value="collaborateur.emailCollaborateur" /></td>
@@ -52,31 +44,6 @@
 										<span class="label label-warning">Non traiter</span>
 									</s:else>
 								</td>
-								<%--<td class="center hidden-phone ">
-									
-									<ul style="list-style: none;" class="navbar-nav nav-options">
-										
-										 <li style="padding-left: 15px;">
-											<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
-												<i class="fa fa-list"></i>
-											</a>
-										</li>
-										
-										<li style="padding-left: 15px;">
-											<a href='javascript:void(0);'
-											   onclick="jsonGetFormation(<s:property value="idFormation"/>);" 
-											   title="Mise à jour">
-												<i class="fa fa-pencil"></i>
-											</a>
-										</li>
-										
-										<li style="padding-left: 15px;">
-											<a data-href='<s:url action="formations/delete" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
-												<i class="fa fa-times"></i>
-											</a>
-										</li> 
-									</ul>
-								</td>--%>
 								
 								<td style="display: none;"><s:property value="collaborateur.adresseCollaborateur" /></td>
 								<td style="display: none;"><s:property value="collaborateur.dateNaissanceCollaborateur" /></td>
@@ -98,5 +65,4 @@
 			</table>
 		</div>
 	</div>
-<!-- 	</form> -->
 </div>

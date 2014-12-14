@@ -44,14 +44,8 @@
 					class="fa fa-laptop"></i> <span>Gestion Formation</span></a>
 				<ul class="sub-menu-list">
 					<li class="active"><a href='<s:url value="/responsableFormation/formations/list"/>'>Liste des formations</a></li>
-<%-- 					<li><a href='<s:url value="/administrateur/profils/list"/>'> Gestion des Profils</a></li> --%>
+					<li><a href='<s:url value="/responsableFormation/formations/evaluation/questions/list"/>' > Evaluation des sessions</a></li>
 				</ul></li>
-			<li class="menu-list"><a href='<s:url value="/responsableFormation/formations/evaluation/questions/list"/>'><i class="fa fa-book"></i>
-					<span>Gestion questions</span></a>
-				<ul class="sub-menu-list">
-					<li><a href='<s:url value="/responsableFormation/formations/evaluation/questions/list"/>' > Liste des questions</a></li>
-				</ul>
-			</li>
 			<li><a href='<s:url value="/responsableFormation/dashboard"/>'><i class="fa fa-bar-chart-o"></i> <span>Tableau de Bord</span></a></li>
 			<li><a href='<s:url value="/profil/display"/>'><i class="fa fa-wrench"></i> <span>Compte</span></a></li>
 			<li><a href='<s:url value="/logout"/>'><i class="fa fa-sign-out"></i> <span>Se déconnecter</span></a></li>

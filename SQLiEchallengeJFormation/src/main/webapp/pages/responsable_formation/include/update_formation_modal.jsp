@@ -26,7 +26,6 @@
 						<div class="form-group">
 							<label for="inputDescription" class="col-sm-2 col-sm-2 control-label">Description<span class="text-danger"> *</span></label> 
 							<div class="col-sm-10">
-<!-- 								<input autocomplete="off" name="descriptionFormation" class="form-control" id="inputDescriptionFormation" placeholder="Ex : l'objectif de cette formaton est ..." type="text"> -->
 								<div class="compose-editor">
                                     <textarea class="form-control" rows="9" name="descriptionFormation" id="discription_formation"></textarea>
                                 </div>

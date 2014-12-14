@@ -7,8 +7,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des Sessions <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
-<!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
 			<div class="panel-body">
@@ -26,18 +24,15 @@
 						<table aria-describedby="hidden-table-info_info"
 							class="display table table-bordered dataTable"
 							id="dynamic-table">
-<!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
 									<th class="text-center">Titre Session</th>
 									<th class="text-center">Desciption</th>
 									<th class="text-center">Lieu</th>
-<!-- 									<th class="text-center">Formateur</th> -->
 									<th class="text-center">Date de debut</th>
 									<th class="text-center">Date de fin</th>
 									<th class="text-center">Status</th>
 									<th class="text-center">Options</th>
-									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
 

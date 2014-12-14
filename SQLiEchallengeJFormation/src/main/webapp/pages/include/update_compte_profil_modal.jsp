@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<!-- Modal -->
+<!-- Modal Update profil Start -->
    <div class="modal fade" id="updateCompteProfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
        <div class="modal-dialog">
            <div class="modal-content" style="width: 110%;">
@@ -14,9 +14,6 @@
 				<form data-toggle="validator" id="update_utilisateur" action="update" method="post" role="form" 
 										class="form-horizontal left-align form-well adminex-form" enctype="multipart/form-data">
                    <div class="col-md-5 img-modal">
-                       <!-- <img src="images/gallery/image1.jpg" alt="">
-                       <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit Image</a>
-                       <a href="#" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> View Full Size</a> -->
 						
 						<div class="fileupload fileupload-new" data-provides="fileupload">
 							<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -40,11 +37,6 @@
 							</div>
 						</div>
 														
-														
-                      <%--  <p class="mtop10"><strong>File Name:</strong> img01.jpg</p>
-                       <p><strong>File Type:</strong> jpg</p>
-                       <p><strong>Resolution:</strong> 300x200</p>
-                       <p><strong>Uploaded By:</strong> <a href="#">ThemeBucket</a></p> --%>
                        
                        <div style="margin-top: 15px;" class="form-group">
                            <label> Ancien mot de passe<span class="text-danger"> *</span></label>
@@ -184,4 +176,4 @@
            </div>
        </div>
    </div>
-<!-- modal -->
+<!-- Modal Update profil End -->

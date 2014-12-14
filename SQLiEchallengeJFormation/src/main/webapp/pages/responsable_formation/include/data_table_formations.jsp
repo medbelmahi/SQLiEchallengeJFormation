@@ -29,7 +29,6 @@
 									<th class="text-centre">Desciption</th>
 									<th class="text-centre">Date de création</th>
 									<th class="text-centre">Options</th>
-									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
 

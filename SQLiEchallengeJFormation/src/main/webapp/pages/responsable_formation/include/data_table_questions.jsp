@@ -6,8 +6,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des questions <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
-<!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
 			<div class="panel-body">
@@ -30,7 +28,6 @@
 								<tr role="row">
 									<th>Question</th>
 									<th class="text-center">Options</th>
-									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
 
@@ -41,20 +38,6 @@
 											<td class="center text-center">
 												
 												<ul style="list-style: none;" class="navbar-nav nav-options">
-													
-													<%-- <li style="padding-left: 15px;">
-														<a title="Liste des sessions" href='<s:url action="formations/sessions/list" ><s:param name="idFormation"><s:property value="idFormation"/></s:param></s:url>'>
-															<i class="fa fa-list"></i>
-														</a>
-													</li>
-													
-													<li style="padding-left: 15px;">
-														<a href='javascript:void(0);'
-														   onclick="jsonGetFormation(<s:property value="idFormation"/>);" 
-														   title="Mise à jour">
-															<i class="fa fa-pencil"></i>
-														</a>
-													</li> --%>
 													
 													<li style="padding-left: 15px;">
 														<a data-href='<s:url action="formations/evaluation/questions/delete" ><s:param name="idQuestion"><s:property value="idEvaluationQuestion"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
