@@ -6,11 +6,11 @@
 
 	<!--logo and iconic logo start-->
 	<div class="logo">
-		<a href="index.html"><img src='<s:url value="/images/logo.png"/>' alt=""></a>
+		<a href='<s:url value="/"/>'><img src='<s:url value="/images/logo.png"/>' alt=""></a>
 	</div>
 
 	<div class="logo-icon text-center">
-		<a href="index.html"><img src='<s:url value="/images/logo_icon.png"/>' alt=""></a>
+		<a href='<s:url value="/"/>'><img src='<s:url value="/images/logo_icon.png"/>' alt=""></a>
 	</div>
 	<!--logo and iconic logo end-->
 
