@@ -26,17 +26,18 @@
                         <div class="compose-mail">
                             	<input type="hidden" id="idUtilisateur_sendMessage" name="idUtilisateur">
                                 <div class="form-group">
-                                    <label for="to" class="col-md-3">A:</label>
-                                    <input type="text" tabindex="1" id="to" class="form-control" readonly="readonly">
+                                    <label for="to" class="col-md-3">A<span
+													class="text-danger"> *</span></label>
+                                    <input required="required" type="text" tabindex="1" id="to" class="form-control" readonly="readonly">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="subject" class="col-md-3">Sujet:</label>
-                                    <input type="text" tabindex="1" id="subject" class="form-control" name="object">
+                                    <label for="subject" class="col-md-4">Sujet</label>
+                                    <input required="required" type="text" tabindex="1" id="subject" class="form-control" name="object">
                                 </div>
 
                                 <div class="compose-editor">
-                                    <textarea class="wysihtml5 form-control" rows="6" name="msg" id="msg_"></textarea>
+                                    <textarea required="required" class="wysihtml5 form-control" rows="6" name="msg" id="msg_"></textarea>
                                 </div>
                         </div>
                     </section>

@@ -30,7 +30,7 @@
 										class="fa fa-paper-clip"></i>Choisir une Photo</span> <span
 									class="fileupload-exists"><i class="fa fa-undo"></i> Modifier</span>
 									
-									<input name="fileImage" class="default" type="file">
+									<input name="fileImage" class="default" type="file" accept=".jpeg,.png,.gif,.jpg">
 									
 								</span> <a href="#" class="btn btn-danger fileupload-exists"
 									data-dismiss="fileupload"><i class="fa fa-trash"></i>Supprimer</a>
