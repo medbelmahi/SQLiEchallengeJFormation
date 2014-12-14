@@ -49,9 +49,6 @@
                         </div>
                         <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
                             <img class="inv-logo" src="<s:url value="/images/login-logo.png"/>" alt=""/>
-                            <!-- <p>121 King Street, Melbourne <br/>
-                                Victoria 3000 Australia <br/>
-                                Phone: +61 3 8376 6284</p> -->
                         </div>
                     </div>
                     <div class="invoice-address">
@@ -176,9 +173,7 @@
         <!--body wrapper end-->
 
         <!--footer section start-->
-        <footer class="">
-            2014 &copy; Mouad &amp; Mohamed
-        </footer>
+        	<s:include value="/pages/include/footer.jsp"></s:include>
         <!--footer section end-->
 
 

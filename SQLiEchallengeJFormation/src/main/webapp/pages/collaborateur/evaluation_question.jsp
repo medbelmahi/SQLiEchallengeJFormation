@@ -9,29 +9,10 @@
     <meta name="description" content="">
     <link rel="shortcut icon" href="#" type="image/png">
 
-    <title>Evaluation</title>
+    <title>JFormation : Evaluation</title>
 	
-	    <!--icheck-->
-    <link href='<s:url value="/js/iCheck/skins/minimal/minimal.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/red.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/green.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/blue.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/yellow.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/minimal/purple.css"/>' rel="stylesheet">
-
-    <link href='<s:url value="/js/iCheck/skins/square/square.css"/>' rel="stylesheet">
+	<!--icheck-->
     <link href='<s:url value="/js/iCheck/skins/square/red.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/square/green.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/square/blue.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/square/yellow.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/square/purple.css"/>' rel="stylesheet">
-
-    <link href='<s:url value="/js/iCheck/skins/flat/grey.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/red.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/green.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/blue.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/yellow.css"/>' rel="stylesheet">
-    <link href='<s:url value="/js/iCheck/skins/flat/purple.css"/>' rel="stylesheet">
 	
     <link href='<s:url value="/css/style.css"/>' rel="stylesheet">
     <link href='<s:url value="/css/style-responsive.css"/>' rel="stylesheet">
@@ -66,10 +47,6 @@
                 <section class="panel">
                     <header class="panel-heading">
                         Evaluation
-                            <%-- <span class="tools pull-right">
-                                <a href="javascript:;" class="fa fa-chevron-down"></a>
-                                <a href="javascript:;" class="fa fa-times"></a>
-                             </span> --%>
                     </header>
                     <div class="panel-body">
                         <table class="table table-striped">
@@ -87,13 +64,16 @@
                             <tbody>
                             	<s:iterator value="questions" status="itStatus">
 									<tr><!-- row table begin -->
-										<input type="hidden" name='idQuestions' value='<s:property value="idEvaluationQuestion" />' />
-										<input type="hidden" name='scores' value="" />
-										<td><s:property value="#itStatus.count" /></td>
+										
+										<td>
+											<s:property value="#itStatus.count" />
+											<input type="hidden" name='idQuestions' value='<s:property value="idEvaluationQuestion" />' />
+											<input type="hidden" name='scores' value="" />
+										</td>
 										<td><s:property value="question" /></td>
 										<td>
 											<div class="icheck ">
-												<div class="square single-row">
+												<div class="square-red">
 													<div class="radio ">
 														<input tabindex="3" checked="checked" type="radio" name='scores[<s:property value="%{#itStatus.count-1}" />]' value="1">
 													</div>

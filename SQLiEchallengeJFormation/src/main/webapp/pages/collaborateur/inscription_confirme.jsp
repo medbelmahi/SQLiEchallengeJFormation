@@ -27,8 +27,6 @@
     <div class="container ">
 
         <section class="error-wrapper text-center">
-            <!-- <h1><img alt="" src="images/500-error.png"></h1>
-            <h2>OOOPS!!!</h2> -->
             <h3>
 				<s:if test="isSessionActionMessage()">
 					<s:property value="sessionActionMessageText" />
@@ -38,7 +36,6 @@
 					<s:property value="sessionActionErrorText" />
 				</s:if>
 			</h3>
-            <!-- <p class="nrml-txt">Why not try refreshing you page? Or you can <a href="#">contact our support</a> if the problem persists.</p>-->
             <a class="back-btn" href='<s:url namespace="/" action="/collaborateur/session/documents/display" >
             							<s:param name="code" ><s:property value="code" /></s:param></s:url>'>Télecharger les documents</a> 
         </section>

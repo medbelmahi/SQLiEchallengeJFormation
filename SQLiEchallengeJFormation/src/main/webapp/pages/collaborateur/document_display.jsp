@@ -56,9 +56,6 @@
                         </div>
                         <div style="margin-left: 0;" class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3">
                             <img style="margin:0 auto; float: none;" class="inv-logo" src="<s:url value="/images/login-logo.png"/>" alt=""/>
-                            <!-- <p>121 King Street, Melbourne <br/>
-                                Victoria 3000 Australia <br/>
-                                Phone: +61 3 8376 6284</p> -->
                         </div>
                     </div>
                     <div class="invoice-address">
@@ -187,17 +184,6 @@
                 			</div>
                 
             </div>
-            <%-- <div class="text-center ">
-                <a class="btn btn-success btn-lg" href='<s:url action="session/inscription/confirme" >
-                <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
-                <s:param name="confirmation">true</s:param>
-                </s:url>'><i class="fa fa-check"></i> Confirmation d'inscription </a>
-                
-                <a class="btn btn-primary btn-lg" target="_blank" href='<s:url action="session/inscription/confirme" >
-                <s:param name="code"><s:property value="inscription.codeInscription"/></s:param>
-                <s:param name="confirmation">false</s:param>
-                </s:url>'><i class="fa fa-print"></i> Annuler </a>
-            </div> --%>
 
         </div>
         <!--body wrapper end-->
