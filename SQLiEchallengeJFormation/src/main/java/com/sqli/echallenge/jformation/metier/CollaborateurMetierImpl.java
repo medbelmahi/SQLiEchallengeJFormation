@@ -22,6 +22,8 @@ public class CollaborateurMetierImpl implements CollaborateurMetier {
 	
 	@Autowired
 	private CollaborateurDao dao;
+	@Autowired
+	private HabilitationMetier habilitationMetier;
 	
 	@Autowired
 	private PropretiesHelper propretiesHelper;
@@ -52,6 +54,10 @@ public class CollaborateurMetierImpl implements CollaborateurMetier {
 
 	public void delete(Long idCollaborateur) throws Exception {
 		try{
+			//delete habilitations
+			habilitationMetier.deleteHabilitationsFromCollaborateur(idCollaborateur);
+			
+			//delete Collaborateur
 			dao.delete(idCollaborateur);
 		}catch(Exception e){
 			throw new SqliException(propretiesHelper.getText("collaborateur.delete.fail"));
@@ -80,6 +86,14 @@ public class CollaborateurMetierImpl implements CollaborateurMetier {
 
 	public void setPropretiesHelper(PropretiesHelper propretiesHelper) {
 		this.propretiesHelper = propretiesHelper;
+	}
+
+	public HabilitationMetier getHabilitationMetier() {
+		return habilitationMetier;
+	}
+
+	public void setHabilitationMetier(HabilitationMetier habilitationMetier) {
+		this.habilitationMetier = habilitationMetier;
 	}
 
 }
