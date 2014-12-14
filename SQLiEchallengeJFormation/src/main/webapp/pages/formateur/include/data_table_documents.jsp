@@ -24,7 +24,6 @@
 						<table aria-describedby="hidden-table-info_info"
 							class="display table table-bordered dataTable"
 							id="dynamic-table">
-<!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
 									<th class="text-center">Titre du document</th>

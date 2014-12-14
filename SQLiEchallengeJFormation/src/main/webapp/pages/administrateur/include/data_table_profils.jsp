@@ -7,8 +7,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des profils <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
-<!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
 			<div class="panel-body">
@@ -47,7 +45,7 @@
 											<td class="text-center">
 												<!-- Le profil est elementaire (n'est pas besoin de se modifier) -->
 												
-												<ul style="list-style: none;" class="navbar-nav nav-options">
+												<ul style="list-style: none; width: 70px;" class="navbar-nav nav-options td_option_class">
 														<li>
 															<a href='javascript:void(0);'
 															   onclick='jsonGetProfil_pourAffectation(<s:property value="idProfil"/>);' 

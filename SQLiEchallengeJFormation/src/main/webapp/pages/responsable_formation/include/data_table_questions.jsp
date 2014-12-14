@@ -37,7 +37,7 @@
 											<td><s:property value="question" /></td>
 											<td class="center text-center">
 												
-												<ul style="list-style: none;" class="navbar-nav nav-options">
+												<ul style="list-style: none; width: 60px;" class="navbar-nav nav-options">
 													
 													<li style="padding-left: 15px;">
 														<a data-href='<s:url action="formations/evaluation/questions/delete" ><s:param name="idQuestion"><s:property value="idEvaluationQuestion"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >

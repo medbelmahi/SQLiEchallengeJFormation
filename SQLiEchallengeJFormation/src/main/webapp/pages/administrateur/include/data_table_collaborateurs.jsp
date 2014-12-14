@@ -7,7 +7,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des collaborateurs <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
 				</span>
 			</header>
 			<div class="panel-body">
@@ -49,8 +48,8 @@
 										<td class=""><s:property value="telephoneCollaborateur" /></td>
 										<td class="text-center"><s:property value="sexeCollaborateur" /></td>
 										
-										<td class="center hidden-phone ">
-											<ul style="list-style: none;" class="navbar-nav nav-options">
+										<td class="text-center">
+											<ul style="list-style: none; width: 120px;" class="navbar-nav nav-options">
 												<li style="padding-right: 15px;">
 													<a title="Habilitations" href='<s:url action="collaborateurs/habilitations" ><s:param name="idCollaborateur"><s:property value="idCollaborateur"/></s:param></s:url>'>
 														<i class="fa fa-ban"></i>

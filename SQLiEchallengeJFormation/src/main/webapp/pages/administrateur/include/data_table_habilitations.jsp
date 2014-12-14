@@ -7,8 +7,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des habilitations <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
-<!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
 			<div class="panel-body">
@@ -41,7 +39,7 @@
 											<td class="text-center"><s:property value="nomHabilitation" /></td>
 											<td><s:property value="descriptionHabilitation" /></td>
 											<td class="text-center">
-												<ul style="list-style: none;" class="navbar-nav nav-options">
+												<ul style="list-style: none; width: 60px;" class="navbar-nav nav-options">
 													
 													<li style="padding-left: 15px;">
 														<a data-href='<s:url action="habilitations/delete" ><s:param name="idHabilitation"><s:property value="idHabilitation"/></s:param></s:url>' data-toggle="confirmation" data-original-title="" title="Supprimer ?" >
