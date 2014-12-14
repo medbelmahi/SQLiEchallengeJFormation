@@ -9,7 +9,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des collaborateurs <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
 				</span>
 			</header>
 			<div class="panel-body">

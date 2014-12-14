@@ -7,8 +7,6 @@
 		<section class="panel">
 			<header class="panel-heading">
 				Liste des Documents <span class="tools pull-right">
-					<a href="javascript:;" class="fa fa-chevron-down" id="downUpCollaborateur"></a> 
-<!-- 					<a href="javascript:;" class="fa fa-times"></a> -->
 				</span>
 			</header>
 			<div class="panel-body">
