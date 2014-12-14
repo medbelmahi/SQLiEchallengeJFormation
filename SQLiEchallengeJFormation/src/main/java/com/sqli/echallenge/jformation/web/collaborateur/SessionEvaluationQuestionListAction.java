@@ -62,6 +62,11 @@ public class SessionEvaluationQuestionListAction extends SqliActionSupport {
 				throw new SqliException(getText("collaborateur.NotInscritOrCodeNotValid"));
 			}
 			
+			//2.3// verify if session ended
+			if(sessionFormation.status() != 2){
+				throw new SqliException(getText("evaluation.session.notEnded"));
+			}
+			
 			//3// verify if user already evaluate session
 			List<EvaluationReponse> reponses = null;
 			try {

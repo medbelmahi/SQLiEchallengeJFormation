@@ -23,7 +23,7 @@ import com.sqli.echallenge.jformation.web.SqliActionSupport;
 @Controller
 public class SessionInscriptionConfirmAction extends SqliActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = -867281139644932294L;
-	private static final String TEMPLATE_MAIL = "collaborateur-session-evaluation-template.vm";
+	private static final String TEMPLATE_MAIL = "template/collaborateur-session-evaluation-template.vm";
 
 	@Autowired
 	public SessionInscriptionMetier inscriptionMetier;
