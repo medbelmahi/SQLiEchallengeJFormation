@@ -58,23 +58,6 @@
 	                </span>
 				</div>
 				
-				<!-- singup div
-	            <div class="registration">
-	                Not a member yet?
-	                <a class="" href="registration.html">
-	                    Signup
-	                </a>
-	            </div><!-- End singup div -->
-	            
-	            <!-- Begin Remember me -->
-	            <label class="checkbox">
-				<!-- <input type="checkbox" value="remember-me"> Remember me -->
-	                <%-- <span class="pull-right">
-	                    <a data-toggle="modal" href="#myModal"  style="color: #D9534F;"> <strong>Mot de passe oublié ?</strong></a>
-	
-	                </span> --%>
-	                
-	            </label><!-- End Remember me -->
 	
 	        </div>
 	    </s:form>
