@@ -4742,4 +4742,5 @@ td.description_class{
 .td_option_class{
 	vertical-align:middle;
 	padding-left: 0;
+	min-width: 60px;
 }

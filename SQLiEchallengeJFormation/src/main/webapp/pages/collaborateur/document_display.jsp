@@ -152,9 +152,9 @@
 <!-- 							id="hidden-table-info"> -->
 							<thead>
 								<tr role="row">
-									<th class="text-centre">Titre du document</th>
-									<th class="text-centre">Desciption</th>
-									<th class="text-centre">Options</th>
+									<th class="text-center">Titre du document</th>
+									<th class="text-center">Desciption</th>
+									<th class="text-center">Options</th>
 									<!-- <th style="display: none;">Actions</th> -->
 								</tr>
 							</thead>
@@ -164,9 +164,9 @@
 										<tr class="gradeA odd">
 											<td><s:property value="nomDocument" /></td>
 											<td><s:property value="descriptionDocument" /></td>
-											<td style="width-min : 60px">
+											<td class="text-center" style="width-min : 60px">
 												
-												<ul style="list-style: none;" class="navbar-nav nav-options">
+												<ul style="list-style: none; width: 20px;" class="navbar-nav nav-options">
 													
 													<li>
 														<a title="Telecharger le document" target="_blank" href='<s:url namespace="/" action="download" >

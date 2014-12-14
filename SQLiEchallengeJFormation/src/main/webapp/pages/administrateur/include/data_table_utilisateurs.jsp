@@ -53,7 +53,7 @@
 											<s:property
 												value="profil.getNomProfil()" />
 										</td>
-										<td class="text-center">
+										<td class="text-center td_option_class" >
 											<ul style="list-style: none;" class="navbar-nav nav-options">
 											
 												<li style="padding-right: 15px;">
