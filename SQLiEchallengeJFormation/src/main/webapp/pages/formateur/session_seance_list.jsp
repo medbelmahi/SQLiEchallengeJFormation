@@ -23,7 +23,9 @@
 	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>' />
 	<link rel="stylesheet" type="text/css" href='<s:url value="/js/bootstrap-datetimepicker/css/datetimepicker-custom.css"/>' />
 	
-	
+	<!--gritter css-->
+  	<link rel="stylesheet" type="text/css" href="js/gritter/css/jquery.gritter.css" />
+  	
 	<!-- initial style -->
 	<link href='<s:url value="/css/style.css"/>' rel="stylesheet">
 	<link href='<s:url value="/css/style-responsive.css"/>' rel="stylesheet">
@@ -144,6 +146,10 @@
 	        EditableTable.init();
 	    });
 	</script>
+	
+	<!--gritter script-->
+	<script type="text/javascript" src="js/gritter/js/jquery.gritter.js"></script>
+	<script src="js/gritter/js/gritter-init.js" type="text/javascript"></script>
 	
 	<!-- javascript of session_seance_list page Begin -->
 		<s:include value="include/javascript_session_seance_list.jsp"></s:include>

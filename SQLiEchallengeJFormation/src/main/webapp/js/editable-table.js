@@ -180,9 +180,21 @@ var EditableTable = function () {
                     	if(globaleStatus == "success"){
                     		saveRow(oTable, nEditing);
                             nEditing = null;
+                            
+                            $.gritter.add({
+                                // (string | mandatory) the heading of the notification
+                                title: 'Mise à jour bien effectuée!',
+                                // (string | mandatory) the text inside the notification
+                                text: 'La mise à jour dynamique été bien effectuée.'
+                            });
+                            
                     	}else{
-                    		console.log("mise à jour n'est po effectuée");
-//                    		alert("mise à jour n'est po effectuée")
+                    		$.gritter.add({
+                                // (string | mandatory) the heading of the notification
+                                title: 'Mise à jour n\'est pas bien effectuée!',
+                                // (string | mandatory) the text inside the notification
+                                text: 'La mise à jour dynamique n\'est pas bien effectuée.'
+                            });
                     	}
                 	
                 	}, 500);
